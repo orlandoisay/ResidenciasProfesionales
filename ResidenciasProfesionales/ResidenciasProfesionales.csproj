@@ -45,11 +45,19 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VIEW\FrmInicioSesion.cs">
+    <Compile Include="..\..\..\..\..\Music\FrmInicioSesion.cs">
+      <SubType>Form</SubType>
+      <Link>VIEW\FrmInicioSesion.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\Music\FrmInicioSesion.Designer.cs">
+      <DependentUpon>FrmInicioSesion.cs</DependentUpon>
+      <Link>VIEW\FrmInicioSesion.Designer.cs</Link>
+    </Compile>
+    <Compile Include="VIEW\FrmAsignacionRevisores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\FrmInicioSesion.Designer.cs">
-      <DependentUpon>FrmInicioSesion.cs</DependentUpon>
+    <Compile Include="VIEW\FrmAsignacionRevisores.Designer.cs">
+      <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\FrmPrueba.cs">
       <SubType>Form</SubType>
@@ -66,8 +74,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VIEW\FrmInicioSesion.resx">
+    <EmbeddedResource Include="..\..\..\..\..\Music\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
+      <Link>VIEW\FrmInicioSesion.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmAsignacionRevisores.resx">
+      <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
