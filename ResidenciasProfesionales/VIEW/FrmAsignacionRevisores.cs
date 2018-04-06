@@ -24,5 +24,19 @@ namespace ResidenciasProfesionales.VIEW
         {
 
         }
+
+        private void pPanelV2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //
+            pPanel.Visible = false;
+            pPanelV2.Location = new Point(pPanel.Location.X, pPanel.Location.Y);
+            pPanelV2.Size = new Size(939, 477);
+            pPanelV2.Visible = true;
+        }
     }
 }
