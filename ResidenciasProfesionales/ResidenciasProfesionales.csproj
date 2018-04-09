@@ -46,7 +46,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\..\..\..\..\Music\FrmInicioSesion.cs">
-      <SubType>Form</SubType>
       <Link>VIEW\FrmInicioSesion.cs</Link>
     </Compile>
     <Compile Include="..\..\..\..\..\Music\FrmInicioSesion.Designer.cs">
@@ -58,6 +57,12 @@
     </Compile>
     <Compile Include="VIEW\FrmAsignacionRevisores.Designer.cs">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmSolicitud.Designer.cs">
+      <DependentUpon>FrmSolicitud.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\FrmPrueba.cs">
       <SubType>Form</SubType>
@@ -80,6 +85,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmAsignacionRevisores.resx">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmPrueba.resx">
+      <DependentUpon>FrmPrueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmSolicitud.resx">
+      <DependentUpon>FrmSolicitud.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
