@@ -81,6 +81,12 @@
     <Compile Include="VIEW\FrmAsignacionRevisores.Designer.cs">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\FrmAsignacionAsesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmAsignacionAsesor.Designer.cs">
+      <DependentUpon>FrmAsignacionAsesor.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FrmControlDocumentacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmAsignacionRevisores.resx">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmAsignacionAsesor.resx">
+      <DependentUpon>FrmAsignacionAsesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmControlDocumentacion.resx">
       <DependentUpon>FrmControlDocumentacion.cs</DependentUpon>
