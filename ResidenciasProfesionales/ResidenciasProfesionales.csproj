@@ -117,6 +117,12 @@
     <Compile Include="VIEW\FrmLiberacionInformeLista.Designer.cs">
       <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\FrmMostrarDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmMostrarDatos.Designer.cs">
+      <DependentUpon>FrmMostrarDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FrmReporteResidencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,18 @@
     </Compile>
     <Compile Include="VIEW\FrmVistaPrincipalAcademia.Designer.cs">
       <DependentUpon>FrmVistaPrincipalAcademia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmVistaPrincipalAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmVistaPrincipalAlumno.Designer.cs">
+      <DependentUpon>FrmVistaPrincipalAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmVistaPrincipalCoordinador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmVistaPrincipalCoordinador.Designer.cs">
+      <DependentUpon>FrmVistaPrincipalCoordinador.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\FrmVistaPrincipalRevisor.cs">
       <SubType>Form</SubType>
@@ -191,6 +209,9 @@
     <EmbeddedResource Include="VIEW\FrmLiberacionInformeLista.resx">
       <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmMostrarDatos.resx">
+      <DependentUpon>FrmMostrarDatos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmPrueba.resx">
       <DependentUpon>FrmPrueba.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmVistaPrincipalAcademia.resx">
       <DependentUpon>FrmVistaPrincipalAcademia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmVistaPrincipalAlumno.resx">
+      <DependentUpon>FrmVistaPrincipalAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmVistaPrincipalCoordinador.resx">
+      <DependentUpon>FrmVistaPrincipalCoordinador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmVistaPrincipalRevisor.resx">
       <DependentUpon>FrmVistaPrincipalRevisor.cs</DependentUpon>

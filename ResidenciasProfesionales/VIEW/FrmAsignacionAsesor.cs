@@ -15,5 +15,25 @@ namespace ResidenciasProfesionales.VIEW
         {
             InitializeComponent();
         }
+
+        private void btnAsignar_Click(object sender, EventArgs e)
+        {
+            new FrmMostrarDatos("Asesor").ShowDialog();
+        }
+
+        private void btnMostrarAsignar_Click(object sender, EventArgs e)
+        {
+            new FrmMostrarDatos("Alumno").ShowDialog();
+        }
+
+        private void btnCambiarAsesor_Click(object sender, EventArgs e)
+        {
+            new FrmMostrarDatos("Asesor").ShowDialog();
+        }
+
+        private void btnMostrarModificar_Click(object sender, EventArgs e)
+        {
+            new FrmMostrarDatos("Alumno").ShowDialog();
+        }
     }
 }
