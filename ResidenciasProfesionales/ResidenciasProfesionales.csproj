@@ -77,6 +77,12 @@
     <Compile Include="VIEW\FrmAsignacionRevisores.Designer.cs">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\FrmControlDocumentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmControlDocumentacion.Designer.cs">
+      <DependentUpon>FrmControlDocumentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FrmLiberacionFinal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmAsignacionRevisores.resx">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmControlDocumentacion.resx">
+      <DependentUpon>FrmControlDocumentacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmLiberacionFinal.resx">
       <DependentUpon>FrmLiberacionFinal.cs</DependentUpon>
