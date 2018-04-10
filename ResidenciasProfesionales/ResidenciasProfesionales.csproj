@@ -70,6 +70,18 @@
     <Compile Include="VIEW\FrmAsignacionRevisores.Designer.cs">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\FrmLiberacionInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmLiberacionInforme.Designer.cs">
+      <DependentUpon>FrmLiberacionInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmLiberacionInformeLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmLiberacionInformeLista.Designer.cs">
+      <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FrmSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmAsignacionRevisores.resx">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmLiberacionInforme.resx">
+      <DependentUpon>FrmLiberacionInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmLiberacionInformeLista.resx">
+      <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmPrueba.resx">
       <DependentUpon>FrmPrueba.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace ResidenciasProfesionales.VIEW
 {
-    partial class FrmAprobacionInformeLista
+    partial class FrmLiberacionInformeLista
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblSolicitud = new System.Windows.Forms.Label();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,19 +36,10 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblSolicitud = new System.Windows.Forms.Label();
             this.btnEvaluar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblSolicitud
-            // 
-            this.lblSolicitud.AutoSize = true;
-            this.lblSolicitud.Font = new System.Drawing.Font("Segoe UI Light", 18F);
-            this.lblSolicitud.Location = new System.Drawing.Point(12, 9);
-            this.lblSolicitud.Name = "lblSolicitud";
-            this.lblSolicitud.Size = new System.Drawing.Size(257, 32);
-            this.lblSolicitud.TabIndex = 1;
-            this.lblSolicitud.Text = "Aprobación de informes";
             // 
             // dgvLista
             // 
@@ -80,14 +70,14 @@
             this.Column5,
             this.Column6});
             this.dgvLista.EnableHeadersVisualStyles = false;
-            this.dgvLista.Location = new System.Drawing.Point(12, 59);
+            this.dgvLista.Location = new System.Drawing.Point(12, 58);
             this.dgvLista.MultiSelect = false;
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
             this.dgvLista.RowHeadersVisible = false;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(763, 325);
-            this.dgvLista.TabIndex = 2;
+            this.dgvLista.Size = new System.Drawing.Size(757, 309);
+            this.dgvLista.TabIndex = 3;
             // 
             // Column1
             // 
@@ -125,30 +115,40 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
+            // lblSolicitud
+            // 
+            this.lblSolicitud.AutoSize = true;
+            this.lblSolicitud.Font = new System.Drawing.Font("Segoe UI Light", 18F);
+            this.lblSolicitud.Location = new System.Drawing.Point(12, 9);
+            this.lblSolicitud.Name = "lblSolicitud";
+            this.lblSolicitud.Size = new System.Drawing.Size(244, 32);
+            this.lblSolicitud.TabIndex = 4;
+            this.lblSolicitud.Text = "Liberación de informes";
+            // 
             // btnEvaluar
             // 
             this.btnEvaluar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEvaluar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEvaluar.Location = new System.Drawing.Point(632, 12);
+            this.btnEvaluar.Location = new System.Drawing.Point(626, 12);
             this.btnEvaluar.Name = "btnEvaluar";
             this.btnEvaluar.Size = new System.Drawing.Size(143, 35);
-            this.btnEvaluar.TabIndex = 17;
+            this.btnEvaluar.TabIndex = 18;
             this.btnEvaluar.Text = "Emitir veredicto";
             this.btnEvaluar.UseVisualStyleBackColor = true;
             // 
-            // FrmAprobacionInformeLista
+            // FrmLiberacionInformeLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(787, 396);
+            this.ClientSize = new System.Drawing.Size(781, 379);
             this.Controls.Add(this.btnEvaluar);
-            this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.lblSolicitud);
+            this.Controls.Add(this.dgvLista);
             this.Font = new System.Drawing.Font("Segoe UI Light", 10F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "FrmAprobacionInformeLista";
-            this.Text = "Aprobación de informes";
+            this.Name = "FrmLiberacionInformeLista";
+            this.Text = "Liberación de informes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,7 +156,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblSolicitud;
+
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -164,6 +164,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Label lblSolicitud;
         private System.Windows.Forms.Button btnEvaluar;
     }
 }
