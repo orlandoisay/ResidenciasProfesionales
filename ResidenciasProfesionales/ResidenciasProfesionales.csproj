@@ -52,11 +52,29 @@
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
       <Link>VIEW\FrmInicioSesion.Designer.cs</Link>
     </Compile>
+    <Compile Include="VIEW\FrmAprobarSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmAprobarSolicitud.Designer.cs">
+      <DependentUpon>FrmAprobarSolicitud.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FrmAsignacionRevisores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIEW\FrmAsignacionRevisores.Designer.cs">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmDetalleInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmDetalleInforme.Designer.cs">
+      <DependentUpon>FrmDetalleInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmLiberacionInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmLiberacionInforme.Designer.cs">
+      <DependentUpon>FrmLiberacionInforme.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\FrmSolicitud.cs">
       <SubType>Form</SubType>
@@ -83,8 +101,17 @@
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
       <Link>VIEW\FrmInicioSesion.resx</Link>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmAprobarSolicitud.resx">
+      <DependentUpon>FrmAprobarSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmAsignacionRevisores.resx">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmDetalleInforme.resx">
+      <DependentUpon>FrmDetalleInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmLiberacionInforme.resx">
+      <DependentUpon>FrmLiberacionInforme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmPrueba.resx">
       <DependentUpon>FrmPrueba.cs</DependentUpon>
