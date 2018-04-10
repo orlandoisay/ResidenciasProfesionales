@@ -65,11 +65,29 @@
     <Compile Include="VIEW\FrmAprobacionInformeLista.Designer.cs">
       <DependentUpon>FrmAprobacionInformeLista.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\FrmAprobacionSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmAprobacionSolicitud.Designer.cs">
+      <DependentUpon>FrmAprobacionSolicitud.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FrmAsignacionRevisores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIEW\FrmAsignacionRevisores.Designer.cs">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmLiberacionFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmLiberacionFinal.Designer.cs">
+      <DependentUpon>FrmLiberacionFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmLiberacionFinalDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmLiberacionFinalDetalle.Designer.cs">
+      <DependentUpon>FrmLiberacionFinalDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\FrmLiberacionInforme.cs">
       <SubType>Form</SubType>
@@ -121,8 +139,17 @@
     <EmbeddedResource Include="VIEW\FrmAprobacionInformeLista.resx">
       <DependentUpon>FrmAprobacionInformeLista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmAprobacionSolicitud.resx">
+      <DependentUpon>FrmAprobacionSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmAsignacionRevisores.resx">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmLiberacionFinal.resx">
+      <DependentUpon>FrmLiberacionFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmLiberacionFinalDetalle.resx">
+      <DependentUpon>FrmLiberacionFinalDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmLiberacionInforme.resx">
       <DependentUpon>FrmLiberacionInforme.cs</DependentUpon>
