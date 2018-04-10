@@ -188,7 +188,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Light", 10F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmLiberacionInforme";
-            this.Text = "FrmLiberacionInforme";
+            this.Text = "Liberación de informe";
             ((System.ComponentModel.ISupportInitialize)(this.pbFotografía)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
