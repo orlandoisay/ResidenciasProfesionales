@@ -57,12 +57,20 @@ namespace ResidenciasProfesionales.VIEW
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos");
+                    MessageBox.Show("Usuario o contraseña incorrectos.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1);
                 }
             }
             else
             {
-                MessageBox.Show("Llena todos los campos");
+                MessageBox.Show("Llena todos los campos.",
+                "Aviso",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1);
             }
         }
 
@@ -94,6 +102,13 @@ namespace ResidenciasProfesionales.VIEW
         {
             hacerLineas();
         }
+
+//        private void FrmLogin2_Load(object sender, EventArgs e) 
+//        { 
+//            MessageBox.Show("Bienvenidos a mi aplicacion", "Hola", MessageBoxButtons.OK,
+//MessageBoxIcon.Warning); 
+//        }
+
 
         private void FrmLogin2_Load(object sender, EventArgs e)
         {
