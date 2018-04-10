@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ResidenciasProfesionales</RootNamespace>
     <AssemblyName>ResidenciasProfesionales</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,11 +53,17 @@
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
       <Link>VIEW\FrmInicioSesion.Designer.cs</Link>
     </Compile>
-    <Compile Include="VIEW\FrmAprobarSolicitud.cs">
+    <Compile Include="VIEW\FrmAprobacionInforme.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\FrmAprobarSolicitud.Designer.cs">
-      <DependentUpon>FrmAprobarSolicitud.cs</DependentUpon>
+    <Compile Include="VIEW\FrmAprobacionInforme.Designer.cs">
+      <DependentUpon>FrmAprobacionInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmAprobacionInformeLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmAprobacionInformeLista.Designer.cs">
+      <DependentUpon>FrmAprobacionInformeLista.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\FrmAsignacionRevisores.cs">
       <SubType>Form</SubType>
@@ -64,17 +71,17 @@
     <Compile Include="VIEW\FrmAsignacionRevisores.Designer.cs">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\FrmDetalleInforme.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VIEW\FrmDetalleInforme.Designer.cs">
-      <DependentUpon>FrmDetalleInforme.cs</DependentUpon>
-    </Compile>
     <Compile Include="VIEW\FrmLiberacionInforme.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIEW\FrmLiberacionInforme.Designer.cs">
       <DependentUpon>FrmLiberacionInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmLiberacionInformeLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmLiberacionInformeLista.Designer.cs">
+      <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\FrmSolicitud.cs">
       <SubType>Form</SubType>
@@ -88,6 +95,12 @@
     <Compile Include="VIEW\FrmPrueba.Designer.cs">
       <DependentUpon>FrmPrueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\FrmVistaPrincipalRevisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmVistaPrincipalRevisor.Designer.cs">
+      <DependentUpon>FrmVistaPrincipalRevisor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -96,22 +109,26 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="..\..\..\..\..\Music\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
       <Link>VIEW\FrmInicioSesion.resx</Link>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\FrmAprobarSolicitud.resx">
-      <DependentUpon>FrmAprobarSolicitud.cs</DependentUpon>
+    <EmbeddedResource Include="VIEW\FrmAprobacionInforme.resx">
+      <DependentUpon>FrmAprobacionInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmAprobacionInformeLista.resx">
+      <DependentUpon>FrmAprobacionInformeLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmAsignacionRevisores.resx">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\FrmDetalleInforme.resx">
-      <DependentUpon>FrmDetalleInforme.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmLiberacionInforme.resx">
       <DependentUpon>FrmLiberacionInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmLiberacionInformeLista.resx">
+      <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmPrueba.resx">
       <DependentUpon>FrmPrueba.cs</DependentUpon>
@@ -119,6 +136,10 @@
     <EmbeddedResource Include="VIEW\FrmSolicitud.resx">
       <DependentUpon>FrmSolicitud.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmVistaPrincipalRevisor.resx">
+      <DependentUpon>FrmVistaPrincipalRevisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
