@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="DATA\Conexion.cs" />
     <Compile Include="DATA\UsuarioDao.cs" />
+    <Compile Include="MODEL\AlumnoPOJO.cs" />
     <Compile Include="MODEL\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
