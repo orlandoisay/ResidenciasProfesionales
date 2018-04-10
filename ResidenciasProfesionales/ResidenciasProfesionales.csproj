@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ResidenciasProfesionales</RootNamespace>
     <AssemblyName>ResidenciasProfesionales</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.10.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
@@ -48,15 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DATA\Conexion.cs" />
+    <Compile Include="DATA\UsuarioDao.cs" />
+    <Compile Include="MODEL\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\..\..\..\..\Music\FrmInicioSesion.cs">
-      <Link>VIEW\FrmInicioSesion.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\..\..\Music\FrmInicioSesion.Designer.cs">
-      <DependentUpon>FrmInicioSesion.cs</DependentUpon>
-      <Link>VIEW\FrmInicioSesion.Designer.cs</Link>
-    </Compile>
     <Compile Include="VIEW\FrmAprobacionInforme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +104,12 @@
     <Compile Include="VIEW\FrmLiberacionInformeLista.Designer.cs">
       <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\FrmLogin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmLogin2.Designer.cs">
+      <DependentUpon>FrmLogin2.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FrmReporteResidencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,10 +150,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="..\..\..\..\..\Music\FrmInicioSesion.resx">
-      <DependentUpon>FrmInicioSesion.cs</DependentUpon>
-      <Link>VIEW\FrmInicioSesion.resx</Link>
-    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmAprobacionInforme.resx">
       <DependentUpon>FrmAprobacionInforme.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmLiberacionInformeLista.resx">
       <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmLogin2.resx">
+      <DependentUpon>FrmLogin2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmPrueba.resx">
       <DependentUpon>FrmPrueba.cs</DependentUpon>
@@ -199,10 +203,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DATA\" />
-    <Folder Include="LIB\" />
-    <Folder Include="MODEL\" />
+    <Content Include="LIB\MySql.Data.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
