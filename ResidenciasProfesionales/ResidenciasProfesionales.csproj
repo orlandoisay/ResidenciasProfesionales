@@ -52,6 +52,18 @@
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
       <Link>VIEW\FrmInicioSesion.Designer.cs</Link>
     </Compile>
+    <Compile Include="VIEW\FrmAprobacionInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmAprobacionInforme.Designer.cs">
+      <DependentUpon>FrmAprobacionInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmAprobacionInformeLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmAprobacionInformeLista.Designer.cs">
+      <DependentUpon>FrmAprobacionInformeLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FrmAsignacionRevisores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,12 @@
     <EmbeddedResource Include="..\..\..\..\..\Music\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
       <Link>VIEW\FrmInicioSesion.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmAprobacionInforme.resx">
+      <DependentUpon>FrmAprobacionInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmAprobacionInformeLista.resx">
+      <DependentUpon>FrmAprobacionInformeLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmAsignacionRevisores.resx">
       <DependentUpon>FrmAsignacionRevisores.cs</DependentUpon>
