@@ -58,6 +58,7 @@
     <Compile Include="DATA\UsuarioDao.cs" />
     <Compile Include="MODEL\AlumnoPOJO.cs" />
     <Compile Include="MODEL\CarreraPOJO.cs" />
+    <Compile Include="MODEL\DictamenPOJO.cs" />
     <Compile Include="MODEL\EmpresaPOJO.cs" />
     <Compile Include="MODEL\InformePOJO.cs" />
     <Compile Include="MODEL\ResidenciaPOJO.cs" />
