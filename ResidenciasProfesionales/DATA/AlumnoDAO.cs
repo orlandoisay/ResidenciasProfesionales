@@ -93,18 +93,17 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
-        // TODO : Cambiar apellido
         public static AlumnoPOJO DataRowAObjeto(DataRow dr)
         {
             return new AlumnoPOJO(
                 dr["Matricula"].ToString(),
                 dr["Password"].ToString(),
                 dr["Nombre"].ToString(),
-                dr["Apellidos"].ToString(),
-                dr["Apellidos"].ToString(),
+                dr["ApellidoP"].ToString(),
+                dr["ApellidoM"].ToString(),
                 dr["Correo"].ToString(),
                 dr["Telefono"].ToString(),
-                dr["Carrera"].ToString(),
+                int.Parse(dr["Carrera"].ToString()),
                 int.Parse(dr["Semestre"].ToString()),
                 dr["Estatus"].ToString()
             );
