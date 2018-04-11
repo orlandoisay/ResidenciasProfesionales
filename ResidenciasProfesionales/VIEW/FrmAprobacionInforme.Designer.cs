@@ -43,7 +43,6 @@
             this.lblComentarios = new System.Windows.Forms.Label();
             this.txtComentarios = new System.Windows.Forms.TextBox();
             this.btnEvaluar = new System.Windows.Forms.Button();
-            this.btnEvaluarContinuar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotografía)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,23 +183,13 @@
             // 
             this.btnEvaluar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEvaluar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEvaluar.Location = new System.Drawing.Point(340, 306);
+            this.btnEvaluar.Location = new System.Drawing.Point(340, 307);
             this.btnEvaluar.Name = "btnEvaluar";
             this.btnEvaluar.Size = new System.Drawing.Size(82, 35);
             this.btnEvaluar.TabIndex = 16;
             this.btnEvaluar.Text = "Evaluar";
             this.btnEvaluar.UseVisualStyleBackColor = true;
-            // 
-            // btnEvaluarContinuar
-            // 
-            this.btnEvaluarContinuar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEvaluarContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEvaluarContinuar.Location = new System.Drawing.Point(185, 307);
-            this.btnEvaluarContinuar.Name = "btnEvaluarContinuar";
-            this.btnEvaluarContinuar.Size = new System.Drawing.Size(149, 35);
-            this.btnEvaluarContinuar.TabIndex = 17;
-            this.btnEvaluarContinuar.Text = "Evaluar y continuar";
-            this.btnEvaluarContinuar.UseVisualStyleBackColor = true;
+            this.btnEvaluar.Click += new System.EventHandler(this.btnEvaluar_Click);
             // 
             // FrmAprobacionInforme
             // 
@@ -208,7 +197,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(434, 354);
-            this.Controls.Add(this.btnEvaluarContinuar);
             this.Controls.Add(this.btnEvaluar);
             this.Controls.Add(this.txtComentarios);
             this.Controls.Add(this.lblComentarios);
@@ -251,6 +239,5 @@
         private System.Windows.Forms.Label lblComentarios;
         private System.Windows.Forms.TextBox txtComentarios;
         private System.Windows.Forms.Button btnEvaluar;
-        private System.Windows.Forms.Button btnEvaluarContinuar;
     }
 }

@@ -52,10 +52,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DATA\AlumnoDAO.cs" />
+    <Compile Include="DATA\CarreraDAO.cs" />
     <Compile Include="DATA\Conexion.cs" />
+    <Compile Include="DATA\InformeDAO.cs" />
     <Compile Include="DATA\UsuarioDao.cs" />
     <Compile Include="MODEL\AlumnoPOJO.cs" />
+    <Compile Include="MODEL\CarreraPOJO.cs" />
     <Compile Include="MODEL\EmpresaPOJO.cs" />
+    <Compile Include="MODEL\InformePOJO.cs" />
     <Compile Include="MODEL\ResidenciaPOJO.cs" />
     <Compile Include="MODEL\Usuario.cs" />
     <Compile Include="Program.cs" />
