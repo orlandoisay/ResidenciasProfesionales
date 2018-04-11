@@ -11,7 +11,7 @@ namespace ResidenciasProfesionales.VIEW
 {
     public partial class FrmAprobacionInformeLista : Form
     {
-        public FrmAprobacionInformeLista()
+        public FrmAprobacionInformeLista(int IdDocente)
         {
             InitializeComponent();
         }
