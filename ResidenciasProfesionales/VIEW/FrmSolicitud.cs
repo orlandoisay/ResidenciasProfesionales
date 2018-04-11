@@ -16,6 +16,9 @@ namespace ResidenciasProfesionales.VIEW
             InitializeComponent();
         }
         
+        private void MostrarSolicitud()
+        {
 
+        }
     }
 }

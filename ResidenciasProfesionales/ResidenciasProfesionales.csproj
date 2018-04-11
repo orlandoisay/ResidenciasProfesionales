@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DATA\AlumnoDAO.cs" />
     <Compile Include="DATA\Conexion.cs" />
     <Compile Include="DATA\UsuarioDao.cs" />
     <Compile Include="MODEL\AlumnoPOJO.cs" />
