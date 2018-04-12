@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.MODEL
 {
-    public class EntregasPOJO
+    public class EntregaPOJO
     {
         public String IdAlumno { get; set; }
         public int IdDocumento { get; set; }
         public String Estado { get; set; }
 
-        public EntregasPOJO() { }
+        public EntregaPOJO() { }
 
-        public EntregasPOJO(String idAlumno, int idDocumento, String estado) {
+        public EntregaPOJO(String idAlumno, int idDocumento, String estado) {
             IdAlumno = idAlumno;
             IdDocumento = idDocumento;
             Estado = estado;

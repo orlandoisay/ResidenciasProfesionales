@@ -55,6 +55,7 @@
     <Compile Include="DATA\CarreraDAO.cs" />
     <Compile Include="DATA\Conexion.cs" />
     <Compile Include="DATA\DictamenDAO.cs" />
+    <Compile Include="DATA\EntregaDAO.cs" />
     <Compile Include="DATA\InformeDAO.cs" />
     <Compile Include="DATA\SolicitudDAO.cs" />
     <Compile Include="DATA\UsuarioDao.cs" />
@@ -63,7 +64,7 @@
     <Compile Include="MODEL\DictamenPOJO.cs" />
     <Compile Include="MODEL\DocentePOJO.cs" />
     <Compile Include="MODEL\EmpresaPOJO.cs" />
-    <Compile Include="MODEL\EntregasPOJO.cs" />
+    <Compile Include="MODEL\EntregaPOJO.cs" />
     <Compile Include="MODEL\InformePOJO.cs" />
     <Compile Include="MODEL\ResidenciaPOJO.cs" />
     <Compile Include="MODEL\SolicitudPOJO.cs" />
