@@ -22,7 +22,7 @@ namespace ResidenciasProfesionales.DATA
                 }
                 else
                 {
-                    sentencia = "";
+                    sentencia = "select * from Docente d join rolDocente rd on d.ID = rd.IdDocente where d.Usuario = @P0 and d.Password = @P1 and rd.Rol = @P2;";
                 }
                 Conexion con = new Conexion();
                 MySqlCommand cmd = new MySqlCommand(sentencia);
