@@ -135,6 +135,7 @@
             this.btnEvaluar.TabIndex = 17;
             this.btnEvaluar.Text = "Emitir veredicto";
             this.btnEvaluar.UseVisualStyleBackColor = true;
+            this.btnEvaluar.Click += new System.EventHandler(this.btnEvaluar_Click);
             // 
             // FrmAprobacionInformeLista
             // 
