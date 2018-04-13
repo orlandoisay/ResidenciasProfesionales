@@ -15,14 +15,14 @@ namespace ResidenciasProfesionales.MODEL
         public String ApellidoM { get; set; }
         public String Correo { get; set; }
         public String Telefono { get; set; }
-        public int Carrera { get; set; }
+        public String Carrera { get; set; }
         public int Semestre { get; set; }
         public String Estatus { get; set; }
 
         public AlumnoPOJO() { }
 
         public AlumnoPOJO(String matricula, String password, String nombre, String apellidoP, String apellidoM, String correo,
-            String telefono, int carrera, int semestre, String estatus) {
+            String telefono, String carrera, int semestre, String estatus) {
             Matricula = matricula;
             Password = password;
             Nombre = nombre;
