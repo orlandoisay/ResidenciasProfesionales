@@ -50,5 +50,19 @@ namespace ResidenciasProfesionales.MODEL
             Domicilio = domicilio;
             Ciudad = ciudad;
         }
+
+        public AlumnoPOJO(String matricula, String password, String nombre, String apellidoP, String apellidoM, String correo,
+            String telefono, int carrera, int semestre, String estatus) {
+            Matricula = matricula;
+            Password = password;
+            Nombre = nombre;
+            ApellidoP = apellidoP;
+            ApellidoM = apellidoM;
+            Correo = correo;
+            Telefono = telefono;
+            Carrera = carrera;
+            Semestre = semestre;
+            Estatus = estatus;
+        }
     }
 }

@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DATA\AlumnoDAO.cs" />
+    <Compile Include="DATA\AsesorDAO.cs" />
+    <Compile Include="DATA\AsignacionRevisorDAO.cs" />
     <Compile Include="DATA\CarreraDAO.cs" />
     <Compile Include="DATA\Conexion.cs" />
     <Compile Include="DATA\DictamenDAO.cs" />
@@ -62,14 +64,17 @@
     <Compile Include="DATA\SolicitudDAO.cs" />
     <Compile Include="DATA\UsuarioDao.cs" />
     <Compile Include="MODEL\AlumnoPOJO.cs" />
+    <Compile Include="MODEL\Asesor.cs" />
     <Compile Include="MODEL\CarreraPOJO.cs" />
     <Compile Include="MODEL\DictamenPOJO.cs" />
     <Compile Include="MODEL\DocentePOJO.cs" />
     <Compile Include="MODEL\EmpresaPOJO.cs" />
     <Compile Include="MODEL\EntregaPOJO.cs" />
     <Compile Include="MODEL\InformePOJO.cs" />
+    <Compile Include="MODEL\MAA.cs" />
     <Compile Include="MODEL\ResidenciaPOJO.cs" />
     <Compile Include="MODEL\SolicitudPOJO.cs" />
+    <Compile Include="MODEL\TablaAsignacionRevisor.cs" />
     <Compile Include="MODEL\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
