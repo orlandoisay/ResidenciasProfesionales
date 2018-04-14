@@ -47,10 +47,8 @@ namespace ResidenciasProfesionales.DATA
                 cmd.Parameters.AddWithValue("@P0", matricula);
 
                 DataTable dt = con.ejecutarConsulta(cmd);
-
                 if (dt.Rows.Count != 1)
                     return null;
-
                 return DataRowAObjeto(dt.Rows[0]);
             }
             catch (Exception ex)
@@ -101,6 +99,7 @@ namespace ResidenciasProfesionales.DATA
 
         public static AlumnoPOJO DataRowAObjeto(DataRow dr)
         {
+         
             return new AlumnoPOJO(
                 dr["Matricula"].ToString(),
                 dr["Password"].ToString(),
@@ -117,6 +116,7 @@ namespace ResidenciasProfesionales.DATA
                 dr["Domicilio"].ToString(),
                 dr["Ciudad"].ToString()
             );
+
         }
     }
 }

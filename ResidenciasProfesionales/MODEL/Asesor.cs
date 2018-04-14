@@ -16,6 +16,13 @@ namespace ResidenciasProfesionales.MODEL
         public string Telefono { get; set; }
         public string Carrera { get; set; }
         public string Estatus { get; set; }
+        public String NombreCompleto
+        {
+            get
+            {
+                return string.Format("{0} {1}, {2}", ApellidoP, ApellidoM, Nombre);
+            }
+        }
 
         public Asesor(string id, string nombre, string apellidoP, string apellidoM, string correo,
        string telefono, string carrera, string estatus)
