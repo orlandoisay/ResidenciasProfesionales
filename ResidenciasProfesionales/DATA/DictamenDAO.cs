@@ -69,8 +69,9 @@ namespace ResidenciasProfesionales.DATA
                 int.Parse(dr["IdResidencia"].ToString()),
                 dr["IdDocente"].ToString(),
                 dr["Tipo"].ToString(),
+                dr["Estatus"].ToString(),
                 dr["Comentario"].ToString(),
-                float.Parse(dr["Calificacion"].ToString()),
+                int.Parse(dr["Calificacion"].ToString()),
                 DateTime.Parse(dr["Fecha"].ToString()));
         }
     }

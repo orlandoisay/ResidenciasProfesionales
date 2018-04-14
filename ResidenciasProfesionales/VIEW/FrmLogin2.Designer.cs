@@ -90,9 +90,11 @@
             this.cbTipo.ForeColor = System.Drawing.Color.White;
             this.cbTipo.FormattingEnabled = true;
             this.cbTipo.Items.AddRange(new object[] {
+            "Asesor",
+            "Revisor",
             "Alumno",
             "Academia",
-            "Cordinador"});
+            "Coordinador"});
             this.cbTipo.Location = new System.Drawing.Point(39, 200);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(198, 28);
