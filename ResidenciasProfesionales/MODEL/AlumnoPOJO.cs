@@ -19,6 +19,14 @@ namespace ResidenciasProfesionales.MODEL
         public int Semestre { get; set; }
         public String Estatus { get; set; }
 
+        public String NombreCompleto
+        {
+            get
+            {
+                return string.Format("{0} {1}, {2}", ApellidoP, ApellidoM, Nombre);
+            }
+        }
+
         public AlumnoPOJO() { }
 
         public AlumnoPOJO(String matricula, String password, String nombre, String apellidoP, String apellidoM, String correo,
