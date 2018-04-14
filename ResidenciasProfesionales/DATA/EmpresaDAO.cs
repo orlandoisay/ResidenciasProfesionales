@@ -73,6 +73,7 @@ namespace ResidenciasProfesionales.DATA
             return new EmpresaPOJO(
                 dr["RFC"].ToString(),
                 dr["Nombre"].ToString(),
+                dr["Giro"].ToString(),
                 dr["Sector"].ToString(),
                 dr["Domicilio"].ToString(),
                 dr["Colonia"].ToString(),
@@ -86,6 +87,5 @@ namespace ResidenciasProfesionales.DATA
             );
         }
 
-        //TODO: Revisar que onda con Sector
     }
 }

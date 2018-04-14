@@ -53,8 +53,5 @@ namespace ResidenciasProfesionales.DATA
                 dr["IdAlumno"].ToString()
             );
         }
-
-
-        //TODO : Revisar si faltan campos en la base de datos
     }    
 }

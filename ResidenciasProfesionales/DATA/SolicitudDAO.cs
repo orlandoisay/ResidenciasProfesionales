@@ -62,13 +62,13 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
-        public static SolicitudPOJO ObtenerSolicitud(string matricula)
+        public static SolicitudPOJO ObtenerSolicitud(string idAlumno)
         {
             try
             {
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM solicitud WHERE matricula = @P0");
-                cmd.Parameters.AddWithValue("@P0", matricula);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM solicitud WHERE idAlumno = @P0");
+                cmd.Parameters.AddWithValue("@P0", idAlumno);
 
                 DataTable dt = con.ejecutarConsulta(cmd);
 
@@ -144,7 +144,8 @@ namespace ResidenciasProfesionales.DATA
             return new SolicitudPOJO(
                 int.Parse(dr["id"].ToString()),
                 dr["idAlumno"].ToString(),
-                int.Parse(dr["idResidencia"].ToString())
+                int.Parse(dr["idResidencia"].ToString()),
+                dr["Estatus"].ToString()
             );
         }
     }
