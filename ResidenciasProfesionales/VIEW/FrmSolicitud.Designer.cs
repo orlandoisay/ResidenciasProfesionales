@@ -52,7 +52,6 @@
             this.lblResCarrera = new System.Windows.Forms.Label();
             this.lblResNombre = new System.Windows.Forms.Label();
             this.tbpProyecto = new System.Windows.Forms.TabPage();
-            this.numProPeriodo = new System.Windows.Forms.NumericUpDown();
             this.rbtnProTipoTrabajador = new System.Windows.Forms.RadioButton();
             this.rbtnProTipoPropia = new System.Windows.Forms.RadioButton();
             this.rbtnProTipoBanco = new System.Windows.Forms.RadioButton();
@@ -102,10 +101,10 @@
             this.lblEmpNombre = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.cmbProPeriodo = new System.Windows.Forms.ComboBox();
             this.tabPrincipal.SuspendLayout();
             this.tbpResidente.SuspendLayout();
             this.tbpProyecto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numProPeriodo)).BeginInit();
             this.tbpEmpresa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,6 +165,7 @@
             // txtResSSNumero
             // 
             this.txtResSSNumero.Location = new System.Drawing.Point(133, 289);
+            this.txtResSSNumero.MaxLength = 20;
             this.txtResSSNumero.Name = "txtResSSNumero";
             this.txtResSSNumero.Size = new System.Drawing.Size(138, 25);
             this.txtResSSNumero.TabIndex = 19;
@@ -182,6 +182,7 @@
             // txtResTelefono
             // 
             this.txtResTelefono.Location = new System.Drawing.Point(134, 223);
+            this.txtResTelefono.MaxLength = 10;
             this.txtResTelefono.Name = "txtResTelefono";
             this.txtResTelefono.Size = new System.Drawing.Size(126, 25);
             this.txtResTelefono.TabIndex = 17;
@@ -189,6 +190,7 @@
             // txtResEmail
             // 
             this.txtResEmail.Location = new System.Drawing.Point(134, 192);
+            this.txtResEmail.MaxLength = 50;
             this.txtResEmail.Name = "txtResEmail";
             this.txtResEmail.Size = new System.Drawing.Size(175, 25);
             this.txtResEmail.TabIndex = 16;
@@ -196,6 +198,7 @@
             // txtResCiudad
             // 
             this.txtResCiudad.Location = new System.Drawing.Point(134, 156);
+            this.txtResCiudad.MaxLength = 50;
             this.txtResCiudad.Name = "txtResCiudad";
             this.txtResCiudad.Size = new System.Drawing.Size(163, 25);
             this.txtResCiudad.TabIndex = 15;
@@ -203,6 +206,7 @@
             // txtResDomicilio
             // 
             this.txtResDomicilio.Location = new System.Drawing.Point(134, 125);
+            this.txtResDomicilio.MaxLength = 50;
             this.txtResDomicilio.Name = "txtResDomicilio";
             this.txtResDomicilio.Size = new System.Drawing.Size(263, 25);
             this.txtResDomicilio.TabIndex = 14;
@@ -244,6 +248,15 @@
             // 
             this.cmbResCarrera.Enabled = false;
             this.cmbResCarrera.FormattingEnabled = true;
+            this.cmbResCarrera.Items.AddRange(new object[] {
+            "Gastronomía",
+            "Ing. Sistemas Automotrices",
+            "Ing. Ambiental",
+            "Ing. Sistemas Computacionales",
+            "Ing. Industrial",
+            "Ing. Electrónica",
+            "Ing. Gestión Empresarial",
+            "Ing. Informática"});
             this.cmbResCarrera.Location = new System.Drawing.Point(134, 88);
             this.cmbResCarrera.Name = "cmbResCarrera";
             this.cmbResCarrera.Size = new System.Drawing.Size(194, 25);
@@ -339,7 +352,7 @@
             // 
             // tbpProyecto
             // 
-            this.tbpProyecto.Controls.Add(this.numProPeriodo);
+            this.tbpProyecto.Controls.Add(this.cmbProPeriodo);
             this.tbpProyecto.Controls.Add(this.rbtnProTipoTrabajador);
             this.tbpProyecto.Controls.Add(this.rbtnProTipoPropia);
             this.tbpProyecto.Controls.Add(this.rbtnProTipoBanco);
@@ -354,13 +367,6 @@
             this.tbpProyecto.TabIndex = 0;
             this.tbpProyecto.Text = "Datos del proyecto";
             this.tbpProyecto.UseVisualStyleBackColor = true;
-            // 
-            // numProPeriodo
-            // 
-            this.numProPeriodo.Location = new System.Drawing.Point(170, 144);
-            this.numProPeriodo.Name = "numProPeriodo";
-            this.numProPeriodo.Size = new System.Drawing.Size(121, 25);
-            this.numProPeriodo.TabIndex = 12;
             // 
             // rbtnProTipoTrabajador
             // 
@@ -398,6 +404,7 @@
             // txtProNombre
             // 
             this.txtProNombre.Location = new System.Drawing.Point(170, 17);
+            this.txtProNombre.MaxLength = 50;
             this.txtProNombre.Name = "txtProNombre";
             this.txtProNombre.Size = new System.Drawing.Size(281, 25);
             this.txtProNombre.TabIndex = 8;
@@ -838,6 +845,19 @@
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
+            // cmbProPeriodo
+            // 
+            this.cmbProPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbProPeriodo.FormattingEnabled = true;
+            this.cmbProPeriodo.Items.AddRange(new object[] {
+            "ENE-JUN",
+            "AGO-DIC"});
+            this.cmbProPeriodo.Location = new System.Drawing.Point(170, 143);
+            this.cmbProPeriodo.Name = "cmbProPeriodo";
+            this.cmbProPeriodo.Size = new System.Drawing.Size(179, 25);
+            this.cmbProPeriodo.TabIndex = 12;
+            // 
             // FrmSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -857,7 +877,6 @@
             this.tbpResidente.PerformLayout();
             this.tbpProyecto.ResumeLayout(false);
             this.tbpProyecto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numProPeriodo)).EndInit();
             this.tbpEmpresa.ResumeLayout(false);
             this.tbpEmpresa.PerformLayout();
             this.ResumeLayout(false);
@@ -878,7 +897,6 @@
         private System.Windows.Forms.Label lblProTipo;
         private System.Windows.Forms.Label lblProNombre;
         private System.Windows.Forms.TextBox txtProNombre;
-        private System.Windows.Forms.NumericUpDown numProPeriodo;
         private System.Windows.Forms.RadioButton rbtnProTipoTrabajador;
         private System.Windows.Forms.RadioButton rbtnProTipoPropia;
         private System.Windows.Forms.RadioButton rbtnProTipoBanco;
@@ -941,5 +959,6 @@
         private System.Windows.Forms.TextBox txtEmpTitularPuesto;
         private System.Windows.Forms.Label lblEmpTitularPuesto;
         private System.Windows.Forms.Label lblEmpTitular;
+        private System.Windows.Forms.ComboBox cmbProPeriodo;
     }
 }
