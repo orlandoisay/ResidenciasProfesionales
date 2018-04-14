@@ -48,28 +48,25 @@ namespace ResidenciasProfesionales.VIEW
         {
             txtResNoControl.Text = alumno.Matricula;
             txtResNombre.Text = alumno.NombreCompleto;
-            // TODO : Llenar el combo en el mismo orden que la base de datos
-            //cmbResCarrera.SelectedIndex = alumno.Carrera;
-
-            // TODO: Corregir base de datos, POJO y DAO de Alumno
-            //txtResDomicilio.Text = alumno.Domicilio;
-            //txtResCiudad.Text = alumno.Ciudad;
+            cmbResCarrera.SelectedIndex = alumno.Carrera - 1;
+            txtResDomicilio.Text = alumno.Domicilio;
+            txtResCiudad.Text = alumno.Ciudad;
             txtResEmail.Text = alumno.Correo;
             txtResTelefono.Text = alumno.Telefono;
 
-            //switch(alumno.SeguridadSocial)
-            //{
-            //    case "IMSS":
-            //        rbtnResSSIMSS.Checked = true;
-            //        break;
-            //    case "ISSSTE":
-            //        rbtnResSSISSSTE.Checked = true;
-            //        break;
-            //    case "Otro":
-            //        rbtnResSSOtro.Checked = true;
-            //        break;
-            //}
-            //txtResSSNumero.Text = alumno.SeguridadSocialNumero;
+            switch(alumno.TipoSS)
+            {
+                case "IMSS":
+                    rbtnResSSIMSS.Checked = true;
+                    break;
+                case "ISSSTE":
+                    rbtnResSSISSSTE.Checked = true;
+                    break;
+                case "Otro":
+                    rbtnResSSOtro.Checked = true;
+                    break;
+            }
+            txtResSSNumero.Text = alumno.NumeroSS;
 
         }
         private void CargarDatosSolicitud(SolicitudPOJO solicitud)
@@ -94,7 +91,7 @@ namespace ResidenciasProfesionales.VIEW
                     break;
             }
 
-            numProPeriodo.Value = decimal.Parse(residencia.Periodo);
+            cmbProPeriodo.SelectedItem = residencia.Periodo;
 
             // Cargado de datos de la empresa
 
