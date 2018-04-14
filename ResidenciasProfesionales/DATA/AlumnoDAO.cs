@@ -37,7 +37,8 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
-        public static AlumnoPOJO ObtenerAlumno(string matricula)
+
+        public AlumnoPOJO ObtenerAlumno(string matricula)
         {
             try
             {

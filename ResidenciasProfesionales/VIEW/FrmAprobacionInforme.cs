@@ -30,7 +30,7 @@ namespace ResidenciasProfesionales.VIEW
 
         private void CargarDatosAlumno()
         {
-            var alumno = AlumnoDAO.ObtenerAlumno(Matricula);
+            var alumno = new AlumnoDAO().ObtenerAlumno(Matricula);
 
             txtNoControl.Text = alumno.Matricula;
             txtNombre.Text = string.Format("{0} {1}, {2}", alumno.ApellidoP, alumno.ApellidoM, alumno.Nombre);

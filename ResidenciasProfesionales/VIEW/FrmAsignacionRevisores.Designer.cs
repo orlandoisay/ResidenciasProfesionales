@@ -29,45 +29,45 @@
         private void InitializeComponent()
         {
             this.dgvTabla = new System.Windows.Forms.DataGridView();
-            this.cNoControl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cAsesor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cRevisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cRevisor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.pPanel = new System.Windows.Forms.Panel();
             this.pPanelV2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.letreroNoControl = new System.Windows.Forms.Label();
-            this.letreroNombre = new System.Windows.Forms.Label();
-            this.letreroCarrera = new System.Windows.Forms.Label();
-            this.letreroSemestre = new System.Windows.Forms.Label();
-            this.lbNoControl = new System.Windows.Forms.Label();
-            this.lbNombre = new System.Windows.Forms.Label();
-            this.lbCarrera = new System.Windows.Forms.Label();
-            this.lbSemestre = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAsignar = new System.Windows.Forms.Button();
+            this.btnAsignarContinuar = new System.Windows.Forms.Button();
+            this.letreroIns = new System.Windows.Forms.Label();
+            this.dgvTablaCarga = new System.Windows.Forms.DataGridView();
+            this.cAceptar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cRevisorr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCargaActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbCarreraAS = new System.Windows.Forms.Label();
             this.lbNombreAS = new System.Windows.Forms.Label();
             this.letrero = new System.Windows.Forms.Label();
             this.letreroNombreA = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.dgvTablaCarga = new System.Windows.Forms.DataGridView();
-            this.cAceptar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cRevisorr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cCargaActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.letreroIns = new System.Windows.Forms.Label();
-            this.btnAsignarContinuar = new System.Windows.Forms.Button();
-            this.btnAsignar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbSemestre = new System.Windows.Forms.Label();
+            this.lbCarrera = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
+            this.lbNoControl = new System.Windows.Forms.Label();
+            this.letreroSemestre = new System.Windows.Forms.Label();
+            this.letreroCarrera = new System.Windows.Forms.Label();
+            this.letreroNombre = new System.Windows.Forms.Label();
+            this.letreroNoControl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cNoControl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cAsesor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cRevisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cRevisor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             this.pPanel.SuspendLayout();
             this.pPanelV2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaCarga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTabla
@@ -86,36 +86,7 @@
             this.dgvTabla.ReadOnly = true;
             this.dgvTabla.Size = new System.Drawing.Size(899, 395);
             this.dgvTabla.TabIndex = 0;
-            // 
-            // cNoControl
-            // 
-            this.cNoControl.HeaderText = "Num. Control";
-            this.cNoControl.Name = "cNoControl";
-            this.cNoControl.ReadOnly = true;
-            // 
-            // cAlumno
-            // 
-            this.cAlumno.HeaderText = "Alumno";
-            this.cAlumno.Name = "cAlumno";
-            this.cAlumno.ReadOnly = true;
-            // 
-            // cAsesor
-            // 
-            this.cAsesor.HeaderText = "Asesor";
-            this.cAsesor.Name = "cAsesor";
-            this.cAsesor.ReadOnly = true;
-            // 
-            // cRevisor
-            // 
-            this.cRevisor.HeaderText = "Revisor";
-            this.cRevisor.Name = "cRevisor";
-            this.cRevisor.ReadOnly = true;
-            // 
-            // cRevisor2
-            // 
-            this.cRevisor2.HeaderText = "Revisor";
-            this.cRevisor2.Name = "cRevisor2";
-            this.cRevisor2.ReadOnly = true;
+            this.dgvTabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTabla_CellClick);
             // 
             // btnEditar
             // 
@@ -178,107 +149,85 @@
             this.pPanelV2.Controls.Add(this.label1);
             this.pPanelV2.Location = new System.Drawing.Point(1, 29);
             this.pPanelV2.Name = "pPanelV2";
-            this.pPanelV2.Size = new System.Drawing.Size(939, 477);
+            this.pPanelV2.Size = new System.Drawing.Size(905, 503);
             this.pPanelV2.TabIndex = 4;
             this.pPanelV2.Paint += new System.Windows.Forms.PaintEventHandler(this.pPanelV2_Paint);
             // 
-            // label1
+            // btnCancelar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Alumno";
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(32, 422);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(100, 31);
+            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // letreroNoControl
+            // btnAsignar
             // 
-            this.letreroNoControl.AutoSize = true;
-            this.letreroNoControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letreroNoControl.Location = new System.Drawing.Point(150, 95);
-            this.letreroNoControl.Name = "letreroNoControl";
-            this.letreroNoControl.Size = new System.Drawing.Size(88, 20);
-            this.letreroNoControl.TabIndex = 1;
-            this.letreroNoControl.Text = "No. Control";
+            this.btnAsignar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsignar.Location = new System.Drawing.Point(832, 422);
+            this.btnAsignar.Name = "btnAsignar";
+            this.btnAsignar.Size = new System.Drawing.Size(75, 31);
+            this.btnAsignar.TabIndex = 23;
+            this.btnAsignar.Text = "Asignar";
+            this.btnAsignar.UseVisualStyleBackColor = true;
             // 
-            // letreroNombre
+            // btnAsignarContinuar
             // 
-            this.letreroNombre.AutoSize = true;
-            this.letreroNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letreroNombre.Location = new System.Drawing.Point(170, 124);
-            this.letreroNombre.Name = "letreroNombre";
-            this.letreroNombre.Size = new System.Drawing.Size(65, 20);
-            this.letreroNombre.TabIndex = 2;
-            this.letreroNombre.Text = "Nombre";
+            this.btnAsignarContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignarContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsignarContinuar.Location = new System.Drawing.Point(661, 422);
+            this.btnAsignarContinuar.Name = "btnAsignarContinuar";
+            this.btnAsignarContinuar.Size = new System.Drawing.Size(165, 31);
+            this.btnAsignarContinuar.TabIndex = 22;
+            this.btnAsignarContinuar.Text = "Asignar y continuar";
+            this.btnAsignarContinuar.UseVisualStyleBackColor = true;
             // 
-            // letreroCarrera
+            // letreroIns
             // 
-            this.letreroCarrera.AutoSize = true;
-            this.letreroCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letreroCarrera.Location = new System.Drawing.Point(173, 154);
-            this.letreroCarrera.Name = "letreroCarrera";
-            this.letreroCarrera.Size = new System.Drawing.Size(62, 20);
-            this.letreroCarrera.TabIndex = 3;
-            this.letreroCarrera.Text = "Carrera";
+            this.letreroIns.AutoSize = true;
+            this.letreroIns.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letreroIns.Location = new System.Drawing.Point(470, 29);
+            this.letreroIns.Name = "letreroIns";
+            this.letreroIns.Size = new System.Drawing.Size(224, 20);
+            this.letreroIns.TabIndex = 21;
+            this.letreroIns.Text = "Revisores disponobles(elige 2)";
             // 
-            // letreroSemestre
+            // dgvTablaCarga
             // 
-            this.letreroSemestre.AutoSize = true;
-            this.letreroSemestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letreroSemestre.Location = new System.Drawing.Point(152, 183);
-            this.letreroSemestre.Name = "letreroSemestre";
-            this.letreroSemestre.Size = new System.Drawing.Size(78, 20);
-            this.letreroSemestre.TabIndex = 4;
-            this.letreroSemestre.Text = "Semestre";
+            this.dgvTablaCarga.AllowUserToAddRows = false;
+            this.dgvTablaCarga.AllowUserToDeleteRows = false;
+            this.dgvTablaCarga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTablaCarga.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cAceptar,
+            this.cRevisorr,
+            this.cCargaActual});
+            this.dgvTablaCarga.Location = new System.Drawing.Point(465, 61);
+            this.dgvTablaCarga.Name = "dgvTablaCarga";
+            this.dgvTablaCarga.ReadOnly = true;
+            this.dgvTablaCarga.Size = new System.Drawing.Size(444, 344);
+            this.dgvTablaCarga.TabIndex = 20;
             // 
-            // lbNoControl
+            // cAceptar
             // 
-            this.lbNoControl.AutoSize = true;
-            this.lbNoControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNoControl.Location = new System.Drawing.Point(263, 98);
-            this.lbNoControl.Name = "lbNoControl";
-            this.lbNoControl.Size = new System.Drawing.Size(45, 16);
-            this.lbNoControl.TabIndex = 5;
-            this.lbNoControl.Text = "label6";
+            this.cAceptar.HeaderText = "";
+            this.cAceptar.Name = "cAceptar";
+            this.cAceptar.ReadOnly = true;
             // 
-            // lbNombre
+            // cRevisorr
             // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.Location = new System.Drawing.Point(263, 128);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(45, 16);
-            this.lbNombre.TabIndex = 6;
-            this.lbNombre.Text = "label7";
+            this.cRevisorr.HeaderText = "Revisor";
+            this.cRevisorr.Name = "cRevisorr";
+            this.cRevisorr.ReadOnly = true;
             // 
-            // lbCarrera
+            // cCargaActual
             // 
-            this.lbCarrera.AutoSize = true;
-            this.lbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCarrera.Location = new System.Drawing.Point(263, 158);
-            this.lbCarrera.Name = "lbCarrera";
-            this.lbCarrera.Size = new System.Drawing.Size(45, 16);
-            this.lbCarrera.TabIndex = 7;
-            this.lbCarrera.Text = "label8";
-            // 
-            // lbSemestre
-            // 
-            this.lbSemestre.AutoSize = true;
-            this.lbSemestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSemestre.Location = new System.Drawing.Point(263, 187);
-            this.lbSemestre.Name = "lbSemestre";
-            this.lbSemestre.Size = new System.Drawing.Size(45, 16);
-            this.lbSemestre.TabIndex = 8;
-            this.lbSemestre.Text = "label9";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(32, 103);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.cCargaActual.HeaderText = "Carga actual";
+            this.cCargaActual.Name = "cCargaActual";
+            this.cCargaActual.ReadOnly = true;
             // 
             // pictureBox2
             // 
@@ -338,81 +287,144 @@
             this.label18.TabIndex = 10;
             this.label18.Text = "Asesor";
             // 
-            // dgvTablaCarga
+            // pictureBox1
             // 
-            this.dgvTablaCarga.AllowUserToAddRows = false;
-            this.dgvTablaCarga.AllowUserToDeleteRows = false;
-            this.dgvTablaCarga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTablaCarga.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cAceptar,
-            this.cRevisorr,
-            this.cCargaActual});
-            this.dgvTablaCarga.Location = new System.Drawing.Point(465, 61);
-            this.dgvTablaCarga.Name = "dgvTablaCarga";
-            this.dgvTablaCarga.ReadOnly = true;
-            this.dgvTablaCarga.Size = new System.Drawing.Size(444, 344);
-            this.dgvTablaCarga.TabIndex = 20;
+            this.pictureBox1.Location = new System.Drawing.Point(32, 103);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
-            // cAceptar
+            // lbSemestre
             // 
-            this.cAceptar.HeaderText = "";
-            this.cAceptar.Name = "cAceptar";
-            this.cAceptar.ReadOnly = true;
+            this.lbSemestre.AutoSize = true;
+            this.lbSemestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSemestre.Location = new System.Drawing.Point(263, 187);
+            this.lbSemestre.Name = "lbSemestre";
+            this.lbSemestre.Size = new System.Drawing.Size(45, 16);
+            this.lbSemestre.TabIndex = 8;
+            this.lbSemestre.Text = "label9";
             // 
-            // cRevisorr
+            // lbCarrera
             // 
-            this.cRevisorr.HeaderText = "Revisor";
-            this.cRevisorr.Name = "cRevisorr";
-            this.cRevisorr.ReadOnly = true;
+            this.lbCarrera.AutoSize = true;
+            this.lbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCarrera.Location = new System.Drawing.Point(263, 158);
+            this.lbCarrera.Name = "lbCarrera";
+            this.lbCarrera.Size = new System.Drawing.Size(45, 16);
+            this.lbCarrera.TabIndex = 7;
+            this.lbCarrera.Text = "label8";
             // 
-            // cCargaActual
+            // lbNombre
             // 
-            this.cCargaActual.HeaderText = "Carga actual";
-            this.cCargaActual.Name = "cCargaActual";
-            this.cCargaActual.ReadOnly = true;
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre.Location = new System.Drawing.Point(263, 128);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(45, 16);
+            this.lbNombre.TabIndex = 6;
+            this.lbNombre.Text = "label7";
             // 
-            // letreroIns
+            // lbNoControl
             // 
-            this.letreroIns.AutoSize = true;
-            this.letreroIns.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letreroIns.Location = new System.Drawing.Point(470, 29);
-            this.letreroIns.Name = "letreroIns";
-            this.letreroIns.Size = new System.Drawing.Size(224, 20);
-            this.letreroIns.TabIndex = 21;
-            this.letreroIns.Text = "Revisores disponobles(elige 2)";
+            this.lbNoControl.AutoSize = true;
+            this.lbNoControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNoControl.Location = new System.Drawing.Point(263, 98);
+            this.lbNoControl.Name = "lbNoControl";
+            this.lbNoControl.Size = new System.Drawing.Size(45, 16);
+            this.lbNoControl.TabIndex = 5;
+            this.lbNoControl.Text = "label6";
             // 
-            // btnAsignarContinuar
+            // letreroSemestre
             // 
-            this.btnAsignarContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsignarContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsignarContinuar.Location = new System.Drawing.Point(661, 422);
-            this.btnAsignarContinuar.Name = "btnAsignarContinuar";
-            this.btnAsignarContinuar.Size = new System.Drawing.Size(165, 31);
-            this.btnAsignarContinuar.TabIndex = 22;
-            this.btnAsignarContinuar.Text = "Asignar y continuar";
-            this.btnAsignarContinuar.UseVisualStyleBackColor = true;
+            this.letreroSemestre.AutoSize = true;
+            this.letreroSemestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letreroSemestre.Location = new System.Drawing.Point(152, 183);
+            this.letreroSemestre.Name = "letreroSemestre";
+            this.letreroSemestre.Size = new System.Drawing.Size(78, 20);
+            this.letreroSemestre.TabIndex = 4;
+            this.letreroSemestre.Text = "Semestre";
             // 
-            // btnAsignar
+            // letreroCarrera
             // 
-            this.btnAsignar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsignar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsignar.Location = new System.Drawing.Point(832, 422);
-            this.btnAsignar.Name = "btnAsignar";
-            this.btnAsignar.Size = new System.Drawing.Size(75, 31);
-            this.btnAsignar.TabIndex = 23;
-            this.btnAsignar.Text = "Asignar";
-            this.btnAsignar.UseVisualStyleBackColor = true;
+            this.letreroCarrera.AutoSize = true;
+            this.letreroCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letreroCarrera.Location = new System.Drawing.Point(173, 154);
+            this.letreroCarrera.Name = "letreroCarrera";
+            this.letreroCarrera.Size = new System.Drawing.Size(62, 20);
+            this.letreroCarrera.TabIndex = 3;
+            this.letreroCarrera.Text = "Carrera";
             // 
-            // btnCancelar
+            // letreroNombre
             // 
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(32, 422);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 31);
-            this.btnCancelar.TabIndex = 24;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.letreroNombre.AutoSize = true;
+            this.letreroNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letreroNombre.Location = new System.Drawing.Point(170, 124);
+            this.letreroNombre.Name = "letreroNombre";
+            this.letreroNombre.Size = new System.Drawing.Size(65, 20);
+            this.letreroNombre.TabIndex = 2;
+            this.letreroNombre.Text = "Nombre";
+            // 
+            // letreroNoControl
+            // 
+            this.letreroNoControl.AutoSize = true;
+            this.letreroNoControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letreroNoControl.Location = new System.Drawing.Point(150, 95);
+            this.letreroNoControl.Name = "letreroNoControl";
+            this.letreroNoControl.Size = new System.Drawing.Size(88, 20);
+            this.letreroNoControl.TabIndex = 1;
+            this.letreroNoControl.Text = "No. Control";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Alumno";
+            // 
+            // cNoControl
+            // 
+            this.cNoControl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cNoControl.DataPropertyName = "NoControl";
+            this.cNoControl.HeaderText = "Num. Control";
+            this.cNoControl.Name = "cNoControl";
+            this.cNoControl.ReadOnly = true;
+            this.cNoControl.Width = 93;
+            // 
+            // cAlumno
+            // 
+            this.cAlumno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cAlumno.DataPropertyName = "Alumno";
+            this.cAlumno.HeaderText = "Alumno";
+            this.cAlumno.Name = "cAlumno";
+            this.cAlumno.ReadOnly = true;
+            // 
+            // cAsesor
+            // 
+            this.cAsesor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cAsesor.DataPropertyName = "Asesor";
+            this.cAsesor.HeaderText = "Asesor";
+            this.cAsesor.Name = "cAsesor";
+            this.cAsesor.ReadOnly = true;
+            // 
+            // cRevisor
+            // 
+            this.cRevisor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cRevisor.DataPropertyName = "Revisor1";
+            this.cRevisor.HeaderText = "Revisor";
+            this.cRevisor.Name = "cRevisor";
+            this.cRevisor.ReadOnly = true;
+            // 
+            // cRevisor2
+            // 
+            this.cRevisor2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cRevisor2.DataPropertyName = "Revisor2";
+            this.cRevisor2.HeaderText = "Revisor";
+            this.cRevisor2.Name = "cRevisor2";
+            this.cRevisor2.ReadOnly = true;
             // 
             // FrmAsignacionRevisores
             // 
@@ -424,13 +436,14 @@
             this.Name = "FrmAsignacionRevisores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAsignacionRevisores";
+            this.Load += new System.EventHandler(this.FrmAsignacionRevisores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).EndInit();
             this.pPanel.ResumeLayout(false);
             this.pPanelV2.ResumeLayout(false);
             this.pPanelV2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaCarga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -440,11 +453,6 @@
         private System.Windows.Forms.DataGridView dgvTabla;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNoControl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cAlumno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cAsesor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cRevisor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cRevisor2;
         private System.Windows.Forms.Panel pPanel;
         private System.Windows.Forms.Panel pPanelV2;
         private System.Windows.Forms.Label label1;
@@ -471,5 +479,10 @@
         private System.Windows.Forms.Label letrero;
         private System.Windows.Forms.Label letreroNombreA;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNoControl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cAlumno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cAsesor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cRevisor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cRevisor2;
     }
 }
