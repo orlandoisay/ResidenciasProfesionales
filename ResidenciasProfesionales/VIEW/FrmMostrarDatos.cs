@@ -15,7 +15,7 @@ namespace ResidenciasProfesionales.VIEW
         {
             InitializeComponent();
 
-            this.Size = new Size(550, 260);
+            this.Size = new Size(550, 270);
             switch (tipo)
             {
                 case "Alumno":

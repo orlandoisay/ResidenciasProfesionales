@@ -73,7 +73,7 @@ namespace ResidenciasProfesionales.VIEW
         }
 
         private void llenarDatos() {
-            AlumnoPOJO aP = new AlumnoDAO().ObtenerAlumno(lista[indice].NoControl);
+            AlumnoPOJO aP = AlumnoDAO.ObtenerAlumno(lista[indice].NoControl);
             lbNoControl.Text = aP.Matricula;
             lbNombre.Text = aP.Nombre;
             lbCarrera.Text = aP.Carrera + "";

@@ -62,6 +62,31 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+        public static SolicitudPOJO ObtenerSolicitud(string matricula)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM solicitud WHERE matricula = @P0");
+                cmd.Parameters.AddWithValue("@P0", matricula);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                if (dt.Rows.Count != 1)
+                    return null;
+
+                return DataRowAObjeto(dt.Rows[0]);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
 
         public static List<SolicitudPOJO> ObtenerSolicitudesPendientes()
         {
@@ -82,6 +107,30 @@ namespace ResidenciasProfesionales.DATA
             catch (Exception ex)
             {
                 return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
+        public static int InsertarSolicitud(SolicitudPOJO solicitud)
+        {
+            //TODO: Revisar el cambio en la base de datos de la tabla solicitud
+
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO solicitud VALUES(null,@P1,@P2); SELECT last_insert_id();");
+                cmd.Parameters.AddWithValue("@P1", solicitud.IdAlumno);
+                cmd.Parameters.AddWithValue("@P2", solicitud.IdResidencia);
+
+                return con.ejecutarSentencia(cmd, true);
+            }
+            catch (Exception ex)
+            {
+                return -1;
             }
             finally
             {

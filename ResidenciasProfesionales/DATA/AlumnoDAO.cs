@@ -38,7 +38,7 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
-        public AlumnoPOJO ObtenerAlumno(string matricula)
+        public static AlumnoPOJO ObtenerAlumno(string matricula)
         {
             try
             {
@@ -68,18 +68,23 @@ namespace ResidenciasProfesionales.DATA
             try
             {
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("UPDATE alumno SET Password=@P0, Nombre=@P1, ApellidoP=@P2, " +
-                    "ApellidoM=@P3, Correo=@P4, Telefono=@P5, Carrera=@P6, Semestre=@P7, Estatus=@P8");
-
-                cmd.Parameters.AddWithValue("@P0", alumno.Password);
-                cmd.Parameters.AddWithValue("@P1", alumno.Nombre);
-                cmd.Parameters.AddWithValue("@P2", alumno.ApellidoP);
-                cmd.Parameters.AddWithValue("@P3", alumno.ApellidoM);
-                cmd.Parameters.AddWithValue("@P4", alumno.Correo);
-                cmd.Parameters.AddWithValue("@P5", alumno.Telefono);
-                cmd.Parameters.AddWithValue("@P6", alumno.Carrera);
-                cmd.Parameters.AddWithValue("@P7", alumno.Semestre);
-                cmd.Parameters.AddWithValue("@P8", alumno.Estatus);
+                MySqlCommand cmd = new MySqlCommand("UPDATE alumno SET Password=@P1, Nombre=@P2, ApellidoP=@P3, " +
+                    "ApellidoM=@P4, Correo=@P5, Telefono=@P6, Carrera=@P7, Semestre=@P8, TipoSS=@P9, NumeroSS=@P10, " +
+                    "Estatus=@P11, Domicilio=@P12, Ciudad=@P13 WHERE Matricula=@P0");
+                cmd.Parameters.AddWithValue("@P0", alumno.Matricula);
+                cmd.Parameters.AddWithValue("@P1", alumno.Password);
+                cmd.Parameters.AddWithValue("@P2", alumno.Nombre);
+                cmd.Parameters.AddWithValue("@P3", alumno.ApellidoP);
+                cmd.Parameters.AddWithValue("@P4", alumno.ApellidoM);
+                cmd.Parameters.AddWithValue("@P5", alumno.Correo);
+                cmd.Parameters.AddWithValue("@P6", alumno.Telefono);
+                cmd.Parameters.AddWithValue("@P7", alumno.Carrera);
+                cmd.Parameters.AddWithValue("@P8", alumno.Semestre);
+                cmd.Parameters.AddWithValue("@P9", alumno.TipoSS);
+                cmd.Parameters.AddWithValue("@P10", alumno.NumeroSS);
+                cmd.Parameters.AddWithValue("@P11", alumno.Estatus);
+                cmd.Parameters.AddWithValue("@P12", alumno.Domicilio);
+                cmd.Parameters.AddWithValue("@P13", alumno.Ciudad);
 
                 con.ejecutarSentencia(cmd, false);
             }
@@ -106,7 +111,11 @@ namespace ResidenciasProfesionales.DATA
                 dr["Telefono"].ToString(),
                 int.Parse(dr["Carrera"].ToString()),
                 int.Parse(dr["Semestre"].ToString()),
-                dr["Estatus"].ToString()
+                dr["TipoSS"].ToString(),
+                dr["NumeroSS"].ToString(),
+                dr["Estatus"].ToString(),
+                dr["Domicilio"].ToString(),
+                dr["Ciudad"].ToString()
             );
         }
     }
