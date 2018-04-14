@@ -113,7 +113,7 @@ namespace ResidenciasProfesionales.DATA
                 dr["TipoSS"].ToString(),
                 dr["NumeroSS"].ToString(),
                 dr["Estatus"].ToString(),
-                dr["Domicio"].ToString(),
+                dr["Domicilio"].ToString(),
                 dr["Ciudad"].ToString()
             );
         }
