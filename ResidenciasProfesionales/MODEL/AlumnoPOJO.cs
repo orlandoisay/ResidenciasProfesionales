@@ -15,9 +15,13 @@ namespace ResidenciasProfesionales.MODEL
         public String ApellidoM { get; set; }
         public String Correo { get; set; }
         public String Telefono { get; set; }
-        public String Carrera { get; set; }
+        public int Carrera { get; set; }
         public int Semestre { get; set; }
+        public String TipoSS { get; set; }
+        public String NumeroSS { get; set; }
         public String Estatus { get; set; }
+        public String Domicilio { get; set; }
+        public String Ciudad { get; set; }
 
         public String NombreCompleto
         {
@@ -30,7 +34,7 @@ namespace ResidenciasProfesionales.MODEL
         public AlumnoPOJO() { }
 
         public AlumnoPOJO(String matricula, String password, String nombre, String apellidoP, String apellidoM, String correo,
-            String telefono, String carrera, int semestre, String estatus) {
+            String telefono, int carrera, int semestre, String tipoSS, String numeroSS, String estatus, String domicilio, String ciudad) {
             Matricula = matricula;
             Password = password;
             Nombre = nombre;
@@ -40,7 +44,11 @@ namespace ResidenciasProfesionales.MODEL
             Telefono = telefono;
             Carrera = carrera;
             Semestre = semestre;
+            TipoSS = tipoSS;
+            NumeroSS = numeroSS;
             Estatus = estatus;
+            Domicilio = domicilio;
+            Ciudad = ciudad;
         }
     }
 }

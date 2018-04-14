@@ -105,7 +105,11 @@ namespace ResidenciasProfesionales.DATA
                 dr["Telefono"].ToString(),
                 int.Parse(dr["Carrera"].ToString()),
                 int.Parse(dr["Semestre"].ToString()),
-                dr["Estatus"].ToString()
+                dr["TipoSS"].ToString(),
+                dr["NumeroSS"].ToString(),
+                dr["Estatus"].ToString(),
+                dr["Domicio"].ToString(),
+                dr["Ciudad"].ToString()
             );
         }
     }
