@@ -55,8 +55,10 @@
     <Compile Include="DATA\CarreraDAO.cs" />
     <Compile Include="DATA\Conexion.cs" />
     <Compile Include="DATA\DictamenDAO.cs" />
+    <Compile Include="DATA\EmpresaDAO.cs" />
     <Compile Include="DATA\EntregaDAO.cs" />
     <Compile Include="DATA\InformeDAO.cs" />
+    <Compile Include="DATA\ResidenciaDAO.cs" />
     <Compile Include="DATA\SolicitudDAO.cs" />
     <Compile Include="DATA\UsuarioDao.cs" />
     <Compile Include="MODEL\AlumnoPOJO.cs" />
