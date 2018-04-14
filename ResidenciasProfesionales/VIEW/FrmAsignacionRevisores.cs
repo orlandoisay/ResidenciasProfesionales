@@ -75,13 +75,12 @@ namespace ResidenciasProfesionales.VIEW
         private void llenarDatos() {
             AlumnoPOJO aP = AlumnoDAO.ObtenerAlumno(lista[indice].NoControl);
             lbNoControl.Text = aP.Matricula;
-            lbNombre.Text = aP.Nombre;
+            lbNombre.Text = aP.NombreCompleto;
             lbCarrera.Text = aP.Carrera + "";
             lbSemestre.Text = aP.Semestre + "";
             Asesor asesor = new AsesorDAO().ObtenerAsesor(lista[indice].IdAsesor);
-            MessageBox.Show(asesor.Carrera);
             lbCarreraAS.Text = asesor.Carrera;
-            lbNombreAS.Text = asesor.Nombre;
+            lbNombreAS.Text = asesor.NombreCompleto;
         }
     }
 }
