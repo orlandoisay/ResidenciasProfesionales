@@ -117,14 +117,13 @@ namespace ResidenciasProfesionales.DATA
 
         public static int InsertarSolicitud(SolicitudPOJO solicitud)
         {
-            //TODO: Revisar el cambio en la base de datos de la tabla solicitud
-
             try
             {
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO solicitud VALUES(null,@P1,@P2); SELECT last_insert_id();");
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO solicitud VALUES(null,@P1,@P2,@P3); SELECT last_insert_id();");
                 cmd.Parameters.AddWithValue("@P1", solicitud.IdAlumno);
                 cmd.Parameters.AddWithValue("@P2", solicitud.IdResidencia);
+                cmd.Parameters.AddWithValue("@P3", solicitud.Estatus);
 
                 return con.ejecutarSentencia(cmd, true);
             }
