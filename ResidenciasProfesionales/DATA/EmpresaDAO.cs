@@ -41,19 +41,20 @@ namespace ResidenciasProfesionales.DATA
             try
             {
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO empresa VALUES(@P0,@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8,@P9,@P10,@P11); SELECT last_insert_id();");
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO empresa VALUES(@P0,@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8,@P9,@P10,@P11,@P12); SELECT last_insert_id();");
                 cmd.Parameters.AddWithValue("@P0", empresa.RFC);
                 cmd.Parameters.AddWithValue("@P1", empresa.Nombre);
-                cmd.Parameters.AddWithValue("@P2", empresa.Sector);
-                cmd.Parameters.AddWithValue("@P3", empresa.Domicilio);
-                cmd.Parameters.AddWithValue("@P4", empresa.Colonia);
-                cmd.Parameters.AddWithValue("@P5", empresa.Ciudad);
-                cmd.Parameters.AddWithValue("@P6", empresa.CP);
-                cmd.Parameters.AddWithValue("@P7", empresa.Telefono);
-                cmd.Parameters.AddWithValue("@P8", empresa.Fax);
-                cmd.Parameters.AddWithValue("@P9", empresa.Mision);
-                cmd.Parameters.AddWithValue("@P10", empresa.Titular);
-                cmd.Parameters.AddWithValue("@P11", empresa.PuestoTit);
+                cmd.Parameters.AddWithValue("@P2", empresa.Giro);
+                cmd.Parameters.AddWithValue("@P3", empresa.Sector);
+                cmd.Parameters.AddWithValue("@P4", empresa.Domicilio);
+                cmd.Parameters.AddWithValue("@P5", empresa.Colonia);
+                cmd.Parameters.AddWithValue("@P6", empresa.Ciudad);
+                cmd.Parameters.AddWithValue("@P7", empresa.CP);
+                cmd.Parameters.AddWithValue("@P8", empresa.Telefono);
+                cmd.Parameters.AddWithValue("@P9", empresa.Fax);
+                cmd.Parameters.AddWithValue("@P10", empresa.Mision);
+                cmd.Parameters.AddWithValue("@P11", empresa.Titular);
+                cmd.Parameters.AddWithValue("@P12", empresa.PuestoTit);
 
                 return con.ejecutarSentencia(cmd, true);
             }
