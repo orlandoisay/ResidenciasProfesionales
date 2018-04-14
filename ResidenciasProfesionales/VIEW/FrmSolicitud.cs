@@ -102,7 +102,7 @@ namespace ResidenciasProfesionales.VIEW
             txtEmpRFC.Text = empresa.RFC;
             txtEmpNombre.Text = empresa.Nombre;
 
-            switch (empresa.Sector)
+            switch (empresa.Giro)
             {
                 case "Industrial":
                     rbtnEmpGiroIndustrial.Checked = true;
@@ -112,6 +112,16 @@ namespace ResidenciasProfesionales.VIEW
                     break;
                 case "Otro":
                     rbtnEmpGiroOtro.Checked = true;
+                    break;
+            }
+
+            switch (empresa.Sector)
+            {
+                case "Publico":
+                    rbtnEmpTipoPublica.Checked = true;
+                    break;
+                case "Privado":
+                    rbtnEmpTipoPrivada.Checked = true;
                     break;
             }
 
@@ -129,8 +139,6 @@ namespace ResidenciasProfesionales.VIEW
             txtEmpAsesorPuesto.Text = residencia.PuestoAsesor;
             txtEmpFirmaNombre.Text = residencia.Responsable;
             txtEmpFirmaPuesto.Text = residencia.PuestoResp;
-
-
         }
         private bool ValidarDatos()
         {
@@ -143,19 +151,24 @@ namespace ResidenciasProfesionales.VIEW
             // TODO: Implementar el metodo de guardado
 
             // Insertar datos de la empresa
-
-            string sector = "";
+            string giro = "", sector = "";
 
             if (rbtnEmpGiroIndustrial.Checked)
-                sector = "Industrial";
+                giro = "Industrial";
             if (rbtnEmpGiroServicios.Checked)
-                sector = "Servicios";
+                giro = "Servicios";
             if (rbtnEmpGiroOtro.Checked)
-                sector = "Otro";
+                giro = "Otro";
+
+            if (rbtnEmpTipoPublica.Checked)
+                sector = "Publico";
+            if (rbtnEmpTipoPrivada.Checked)
+                sector = "Privado";
 
             EmpresaDAO.InsertarEmpresa(
                 new EmpresaPOJO(txtEmpRFC.Text,
                                 txtEmpNombre.Text,
+                                giro,
                                 sector,
                                 txtEmpDomicilio.Text,
                                 txtEmpColonia.Text,

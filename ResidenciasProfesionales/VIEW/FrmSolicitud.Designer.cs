@@ -52,6 +52,7 @@
             this.lblResCarrera = new System.Windows.Forms.Label();
             this.lblResNombre = new System.Windows.Forms.Label();
             this.tbpProyecto = new System.Windows.Forms.TabPage();
+            this.cmbProPeriodo = new System.Windows.Forms.ComboBox();
             this.rbtnProTipoTrabajador = new System.Windows.Forms.RadioButton();
             this.rbtnProTipoPropia = new System.Windows.Forms.RadioButton();
             this.rbtnProTipoBanco = new System.Windows.Forms.RadioButton();
@@ -101,11 +102,12 @@
             this.lblEmpNombre = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.cmbProPeriodo = new System.Windows.Forms.ComboBox();
+            this.pnlSector = new System.Windows.Forms.Panel();
             this.tabPrincipal.SuspendLayout();
             this.tbpResidente.SuspendLayout();
             this.tbpProyecto.SuspendLayout();
             this.tbpEmpresa.SuspendLayout();
+            this.pnlSector.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSolicitud
@@ -368,6 +370,19 @@
             this.tbpProyecto.Text = "Datos del proyecto";
             this.tbpProyecto.UseVisualStyleBackColor = true;
             // 
+            // cmbProPeriodo
+            // 
+            this.cmbProPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbProPeriodo.FormattingEnabled = true;
+            this.cmbProPeriodo.Items.AddRange(new object[] {
+            "ENE-JUN",
+            "AGO-DIC"});
+            this.cmbProPeriodo.Location = new System.Drawing.Point(170, 143);
+            this.cmbProPeriodo.Name = "cmbProPeriodo";
+            this.cmbProPeriodo.Size = new System.Drawing.Size(179, 25);
+            this.cmbProPeriodo.TabIndex = 12;
+            // 
             // rbtnProTipoTrabajador
             // 
             this.rbtnProTipoTrabajador.AutoSize = true;
@@ -439,6 +454,7 @@
             // tbpEmpresa
             // 
             this.tbpEmpresa.AutoScroll = true;
+            this.tbpEmpresa.Controls.Add(this.pnlSector);
             this.tbpEmpresa.Controls.Add(this.txtEmpFirmaPuesto);
             this.tbpEmpresa.Controls.Add(this.lblEmpFirmaPuesto);
             this.tbpEmpresa.Controls.Add(this.lblEmpFirma);
@@ -453,9 +469,7 @@
             this.tbpEmpresa.Controls.Add(this.lblEmpTitularPuesto);
             this.tbpEmpresa.Controls.Add(this.lblEmpTitular);
             this.tbpEmpresa.Controls.Add(this.rbtnEmpGiroOtro);
-            this.tbpEmpresa.Controls.Add(this.rbtnEmpTipoPrivada);
             this.tbpEmpresa.Controls.Add(this.rbtnEmpGiroServicios);
-            this.tbpEmpresa.Controls.Add(this.rbtnEmpTipoPublica);
             this.tbpEmpresa.Controls.Add(this.txtEmpFax);
             this.tbpEmpresa.Controls.Add(this.lblEmpFax);
             this.tbpEmpresa.Controls.Add(this.txtEmpCP);
@@ -610,7 +624,7 @@
             // rbtnEmpTipoPrivada
             // 
             this.rbtnEmpTipoPrivada.AutoSize = true;
-            this.rbtnEmpTipoPrivada.Location = new System.Drawing.Point(193, 101);
+            this.rbtnEmpTipoPrivada.Location = new System.Drawing.Point(78, 3);
             this.rbtnEmpTipoPrivada.Name = "rbtnEmpTipoPrivada";
             this.rbtnEmpTipoPrivada.Size = new System.Drawing.Size(71, 23);
             this.rbtnEmpTipoPrivada.TabIndex = 46;
@@ -632,7 +646,7 @@
             // rbtnEmpTipoPublica
             // 
             this.rbtnEmpTipoPublica.AutoSize = true;
-            this.rbtnEmpTipoPublica.Location = new System.Drawing.Point(113, 101);
+            this.rbtnEmpTipoPublica.Location = new System.Drawing.Point(3, 3);
             this.rbtnEmpTipoPublica.Name = "rbtnEmpTipoPublica";
             this.rbtnEmpTipoPublica.Size = new System.Drawing.Size(69, 23);
             this.rbtnEmpTipoPublica.TabIndex = 44;
@@ -845,18 +859,14 @@
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // cmbProPeriodo
+            // pnlSector
             // 
-            this.cmbProPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbProPeriodo.FormattingEnabled = true;
-            this.cmbProPeriodo.Items.AddRange(new object[] {
-            "ENE-JUN",
-            "AGO-DIC"});
-            this.cmbProPeriodo.Location = new System.Drawing.Point(170, 143);
-            this.cmbProPeriodo.Name = "cmbProPeriodo";
-            this.cmbProPeriodo.Size = new System.Drawing.Size(179, 25);
-            this.cmbProPeriodo.TabIndex = 12;
+            this.pnlSector.Controls.Add(this.rbtnEmpTipoPublica);
+            this.pnlSector.Controls.Add(this.rbtnEmpTipoPrivada);
+            this.pnlSector.Location = new System.Drawing.Point(113, 100);
+            this.pnlSector.Name = "pnlSector";
+            this.pnlSector.Size = new System.Drawing.Size(157, 27);
+            this.pnlSector.TabIndex = 61;
             // 
             // FrmSolicitud
             // 
@@ -879,6 +889,8 @@
             this.tbpProyecto.PerformLayout();
             this.tbpEmpresa.ResumeLayout(false);
             this.tbpEmpresa.PerformLayout();
+            this.pnlSector.ResumeLayout(false);
+            this.pnlSector.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -960,5 +972,6 @@
         private System.Windows.Forms.Label lblEmpTitularPuesto;
         private System.Windows.Forms.Label lblEmpTitular;
         private System.Windows.Forms.ComboBox cmbProPeriodo;
+        private System.Windows.Forms.Panel pnlSector;
     }
 }
