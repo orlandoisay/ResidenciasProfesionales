@@ -18,6 +18,10 @@ namespace ResidenciasProfesionales.VIEW
         public FrmSolicitud(string matricula)
         {
             InitializeComponent();
+            cmbResCarrera.DataSource = CarreraDAO.ObtenerTodas();
+            cmbResCarrera.DisplayMember = "Nombre";
+            cmbResCarrera.ValueMember = "ID";
+
             var alumno = AlumnoDAO.ObtenerAlumno(matricula);
             var solicitud = SolicitudDAO.ObtenerSolicitud(matricula);
 
@@ -48,7 +52,7 @@ namespace ResidenciasProfesionales.VIEW
         {
             txtResNoControl.Text = alumno.Matricula;
             txtResNombre.Text = alumno.NombreCompleto;
-            cmbResCarrera.SelectedIndex = alumno.Carrera - 1;
+            cmbResCarrera.SelectedValue = alumno.Carrera;
             txtResDomicilio.Text = alumno.Domicilio;
             txtResCiudad.Text = alumno.Ciudad;
             txtResEmail.Text = alumno.Correo;

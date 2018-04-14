@@ -11,6 +11,32 @@ namespace ResidenciasProfesionales.DATA
 {
     public class CarreraDAO
     {
+        public static List<CarreraPOJO> ObtenerTodas()
+        {
+            try
+            {
+                var list = new List<CarreraPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM carrera");
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
         public static CarreraPOJO ObtenerUno(int id)
         {
             try
