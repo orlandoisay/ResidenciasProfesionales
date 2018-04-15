@@ -56,12 +56,12 @@ namespace ResidenciasProfesionales.VIEW
                         switch (cbTipo.Text) {
                         case "Asesor":
                             this.Visible = false;
-                            FrmVistaPrincipalAsesor fvpa = new FrmVistaPrincipalAsesor();
+                            FrmVistaPrincipalAsesor fvpa = new FrmVistaPrincipalAsesor(lbUsuario.Text);
                             fvpa.Show();
                             break;
                         case "Revisor":
                             this.Visible = false;
-                            //FrmVistaPrincipalRevisor fvpr = new FrmVistaPrincipalRevisor(lbUsuario.Text);
+                            FrmVistaPrincipalRevisor fvpr = new FrmVistaPrincipalRevisor(lbUsuario.Text);
                             break;
                         case "Alumno":
                             this.Visible = false;

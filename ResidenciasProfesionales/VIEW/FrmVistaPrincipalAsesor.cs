@@ -12,22 +12,25 @@ namespace ResidenciasProfesionales.VIEW
 {
     public partial class FrmVistaPrincipalAsesor : Form
     {
-        public FrmVistaPrincipalAsesor()
+        private String IdDocente;
+
+        public FrmVistaPrincipalAsesor(String IdDocente)
         {
             InitializeComponent();
+            this.IdDocente = IdDocente;
             CentrarLogo();
         }
 
         private void btnAprobacionInformes_Click(object sender, EventArgs e)
         {
-            /*var frmAprobacionInformeLista = new FrmAprobacionInformeLista(IdDocente);
-            frmAprobacionInformeLista.ShowDialog();*/
+            var frmAprobacionInformeLista = new FrmAprobacionInformeLista(IdDocente);
+            frmAprobacionInformeLista.ShowDialog();
         }
 
         private void btnLiberacionInformes_Click(object sender, EventArgs e)
         {
-            /*var frmLiberacionInformeLista = new FrmLiberacionInformeLista(IdDocente);
-            frmLiberacionInformeLista.ShowDialog();*/
+            var frmLiberacionInformeLista = new FrmLiberacionInformeLista(IdDocente);
+            frmLiberacionInformeLista.ShowDialog();
         }
 
         private void btnControlDocumentacion_Click(object sender, EventArgs e)

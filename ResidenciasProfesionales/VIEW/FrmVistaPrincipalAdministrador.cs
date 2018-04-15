@@ -53,5 +53,10 @@ namespace ResidenciasProfesionales.VIEW
             var frmReporteResidencia = new FrmReporteResidencias();
             frmReporteResidencia.ShowDialog();
         }
+
+        private void FrmVistaPrincipalAdministrador_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

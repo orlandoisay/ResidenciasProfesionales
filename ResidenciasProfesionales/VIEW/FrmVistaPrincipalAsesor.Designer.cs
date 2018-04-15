@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVistaPrincipalAsesor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLiberacionInformes = new System.Windows.Forms.Button();
             this.btnAprobacionInformes = new System.Windows.Forms.Button();
             this.btnControlDocumentacion = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -53,6 +53,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(774, 69);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnCerrarSesion);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(693, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(81, 69);
+            this.panel2.TabIndex = 1;
+            this.panel2.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.BackgroundImage")));
+            this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnCerrarSesion.Location = new System.Drawing.Point(25, 12);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(30, 35);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // label1
             // 
@@ -107,16 +131,6 @@
             this.btnControlDocumentacion.UseVisualStyleBackColor = false;
             this.btnControlDocumentacion.Click += new System.EventHandler(this.btnControlDocumentacion_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnCerrarSesion);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(693, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(81, 69);
-            this.panel2.TabIndex = 1;
-            this.panel2.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
             // pbLogo
             // 
             this.pbLogo.BackgroundImage = global::ResidenciasProfesionales.Properties.Resources.ITSUR_Logo;
@@ -127,20 +141,6 @@
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
             // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.BackgroundImage")));
-            this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(25, 12);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(30, 35);
-            this.btnCerrarSesion.TabIndex = 3;
-            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
             // FrmVistaPrincipalAsesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +150,7 @@
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.panel1);
             this.Name = "FrmVistaPrincipalAsesor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmVentanaPrincipalAsesor";
             this.Resize += new System.EventHandler(this.FrmVistaPrincipalAsesor_Resize);
             this.panel1.ResumeLayout(false);
