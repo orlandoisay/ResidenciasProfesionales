@@ -61,6 +61,7 @@
     <Compile Include="DATA\EntregaDAO.cs" />
     <Compile Include="DATA\InformeDAO.cs" />
     <Compile Include="DATA\ResidenciaDAO.cs" />
+    <Compile Include="DATA\RevisorDAO.cs" />
     <Compile Include="DATA\SolicitudDAO.cs" />
     <Compile Include="DATA\UsuarioDao.cs" />
     <Compile Include="MODEL\AlumnoPOJO.cs" />
@@ -168,6 +169,12 @@
     <Compile Include="VIEW\FrmPrueba.Designer.cs">
       <DependentUpon>FrmPrueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\FrmVistaPrincipalAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmVistaPrincipalAdministrador.Designer.cs">
+      <DependentUpon>FrmVistaPrincipalAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FrmVistaPrincipalAsesor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +266,9 @@
     <EmbeddedResource Include="VIEW\FrmVistaPrincipalAlumno.resx">
       <DependentUpon>FrmVistaPrincipalAlumno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmVistaPrincipalAdministrador.resx">
+      <DependentUpon>FrmVistaPrincipalAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmVistaPrincipalAsesor.resx">
       <DependentUpon>FrmVistaPrincipalAsesor.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +292,9 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="LIB\MySql.Data.dll" />
+    <None Include="Resources\fondo.png" />
+    <None Include="Resources\chico.png" />
+    <None Include="Resources\hombre.png" />
     <Content Include="Resources\Residencias.sql" />
     <None Include="Resources\ITSUR-Logo.jpg" />
   </ItemGroup>

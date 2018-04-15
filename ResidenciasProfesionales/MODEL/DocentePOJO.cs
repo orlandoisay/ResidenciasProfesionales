@@ -18,6 +18,16 @@ namespace ResidenciasProfesionales.MODEL
         public String Usuario { get; set; }
         public String Password { get; set; }
         public String Estatus { get; set; }
+        public String Carga { get; set; }
+        public string boleana { get; set; }
+
+        public String NombreCompleto
+        {
+            get
+            {
+                return string.Format("{0} {1}, {2}", ApellidoP, ApellidoM, Nombre);
+            }
+        }
 
         public DocentePOJO() { }
 
@@ -33,6 +43,19 @@ namespace ResidenciasProfesionales.MODEL
             Usuario = usuario;
             Password = password;
             Estatus = estatus;
+        }
+        public DocentePOJO(String id, String nombre, String apellidoP, String apellidoM, String correo, String telefono,
+            int carrera,String estatus, string carga)
+        {
+            ID = id;
+            Nombre = nombre;
+            ApellidoP = apellidoP;
+            ApellidoM = apellidoM;
+            Correo = correo;
+            Telefono = telefono;
+            Carrera = carrera;
+            Estatus = estatus;
+            Carga = carga;
         }
     }
 }
