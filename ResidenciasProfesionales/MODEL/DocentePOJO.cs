@@ -29,14 +29,6 @@ namespace ResidenciasProfesionales.MODEL
             }
         }
 
-        public String NombreCompleto
-        {
-            get
-            {
-                return string.Format("{0} {1} {2}", ApellidoP, ApellidoM, Nombre);
-            }
-        }
-
         public DocentePOJO() { }
 
         public DocentePOJO(String id, String nombre, String apellidoP, String apellidoM, String correo, String telefono,
