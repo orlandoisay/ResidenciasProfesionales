@@ -67,6 +67,40 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+        public static bool ActualizarResidencia(ResidenciaPOJO residencia)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("UPDATE inforesidencia SET NombreProyecto=@P1, Modalidad=@P2, " +
+                    "Periodo=@P3, Anio=@P4, AsesorExt=@P5, PuestoAsesor=@P6, Responsable=@P7, PuestoRespo=@P8, " +
+                    "IdEmpresa=@P9, IdAlumno=@P10 WHERE ID=@P0");
+                cmd.Parameters.AddWithValue("@P0", residencia.ID);
+                cmd.Parameters.AddWithValue("@P1", residencia.NombreProyec);
+                cmd.Parameters.AddWithValue("@P2", residencia.Modalidad);
+                cmd.Parameters.AddWithValue("@P3", residencia.Periodo);
+                cmd.Parameters.AddWithValue("@P4", residencia.Anio);
+                cmd.Parameters.AddWithValue("@P5", residencia.AsesorExt);
+                cmd.Parameters.AddWithValue("@P6", residencia.PuestoAsesor);
+                cmd.Parameters.AddWithValue("@P7", residencia.Responsable);
+                cmd.Parameters.AddWithValue("@P8", residencia.PuestoResp);
+                cmd.Parameters.AddWithValue("@P9", residencia.IdEmpresa);
+                cmd.Parameters.AddWithValue("@P10", residencia.IdAlumno);
+
+                con.ejecutarSentencia(cmd, false);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
 
         public static ResidenciaPOJO DataRowAObjeto(DataRow dr)
         {

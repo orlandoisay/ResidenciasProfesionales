@@ -103,6 +103,7 @@
             this.lblEmpNombre = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.sfdImpresion = new System.Windows.Forms.SaveFileDialog();
             this.tabPrincipal.SuspendLayout();
             this.tbpResidente.SuspendLayout();
             this.tbpProyecto.SuspendLayout();
@@ -303,7 +304,7 @@
             this.lblResTelefono.AutoSize = true;
             this.lblResTelefono.Location = new System.Drawing.Point(65, 226);
             this.lblResTelefono.Name = "lblResTelefono";
-            this.lblResTelefono.Size = new System.Drawing.Size(61, 19);
+            this.lblResTelefono.Size = new System.Drawing.Size(63, 19);
             this.lblResTelefono.TabIndex = 5;
             this.lblResTelefono.Text = "Teléfono:";
             // 
@@ -388,7 +389,7 @@
             this.rbtnProTipoTrabajador.AutoSize = true;
             this.rbtnProTipoTrabajador.Location = new System.Drawing.Point(170, 112);
             this.rbtnProTipoTrabajador.Name = "rbtnProTipoTrabajador";
-            this.rbtnProTipoTrabajador.Size = new System.Drawing.Size(90, 23);
+            this.rbtnProTipoTrabajador.Size = new System.Drawing.Size(92, 23);
             this.rbtnProTipoTrabajador.TabIndex = 11;
             this.rbtnProTipoTrabajador.TabStop = true;
             this.rbtnProTipoTrabajador.Text = "Trabajador";
@@ -429,7 +430,7 @@
             this.lblProPeriodo.AutoSize = true;
             this.lblProPeriodo.Location = new System.Drawing.Point(34, 146);
             this.lblProPeriodo.Name = "lblProPeriodo";
-            this.lblProPeriodo.Size = new System.Drawing.Size(129, 19);
+            this.lblProPeriodo.Size = new System.Drawing.Size(130, 19);
             this.lblProPeriodo.TabIndex = 6;
             this.lblProPeriodo.Text = "Periodo proyectado:";
             // 
@@ -554,7 +555,7 @@
             this.lblEmpFirma.Font = new System.Drawing.Font("Segoe UI Light", 10F);
             this.lblEmpFirma.Location = new System.Drawing.Point(45, 437);
             this.lblEmpFirma.Name = "lblEmpFirma";
-            this.lblEmpFirma.Size = new System.Drawing.Size(259, 19);
+            this.lblEmpFirma.Size = new System.Drawing.Size(260, 19);
             this.lblEmpFirma.TabIndex = 58;
             this.lblEmpFirma.Text = "Persona que firmará el acuerdo de trabajo";
             // 
@@ -662,7 +663,7 @@
             this.rbtnEmpGiroServicios.AutoSize = true;
             this.rbtnEmpGiroServicios.Location = new System.Drawing.Point(193, 76);
             this.rbtnEmpGiroServicios.Name = "rbtnEmpGiroServicios";
-            this.rbtnEmpGiroServicios.Size = new System.Drawing.Size(78, 23);
+            this.rbtnEmpGiroServicios.Size = new System.Drawing.Size(77, 23);
             this.rbtnEmpGiroServicios.TabIndex = 4;
             this.rbtnEmpGiroServicios.TabStop = true;
             this.rbtnEmpGiroServicios.Text = "Servicios";
@@ -698,7 +699,7 @@
             this.lblEmpCP.AutoSize = true;
             this.lblEmpCP.Location = new System.Drawing.Point(245, 167);
             this.lblEmpCP.Name = "lblEmpCP";
-            this.lblEmpCP.Size = new System.Drawing.Size(32, 19);
+            this.lblEmpCP.Size = new System.Drawing.Size(35, 19);
             this.lblEmpCP.TabIndex = 40;
             this.lblEmpCP.Text = "C.P.:";
             // 
@@ -819,7 +820,7 @@
             this.lblEmpTelefono.AutoSize = true;
             this.lblEmpTelefono.Location = new System.Drawing.Point(337, 201);
             this.lblEmpTelefono.Name = "lblEmpTelefono";
-            this.lblEmpTelefono.Size = new System.Drawing.Size(61, 19);
+            this.lblEmpTelefono.Size = new System.Drawing.Size(63, 19);
             this.lblEmpTelefono.TabIndex = 25;
             this.lblEmpTelefono.Text = "Teléfono:";
             // 
@@ -846,7 +847,7 @@
             this.lblEmpRFC.AutoSize = true;
             this.lblEmpRFC.Location = new System.Drawing.Point(65, 14);
             this.lblEmpRFC.Name = "lblEmpRFC";
-            this.lblEmpRFC.Size = new System.Drawing.Size(40, 19);
+            this.lblEmpRFC.Size = new System.Drawing.Size(42, 19);
             this.lblEmpRFC.TabIndex = 22;
             this.lblEmpRFC.Text = "R.F.C:";
             // 
@@ -882,6 +883,10 @@
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // sfdImpresion
+            // 
+            this.sfdImpresion.DefaultExt = "xlsx";
             // 
             // FrmSolicitud
             // 
@@ -988,5 +993,6 @@
         private System.Windows.Forms.Label lblEmpTitular;
         private System.Windows.Forms.ComboBox cmbProPeriodo;
         private System.Windows.Forms.Panel pnlSector;
+        private System.Windows.Forms.SaveFileDialog sfdImpresion;
     }
 }
