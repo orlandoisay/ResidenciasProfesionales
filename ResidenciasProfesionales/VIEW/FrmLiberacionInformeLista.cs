@@ -11,7 +11,7 @@ namespace ResidenciasProfesionales.VIEW
 {
     public partial class FrmLiberacionInformeLista : Form
     {
-        public FrmLiberacionInformeLista(int IdDocente)
+        public FrmLiberacionInformeLista(String IdDocente)
         {
             InitializeComponent();
         }

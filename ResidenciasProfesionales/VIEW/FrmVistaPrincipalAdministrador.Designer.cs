@@ -1,6 +1,6 @@
 ﻿namespace ResidenciasProfesionales.VIEW
 {
-    partial class FrmVistaPrincipalAsesor
+    partial class FrmVistaPrincipalAdministrador
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVistaPrincipalAsesor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVistaPrincipalAdministrador));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLiberacionInformes = new System.Windows.Forms.Button();
-            this.btnAprobacionInformes = new System.Windows.Forms.Button();
-            this.btnControlDocumentacion = new System.Windows.Forms.Button();
+            this.btnReporteResidencia = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -46,9 +44,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnLiberacionInformes);
-            this.panel1.Controls.Add(this.btnAprobacionInformes);
-            this.panel1.Controls.Add(this.btnControlDocumentacion);
+            this.panel1.Controls.Add(this.btnReporteResidencia);
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(774, 69);
@@ -89,47 +85,19 @@
             this.label1.Text = "Cerrar sesión";
             this.label1.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // btnLiberacionInformes
+            // btnReporteResidencia
             // 
-            this.btnLiberacionInformes.BackColor = System.Drawing.Color.White;
-            this.btnLiberacionInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLiberacionInformes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLiberacionInformes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnLiberacionInformes.Location = new System.Drawing.Point(373, 20);
-            this.btnLiberacionInformes.Name = "btnLiberacionInformes";
-            this.btnLiberacionInformes.Size = new System.Drawing.Size(157, 30);
-            this.btnLiberacionInformes.TabIndex = 2;
-            this.btnLiberacionInformes.Text = "Liberación de informes";
-            this.btnLiberacionInformes.UseVisualStyleBackColor = false;
-            this.btnLiberacionInformes.Click += new System.EventHandler(this.btnLiberacionInformes_Click);
-            // 
-            // btnAprobacionInformes
-            // 
-            this.btnAprobacionInformes.BackColor = System.Drawing.Color.White;
-            this.btnAprobacionInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAprobacionInformes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAprobacionInformes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnAprobacionInformes.Location = new System.Drawing.Point(203, 20);
-            this.btnAprobacionInformes.Name = "btnAprobacionInformes";
-            this.btnAprobacionInformes.Size = new System.Drawing.Size(164, 30);
-            this.btnAprobacionInformes.TabIndex = 1;
-            this.btnAprobacionInformes.Text = "Aprobación de informes";
-            this.btnAprobacionInformes.UseVisualStyleBackColor = false;
-            this.btnAprobacionInformes.Click += new System.EventHandler(this.btnAprobacionInformes_Click);
-            // 
-            // btnControlDocumentacion
-            // 
-            this.btnControlDocumentacion.BackColor = System.Drawing.Color.White;
-            this.btnControlDocumentacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnControlDocumentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnControlDocumentacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnControlDocumentacion.Location = new System.Drawing.Point(22, 20);
-            this.btnControlDocumentacion.Name = "btnControlDocumentacion";
-            this.btnControlDocumentacion.Size = new System.Drawing.Size(175, 30);
-            this.btnControlDocumentacion.TabIndex = 0;
-            this.btnControlDocumentacion.Text = "Control de documentación";
-            this.btnControlDocumentacion.UseVisualStyleBackColor = false;
-            this.btnControlDocumentacion.Click += new System.EventHandler(this.btnControlDocumentacion_Click);
+            this.btnReporteResidencia.BackColor = System.Drawing.Color.White;
+            this.btnReporteResidencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteResidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteResidencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnReporteResidencia.Location = new System.Drawing.Point(22, 20);
+            this.btnReporteResidencia.Name = "btnReporteResidencia";
+            this.btnReporteResidencia.Size = new System.Drawing.Size(175, 30);
+            this.btnReporteResidencia.TabIndex = 0;
+            this.btnReporteResidencia.Text = "Reporte de residencias";
+            this.btnReporteResidencia.UseVisualStyleBackColor = false;
+            this.btnReporteResidencia.Click += new System.EventHandler(this.btnReporteResidencia_Click);
             // 
             // pbLogo
             // 
@@ -141,7 +109,7 @@
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
             // 
-            // FrmVistaPrincipalAsesor
+            // FrmVistaPrincipalAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,9 +117,10 @@
             this.ClientSize = new System.Drawing.Size(776, 392);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.panel1);
-            this.Name = "FrmVistaPrincipalAsesor";
+            this.Name = "FrmVistaPrincipalAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmVentanaPrincipalAsesor";
+            this.Text = "FrmVentanaPrincipalAdministrador";
+            this.Load += new System.EventHandler(this.FrmVistaPrincipalAdministrador_Load);
             this.Resize += new System.EventHandler(this.FrmVistaPrincipalAsesor_Resize);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -164,9 +133,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnLiberacionInformes;
-        private System.Windows.Forms.Button btnAprobacionInformes;
-        private System.Windows.Forms.Button btnControlDocumentacion;
+        private System.Windows.Forms.Button btnReporteResidencia;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;

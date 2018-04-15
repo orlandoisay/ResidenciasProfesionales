@@ -41,7 +41,7 @@ namespace ResidenciasProfesionales.DATA
             try
             {
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO empresa VALUES(@P0,@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8,@P9,@P10,@P11,@P12); SELECT last_insert_id();");
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO empresa VALUES(@P0,@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8,@P9,@P10,@P11,@P12);");
                 cmd.Parameters.AddWithValue("@P0", empresa.RFC);
                 cmd.Parameters.AddWithValue("@P1", empresa.Nombre);
                 cmd.Parameters.AddWithValue("@P2", empresa.Giro);
@@ -61,6 +61,64 @@ namespace ResidenciasProfesionales.DATA
             catch (Exception ex)
             {
                 return -1;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+        public static bool ActualizarEmpresa(EmpresaPOJO empresa)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("UPDATE empresa SET Nombre=@P1, Giro=@P2, Sector=@P3, " +
+                    "Domicilio=@P4, Colonia=@P5, Ciudad=@P6, CP=@P7, Telefono=@P8, Fax=@P9, Mision=@P10, " +
+                    "Titular=@P11, PuestoTitu=@P12 WHERE RFC=@P0");
+                cmd.Parameters.AddWithValue("@P0", empresa.RFC);
+                cmd.Parameters.AddWithValue("@P1", empresa.Nombre);
+                cmd.Parameters.AddWithValue("@P2", empresa.Giro);
+                cmd.Parameters.AddWithValue("@P3", empresa.Sector);
+                cmd.Parameters.AddWithValue("@P4", empresa.Domicilio);
+                cmd.Parameters.AddWithValue("@P5", empresa.Colonia);
+                cmd.Parameters.AddWithValue("@P6", empresa.Ciudad);
+                cmd.Parameters.AddWithValue("@P7", empresa.CP);
+                cmd.Parameters.AddWithValue("@P8", empresa.Telefono);
+                cmd.Parameters.AddWithValue("@P9", empresa.Fax);
+                cmd.Parameters.AddWithValue("@P10", empresa.Mision);
+                cmd.Parameters.AddWithValue("@P11", empresa.Titular);
+                cmd.Parameters.AddWithValue("@P12", empresa.PuestoTit);
+
+                con.ejecutarSentencia(cmd, true);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+        public static bool EliminarEmpresa(String RFC)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("DELETE FROM empresa WHERE RFC=@P0");
+                cmd.Parameters.AddWithValue("@P0", RFC);
+
+                con.ejecutarSentencia(cmd, false);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
             finally
             {

@@ -1,6 +1,6 @@
 ﻿namespace ResidenciasProfesionales.VIEW
 {
-    partial class FrmSolicitud
+    partial class FrmMostrarSolicitud
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblSolicitud = new System.Windows.Forms.Label();
             this.tabPrincipal = new System.Windows.Forms.TabControl();
             this.tbpResidente = new System.Windows.Forms.TabPage();
             this.txtResSSNumero = new System.Windows.Forms.TextBox();
@@ -101,25 +100,14 @@
             this.lblEmpDomicilio = new System.Windows.Forms.Label();
             this.lblEmpRFC = new System.Windows.Forms.Label();
             this.lblEmpNombre = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.sfdImpresion = new System.Windows.Forms.SaveFileDialog();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblSolicitud = new System.Windows.Forms.Label();
             this.tabPrincipal.SuspendLayout();
             this.tbpResidente.SuspendLayout();
             this.tbpProyecto.SuspendLayout();
             this.tbpEmpresa.SuspendLayout();
             this.pnlSector.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblSolicitud
-            // 
-            this.lblSolicitud.AutoSize = true;
-            this.lblSolicitud.Font = new System.Drawing.Font("Segoe UI Light", 18F);
-            this.lblSolicitud.Location = new System.Drawing.Point(12, 9);
-            this.lblSolicitud.Name = "lblSolicitud";
-            this.lblSolicitud.Size = new System.Drawing.Size(99, 32);
-            this.lblSolicitud.TabIndex = 0;
-            this.lblSolicitud.Text = "Solicitud";
             // 
             // tabPrincipal
             // 
@@ -133,7 +121,7 @@
             this.tabPrincipal.Name = "tabPrincipal";
             this.tabPrincipal.SelectedIndex = 0;
             this.tabPrincipal.Size = new System.Drawing.Size(561, 372);
-            this.tabPrincipal.TabIndex = 1;
+            this.tabPrincipal.TabIndex = 2;
             // 
             // tbpResidente
             // 
@@ -157,20 +145,21 @@
             this.tbpResidente.Controls.Add(this.lblResNoControl);
             this.tbpResidente.Controls.Add(this.lblResCarrera);
             this.tbpResidente.Controls.Add(this.lblResNombre);
-            this.tbpResidente.Location = new System.Drawing.Point(4, 26);
+            this.tbpResidente.Location = new System.Drawing.Point(4, 22);
             this.tbpResidente.Name = "tbpResidente";
             this.tbpResidente.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpResidente.Size = new System.Drawing.Size(553, 342);
+            this.tbpResidente.Size = new System.Drawing.Size(553, 346);
             this.tbpResidente.TabIndex = 2;
             this.tbpResidente.Text = "Datos del residente";
             this.tbpResidente.UseVisualStyleBackColor = true;
             // 
             // txtResSSNumero
             // 
+            this.txtResSSNumero.Enabled = false;
             this.txtResSSNumero.Location = new System.Drawing.Point(133, 289);
             this.txtResSSNumero.MaxLength = 20;
             this.txtResSSNumero.Name = "txtResSSNumero";
-            this.txtResSSNumero.Size = new System.Drawing.Size(138, 25);
+            this.txtResSSNumero.Size = new System.Drawing.Size(138, 20);
             this.txtResSSNumero.TabIndex = 19;
             // 
             // lblResNumeroSS
@@ -178,48 +167,53 @@
             this.lblResNumeroSS.AutoSize = true;
             this.lblResNumeroSS.Location = new System.Drawing.Point(67, 292);
             this.lblResNumeroSS.Name = "lblResNumeroSS";
-            this.lblResNumeroSS.Size = new System.Drawing.Size(61, 19);
+            this.lblResNumeroSS.Size = new System.Drawing.Size(47, 13);
             this.lblResNumeroSS.TabIndex = 18;
             this.lblResNumeroSS.Text = "Número:";
             // 
             // txtResTelefono
             // 
+            this.txtResTelefono.Enabled = false;
             this.txtResTelefono.Location = new System.Drawing.Point(134, 223);
             this.txtResTelefono.MaxLength = 10;
             this.txtResTelefono.Name = "txtResTelefono";
-            this.txtResTelefono.Size = new System.Drawing.Size(126, 25);
+            this.txtResTelefono.Size = new System.Drawing.Size(126, 20);
             this.txtResTelefono.TabIndex = 17;
             // 
             // txtResEmail
             // 
+            this.txtResEmail.Enabled = false;
             this.txtResEmail.Location = new System.Drawing.Point(134, 192);
             this.txtResEmail.MaxLength = 50;
             this.txtResEmail.Name = "txtResEmail";
-            this.txtResEmail.Size = new System.Drawing.Size(175, 25);
+            this.txtResEmail.Size = new System.Drawing.Size(175, 20);
             this.txtResEmail.TabIndex = 16;
             // 
             // txtResCiudad
             // 
+            this.txtResCiudad.Enabled = false;
             this.txtResCiudad.Location = new System.Drawing.Point(134, 156);
             this.txtResCiudad.MaxLength = 50;
             this.txtResCiudad.Name = "txtResCiudad";
-            this.txtResCiudad.Size = new System.Drawing.Size(163, 25);
+            this.txtResCiudad.Size = new System.Drawing.Size(163, 20);
             this.txtResCiudad.TabIndex = 15;
             // 
             // txtResDomicilio
             // 
+            this.txtResDomicilio.Enabled = false;
             this.txtResDomicilio.Location = new System.Drawing.Point(134, 125);
             this.txtResDomicilio.MaxLength = 150;
             this.txtResDomicilio.Name = "txtResDomicilio";
-            this.txtResDomicilio.Size = new System.Drawing.Size(263, 25);
+            this.txtResDomicilio.Size = new System.Drawing.Size(263, 20);
             this.txtResDomicilio.TabIndex = 14;
             // 
             // rbtnResSSOtro
             // 
             this.rbtnResSSOtro.AutoSize = true;
+            this.rbtnResSSOtro.Enabled = false;
             this.rbtnResSSOtro.Location = new System.Drawing.Point(266, 260);
             this.rbtnResSSOtro.Name = "rbtnResSSOtro";
-            this.rbtnResSSOtro.Size = new System.Drawing.Size(55, 23);
+            this.rbtnResSSOtro.Size = new System.Drawing.Size(45, 17);
             this.rbtnResSSOtro.TabIndex = 13;
             this.rbtnResSSOtro.TabStop = true;
             this.rbtnResSSOtro.Text = "Otro";
@@ -228,9 +222,10 @@
             // rbtnResSSISSSTE
             // 
             this.rbtnResSSISSSTE.AutoSize = true;
+            this.rbtnResSSISSSTE.Enabled = false;
             this.rbtnResSSISSSTE.Location = new System.Drawing.Point(195, 260);
             this.rbtnResSSISSSTE.Name = "rbtnResSSISSSTE";
-            this.rbtnResSSISSSTE.Size = new System.Drawing.Size(65, 23);
+            this.rbtnResSSISSSTE.Size = new System.Drawing.Size(63, 17);
             this.rbtnResSSISSSTE.TabIndex = 12;
             this.rbtnResSSISSSTE.TabStop = true;
             this.rbtnResSSISSSTE.Text = "ISSSTE";
@@ -239,9 +234,10 @@
             // rbtnResSSIMSS
             // 
             this.rbtnResSSIMSS.AutoSize = true;
+            this.rbtnResSSIMSS.Enabled = false;
             this.rbtnResSSIMSS.Location = new System.Drawing.Point(133, 260);
             this.rbtnResSSIMSS.Name = "rbtnResSSIMSS";
-            this.rbtnResSSIMSS.Size = new System.Drawing.Size(56, 23);
+            this.rbtnResSSIMSS.Size = new System.Drawing.Size(51, 17);
             this.rbtnResSSIMSS.TabIndex = 11;
             this.rbtnResSSIMSS.TabStop = true;
             this.rbtnResSSIMSS.Text = "IMSS";
@@ -262,7 +258,7 @@
             "Ing. Informática"});
             this.cmbResCarrera.Location = new System.Drawing.Point(134, 88);
             this.cmbResCarrera.Name = "cmbResCarrera";
-            this.cmbResCarrera.Size = new System.Drawing.Size(194, 25);
+            this.cmbResCarrera.Size = new System.Drawing.Size(194, 21);
             this.cmbResCarrera.TabIndex = 10;
             // 
             // txtResNombre
@@ -270,7 +266,7 @@
             this.txtResNombre.Enabled = false;
             this.txtResNombre.Location = new System.Drawing.Point(134, 52);
             this.txtResNombre.Name = "txtResNombre";
-            this.txtResNombre.Size = new System.Drawing.Size(239, 25);
+            this.txtResNombre.Size = new System.Drawing.Size(239, 20);
             this.txtResNombre.TabIndex = 9;
             // 
             // txtResNoControl
@@ -278,7 +274,7 @@
             this.txtResNoControl.Enabled = false;
             this.txtResNoControl.Location = new System.Drawing.Point(134, 21);
             this.txtResNoControl.Name = "txtResNoControl";
-            this.txtResNoControl.Size = new System.Drawing.Size(108, 25);
+            this.txtResNoControl.Size = new System.Drawing.Size(108, 20);
             this.txtResNoControl.TabIndex = 8;
             // 
             // lblResCiudad
@@ -286,7 +282,7 @@
             this.lblResCiudad.AutoSize = true;
             this.lblResCiudad.Location = new System.Drawing.Point(73, 159);
             this.lblResCiudad.Name = "lblResCiudad";
-            this.lblResCiudad.Size = new System.Drawing.Size(54, 19);
+            this.lblResCiudad.Size = new System.Drawing.Size(43, 13);
             this.lblResCiudad.TabIndex = 7;
             this.lblResCiudad.Text = "Ciudad:";
             // 
@@ -295,7 +291,7 @@
             this.lblResSeguridadSocial.AutoSize = true;
             this.lblResSeguridadSocial.Location = new System.Drawing.Point(19, 263);
             this.lblResSeguridadSocial.Name = "lblResSeguridadSocial";
-            this.lblResSeguridadSocial.Size = new System.Drawing.Size(108, 19);
+            this.lblResSeguridadSocial.Size = new System.Drawing.Size(88, 13);
             this.lblResSeguridadSocial.TabIndex = 6;
             this.lblResSeguridadSocial.Text = "Seguridad social:";
             // 
@@ -304,7 +300,7 @@
             this.lblResTelefono.AutoSize = true;
             this.lblResTelefono.Location = new System.Drawing.Point(65, 226);
             this.lblResTelefono.Name = "lblResTelefono";
-            this.lblResTelefono.Size = new System.Drawing.Size(63, 19);
+            this.lblResTelefono.Size = new System.Drawing.Size(52, 13);
             this.lblResTelefono.TabIndex = 5;
             this.lblResTelefono.Text = "Teléfono:";
             // 
@@ -313,7 +309,7 @@
             this.lblResEmail.AutoSize = true;
             this.lblResEmail.Location = new System.Drawing.Point(77, 195);
             this.lblResEmail.Name = "lblResEmail";
-            this.lblResEmail.Size = new System.Drawing.Size(50, 19);
+            this.lblResEmail.Size = new System.Drawing.Size(38, 13);
             this.lblResEmail.TabIndex = 4;
             this.lblResEmail.Text = "E-mail:";
             // 
@@ -322,7 +318,7 @@
             this.lblResDomicilio.AutoSize = true;
             this.lblResDomicilio.Location = new System.Drawing.Point(61, 128);
             this.lblResDomicilio.Name = "lblResDomicilio";
-            this.lblResDomicilio.Size = new System.Drawing.Size(67, 19);
+            this.lblResDomicilio.Size = new System.Drawing.Size(52, 13);
             this.lblResDomicilio.TabIndex = 3;
             this.lblResDomicilio.Text = "Domicilio:";
             // 
@@ -331,7 +327,7 @@
             this.lblResNoControl.AutoSize = true;
             this.lblResNoControl.Location = new System.Drawing.Point(46, 24);
             this.lblResNoControl.Name = "lblResNoControl";
-            this.lblResNoControl.Size = new System.Drawing.Size(81, 19);
+            this.lblResNoControl.Size = new System.Drawing.Size(63, 13);
             this.lblResNoControl.TabIndex = 2;
             this.lblResNoControl.Text = "No. Control:";
             // 
@@ -340,7 +336,7 @@
             this.lblResCarrera.AutoSize = true;
             this.lblResCarrera.Location = new System.Drawing.Point(70, 91);
             this.lblResCarrera.Name = "lblResCarrera";
-            this.lblResCarrera.Size = new System.Drawing.Size(57, 19);
+            this.lblResCarrera.Size = new System.Drawing.Size(44, 13);
             this.lblResCarrera.TabIndex = 1;
             this.lblResCarrera.Text = "Carrera:";
             // 
@@ -349,7 +345,7 @@
             this.lblResNombre.AutoSize = true;
             this.lblResNombre.Location = new System.Drawing.Point(66, 55);
             this.lblResNombre.Name = "lblResNombre";
-            this.lblResNombre.Size = new System.Drawing.Size(62, 19);
+            this.lblResNombre.Size = new System.Drawing.Size(47, 13);
             this.lblResNombre.TabIndex = 0;
             this.lblResNombre.Text = "Nombre:";
             // 
@@ -363,10 +359,10 @@
             this.tbpProyecto.Controls.Add(this.lblProPeriodo);
             this.tbpProyecto.Controls.Add(this.lblProTipo);
             this.tbpProyecto.Controls.Add(this.lblProNombre);
-            this.tbpProyecto.Location = new System.Drawing.Point(4, 26);
+            this.tbpProyecto.Location = new System.Drawing.Point(4, 22);
             this.tbpProyecto.Name = "tbpProyecto";
             this.tbpProyecto.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpProyecto.Size = new System.Drawing.Size(553, 342);
+            this.tbpProyecto.Size = new System.Drawing.Size(553, 346);
             this.tbpProyecto.TabIndex = 0;
             this.tbpProyecto.Text = "Datos del proyecto";
             this.tbpProyecto.UseVisualStyleBackColor = true;
@@ -374,6 +370,7 @@
             // cmbProPeriodo
             // 
             this.cmbProPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProPeriodo.Enabled = false;
             this.cmbProPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbProPeriodo.FormattingEnabled = true;
             this.cmbProPeriodo.Items.AddRange(new object[] {
@@ -381,15 +378,16 @@
             "AGO-DIC"});
             this.cmbProPeriodo.Location = new System.Drawing.Point(170, 143);
             this.cmbProPeriodo.Name = "cmbProPeriodo";
-            this.cmbProPeriodo.Size = new System.Drawing.Size(179, 25);
+            this.cmbProPeriodo.Size = new System.Drawing.Size(179, 21);
             this.cmbProPeriodo.TabIndex = 12;
             // 
             // rbtnProTipoTrabajador
             // 
             this.rbtnProTipoTrabajador.AutoSize = true;
+            this.rbtnProTipoTrabajador.Enabled = false;
             this.rbtnProTipoTrabajador.Location = new System.Drawing.Point(170, 112);
             this.rbtnProTipoTrabajador.Name = "rbtnProTipoTrabajador";
-            this.rbtnProTipoTrabajador.Size = new System.Drawing.Size(92, 23);
+            this.rbtnProTipoTrabajador.Size = new System.Drawing.Size(76, 17);
             this.rbtnProTipoTrabajador.TabIndex = 11;
             this.rbtnProTipoTrabajador.TabStop = true;
             this.rbtnProTipoTrabajador.Text = "Trabajador";
@@ -398,9 +396,10 @@
             // rbtnProTipoPropia
             // 
             this.rbtnProTipoPropia.AutoSize = true;
+            this.rbtnProTipoPropia.Enabled = false;
             this.rbtnProTipoPropia.Location = new System.Drawing.Point(170, 83);
             this.rbtnProTipoPropia.Name = "rbtnProTipoPropia";
-            this.rbtnProTipoPropia.Size = new System.Drawing.Size(129, 23);
+            this.rbtnProTipoPropia.Size = new System.Drawing.Size(105, 17);
             this.rbtnProTipoPropia.TabIndex = 10;
             this.rbtnProTipoPropia.TabStop = true;
             this.rbtnProTipoPropia.Text = "Propuesta propia";
@@ -409,9 +408,10 @@
             // rbtnProTipoBanco
             // 
             this.rbtnProTipoBanco.AutoSize = true;
+            this.rbtnProTipoBanco.Enabled = false;
             this.rbtnProTipoBanco.Location = new System.Drawing.Point(170, 54);
             this.rbtnProTipoBanco.Name = "rbtnProTipoBanco";
-            this.rbtnProTipoBanco.Size = new System.Drawing.Size(143, 23);
+            this.rbtnProTipoBanco.Size = new System.Drawing.Size(120, 17);
             this.rbtnProTipoBanco.TabIndex = 9;
             this.rbtnProTipoBanco.TabStop = true;
             this.rbtnProTipoBanco.Text = "Banco de proyectos";
@@ -419,10 +419,11 @@
             // 
             // txtProNombre
             // 
+            this.txtProNombre.Enabled = false;
             this.txtProNombre.Location = new System.Drawing.Point(170, 17);
             this.txtProNombre.MaxLength = 50;
             this.txtProNombre.Name = "txtProNombre";
-            this.txtProNombre.Size = new System.Drawing.Size(281, 25);
+            this.txtProNombre.Size = new System.Drawing.Size(281, 20);
             this.txtProNombre.TabIndex = 8;
             // 
             // lblProPeriodo
@@ -430,7 +431,7 @@
             this.lblProPeriodo.AutoSize = true;
             this.lblProPeriodo.Location = new System.Drawing.Point(34, 146);
             this.lblProPeriodo.Name = "lblProPeriodo";
-            this.lblProPeriodo.Size = new System.Drawing.Size(130, 19);
+            this.lblProPeriodo.Size = new System.Drawing.Size(102, 13);
             this.lblProPeriodo.TabIndex = 6;
             this.lblProPeriodo.Text = "Periodo proyectado:";
             // 
@@ -439,7 +440,7 @@
             this.lblProTipo.AutoSize = true;
             this.lblProTipo.Location = new System.Drawing.Point(51, 54);
             this.lblProTipo.Name = "lblProTipo";
-            this.lblProTipo.Size = new System.Drawing.Size(113, 19);
+            this.lblProTipo.Size = new System.Drawing.Size(90, 13);
             this.lblProTipo.TabIndex = 5;
             this.lblProTipo.Text = "Tipo de proyecto:";
             // 
@@ -448,7 +449,7 @@
             this.lblProNombre.AutoSize = true;
             this.lblProNombre.Location = new System.Drawing.Point(24, 20);
             this.lblProNombre.Name = "lblProNombre";
-            this.lblProNombre.Size = new System.Drawing.Size(140, 19);
+            this.lblProNombre.Size = new System.Drawing.Size(108, 13);
             this.lblProNombre.TabIndex = 4;
             this.lblProNombre.Text = "Nombre del proyecto:";
             // 
@@ -493,10 +494,10 @@
             this.tbpEmpresa.Controls.Add(this.lblEmpDomicilio);
             this.tbpEmpresa.Controls.Add(this.lblEmpRFC);
             this.tbpEmpresa.Controls.Add(this.lblEmpNombre);
-            this.tbpEmpresa.Location = new System.Drawing.Point(4, 26);
+            this.tbpEmpresa.Location = new System.Drawing.Point(4, 22);
             this.tbpEmpresa.Name = "tbpEmpresa";
             this.tbpEmpresa.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpEmpresa.Size = new System.Drawing.Size(553, 342);
+            this.tbpEmpresa.Size = new System.Drawing.Size(553, 346);
             this.tbpEmpresa.TabIndex = 1;
             this.tbpEmpresa.Text = "Datos de la empresa";
             this.tbpEmpresa.UseVisualStyleBackColor = true;
@@ -513,9 +514,10 @@
             // rbtnEmpTipoPublica
             // 
             this.rbtnEmpTipoPublica.AutoSize = true;
+            this.rbtnEmpTipoPublica.Enabled = false;
             this.rbtnEmpTipoPublica.Location = new System.Drawing.Point(3, 3);
             this.rbtnEmpTipoPublica.Name = "rbtnEmpTipoPublica";
-            this.rbtnEmpTipoPublica.Size = new System.Drawing.Size(69, 23);
+            this.rbtnEmpTipoPublica.Size = new System.Drawing.Size(60, 17);
             this.rbtnEmpTipoPublica.TabIndex = 6;
             this.rbtnEmpTipoPublica.TabStop = true;
             this.rbtnEmpTipoPublica.Text = "Pública";
@@ -524,9 +526,10 @@
             // rbtnEmpTipoPrivada
             // 
             this.rbtnEmpTipoPrivada.AutoSize = true;
+            this.rbtnEmpTipoPrivada.Enabled = false;
             this.rbtnEmpTipoPrivada.Location = new System.Drawing.Point(78, 3);
             this.rbtnEmpTipoPrivada.Name = "rbtnEmpTipoPrivada";
-            this.rbtnEmpTipoPrivada.Size = new System.Drawing.Size(71, 23);
+            this.rbtnEmpTipoPrivada.Size = new System.Drawing.Size(61, 17);
             this.rbtnEmpTipoPrivada.TabIndex = 7;
             this.rbtnEmpTipoPrivada.TabStop = true;
             this.rbtnEmpTipoPrivada.Text = "Privada";
@@ -534,10 +537,11 @@
             // 
             // txtEmpFirmaPuesto
             // 
+            this.txtEmpFirmaPuesto.Enabled = false;
             this.txtEmpFirmaPuesto.Location = new System.Drawing.Point(367, 459);
             this.txtEmpFirmaPuesto.MaxLength = 30;
             this.txtEmpFirmaPuesto.Name = "txtEmpFirmaPuesto";
-            this.txtEmpFirmaPuesto.Size = new System.Drawing.Size(159, 25);
+            this.txtEmpFirmaPuesto.Size = new System.Drawing.Size(159, 20);
             this.txtEmpFirmaPuesto.TabIndex = 20;
             // 
             // lblEmpFirmaPuesto
@@ -545,7 +549,7 @@
             this.lblEmpFirmaPuesto.AutoSize = true;
             this.lblEmpFirmaPuesto.Location = new System.Drawing.Point(310, 462);
             this.lblEmpFirmaPuesto.Name = "lblEmpFirmaPuesto";
-            this.lblEmpFirmaPuesto.Size = new System.Drawing.Size(51, 19);
+            this.lblEmpFirmaPuesto.Size = new System.Drawing.Size(43, 13);
             this.lblEmpFirmaPuesto.TabIndex = 59;
             this.lblEmpFirmaPuesto.Text = "Puesto:";
             // 
@@ -555,16 +559,17 @@
             this.lblEmpFirma.Font = new System.Drawing.Font("Segoe UI Light", 10F);
             this.lblEmpFirma.Location = new System.Drawing.Point(45, 437);
             this.lblEmpFirma.Name = "lblEmpFirma";
-            this.lblEmpFirma.Size = new System.Drawing.Size(260, 19);
+            this.lblEmpFirma.Size = new System.Drawing.Size(259, 19);
             this.lblEmpFirma.TabIndex = 58;
             this.lblEmpFirma.Text = "Persona que firmará el acuerdo de trabajo";
             // 
             // txtEmpFirmaNombre
             // 
+            this.txtEmpFirmaNombre.Enabled = false;
             this.txtEmpFirmaNombre.Location = new System.Drawing.Point(113, 459);
             this.txtEmpFirmaNombre.MaxLength = 80;
             this.txtEmpFirmaNombre.Name = "txtEmpFirmaNombre";
-            this.txtEmpFirmaNombre.Size = new System.Drawing.Size(191, 25);
+            this.txtEmpFirmaNombre.Size = new System.Drawing.Size(191, 20);
             this.txtEmpFirmaNombre.TabIndex = 19;
             // 
             // lblEmpFirmaNombre
@@ -572,16 +577,17 @@
             this.lblEmpFirmaNombre.AutoSize = true;
             this.lblEmpFirmaNombre.Location = new System.Drawing.Point(45, 462);
             this.lblEmpFirmaNombre.Name = "lblEmpFirmaNombre";
-            this.lblEmpFirmaNombre.Size = new System.Drawing.Size(62, 19);
+            this.lblEmpFirmaNombre.Size = new System.Drawing.Size(47, 13);
             this.lblEmpFirmaNombre.TabIndex = 56;
             this.lblEmpFirmaNombre.Text = "Nombre:";
             // 
             // txtEmpAsesorPuesto
             // 
+            this.txtEmpAsesorPuesto.Enabled = false;
             this.txtEmpAsesorPuesto.Location = new System.Drawing.Point(367, 404);
             this.txtEmpAsesorPuesto.MaxLength = 30;
             this.txtEmpAsesorPuesto.Name = "txtEmpAsesorPuesto";
-            this.txtEmpAsesorPuesto.Size = new System.Drawing.Size(159, 25);
+            this.txtEmpAsesorPuesto.Size = new System.Drawing.Size(159, 20);
             this.txtEmpAsesorPuesto.TabIndex = 18;
             // 
             // lblEmpAsesorPuesto
@@ -589,7 +595,7 @@
             this.lblEmpAsesorPuesto.AutoSize = true;
             this.lblEmpAsesorPuesto.Location = new System.Drawing.Point(310, 407);
             this.lblEmpAsesorPuesto.Name = "lblEmpAsesorPuesto";
-            this.lblEmpAsesorPuesto.Size = new System.Drawing.Size(51, 19);
+            this.lblEmpAsesorPuesto.Size = new System.Drawing.Size(43, 13);
             this.lblEmpAsesorPuesto.TabIndex = 54;
             this.lblEmpAsesorPuesto.Text = "Puesto:";
             // 
@@ -605,10 +611,11 @@
             // 
             // txtEmpAsesorNombre
             // 
+            this.txtEmpAsesorNombre.Enabled = false;
             this.txtEmpAsesorNombre.Location = new System.Drawing.Point(113, 404);
             this.txtEmpAsesorNombre.MaxLength = 80;
             this.txtEmpAsesorNombre.Name = "txtEmpAsesorNombre";
-            this.txtEmpAsesorNombre.Size = new System.Drawing.Size(191, 25);
+            this.txtEmpAsesorNombre.Size = new System.Drawing.Size(191, 20);
             this.txtEmpAsesorNombre.TabIndex = 17;
             // 
             // lblEmpAsesorNombre
@@ -616,16 +623,17 @@
             this.lblEmpAsesorNombre.AutoSize = true;
             this.lblEmpAsesorNombre.Location = new System.Drawing.Point(45, 407);
             this.lblEmpAsesorNombre.Name = "lblEmpAsesorNombre";
-            this.lblEmpAsesorNombre.Size = new System.Drawing.Size(62, 19);
+            this.lblEmpAsesorNombre.Size = new System.Drawing.Size(47, 13);
             this.lblEmpAsesorNombre.TabIndex = 51;
             this.lblEmpAsesorNombre.Text = "Nombre:";
             // 
             // txtEmpTitularPuesto
             // 
+            this.txtEmpTitularPuesto.Enabled = false;
             this.txtEmpTitularPuesto.Location = new System.Drawing.Point(367, 349);
             this.txtEmpTitularPuesto.MaxLength = 50;
             this.txtEmpTitularPuesto.Name = "txtEmpTitularPuesto";
-            this.txtEmpTitularPuesto.Size = new System.Drawing.Size(159, 25);
+            this.txtEmpTitularPuesto.Size = new System.Drawing.Size(159, 20);
             this.txtEmpTitularPuesto.TabIndex = 16;
             // 
             // lblEmpTitularPuesto
@@ -633,7 +641,7 @@
             this.lblEmpTitularPuesto.AutoSize = true;
             this.lblEmpTitularPuesto.Location = new System.Drawing.Point(310, 352);
             this.lblEmpTitularPuesto.Name = "lblEmpTitularPuesto";
-            this.lblEmpTitularPuesto.Size = new System.Drawing.Size(51, 19);
+            this.lblEmpTitularPuesto.Size = new System.Drawing.Size(43, 13);
             this.lblEmpTitularPuesto.TabIndex = 49;
             this.lblEmpTitularPuesto.Text = "Puesto:";
             // 
@@ -650,9 +658,10 @@
             // rbtnEmpGiroOtro
             // 
             this.rbtnEmpGiroOtro.AutoSize = true;
+            this.rbtnEmpGiroOtro.Enabled = false;
             this.rbtnEmpGiroOtro.Location = new System.Drawing.Point(276, 76);
             this.rbtnEmpGiroOtro.Name = "rbtnEmpGiroOtro";
-            this.rbtnEmpGiroOtro.Size = new System.Drawing.Size(55, 23);
+            this.rbtnEmpGiroOtro.Size = new System.Drawing.Size(45, 17);
             this.rbtnEmpGiroOtro.TabIndex = 5;
             this.rbtnEmpGiroOtro.TabStop = true;
             this.rbtnEmpGiroOtro.Text = "Otro";
@@ -661,9 +670,10 @@
             // rbtnEmpGiroServicios
             // 
             this.rbtnEmpGiroServicios.AutoSize = true;
+            this.rbtnEmpGiroServicios.Enabled = false;
             this.rbtnEmpGiroServicios.Location = new System.Drawing.Point(193, 76);
             this.rbtnEmpGiroServicios.Name = "rbtnEmpGiroServicios";
-            this.rbtnEmpGiroServicios.Size = new System.Drawing.Size(77, 23);
+            this.rbtnEmpGiroServicios.Size = new System.Drawing.Size(68, 17);
             this.rbtnEmpGiroServicios.TabIndex = 4;
             this.rbtnEmpGiroServicios.TabStop = true;
             this.rbtnEmpGiroServicios.Text = "Servicios";
@@ -671,10 +681,11 @@
             // 
             // txtEmpFax
             // 
+            this.txtEmpFax.Enabled = false;
             this.txtEmpFax.Location = new System.Drawing.Point(406, 164);
             this.txtEmpFax.MaxLength = 12;
             this.txtEmpFax.Name = "txtEmpFax";
-            this.txtEmpFax.Size = new System.Drawing.Size(120, 25);
+            this.txtEmpFax.Size = new System.Drawing.Size(120, 20);
             this.txtEmpFax.TabIndex = 11;
             // 
             // lblEmpFax
@@ -682,16 +693,17 @@
             this.lblEmpFax.AutoSize = true;
             this.lblEmpFax.Location = new System.Drawing.Point(368, 167);
             this.lblEmpFax.Name = "lblEmpFax";
-            this.lblEmpFax.Size = new System.Drawing.Size(32, 19);
+            this.lblEmpFax.Size = new System.Drawing.Size(27, 13);
             this.lblEmpFax.TabIndex = 42;
             this.lblEmpFax.Text = "Fáx:";
             // 
             // txtEmpCP
             // 
+            this.txtEmpCP.Enabled = false;
             this.txtEmpCP.Location = new System.Drawing.Point(286, 164);
             this.txtEmpCP.MaxLength = 5;
             this.txtEmpCP.Name = "txtEmpCP";
-            this.txtEmpCP.Size = new System.Drawing.Size(75, 25);
+            this.txtEmpCP.Size = new System.Drawing.Size(75, 20);
             this.txtEmpCP.TabIndex = 10;
             // 
             // lblEmpCP
@@ -699,16 +711,17 @@
             this.lblEmpCP.AutoSize = true;
             this.lblEmpCP.Location = new System.Drawing.Point(245, 167);
             this.lblEmpCP.Name = "lblEmpCP";
-            this.lblEmpCP.Size = new System.Drawing.Size(35, 19);
+            this.lblEmpCP.Size = new System.Drawing.Size(30, 13);
             this.lblEmpCP.TabIndex = 40;
             this.lblEmpCP.Text = "C.P.:";
             // 
             // txtEmpColonia
             // 
+            this.txtEmpColonia.Enabled = false;
             this.txtEmpColonia.Location = new System.Drawing.Point(113, 164);
             this.txtEmpColonia.MaxLength = 30;
             this.txtEmpColonia.Name = "txtEmpColonia";
-            this.txtEmpColonia.Size = new System.Drawing.Size(126, 25);
+            this.txtEmpColonia.Size = new System.Drawing.Size(126, 20);
             this.txtEmpColonia.TabIndex = 9;
             // 
             // lblEmpColonia
@@ -716,12 +729,13 @@
             this.lblEmpColonia.AutoSize = true;
             this.lblEmpColonia.Location = new System.Drawing.Point(50, 167);
             this.lblEmpColonia.Name = "lblEmpColonia";
-            this.lblEmpColonia.Size = new System.Drawing.Size(57, 19);
+            this.lblEmpColonia.Size = new System.Drawing.Size(45, 13);
             this.lblEmpColonia.TabIndex = 38;
             this.lblEmpColonia.Text = "Colonia:";
             // 
             // txtEmpMision
             // 
+            this.txtEmpMision.Enabled = false;
             this.txtEmpMision.Location = new System.Drawing.Point(113, 245);
             this.txtEmpMision.MaxLength = 50;
             this.txtEmpMision.Multiline = true;
@@ -734,48 +748,53 @@
             this.lblEmpMision.AutoSize = true;
             this.lblEmpMision.Location = new System.Drawing.Point(57, 248);
             this.lblEmpMision.Name = "lblEmpMision";
-            this.lblEmpMision.Size = new System.Drawing.Size(50, 19);
+            this.lblEmpMision.Size = new System.Drawing.Size(40, 13);
             this.lblEmpMision.TabIndex = 36;
             this.lblEmpMision.Text = "Misión:";
             // 
             // txtEmpTelefono
             // 
+            this.txtEmpTelefono.Enabled = false;
             this.txtEmpTelefono.Location = new System.Drawing.Point(406, 198);
             this.txtEmpTelefono.MaxLength = 10;
             this.txtEmpTelefono.Name = "txtEmpTelefono";
-            this.txtEmpTelefono.Size = new System.Drawing.Size(120, 25);
+            this.txtEmpTelefono.Size = new System.Drawing.Size(120, 20);
             this.txtEmpTelefono.TabIndex = 13;
             // 
             // txtEmpTitularNombre
             // 
+            this.txtEmpTitularNombre.Enabled = false;
             this.txtEmpTitularNombre.Location = new System.Drawing.Point(113, 349);
             this.txtEmpTitularNombre.MaxLength = 80;
             this.txtEmpTitularNombre.Name = "txtEmpTitularNombre";
-            this.txtEmpTitularNombre.Size = new System.Drawing.Size(191, 25);
+            this.txtEmpTitularNombre.Size = new System.Drawing.Size(191, 20);
             this.txtEmpTitularNombre.TabIndex = 15;
             // 
             // txtEmpCiudad
             // 
+            this.txtEmpCiudad.Enabled = false;
             this.txtEmpCiudad.Location = new System.Drawing.Point(113, 198);
             this.txtEmpCiudad.MaxLength = 50;
             this.txtEmpCiudad.Name = "txtEmpCiudad";
-            this.txtEmpCiudad.Size = new System.Drawing.Size(218, 25);
+            this.txtEmpCiudad.Size = new System.Drawing.Size(218, 20);
             this.txtEmpCiudad.TabIndex = 12;
             // 
             // txtEmpDomicilio
             // 
+            this.txtEmpDomicilio.Enabled = false;
             this.txtEmpDomicilio.Location = new System.Drawing.Point(113, 133);
             this.txtEmpDomicilio.MaxLength = 50;
             this.txtEmpDomicilio.Name = "txtEmpDomicilio";
-            this.txtEmpDomicilio.Size = new System.Drawing.Size(413, 25);
+            this.txtEmpDomicilio.Size = new System.Drawing.Size(413, 20);
             this.txtEmpDomicilio.TabIndex = 8;
             // 
             // rbtnEmpGiroIndustrial
             // 
             this.rbtnEmpGiroIndustrial.AutoSize = true;
+            this.rbtnEmpGiroIndustrial.Enabled = false;
             this.rbtnEmpGiroIndustrial.Location = new System.Drawing.Point(113, 76);
             this.rbtnEmpGiroIndustrial.Name = "rbtnEmpGiroIndustrial";
-            this.rbtnEmpGiroIndustrial.Size = new System.Drawing.Size(79, 23);
+            this.rbtnEmpGiroIndustrial.Size = new System.Drawing.Size(67, 17);
             this.rbtnEmpGiroIndustrial.TabIndex = 3;
             this.rbtnEmpGiroIndustrial.TabStop = true;
             this.rbtnEmpGiroIndustrial.Text = "Industrial";
@@ -783,18 +802,20 @@
             // 
             // txtEmpNombre
             // 
+            this.txtEmpNombre.Enabled = false;
             this.txtEmpNombre.Location = new System.Drawing.Point(113, 42);
             this.txtEmpNombre.MaxLength = 50;
             this.txtEmpNombre.Name = "txtEmpNombre";
-            this.txtEmpNombre.Size = new System.Drawing.Size(287, 25);
+            this.txtEmpNombre.Size = new System.Drawing.Size(287, 20);
             this.txtEmpNombre.TabIndex = 2;
             // 
             // txtEmpRFC
             // 
+            this.txtEmpRFC.Enabled = false;
             this.txtEmpRFC.Location = new System.Drawing.Point(113, 11);
             this.txtEmpRFC.MaxLength = 13;
             this.txtEmpRFC.Name = "txtEmpRFC";
-            this.txtEmpRFC.Size = new System.Drawing.Size(147, 25);
+            this.txtEmpRFC.Size = new System.Drawing.Size(147, 20);
             this.txtEmpRFC.TabIndex = 1;
             // 
             // lblEmpCiudad
@@ -802,7 +823,7 @@
             this.lblEmpCiudad.AutoSize = true;
             this.lblEmpCiudad.Location = new System.Drawing.Point(53, 201);
             this.lblEmpCiudad.Name = "lblEmpCiudad";
-            this.lblEmpCiudad.Size = new System.Drawing.Size(54, 19);
+            this.lblEmpCiudad.Size = new System.Drawing.Size(43, 13);
             this.lblEmpCiudad.TabIndex = 27;
             this.lblEmpCiudad.Text = "Ciudad:";
             // 
@@ -811,7 +832,7 @@
             this.lblEmpGiro.AutoSize = true;
             this.lblEmpGiro.Location = new System.Drawing.Point(70, 79);
             this.lblEmpGiro.Name = "lblEmpGiro";
-            this.lblEmpGiro.Size = new System.Drawing.Size(37, 19);
+            this.lblEmpGiro.Size = new System.Drawing.Size(29, 13);
             this.lblEmpGiro.TabIndex = 26;
             this.lblEmpGiro.Text = "Giro:";
             // 
@@ -820,7 +841,7 @@
             this.lblEmpTelefono.AutoSize = true;
             this.lblEmpTelefono.Location = new System.Drawing.Point(337, 201);
             this.lblEmpTelefono.Name = "lblEmpTelefono";
-            this.lblEmpTelefono.Size = new System.Drawing.Size(63, 19);
+            this.lblEmpTelefono.Size = new System.Drawing.Size(52, 13);
             this.lblEmpTelefono.TabIndex = 25;
             this.lblEmpTelefono.Text = "Teléfono:";
             // 
@@ -829,7 +850,7 @@
             this.lblEmpTitularNombre.AutoSize = true;
             this.lblEmpTitularNombre.Location = new System.Drawing.Point(45, 352);
             this.lblEmpTitularNombre.Name = "lblEmpTitularNombre";
-            this.lblEmpTitularNombre.Size = new System.Drawing.Size(62, 19);
+            this.lblEmpTitularNombre.Size = new System.Drawing.Size(47, 13);
             this.lblEmpTitularNombre.TabIndex = 24;
             this.lblEmpTitularNombre.Text = "Nombre:";
             // 
@@ -838,7 +859,7 @@
             this.lblEmpDomicilio.AutoSize = true;
             this.lblEmpDomicilio.Location = new System.Drawing.Point(40, 136);
             this.lblEmpDomicilio.Name = "lblEmpDomicilio";
-            this.lblEmpDomicilio.Size = new System.Drawing.Size(67, 19);
+            this.lblEmpDomicilio.Size = new System.Drawing.Size(52, 13);
             this.lblEmpDomicilio.TabIndex = 23;
             this.lblEmpDomicilio.Text = "Domicilio:";
             // 
@@ -847,7 +868,7 @@
             this.lblEmpRFC.AutoSize = true;
             this.lblEmpRFC.Location = new System.Drawing.Point(65, 14);
             this.lblEmpRFC.Name = "lblEmpRFC";
-            this.lblEmpRFC.Size = new System.Drawing.Size(42, 19);
+            this.lblEmpRFC.Size = new System.Drawing.Size(37, 13);
             this.lblEmpRFC.TabIndex = 22;
             this.lblEmpRFC.Text = "R.F.C:";
             // 
@@ -856,52 +877,43 @@
             this.lblEmpNombre.AutoSize = true;
             this.lblEmpNombre.Location = new System.Drawing.Point(45, 45);
             this.lblEmpNombre.Name = "lblEmpNombre";
-            this.lblEmpNombre.Size = new System.Drawing.Size(62, 19);
+            this.lblEmpNombre.Size = new System.Drawing.Size(47, 13);
             this.lblEmpNombre.TabIndex = 20;
             this.lblEmpNombre.Text = "Nombre:";
             // 
-            // btnGuardar
+            // btnAceptar
             // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(500, 12);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 32);
-            this.btnGuardar.TabIndex = 2;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Segoe UI Light", 10F);
+            this.btnAceptar.Location = new System.Drawing.Point(461, 12);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(118, 32);
+            this.btnAceptar.TabIndex = 3;
+            this.btnAceptar.Text = "Aceptar solicitud";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // btnImprimir
+            // lblSolicitud
             // 
-            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Location = new System.Drawing.Point(402, 12);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(92, 32);
-            this.btnImprimir.TabIndex = 3;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            this.lblSolicitud.AutoSize = true;
+            this.lblSolicitud.Font = new System.Drawing.Font("Segoe UI Light", 18F);
+            this.lblSolicitud.Location = new System.Drawing.Point(12, 7);
+            this.lblSolicitud.Name = "lblSolicitud";
+            this.lblSolicitud.Size = new System.Drawing.Size(206, 32);
+            this.lblSolicitud.TabIndex = 4;
+            this.lblSolicitud.Text = "Solicitud pendiente";
             // 
-            // sfdImpresion
+            // FrmMostrarSolicitud
             // 
-            this.sfdImpresion.DefaultExt = "xlsx";
-            // 
-            // FrmSolicitud
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(591, 434);
-            this.Controls.Add(this.btnImprimir);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.tabPrincipal);
             this.Controls.Add(this.lblSolicitud);
-            this.Font = new System.Drawing.Font("Segoe UI Light", 10F);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "FrmSolicitud";
-            this.Text = "Solicitud de residencias profesionales";
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.tabPrincipal);
+            this.Name = "FrmMostrarSolicitud";
+            this.Text = "Solicitud pendiente";
             this.tabPrincipal.ResumeLayout(false);
             this.tbpResidente.ResumeLayout(false);
             this.tbpResidente.PerformLayout();
@@ -918,20 +930,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblSolicitud;
         private System.Windows.Forms.TabControl tabPrincipal;
-        private System.Windows.Forms.TabPage tbpProyecto;
-        private System.Windows.Forms.TabPage tbpEmpresa;
         private System.Windows.Forms.TabPage tbpResidente;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.Label lblProPeriodo;
-        private System.Windows.Forms.Label lblProTipo;
-        private System.Windows.Forms.Label lblProNombre;
-        private System.Windows.Forms.TextBox txtProNombre;
-        private System.Windows.Forms.RadioButton rbtnProTipoTrabajador;
-        private System.Windows.Forms.RadioButton rbtnProTipoPropia;
-        private System.Windows.Forms.RadioButton rbtnProTipoBanco;
+        private System.Windows.Forms.TextBox txtResSSNumero;
+        private System.Windows.Forms.Label lblResNumeroSS;
+        private System.Windows.Forms.TextBox txtResTelefono;
+        private System.Windows.Forms.TextBox txtResEmail;
+        private System.Windows.Forms.TextBox txtResCiudad;
+        private System.Windows.Forms.TextBox txtResDomicilio;
+        private System.Windows.Forms.RadioButton rbtnResSSOtro;
+        private System.Windows.Forms.RadioButton rbtnResSSISSSTE;
+        private System.Windows.Forms.RadioButton rbtnResSSIMSS;
+        private System.Windows.Forms.ComboBox cmbResCarrera;
+        private System.Windows.Forms.TextBox txtResNombre;
+        private System.Windows.Forms.TextBox txtResNoControl;
         private System.Windows.Forms.Label lblResCiudad;
         private System.Windows.Forms.Label lblResSeguridadSocial;
         private System.Windows.Forms.Label lblResTelefono;
@@ -940,18 +952,40 @@
         private System.Windows.Forms.Label lblResNoControl;
         private System.Windows.Forms.Label lblResCarrera;
         private System.Windows.Forms.Label lblResNombre;
-        private System.Windows.Forms.TextBox txtResNombre;
-        private System.Windows.Forms.TextBox txtResNoControl;
-        private System.Windows.Forms.RadioButton rbtnResSSOtro;
-        private System.Windows.Forms.RadioButton rbtnResSSISSSTE;
-        private System.Windows.Forms.RadioButton rbtnResSSIMSS;
-        private System.Windows.Forms.ComboBox cmbResCarrera;
-        private System.Windows.Forms.TextBox txtResTelefono;
-        private System.Windows.Forms.TextBox txtResEmail;
-        private System.Windows.Forms.TextBox txtResCiudad;
-        private System.Windows.Forms.TextBox txtResDomicilio;
-        private System.Windows.Forms.TextBox txtResSSNumero;
-        private System.Windows.Forms.Label lblResNumeroSS;
+        private System.Windows.Forms.TabPage tbpProyecto;
+        private System.Windows.Forms.ComboBox cmbProPeriodo;
+        private System.Windows.Forms.RadioButton rbtnProTipoTrabajador;
+        private System.Windows.Forms.RadioButton rbtnProTipoPropia;
+        private System.Windows.Forms.RadioButton rbtnProTipoBanco;
+        private System.Windows.Forms.TextBox txtProNombre;
+        private System.Windows.Forms.Label lblProPeriodo;
+        private System.Windows.Forms.Label lblProTipo;
+        private System.Windows.Forms.Label lblProNombre;
+        private System.Windows.Forms.TabPage tbpEmpresa;
+        private System.Windows.Forms.Panel pnlSector;
+        private System.Windows.Forms.RadioButton rbtnEmpTipoPublica;
+        private System.Windows.Forms.RadioButton rbtnEmpTipoPrivada;
+        private System.Windows.Forms.TextBox txtEmpFirmaPuesto;
+        private System.Windows.Forms.Label lblEmpFirmaPuesto;
+        private System.Windows.Forms.Label lblEmpFirma;
+        private System.Windows.Forms.TextBox txtEmpFirmaNombre;
+        private System.Windows.Forms.Label lblEmpFirmaNombre;
+        private System.Windows.Forms.TextBox txtEmpAsesorPuesto;
+        private System.Windows.Forms.Label lblEmpAsesorPuesto;
+        private System.Windows.Forms.Label lblEmpAsesor;
+        private System.Windows.Forms.TextBox txtEmpAsesorNombre;
+        private System.Windows.Forms.Label lblEmpAsesorNombre;
+        private System.Windows.Forms.TextBox txtEmpTitularPuesto;
+        private System.Windows.Forms.Label lblEmpTitularPuesto;
+        private System.Windows.Forms.Label lblEmpTitular;
+        private System.Windows.Forms.RadioButton rbtnEmpGiroOtro;
+        private System.Windows.Forms.RadioButton rbtnEmpGiroServicios;
+        private System.Windows.Forms.TextBox txtEmpFax;
+        private System.Windows.Forms.Label lblEmpFax;
+        private System.Windows.Forms.TextBox txtEmpCP;
+        private System.Windows.Forms.Label lblEmpCP;
+        private System.Windows.Forms.TextBox txtEmpColonia;
+        private System.Windows.Forms.Label lblEmpColonia;
         private System.Windows.Forms.TextBox txtEmpMision;
         private System.Windows.Forms.Label lblEmpMision;
         private System.Windows.Forms.TextBox txtEmpTelefono;
@@ -968,31 +1002,7 @@
         private System.Windows.Forms.Label lblEmpDomicilio;
         private System.Windows.Forms.Label lblEmpRFC;
         private System.Windows.Forms.Label lblEmpNombre;
-        private System.Windows.Forms.TextBox txtEmpColonia;
-        private System.Windows.Forms.Label lblEmpColonia;
-        private System.Windows.Forms.TextBox txtEmpFax;
-        private System.Windows.Forms.Label lblEmpFax;
-        private System.Windows.Forms.TextBox txtEmpCP;
-        private System.Windows.Forms.Label lblEmpCP;
-        private System.Windows.Forms.RadioButton rbtnEmpGiroOtro;
-        private System.Windows.Forms.RadioButton rbtnEmpTipoPrivada;
-        private System.Windows.Forms.RadioButton rbtnEmpGiroServicios;
-        private System.Windows.Forms.RadioButton rbtnEmpTipoPublica;
-        private System.Windows.Forms.TextBox txtEmpFirmaPuesto;
-        private System.Windows.Forms.Label lblEmpFirmaPuesto;
-        private System.Windows.Forms.Label lblEmpFirma;
-        private System.Windows.Forms.TextBox txtEmpFirmaNombre;
-        private System.Windows.Forms.Label lblEmpFirmaNombre;
-        private System.Windows.Forms.TextBox txtEmpAsesorPuesto;
-        private System.Windows.Forms.Label lblEmpAsesorPuesto;
-        private System.Windows.Forms.Label lblEmpAsesor;
-        private System.Windows.Forms.TextBox txtEmpAsesorNombre;
-        private System.Windows.Forms.Label lblEmpAsesorNombre;
-        private System.Windows.Forms.TextBox txtEmpTitularPuesto;
-        private System.Windows.Forms.Label lblEmpTitularPuesto;
-        private System.Windows.Forms.Label lblEmpTitular;
-        private System.Windows.Forms.ComboBox cmbProPeriodo;
-        private System.Windows.Forms.Panel pnlSector;
-        private System.Windows.Forms.SaveFileDialog sfdImpresion;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Label lblSolicitud;
     }
 }

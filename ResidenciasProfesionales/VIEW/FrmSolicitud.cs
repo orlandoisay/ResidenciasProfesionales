@@ -273,7 +273,7 @@ namespace ResidenciasProfesionales.VIEW
                 mensajeError += " - Periodo proyectado para el proyecto\n";
             }
 
-            //TODO: Implementar validaciones de alumno
+            // Implementar validaciones de alumno
             if (txtResDomicilio.Text.Trim().Length == 0)
             {
                 datosValidados = false;
@@ -389,18 +389,122 @@ namespace ResidenciasProfesionales.VIEW
             SolicitudDAO.InsertarSolicitud(new SolicitudPOJO(-1, txtResNoControl.Text, idResidencia, "PENDIENTE"));
 
             MessageBox.Show("Solicitud registrada correctamente.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             esEdicion = true;
         }
         private void ModificarDatos()
         {
-            // TODO: Implementar el metodo de modificado
-            return;
+            // Actualizar los datos de la empresa
+            string giro = "", sector = "";
+
+            if (rbtnEmpGiroIndustrial.Checked)
+                giro = "Industrial";
+            if (rbtnEmpGiroServicios.Checked)
+                giro = "Servicios";
+            if (rbtnEmpGiroOtro.Checked)
+                giro = "Otro";
+
+            if (rbtnEmpTipoPublica.Checked)
+                sector = "Publico";
+            if (rbtnEmpTipoPrivada.Checked)
+                sector = "Privado";
+
+            var empresa = EmpresaDAO.ObtenerEmpresa(txtEmpRFC.Text);
+            if (empresa != null)
+                EmpresaDAO.ActualizarEmpresa(
+                    new EmpresaPOJO(txtEmpRFC.Text,
+                                    txtEmpNombre.Text,
+                                    giro,
+                                    sector,
+                                    txtEmpDomicilio.Text,
+                                    txtEmpColonia.Text,
+                                    txtEmpCiudad.Text,
+                                    txtEmpCP.Text,
+                                    txtEmpTelefono.Text,
+                                    txtEmpFax.Text,
+                                    txtEmpMision.Text,
+                                    txtEmpTitularNombre.Text,
+                                    txtEmpTitularPuesto.Text));
+            else
+                EmpresaDAO.InsertarEmpresa(
+                        new EmpresaPOJO(txtEmpRFC.Text,
+                                        txtEmpNombre.Text,
+                                        giro,
+                                        sector,
+                                        txtEmpDomicilio.Text,
+                                        txtEmpColonia.Text,
+                                        txtEmpCiudad.Text,
+                                        txtEmpCP.Text,
+                                        txtEmpTelefono.Text,
+                                        txtEmpFax.Text,
+                                        txtEmpMision.Text,
+                                        txtEmpTitularNombre.Text,
+                                        txtEmpTitularPuesto.Text));
+
+            // Actualizar los datos del alumno
+            alumno.Domicilio = txtResDomicilio.Text.Trim();
+            alumno.Ciudad = txtResCiudad.Text.Trim();
+            alumno.Correo = txtResEmail.Text.Trim();
+            alumno.Telefono = txtResTelefono.Text.Trim();
+            alumno.NumeroSS = txtResSSNumero.Text.Trim();
+
+            if (rbtnResSSIMSS.Checked)
+                alumno.TipoSS = "IMSS";
+            if (rbtnResSSISSSTE.Checked)
+                alumno.TipoSS = "ISSSTE";
+            if (rbtnResSSOtro.Checked)
+                alumno.TipoSS = "Otro";
+
+            AlumnoDAO.Actualizar(alumno);
+
+            // Actualizar los datos de la residencia
+            int idResidencia = SolicitudDAO.ObtenerSolicitud(alumno.Matricula).IdResidencia;
+
+            string modalidad = "";
+
+            if (rbtnProTipoBanco.Checked)
+                modalidad = "Banco de proyectos";
+            if (rbtnProTipoPropia.Checked)
+                modalidad = "Propuesta propia";
+            if (rbtnProTipoTrabajador.Checked)
+                modalidad = "Trabajador";
+
+            ResidenciaDAO.ActualizarResidencia(
+                 new ResidenciaPOJO(
+                    idResidencia,
+                    txtProNombre.Text,
+                    modalidad,
+                    cmbProPeriodo.SelectedItem.ToString(),
+                    DateTime.Now.Year,
+                    txtEmpAsesorNombre.Text,
+                    txtEmpAsesorPuesto.Text,
+                    txtEmpFirmaNombre.Text,
+                    txtEmpFirmaPuesto.Text,
+                    txtEmpRFC.Text,
+                    txtResNoControl.Text
+                ));
+
+            MessageBox.Show("Solicitud actualizada correctamente.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void ImprimirSolicitud()
         {
-            // TODO: Implementar el metodo de impresion
-            // TODO: Crear la clase que se encarga de generar archivos de Excel
+            if (!ValidarDatos())
+                return;
+
+            // Inicializar el cuadro de diálogo
+            sfdImpresion.FileName = string.Format("Solicitud_{0}", alumno.Matricula);
+            sfdImpresion.Filter = "Archivo de Excel (.xlsx)|*.xlsx";
+
+            DialogResult dr = sfdImpresion.ShowDialog();
+
+            if (dr != DialogResult.OK)
+                return;
+
+            bool resultado = SolicitudGenerador.GenerarFormatoDeSolicitud(alumno.Matricula, sfdImpresion.FileName);
+
+            if (resultado)
+                MessageBox.Show("Archivo generado corretamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Ocurrio un error al generar el archivo. Intente más tarde.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

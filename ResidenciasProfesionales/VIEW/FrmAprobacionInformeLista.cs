@@ -1,4 +1,5 @@
 ﻿using ResidenciasProfesionales.DATA;
+using ResidenciasProfesionales.MODEL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,15 +13,15 @@ namespace ResidenciasProfesionales.VIEW
 {
     public partial class FrmAprobacionInformeLista : Form
     {
-        private int IdDocente;
+        private String IdDocente;
 
-        public FrmAprobacionInformeLista(int idDocente)
+        public FrmAprobacionInformeLista(String idDocente)
         {
             IdDocente = idDocente;
-            InitializeComponent();            
+            InitializeComponent();
+            dgvLista.AutoGenerateColumns = false;
             CargarInformes();
         }        
-
         private void btnEvaluar_Click(object sender, EventArgs e)
         {
             if(dgvLista.SelectedRows.Count == 0)
@@ -41,6 +42,7 @@ namespace ResidenciasProfesionales.VIEW
                                                                      Properties.Settings.Default.Periodo,
                                                                      IdDocente,
                                                                      false);
+
             dgvLista.DataSource = listaInformes;
         }
     }

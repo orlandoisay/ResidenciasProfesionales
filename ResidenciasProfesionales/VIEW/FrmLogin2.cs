@@ -53,7 +53,33 @@ namespace ResidenciasProfesionales.VIEW
                 UsuarioDao ud = new UsuarioDao();
                 if (ud.Existe(u))
                 {
-                    MessageBox.Show("Bien-Mientras pongo la ventan principal");
+                        switch (cbTipo.Text) {
+                        case "Asesor":
+                            this.Visible = false;
+                            FrmVistaPrincipalAsesor fvpa = new FrmVistaPrincipalAsesor(lbUsuario.Text);
+                            fvpa.Show();
+                            break;
+                        case "Revisor":
+                            this.Visible = false;
+                            FrmVistaPrincipalRevisor fvpr = new FrmVistaPrincipalRevisor(lbUsuario.Text);
+                            break;
+                        case "Alumno":
+                            this.Visible = false;
+                            FrmVistaPrincipalAlumno fvp_a = new FrmVistaPrincipalAlumno();
+                            fvp_a.Show();
+                            break;
+                        case "Academia":
+                            this.Visible = false;
+                            FrmVistaPrincipalAcademia fvpac = new FrmVistaPrincipalAcademia();
+                            fvpac.Show();
+                            break;
+                        case "Coordinador":
+                            this.Visible = false;
+                            FrmVistaPrincipalCoordinador fvpc = new FrmVistaPrincipalCoordinador();
+                            fvpc.Show();
+                            break;
+                       } 
+                    //MessageBox.Show("Bien-Mientras pongo la ventan principal");
                 }
                 else
                 {

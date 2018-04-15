@@ -10,34 +10,14 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.VIEW
 {
-    public partial class FrmVistaPrincipalAsesor : Form
+    public partial class FrmVistaPrincipalAdministrador : Form
     {
-        private String IdDocente;
-
-        public FrmVistaPrincipalAsesor(String IdDocente)
+        public FrmVistaPrincipalAdministrador()
         {
             InitializeComponent();
-            this.IdDocente = IdDocente;
             CentrarLogo();
         }
-
-        private void btnAprobacionInformes_Click(object sender, EventArgs e)
-        {
-            var frmAprobacionInformeLista = new FrmAprobacionInformeLista(IdDocente);
-            frmAprobacionInformeLista.ShowDialog();
-        }
-
-        private void btnLiberacionInformes_Click(object sender, EventArgs e)
-        {
-            var frmLiberacionInformeLista = new FrmLiberacionInformeLista(IdDocente);
-            frmLiberacionInformeLista.ShowDialog();
-        }
-
-        private void btnControlDocumentacion_Click(object sender, EventArgs e)
-        {
-            var frmControlDocumentacion = new FrmControlDocumentacion();
-            frmControlDocumentacion.ShowDialog();
-        }
+        
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -66,6 +46,17 @@ namespace ResidenciasProfesionales.VIEW
         private void FrmVistaPrincipalAsesor_Resize(object sender, EventArgs e)
         {
             CentrarLogo();
+        }
+
+        private void btnReporteResidencia_Click(object sender, EventArgs e)
+        {
+            var frmReporteResidencia = new FrmReporteResidencias();
+            frmReporteResidencia.ShowDialog();
+        }
+
+        private void FrmVistaPrincipalAdministrador_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

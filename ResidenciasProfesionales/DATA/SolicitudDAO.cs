@@ -11,7 +11,7 @@ namespace ResidenciasProfesionales.DATA
 {
     public class SolicitudDAO
     {
-        public static List<SolicitudPOJO> ObtenerTodos()
+        public List<SolicitudPOJO> ObtenerTodos()
         {
             try
             {
@@ -95,7 +95,7 @@ namespace ResidenciasProfesionales.DATA
                 var list = new List<SolicitudPOJO>();
 
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("SELECT s.id, s.idAlumno, s.idResidencia FROM solicitud s, alumno a WHERE a.matricula = s.idAlumno and a.estatus like 'Pendiente'");
+                MySqlCommand cmd = new MySqlCommand("SELECT* FROM solicitud WHERE estatus like 'Pendiente'");
 
                 DataTable dt = con.ejecutarConsulta(cmd);
 
@@ -130,6 +130,30 @@ namespace ResidenciasProfesionales.DATA
             catch (Exception ex)
             {
                 return -1;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
+        public static void Actualizar(SolicitudPOJO solicitud)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("UPDATE solicitud SET idAlumno=@P1, idResidencia=@P2, Estatus='Aceptado' " +
+                    "WHERE id=@P0");
+                cmd.Parameters.AddWithValue("@P0", solicitud.ID);
+                cmd.Parameters.AddWithValue("@P1", solicitud.IdAlumno);
+                cmd.Parameters.AddWithValue("@P2", solicitud.IdResidencia);
+
+                con.ejecutarSentencia(cmd, false);
+            }
+            catch (Exception ex)
+            {
+                return;
             }
             finally
             {
