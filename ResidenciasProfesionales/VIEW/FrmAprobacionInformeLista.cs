@@ -12,9 +12,9 @@ namespace ResidenciasProfesionales.VIEW
 {
     public partial class FrmAprobacionInformeLista : Form
     {
-        private int IdDocente;
+        private String IdDocente;
 
-        public FrmAprobacionInformeLista(int idDocente)
+        public FrmAprobacionInformeLista(String idDocente)
         {
             IdDocente = idDocente;
             InitializeComponent();            

@@ -11,14 +11,14 @@ namespace ResidenciasProfesionales.VIEW
 {
     public partial class FrmVistaPrincipalRevisor : Form
     {
-        private int IdDocente;
+        private String IdDocente;
 
         /// <summary>
         /// Crea una instancia de un formulario de vista principal para un
         /// usuario con el rol de revisor.
         /// </summary>
         /// <param name="IdDocente">El Id del revisor</param>
-        public FrmVistaPrincipalRevisor(int IdDocente)
+        public FrmVistaPrincipalRevisor(String IdDocente)
         {
             InitializeComponent();
             this.IdDocente = IdDocente;
@@ -30,18 +30,15 @@ namespace ResidenciasProfesionales.VIEW
             var frmAprobacionInformeLista = new FrmAprobacionInformeLista(IdDocente);
             frmAprobacionInformeLista.ShowDialog();
         }
-
         private void btnLiberacion_Click(object sender, EventArgs e)
         {
             var frmLiberacionInformeLista = new FrmLiberacionInformeLista(IdDocente);
             frmLiberacionInformeLista.ShowDialog();
         }
-
         private void pnlCerrarSesion_Click(object sender, EventArgs e)
         {
             CerrarSesion();
         }
-
         private void FrmVistaPrincipalRevisor_Resize(object sender, EventArgs e)
         {
             CentrarLogo();
@@ -57,7 +54,6 @@ namespace ResidenciasProfesionales.VIEW
 
             pbLogo.Location = new Point(left, top);
         }
-
         /// <summary>
         /// Cierra la sesión actual en el sistema.
         /// </summary>

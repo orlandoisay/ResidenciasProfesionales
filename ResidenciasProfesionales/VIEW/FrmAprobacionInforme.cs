@@ -13,11 +13,11 @@ namespace ResidenciasProfesionales.VIEW
 {
     public partial class FrmAprobacionInforme : Form
     {
-        private int IdDocente;
-        private string Matricula;
+        private String IdDocente;
+        private String Matricula;
         private DictamenPOJO Dictamen;
 
-        public FrmAprobacionInforme(int idDocente, string matricula)
+        public FrmAprobacionInforme(String idDocente, String matricula)
         {
             IdDocente = idDocente;
             Matricula = matricula;

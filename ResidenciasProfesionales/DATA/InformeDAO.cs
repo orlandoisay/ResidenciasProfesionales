@@ -16,7 +16,7 @@ namespace ResidenciasProfesionales.DATA
         /// <param name="periodo"></param>
         /// <param name="aprobados"></param>
         /// <returns></returns>
-        public static List<InformePOJO> ObtenerInformesPorPeriodo(int anio, string periodo, int idDocente, bool aprobados)
+        public static List<InformePOJO> ObtenerInformesPorPeriodo(int anio, string periodo, String idDocente, bool aprobados)
         {
             throw new NotImplementedException();
         }
