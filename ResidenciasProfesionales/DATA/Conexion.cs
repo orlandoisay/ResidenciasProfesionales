@@ -13,7 +13,7 @@ namespace ResidenciasProfesionales.DATA
 
         static public bool Conectar()
         {
-            String parametrosConexion = "Server=127.0.01;Database=ControlResidencias;Uid=root;Pwd=root;Port=3306;";
+            String parametrosConexion = "Server=127.0.0.1;Database=ControlResidencias;Uid=root;Pwd=root;Port=3306;";
             conexion = new MySqlConnection(parametrosConexion);
             //Intentamos conectarnos
             try
