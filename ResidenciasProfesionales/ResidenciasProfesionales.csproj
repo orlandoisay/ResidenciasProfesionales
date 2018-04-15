@@ -75,6 +75,7 @@
     <Compile Include="MODEL\ResidenciaPOJO.cs" />
     <Compile Include="MODEL\SolicitudPOJO.cs" />
     <Compile Include="MODEL\TablaAsignacionRevisor.cs" />
+    <Compile Include="MODEL\TablaSolicitudesPOJO.cs" />
     <Compile Include="MODEL\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
