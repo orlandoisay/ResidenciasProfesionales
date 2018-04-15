@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.paginaAsignarAsesor = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pestaniasAsig_Mod = new System.Windows.Forms.TabControl();
+            this.paginaAsignarAsesor = new System.Windows.Forms.TabPage();
             this.btnAsignar = new System.Windows.Forms.Button();
             this.lblAlumnoAsignar = new System.Windows.Forms.Label();
             this.btnMostrarAsignar = new System.Windows.Forms.Button();
@@ -40,40 +40,40 @@
             this.btnCambiarAsesor = new System.Windows.Forms.Button();
             this.btnMostrarModificar = new System.Windows.Forms.Button();
             this.lblAlumnoModificar = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tablaModificarAsesor = new System.Windows.Forms.DataGridView();
             this.noControlModificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreModificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asesorModificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pestaniasAsig_Mod.SuspendLayout();
             this.paginaAsignarAsesor.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaAsignarAsesor)).BeginInit();
             this.paginaModificarAsesor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaModificarAsesor)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pestaniasAsig_Mod
+            // 
+            this.pestaniasAsig_Mod.Controls.Add(this.paginaAsignarAsesor);
+            this.pestaniasAsig_Mod.Controls.Add(this.paginaModificarAsesor);
+            this.pestaniasAsig_Mod.Location = new System.Drawing.Point(12, 12);
+            this.pestaniasAsig_Mod.Name = "pestaniasAsig_Mod";
+            this.pestaniasAsig_Mod.SelectedIndex = 0;
+            this.pestaniasAsig_Mod.Size = new System.Drawing.Size(710, 432);
+            this.pestaniasAsig_Mod.TabIndex = 2;
             // 
             // paginaAsignarAsesor
             // 
-            this.paginaAsignarAsesor.Controls.Add(this.tabPage1);
-            this.paginaAsignarAsesor.Controls.Add(this.paginaModificarAsesor);
-            this.paginaAsignarAsesor.Location = new System.Drawing.Point(12, 12);
+            this.paginaAsignarAsesor.Controls.Add(this.btnAsignar);
+            this.paginaAsignarAsesor.Controls.Add(this.lblAlumnoAsignar);
+            this.paginaAsignarAsesor.Controls.Add(this.btnMostrarAsignar);
+            this.paginaAsignarAsesor.Controls.Add(this.tablaAsignarAsesor);
+            this.paginaAsignarAsesor.Location = new System.Drawing.Point(4, 22);
             this.paginaAsignarAsesor.Name = "paginaAsignarAsesor";
-            this.paginaAsignarAsesor.SelectedIndex = 0;
-            this.paginaAsignarAsesor.Size = new System.Drawing.Size(710, 432);
-            this.paginaAsignarAsesor.TabIndex = 2;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.btnAsignar);
-            this.tabPage1.Controls.Add(this.lblAlumnoAsignar);
-            this.tabPage1.Controls.Add(this.btnMostrarAsignar);
-            this.tabPage1.Controls.Add(this.tablaAsignarAsesor);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(702, 406);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Asignar asesor";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.paginaAsignarAsesor.Padding = new System.Windows.Forms.Padding(3);
+            this.paginaAsignarAsesor.Size = new System.Drawing.Size(702, 406);
+            this.paginaAsignarAsesor.TabIndex = 0;
+            this.paginaAsignarAsesor.Text = "Asignar asesor";
+            this.paginaAsignarAsesor.UseVisualStyleBackColor = true;
             // 
             // btnAsignar
             // 
@@ -117,6 +117,8 @@
             this.tablaAsignarAsesor.ReadOnly = true;
             this.tablaAsignarAsesor.Size = new System.Drawing.Size(696, 368);
             this.tablaAsignarAsesor.TabIndex = 0;
+            this.tablaAsignarAsesor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaAsignarAsesor_CellClick);
+            this.tablaAsignarAsesor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaAsignarAsesor_CellContentClick);
             // 
             // noControlAsignar
             // 
@@ -137,7 +139,7 @@
             this.paginaModificarAsesor.Controls.Add(this.btnCambiarAsesor);
             this.paginaModificarAsesor.Controls.Add(this.btnMostrarModificar);
             this.paginaModificarAsesor.Controls.Add(this.lblAlumnoModificar);
-            this.paginaModificarAsesor.Controls.Add(this.dataGridView1);
+            this.paginaModificarAsesor.Controls.Add(this.tablaModificarAsesor);
             this.paginaModificarAsesor.Location = new System.Drawing.Point(4, 22);
             this.paginaModificarAsesor.Name = "paginaModificarAsesor";
             this.paginaModificarAsesor.Padding = new System.Windows.Forms.Padding(3);
@@ -175,20 +177,21 @@
             this.lblAlumnoModificar.TabIndex = 1;
             this.lblAlumnoModificar.Text = "ALUMNO: ";
             // 
-            // dataGridView1
+            // tablaModificarAsesor
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tablaModificarAsesor.AllowUserToAddRows = false;
+            this.tablaModificarAsesor.AllowUserToDeleteRows = false;
+            this.tablaModificarAsesor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaModificarAsesor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.noControlModificar,
             this.nombreModificar,
             this.asesorModificar});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(696, 368);
-            this.dataGridView1.TabIndex = 0;
+            this.tablaModificarAsesor.Location = new System.Drawing.Point(3, 3);
+            this.tablaModificarAsesor.Name = "tablaModificarAsesor";
+            this.tablaModificarAsesor.ReadOnly = true;
+            this.tablaModificarAsesor.Size = new System.Drawing.Size(696, 368);
+            this.tablaModificarAsesor.TabIndex = 0;
+            this.tablaModificarAsesor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaModificarAsesor_CellClick);
             // 
             // noControlModificar
             // 
@@ -217,24 +220,24 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 456);
-            this.Controls.Add(this.paginaAsignarAsesor);
+            this.Controls.Add(this.pestaniasAsig_Mod);
             this.Name = "FrmAsignacionAsesor";
             this.Text = "FrmAsignarAsesor";
+            this.pestaniasAsig_Mod.ResumeLayout(false);
             this.paginaAsignarAsesor.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.paginaAsignarAsesor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaAsignarAsesor)).EndInit();
             this.paginaModificarAsesor.ResumeLayout(false);
             this.paginaModificarAsesor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaModificarAsesor)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl paginaAsignarAsesor;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl pestaniasAsig_Mod;
+        private System.Windows.Forms.TabPage paginaAsignarAsesor;
         private System.Windows.Forms.Button btnAsignar;
         private System.Windows.Forms.Label lblAlumnoAsignar;
         private System.Windows.Forms.Button btnMostrarAsignar;
@@ -245,7 +248,7 @@
         private System.Windows.Forms.Button btnCambiarAsesor;
         private System.Windows.Forms.Button btnMostrarModificar;
         private System.Windows.Forms.Label lblAlumnoModificar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tablaModificarAsesor;
         private System.Windows.Forms.DataGridViewTextBoxColumn noControlModificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreModificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn asesorModificar;

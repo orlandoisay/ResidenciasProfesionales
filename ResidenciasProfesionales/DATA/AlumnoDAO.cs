@@ -38,6 +38,62 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        public static List<AlumnoPOJO> ObtenerAlumnosSinAsesor()
+        {
+            try
+            {
+                var list = new List<AlumnoPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM alumno WHERE Matricula NOT IN " +
+                    "( SELECT IdAlumno FROM roldocente WHERE Rol = 'Asesor');");
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
+        public static List<AlumnoPOJO> ObtenerAlumnosConAsesor()
+        {
+            try
+            {
+                var list = new List<AlumnoPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT al.* FROM alumno al JOIN roldocente rol " +
+                    "WHERE al.Matricula = rol.idAlumno AND rol.Rol = 'Asesor';");
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static AlumnoPOJO ObtenerAlumno(string matricula)
         {
             try
@@ -61,6 +117,7 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
         public static void Actualizar(AlumnoPOJO alumno)
         {
             try

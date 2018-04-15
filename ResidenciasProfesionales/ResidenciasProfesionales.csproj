@@ -57,6 +57,7 @@
     <Compile Include="DATA\CarreraDAO.cs" />
     <Compile Include="DATA\Conexion.cs" />
     <Compile Include="DATA\DictamenDAO.cs" />
+    <Compile Include="DATA\DocenteDAO.cs" />
     <Compile Include="DATA\EmpresaDAO.cs" />
     <Compile Include="DATA\EntregaDAO.cs" />
     <Compile Include="DATA\InformeDAO.cs" />
