@@ -138,6 +138,30 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        public static void Actualizar(SolicitudPOJO solicitud)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("UPDATE solicitud SET idAlumno=@P1, idResidencia=@P2, Estatus='Aceptado' " +
+                    "WHERE id=@P0");
+                cmd.Parameters.AddWithValue("@P0", solicitud.ID);
+                cmd.Parameters.AddWithValue("@P1", solicitud.IdAlumno);
+                cmd.Parameters.AddWithValue("@P2", solicitud.IdResidencia);
+
+                con.ejecutarSentencia(cmd, false);
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static SolicitudPOJO DataRowAObjeto(DataRow dr)
         {
             return new SolicitudPOJO(

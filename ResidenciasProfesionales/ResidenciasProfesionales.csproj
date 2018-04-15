@@ -151,6 +151,12 @@
     <Compile Include="VIEW\FrmMostrarDatos.Designer.cs">
       <DependentUpon>FrmMostrarDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\FrmMostrarSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmMostrarSolicitud.Designer.cs">
+      <DependentUpon>FrmMostrarSolicitud.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FrmReporteResidencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmMostrarDatos.resx">
       <DependentUpon>FrmMostrarDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmMostrarSolicitud.resx">
+      <DependentUpon>FrmMostrarSolicitud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmPrueba.resx">
       <DependentUpon>FrmPrueba.cs</DependentUpon>

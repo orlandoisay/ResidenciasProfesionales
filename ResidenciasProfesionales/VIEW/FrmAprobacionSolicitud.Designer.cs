@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblSolicitud = new System.Windows.Forms.Label();
             this.dgvLista = new System.Windows.Forms.DataGridView();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnMostar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,25 +76,25 @@
             this.dgvLista.Size = new System.Drawing.Size(760, 325);
             this.dgvLista.TabIndex = 6;
             // 
-            // btnGuardar
+            // btnMostar
             // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(629, 12);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(143, 35);
-            this.btnGuardar.TabIndex = 19;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnMostar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMostar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostar.Location = new System.Drawing.Point(629, 12);
+            this.btnMostar.Name = "btnMostar";
+            this.btnMostar.Size = new System.Drawing.Size(143, 35);
+            this.btnMostar.TabIndex = 19;
+            this.btnMostar.Text = "Mostrar";
+            this.btnMostar.UseVisualStyleBackColor = true;
+            this.btnMostar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmAprobacionSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 411);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnMostar);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.lblSolicitud);
             this.Name = "FrmAprobacionSolicitud";
@@ -109,6 +109,6 @@
 
         private System.Windows.Forms.Label lblSolicitud;
         private System.Windows.Forms.DataGridView dgvLista;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnMostar;
     }
 }

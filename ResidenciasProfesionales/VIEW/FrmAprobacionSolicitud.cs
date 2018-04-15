@@ -21,10 +21,13 @@ namespace ResidenciasProfesionales.VIEW
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-           
+            FrmMostrarSolicitud frmMostrar = 
+                new FrmMostrarSolicitud(SolicitudDAO.ObtenerSolicitud(dgvLista.CurrentRow.Cells[0].Value.ToString()));
+            frmMostrar.FormClosed += new FormClosedEventHandler(cargarDatos);
+            frmMostrar.Show();
         }
 
-        private void cargarDatos() {
+       private void cargarDatos() {
             List <SolicitudPOJO> solicitudes = SolicitudDAO.ObtenerSolicitudesPendientes();
             List <TablaSolicitudes> listaTabla = new List<TablaSolicitudes>();
             for (int i = 0; i < solicitudes.Count; i++) {
@@ -32,6 +35,22 @@ namespace ResidenciasProfesionales.VIEW
                 ResidenciaPOJO objResidencia = ResidenciaDAO.ObtenerResidencia(solicitudes[i].IdResidencia);
                 EmpresaPOJO objEmpresa = EmpresaDAO.ObtenerEmpresa(objResidencia.IdEmpresa);
                 listaTabla.Add(new TablaSolicitudes(objAlum.Matricula,objAlum.NombreCompleto,objAlum.Semestre,objResidencia.NombreProyec,
+                    objResidencia.Modalidad, objResidencia.Periodo, objEmpresa.Nombre));
+            }
+            dgvLista.DataSource = null;
+            dgvLista.DataSource = listaTabla;
+        }
+
+        private void cargarDatos(object sender, FormClosedEventArgs e)
+        {
+            List<SolicitudPOJO> solicitudes = SolicitudDAO.ObtenerSolicitudesPendientes();
+            List<TablaSolicitudes> listaTabla = new List<TablaSolicitudes>();
+            for (int i = 0; i < solicitudes.Count; i++)
+            {
+                AlumnoPOJO objAlum = AlumnoDAO.ObtenerAlumno(solicitudes[i].IdAlumno);
+                ResidenciaPOJO objResidencia = ResidenciaDAO.ObtenerResidencia(solicitudes[i].IdResidencia);
+                EmpresaPOJO objEmpresa = EmpresaDAO.ObtenerEmpresa(objResidencia.IdEmpresa);
+                listaTabla.Add(new TablaSolicitudes(objAlum.Matricula, objAlum.NombreCompleto, objAlum.Semestre, objResidencia.NombreProyec,
                     objResidencia.Modalidad, objResidencia.Periodo, objEmpresa.Nombre));
             }
             dgvLista.DataSource = null;
