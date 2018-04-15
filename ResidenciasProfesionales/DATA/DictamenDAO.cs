@@ -38,6 +38,87 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        public static DictamenPOJO ObtenerDictamenAsesor(int idResidencia)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM dictamen WHERE IdResidencia = @P0 and tipo like 'LiberacionAsesor'");
+                cmd.Parameters.AddWithValue("@P0", idResidencia);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                if (dt.Rows.Count != 1)
+                    return null;
+
+                return DataRowAObjeto(dt.Rows[0]);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
+        public static List<DictamenPOJO> ObtenerDictamenesAsesores(int idResidencia)
+        {
+            try
+            {
+                var list = new List<DictamenPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM dictamen WHERE IdResidencia = @P0 and tipo like 'LiberacionRevisor'");
+                cmd.Parameters.AddWithValue("@P0", idResidencia);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
+        public static List<DictamenPOJO> ObtenerProyectosTerminados()
+        {
+            try
+            {
+                var list = new List<DictamenPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM dictamen where tipo like 'LiberacionFinal'");
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         // Ingresa la calificación final al dictamen.
         public static void agregarCalificacionFinal(int idResidencia, float calificacion)
         {
