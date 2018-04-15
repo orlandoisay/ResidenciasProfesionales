@@ -85,7 +85,7 @@ create table dictamen(
 	ID				int				auto_increment	primary key,
     IdResidencia	int				not null,
     IdDocente		char(9)			not null,
-    Tipo			enum('LiberacionAsesor','LiberacionFinal','LiberacionRevisor'),
+    Tipo			enum('LiberacionAsesor','LiberacionFinal','LiberacionRevisor','AprobacionAsesor','AprobacionRevisor'),
     Estatus			enum('Aceptado','Rechazado')	null,
     Comentario		text(150)		null,
     Calificacion	int				null,
@@ -159,7 +159,12 @@ insert into infoResidencia values
 
 insert into dictamen values
 (null,1,'S18790740','LiberacionAsesor','Aceptado','Revisar la introducción',null,'2016-03-11'),
+(null,1,'S67150249','LiberacionRevisor','Aceptado','Revisar la ortografía',null,'2016-03-11'),
+(null,1,'I87012394','LiberacionRevisor','Aceptado','Bien ejecutado',null,'2016-03-12'),
 (null,3,'D18741973','LiberacionRevisor','Rechazado','El proyecto no cumple con los aspectos necesarios',null,'2016-10-01'),
+(null,2,'I87012394','LiberacionAsesor','Aceptado','Lorem ipsum dolor sit amet',null,'2017-04-30'),
+(null,2,'I19823741','LiberacionRevisor','Aceptado',null,null,'2017-05-01'),
+(null,2,'D91361288','LiberacionRevisor','Rechazado','Lorem ipsum',null,'2017-05-02'),
 (null,2,'I87012394','LiberacionFinal','Aceptado',null,87,'2017-05-22');
 
 insert into documento values
