@@ -118,7 +118,9 @@
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.panel1);
             this.Name = "FrmVistaPrincipalAdministrador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmVentanaPrincipalAdministrador";
+            this.Load += new System.EventHandler(this.FrmVistaPrincipalAdministrador_Load);
             this.Resize += new System.EventHandler(this.FrmVistaPrincipalAsesor_Resize);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -104,13 +104,15 @@ namespace ResidenciasProfesionales.VIEW
 
         private void FrmAsignacionRevisores_Load(object sender, EventArgs e)
         {
+            actualizarDgvTabla();
+        }
+
+        public void actualizarDgvTabla() {
             AsignacionRevisorDAO ard = new AsignacionRevisorDAO();
             dgvTabla.DataSource = null;
             lista = ard.extraerList();
             dgvTabla.DataSource = lista;
         }
-
-       
 
         private void dgvTabla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -139,6 +141,34 @@ namespace ResidenciasProfesionales.VIEW
         private void btnAsignarContinuar_Click(object sender, EventArgs e)
         {
             insertarRevisores();
+            siguiente();
+        }
+
+        public void siguiente() {
+            //dgvTabla.Rows[indice].Cells[3].Value.ToString()
+            actualizarDgvTabla();
+            bool entrar = false;
+            for (int i = 0; i < dgvTabla.RowCount; i++) {
+                if (dgvTabla.Rows[i].Cells[3].Value.ToString() == "") {
+                    entrar = true;
+                    indice = i;
+                    llenarDatos();
+                    indice = -1;
+                    listRevisores = new RevisorDAO().ObtenerTodos();
+                    dgvTablaCarga.DataSource = null;
+                    dgvTablaCarga.DataSource = listRevisores;
+                }
+            }
+            if (!entrar)
+            {
+                RevisorDAO.InsertarRevisor(NoControl, d1.ID, d2.ID);
+                MessageBox.Show("No hay más alumnos sin revisores.",
+               "Aviso",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information,
+               MessageBoxDefaultButton.Button1);
+                regresar();
+            }
         }
 
         public void insertarRevisores() {
@@ -179,6 +209,11 @@ namespace ResidenciasProfesionales.VIEW
         {
             insertarRevisores();
             regresar();
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
