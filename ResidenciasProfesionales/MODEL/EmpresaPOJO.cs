@@ -10,6 +10,7 @@ namespace ResidenciasProfesionales.MODEL
     {
         public String RFC { get; set; }
         public String Nombre { get; set; }
+        public String Giro { get; set; }
         public String Sector { get; set; }
         public String Domicilio { get; set; }
         public String Colonia { get; set; }
@@ -23,10 +24,11 @@ namespace ResidenciasProfesionales.MODEL
 
         public EmpresaPOJO() { }
 
-        public EmpresaPOJO(String rfc, String nombre, String sector, String domicilio, String colonia, String ciudad,
+        public EmpresaPOJO(String rfc, String nombre, String giro, String sector, String domicilio, String colonia, String ciudad,
             String cp, String telefono, String fax, String mision, String titular, String puestoTit) {
             RFC = rfc;
             Nombre = nombre;
+            Giro = giro;
             Sector = sector;
             Domicilio = domicilio;
             Colonia = colonia;

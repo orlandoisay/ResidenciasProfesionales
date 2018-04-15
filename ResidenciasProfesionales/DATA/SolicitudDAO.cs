@@ -11,7 +11,7 @@ namespace ResidenciasProfesionales.DATA
 {
     public class SolicitudDAO
     {
-        public static List<SolicitudPOJO> ObtenerTodos()
+        public List<SolicitudPOJO> ObtenerTodos()
         {
             try
             {
@@ -62,13 +62,13 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
-        public static SolicitudPOJO ObtenerSolicitud(string matricula)
+        public static SolicitudPOJO ObtenerSolicitud(string idAlumno)
         {
             try
             {
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM solicitud WHERE matricula = @P0");
-                cmd.Parameters.AddWithValue("@P0", matricula);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM solicitud WHERE idAlumno = @P0");
+                cmd.Parameters.AddWithValue("@P0", idAlumno);
 
                 DataTable dt = con.ejecutarConsulta(cmd);
 
@@ -95,7 +95,7 @@ namespace ResidenciasProfesionales.DATA
                 var list = new List<SolicitudPOJO>();
 
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("SELECT s.id, s.idAlumno, s.idResidencia FROM solicitud s, alumno a WHERE a.matricula = s.idAlumno and a.estatus like 'Pendiente'");
+                MySqlCommand cmd = new MySqlCommand("SELECT* FROM solicitud WHERE estatus like 'Pendiente'");
 
                 DataTable dt = con.ejecutarConsulta(cmd);
 
@@ -117,14 +117,13 @@ namespace ResidenciasProfesionales.DATA
 
         public static int InsertarSolicitud(SolicitudPOJO solicitud)
         {
-            //TODO: Revisar el cambio en la base de datos de la tabla solicitud
-
             try
             {
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO solicitud VALUES(null,@P1,@P2); SELECT last_insert_id();");
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO solicitud VALUES(null,@P1,@P2,@P3); SELECT last_insert_id();");
                 cmd.Parameters.AddWithValue("@P1", solicitud.IdAlumno);
                 cmd.Parameters.AddWithValue("@P2", solicitud.IdResidencia);
+                cmd.Parameters.AddWithValue("@P3", solicitud.Estatus);
 
                 return con.ejecutarSentencia(cmd, true);
             }
@@ -144,7 +143,8 @@ namespace ResidenciasProfesionales.DATA
             return new SolicitudPOJO(
                 int.Parse(dr["id"].ToString()),
                 dr["idAlumno"].ToString(),
-                int.Parse(dr["idResidencia"].ToString())
+                int.Parse(dr["idResidencia"].ToString()),
+                dr["Estatus"].ToString()
             );
         }
     }

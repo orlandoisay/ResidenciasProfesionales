@@ -52,6 +52,7 @@
             this.lblResCarrera = new System.Windows.Forms.Label();
             this.lblResNombre = new System.Windows.Forms.Label();
             this.tbpProyecto = new System.Windows.Forms.TabPage();
+            this.cmbProPeriodo = new System.Windows.Forms.ComboBox();
             this.rbtnProTipoTrabajador = new System.Windows.Forms.RadioButton();
             this.rbtnProTipoPropia = new System.Windows.Forms.RadioButton();
             this.rbtnProTipoBanco = new System.Windows.Forms.RadioButton();
@@ -60,6 +61,9 @@
             this.lblProTipo = new System.Windows.Forms.Label();
             this.lblProNombre = new System.Windows.Forms.Label();
             this.tbpEmpresa = new System.Windows.Forms.TabPage();
+            this.pnlSector = new System.Windows.Forms.Panel();
+            this.rbtnEmpTipoPublica = new System.Windows.Forms.RadioButton();
+            this.rbtnEmpTipoPrivada = new System.Windows.Forms.RadioButton();
             this.txtEmpFirmaPuesto = new System.Windows.Forms.TextBox();
             this.lblEmpFirmaPuesto = new System.Windows.Forms.Label();
             this.lblEmpFirma = new System.Windows.Forms.Label();
@@ -74,9 +78,7 @@
             this.lblEmpTitularPuesto = new System.Windows.Forms.Label();
             this.lblEmpTitular = new System.Windows.Forms.Label();
             this.rbtnEmpGiroOtro = new System.Windows.Forms.RadioButton();
-            this.rbtnEmpTipoPrivada = new System.Windows.Forms.RadioButton();
             this.rbtnEmpGiroServicios = new System.Windows.Forms.RadioButton();
-            this.rbtnEmpTipoPublica = new System.Windows.Forms.RadioButton();
             this.txtEmpFax = new System.Windows.Forms.TextBox();
             this.lblEmpFax = new System.Windows.Forms.Label();
             this.txtEmpCP = new System.Windows.Forms.TextBox();
@@ -101,11 +103,11 @@
             this.lblEmpNombre = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.cmbProPeriodo = new System.Windows.Forms.ComboBox();
             this.tabPrincipal.SuspendLayout();
             this.tbpResidente.SuspendLayout();
             this.tbpProyecto.SuspendLayout();
             this.tbpEmpresa.SuspendLayout();
+            this.pnlSector.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSolicitud
@@ -206,7 +208,7 @@
             // txtResDomicilio
             // 
             this.txtResDomicilio.Location = new System.Drawing.Point(134, 125);
-            this.txtResDomicilio.MaxLength = 50;
+            this.txtResDomicilio.MaxLength = 150;
             this.txtResDomicilio.Name = "txtResDomicilio";
             this.txtResDomicilio.Size = new System.Drawing.Size(263, 25);
             this.txtResDomicilio.TabIndex = 14;
@@ -368,6 +370,19 @@
             this.tbpProyecto.Text = "Datos del proyecto";
             this.tbpProyecto.UseVisualStyleBackColor = true;
             // 
+            // cmbProPeriodo
+            // 
+            this.cmbProPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbProPeriodo.FormattingEnabled = true;
+            this.cmbProPeriodo.Items.AddRange(new object[] {
+            "ENE-JUN",
+            "AGO-DIC"});
+            this.cmbProPeriodo.Location = new System.Drawing.Point(170, 143);
+            this.cmbProPeriodo.Name = "cmbProPeriodo";
+            this.cmbProPeriodo.Size = new System.Drawing.Size(179, 25);
+            this.cmbProPeriodo.TabIndex = 12;
+            // 
             // rbtnProTipoTrabajador
             // 
             this.rbtnProTipoTrabajador.AutoSize = true;
@@ -439,6 +454,7 @@
             // tbpEmpresa
             // 
             this.tbpEmpresa.AutoScroll = true;
+            this.tbpEmpresa.Controls.Add(this.pnlSector);
             this.tbpEmpresa.Controls.Add(this.txtEmpFirmaPuesto);
             this.tbpEmpresa.Controls.Add(this.lblEmpFirmaPuesto);
             this.tbpEmpresa.Controls.Add(this.lblEmpFirma);
@@ -453,9 +469,7 @@
             this.tbpEmpresa.Controls.Add(this.lblEmpTitularPuesto);
             this.tbpEmpresa.Controls.Add(this.lblEmpTitular);
             this.tbpEmpresa.Controls.Add(this.rbtnEmpGiroOtro);
-            this.tbpEmpresa.Controls.Add(this.rbtnEmpTipoPrivada);
             this.tbpEmpresa.Controls.Add(this.rbtnEmpGiroServicios);
-            this.tbpEmpresa.Controls.Add(this.rbtnEmpTipoPublica);
             this.tbpEmpresa.Controls.Add(this.txtEmpFax);
             this.tbpEmpresa.Controls.Add(this.lblEmpFax);
             this.tbpEmpresa.Controls.Add(this.txtEmpCP);
@@ -486,12 +500,44 @@
             this.tbpEmpresa.Text = "Datos de la empresa";
             this.tbpEmpresa.UseVisualStyleBackColor = true;
             // 
+            // pnlSector
+            // 
+            this.pnlSector.Controls.Add(this.rbtnEmpTipoPublica);
+            this.pnlSector.Controls.Add(this.rbtnEmpTipoPrivada);
+            this.pnlSector.Location = new System.Drawing.Point(110, 100);
+            this.pnlSector.Name = "pnlSector";
+            this.pnlSector.Size = new System.Drawing.Size(157, 27);
+            this.pnlSector.TabIndex = 61;
+            // 
+            // rbtnEmpTipoPublica
+            // 
+            this.rbtnEmpTipoPublica.AutoSize = true;
+            this.rbtnEmpTipoPublica.Location = new System.Drawing.Point(3, 3);
+            this.rbtnEmpTipoPublica.Name = "rbtnEmpTipoPublica";
+            this.rbtnEmpTipoPublica.Size = new System.Drawing.Size(69, 23);
+            this.rbtnEmpTipoPublica.TabIndex = 6;
+            this.rbtnEmpTipoPublica.TabStop = true;
+            this.rbtnEmpTipoPublica.Text = "Pública";
+            this.rbtnEmpTipoPublica.UseVisualStyleBackColor = true;
+            // 
+            // rbtnEmpTipoPrivada
+            // 
+            this.rbtnEmpTipoPrivada.AutoSize = true;
+            this.rbtnEmpTipoPrivada.Location = new System.Drawing.Point(78, 3);
+            this.rbtnEmpTipoPrivada.Name = "rbtnEmpTipoPrivada";
+            this.rbtnEmpTipoPrivada.Size = new System.Drawing.Size(71, 23);
+            this.rbtnEmpTipoPrivada.TabIndex = 7;
+            this.rbtnEmpTipoPrivada.TabStop = true;
+            this.rbtnEmpTipoPrivada.Text = "Privada";
+            this.rbtnEmpTipoPrivada.UseVisualStyleBackColor = true;
+            // 
             // txtEmpFirmaPuesto
             // 
             this.txtEmpFirmaPuesto.Location = new System.Drawing.Point(367, 459);
+            this.txtEmpFirmaPuesto.MaxLength = 30;
             this.txtEmpFirmaPuesto.Name = "txtEmpFirmaPuesto";
             this.txtEmpFirmaPuesto.Size = new System.Drawing.Size(159, 25);
-            this.txtEmpFirmaPuesto.TabIndex = 60;
+            this.txtEmpFirmaPuesto.TabIndex = 20;
             // 
             // lblEmpFirmaPuesto
             // 
@@ -515,9 +561,10 @@
             // txtEmpFirmaNombre
             // 
             this.txtEmpFirmaNombre.Location = new System.Drawing.Point(113, 459);
+            this.txtEmpFirmaNombre.MaxLength = 80;
             this.txtEmpFirmaNombre.Name = "txtEmpFirmaNombre";
             this.txtEmpFirmaNombre.Size = new System.Drawing.Size(191, 25);
-            this.txtEmpFirmaNombre.TabIndex = 57;
+            this.txtEmpFirmaNombre.TabIndex = 19;
             // 
             // lblEmpFirmaNombre
             // 
@@ -531,9 +578,10 @@
             // txtEmpAsesorPuesto
             // 
             this.txtEmpAsesorPuesto.Location = new System.Drawing.Point(367, 404);
+            this.txtEmpAsesorPuesto.MaxLength = 30;
             this.txtEmpAsesorPuesto.Name = "txtEmpAsesorPuesto";
             this.txtEmpAsesorPuesto.Size = new System.Drawing.Size(159, 25);
-            this.txtEmpAsesorPuesto.TabIndex = 55;
+            this.txtEmpAsesorPuesto.TabIndex = 18;
             // 
             // lblEmpAsesorPuesto
             // 
@@ -557,9 +605,10 @@
             // txtEmpAsesorNombre
             // 
             this.txtEmpAsesorNombre.Location = new System.Drawing.Point(113, 404);
+            this.txtEmpAsesorNombre.MaxLength = 80;
             this.txtEmpAsesorNombre.Name = "txtEmpAsesorNombre";
             this.txtEmpAsesorNombre.Size = new System.Drawing.Size(191, 25);
-            this.txtEmpAsesorNombre.TabIndex = 52;
+            this.txtEmpAsesorNombre.TabIndex = 17;
             // 
             // lblEmpAsesorNombre
             // 
@@ -573,9 +622,10 @@
             // txtEmpTitularPuesto
             // 
             this.txtEmpTitularPuesto.Location = new System.Drawing.Point(367, 349);
+            this.txtEmpTitularPuesto.MaxLength = 50;
             this.txtEmpTitularPuesto.Name = "txtEmpTitularPuesto";
             this.txtEmpTitularPuesto.Size = new System.Drawing.Size(159, 25);
-            this.txtEmpTitularPuesto.TabIndex = 50;
+            this.txtEmpTitularPuesto.TabIndex = 16;
             // 
             // lblEmpTitularPuesto
             // 
@@ -602,21 +652,10 @@
             this.rbtnEmpGiroOtro.Location = new System.Drawing.Point(276, 76);
             this.rbtnEmpGiroOtro.Name = "rbtnEmpGiroOtro";
             this.rbtnEmpGiroOtro.Size = new System.Drawing.Size(55, 23);
-            this.rbtnEmpGiroOtro.TabIndex = 47;
+            this.rbtnEmpGiroOtro.TabIndex = 5;
             this.rbtnEmpGiroOtro.TabStop = true;
             this.rbtnEmpGiroOtro.Text = "Otro";
             this.rbtnEmpGiroOtro.UseVisualStyleBackColor = true;
-            // 
-            // rbtnEmpTipoPrivada
-            // 
-            this.rbtnEmpTipoPrivada.AutoSize = true;
-            this.rbtnEmpTipoPrivada.Location = new System.Drawing.Point(193, 101);
-            this.rbtnEmpTipoPrivada.Name = "rbtnEmpTipoPrivada";
-            this.rbtnEmpTipoPrivada.Size = new System.Drawing.Size(71, 23);
-            this.rbtnEmpTipoPrivada.TabIndex = 46;
-            this.rbtnEmpTipoPrivada.TabStop = true;
-            this.rbtnEmpTipoPrivada.Text = "Privada";
-            this.rbtnEmpTipoPrivada.UseVisualStyleBackColor = true;
             // 
             // rbtnEmpGiroServicios
             // 
@@ -624,28 +663,18 @@
             this.rbtnEmpGiroServicios.Location = new System.Drawing.Point(193, 76);
             this.rbtnEmpGiroServicios.Name = "rbtnEmpGiroServicios";
             this.rbtnEmpGiroServicios.Size = new System.Drawing.Size(77, 23);
-            this.rbtnEmpGiroServicios.TabIndex = 45;
+            this.rbtnEmpGiroServicios.TabIndex = 4;
             this.rbtnEmpGiroServicios.TabStop = true;
             this.rbtnEmpGiroServicios.Text = "Servicios";
             this.rbtnEmpGiroServicios.UseVisualStyleBackColor = true;
             // 
-            // rbtnEmpTipoPublica
-            // 
-            this.rbtnEmpTipoPublica.AutoSize = true;
-            this.rbtnEmpTipoPublica.Location = new System.Drawing.Point(113, 101);
-            this.rbtnEmpTipoPublica.Name = "rbtnEmpTipoPublica";
-            this.rbtnEmpTipoPublica.Size = new System.Drawing.Size(69, 23);
-            this.rbtnEmpTipoPublica.TabIndex = 44;
-            this.rbtnEmpTipoPublica.TabStop = true;
-            this.rbtnEmpTipoPublica.Text = "Pública";
-            this.rbtnEmpTipoPublica.UseVisualStyleBackColor = true;
-            // 
             // txtEmpFax
             // 
             this.txtEmpFax.Location = new System.Drawing.Point(406, 164);
+            this.txtEmpFax.MaxLength = 12;
             this.txtEmpFax.Name = "txtEmpFax";
             this.txtEmpFax.Size = new System.Drawing.Size(120, 25);
-            this.txtEmpFax.TabIndex = 43;
+            this.txtEmpFax.TabIndex = 11;
             // 
             // lblEmpFax
             // 
@@ -659,9 +688,10 @@
             // txtEmpCP
             // 
             this.txtEmpCP.Location = new System.Drawing.Point(286, 164);
+            this.txtEmpCP.MaxLength = 5;
             this.txtEmpCP.Name = "txtEmpCP";
             this.txtEmpCP.Size = new System.Drawing.Size(75, 25);
-            this.txtEmpCP.TabIndex = 41;
+            this.txtEmpCP.TabIndex = 10;
             // 
             // lblEmpCP
             // 
@@ -675,9 +705,10 @@
             // txtEmpColonia
             // 
             this.txtEmpColonia.Location = new System.Drawing.Point(113, 164);
+            this.txtEmpColonia.MaxLength = 30;
             this.txtEmpColonia.Name = "txtEmpColonia";
             this.txtEmpColonia.Size = new System.Drawing.Size(126, 25);
-            this.txtEmpColonia.TabIndex = 39;
+            this.txtEmpColonia.TabIndex = 9;
             // 
             // lblEmpColonia
             // 
@@ -691,10 +722,11 @@
             // txtEmpMision
             // 
             this.txtEmpMision.Location = new System.Drawing.Point(113, 245);
+            this.txtEmpMision.MaxLength = 50;
             this.txtEmpMision.Multiline = true;
             this.txtEmpMision.Name = "txtEmpMision";
             this.txtEmpMision.Size = new System.Drawing.Size(413, 68);
-            this.txtEmpMision.TabIndex = 37;
+            this.txtEmpMision.TabIndex = 14;
             // 
             // lblEmpMision
             // 
@@ -708,30 +740,34 @@
             // txtEmpTelefono
             // 
             this.txtEmpTelefono.Location = new System.Drawing.Point(406, 198);
+            this.txtEmpTelefono.MaxLength = 10;
             this.txtEmpTelefono.Name = "txtEmpTelefono";
             this.txtEmpTelefono.Size = new System.Drawing.Size(120, 25);
-            this.txtEmpTelefono.TabIndex = 35;
+            this.txtEmpTelefono.TabIndex = 13;
             // 
             // txtEmpTitularNombre
             // 
             this.txtEmpTitularNombre.Location = new System.Drawing.Point(113, 349);
+            this.txtEmpTitularNombre.MaxLength = 80;
             this.txtEmpTitularNombre.Name = "txtEmpTitularNombre";
             this.txtEmpTitularNombre.Size = new System.Drawing.Size(191, 25);
-            this.txtEmpTitularNombre.TabIndex = 34;
+            this.txtEmpTitularNombre.TabIndex = 15;
             // 
             // txtEmpCiudad
             // 
             this.txtEmpCiudad.Location = new System.Drawing.Point(113, 198);
+            this.txtEmpCiudad.MaxLength = 50;
             this.txtEmpCiudad.Name = "txtEmpCiudad";
             this.txtEmpCiudad.Size = new System.Drawing.Size(218, 25);
-            this.txtEmpCiudad.TabIndex = 33;
+            this.txtEmpCiudad.TabIndex = 12;
             // 
             // txtEmpDomicilio
             // 
             this.txtEmpDomicilio.Location = new System.Drawing.Point(113, 133);
+            this.txtEmpDomicilio.MaxLength = 50;
             this.txtEmpDomicilio.Name = "txtEmpDomicilio";
             this.txtEmpDomicilio.Size = new System.Drawing.Size(413, 25);
-            this.txtEmpDomicilio.TabIndex = 32;
+            this.txtEmpDomicilio.TabIndex = 8;
             // 
             // rbtnEmpGiroIndustrial
             // 
@@ -739,7 +775,7 @@
             this.rbtnEmpGiroIndustrial.Location = new System.Drawing.Point(113, 76);
             this.rbtnEmpGiroIndustrial.Name = "rbtnEmpGiroIndustrial";
             this.rbtnEmpGiroIndustrial.Size = new System.Drawing.Size(79, 23);
-            this.rbtnEmpGiroIndustrial.TabIndex = 31;
+            this.rbtnEmpGiroIndustrial.TabIndex = 3;
             this.rbtnEmpGiroIndustrial.TabStop = true;
             this.rbtnEmpGiroIndustrial.Text = "Industrial";
             this.rbtnEmpGiroIndustrial.UseVisualStyleBackColor = true;
@@ -747,16 +783,18 @@
             // txtEmpNombre
             // 
             this.txtEmpNombre.Location = new System.Drawing.Point(113, 42);
+            this.txtEmpNombre.MaxLength = 50;
             this.txtEmpNombre.Name = "txtEmpNombre";
             this.txtEmpNombre.Size = new System.Drawing.Size(287, 25);
-            this.txtEmpNombre.TabIndex = 29;
+            this.txtEmpNombre.TabIndex = 2;
             // 
             // txtEmpRFC
             // 
             this.txtEmpRFC.Location = new System.Drawing.Point(113, 11);
+            this.txtEmpRFC.MaxLength = 13;
             this.txtEmpRFC.Name = "txtEmpRFC";
             this.txtEmpRFC.Size = new System.Drawing.Size(147, 25);
-            this.txtEmpRFC.TabIndex = 28;
+            this.txtEmpRFC.TabIndex = 1;
             // 
             // lblEmpCiudad
             // 
@@ -845,19 +883,6 @@
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // cmbProPeriodo
-            // 
-            this.cmbProPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbProPeriodo.FormattingEnabled = true;
-            this.cmbProPeriodo.Items.AddRange(new object[] {
-            "ENE-JUN",
-            "AGO-DIC"});
-            this.cmbProPeriodo.Location = new System.Drawing.Point(170, 143);
-            this.cmbProPeriodo.Name = "cmbProPeriodo";
-            this.cmbProPeriodo.Size = new System.Drawing.Size(179, 25);
-            this.cmbProPeriodo.TabIndex = 12;
-            // 
             // FrmSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -879,6 +904,8 @@
             this.tbpProyecto.PerformLayout();
             this.tbpEmpresa.ResumeLayout(false);
             this.tbpEmpresa.PerformLayout();
+            this.pnlSector.ResumeLayout(false);
+            this.pnlSector.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -960,5 +987,6 @@
         private System.Windows.Forms.Label lblEmpTitularPuesto;
         private System.Windows.Forms.Label lblEmpTitular;
         private System.Windows.Forms.ComboBox cmbProPeriodo;
+        private System.Windows.Forms.Panel pnlSector;
     }
 }

@@ -11,13 +11,15 @@ namespace ResidenciasProfesionales.MODEL
         public int ID { get; set; }
         public String IdAlumno { get; set; }
         public int IdResidencia { get; set; }
+        public String Estatus { get; set; }
 
         public SolicitudPOJO() { }
 
-        public SolicitudPOJO(int id, String idAlumno,int idResidencia) {
+        public SolicitudPOJO(int id, String idAlumno,int idResidencia, String estatus) {
             ID = id;
             IdAlumno = idAlumno;
-            IdResidencia = IdResidencia;
+            IdResidencia = idResidencia;
+            Estatus = estatus;
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.VIEW
@@ -14,6 +15,7 @@ namespace ResidenciasProfesionales.VIEW
     public partial class FrmSolicitud : Form
     {
         private bool esEdicion = false;
+        private AlumnoPOJO alumno;
 
         public FrmSolicitud(string matricula)
         {
@@ -22,7 +24,7 @@ namespace ResidenciasProfesionales.VIEW
             cmbResCarrera.DisplayMember = "Nombre";
             cmbResCarrera.ValueMember = "ID";
 
-            var alumno = AlumnoDAO.ObtenerAlumno(matricula);
+            alumno = AlumnoDAO.ObtenerAlumno(matricula);
             var solicitud = SolicitudDAO.ObtenerSolicitud(matricula);
 
             CargarDatosAlumno(alumno);
@@ -32,16 +34,16 @@ namespace ResidenciasProfesionales.VIEW
                 CargarDatosSolicitud(solicitud);
                 esEdicion = true;
             }
-        }     
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!ValidarDatos())
                 return;
 
             if (esEdicion)
-                GuardarDatos();
-            else
                 ModificarDatos();
+            else
+                GuardarDatos();
         }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
@@ -75,6 +77,9 @@ namespace ResidenciasProfesionales.VIEW
         }
         private void CargarDatosSolicitud(SolicitudPOJO solicitud)
         {
+            if (solicitud.Estatus == "Aceptado")
+                btnGuardar.Enabled = false;
+
             var residencia = ResidenciaDAO.ObtenerResidencia(solicitud.IdResidencia);
             var empresa = EmpresaDAO.ObtenerEmpresa(residencia.IdEmpresa);
 
@@ -102,7 +107,7 @@ namespace ResidenciasProfesionales.VIEW
             txtEmpRFC.Text = empresa.RFC;
             txtEmpNombre.Text = empresa.Nombre;
 
-            switch (empresa.Sector)
+            switch (empresa.Giro)
             {
                 case "Industrial":
                     rbtnEmpGiroIndustrial.Checked = true;
@@ -112,6 +117,16 @@ namespace ResidenciasProfesionales.VIEW
                     break;
                 case "Otro":
                     rbtnEmpGiroOtro.Checked = true;
+                    break;
+            }
+
+            switch (empresa.Sector)
+            {
+                case "Publico":
+                    rbtnEmpTipoPublica.Checked = true;
+                    break;
+                case "Privado":
+                    rbtnEmpTipoPrivada.Checked = true;
                     break;
             }
 
@@ -129,33 +144,195 @@ namespace ResidenciasProfesionales.VIEW
             txtEmpAsesorPuesto.Text = residencia.PuestoAsesor;
             txtEmpFirmaNombre.Text = residencia.Responsable;
             txtEmpFirmaPuesto.Text = residencia.PuestoResp;
-
-
         }
         private bool ValidarDatos()
         {
-            //TODO: Implementar validaciones
+            bool datosValidados = true;
+            String mensajeError = "Es necesario corregir los siguientes campos:\n";
+
+            // Validaciones de empresa
+
+            if (!(new Regex("[A-Z0-9]{13}").IsMatch(txtEmpRFC.Text)))
+            {
+                datosValidados = false;
+                mensajeError += " - R.F.C. de la empresa\n";
+            }
+
+            if (txtEmpNombre.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Nombre de la empresa\n";
+            }
+
+            if (!rbtnEmpGiroIndustrial.Checked &&
+                !rbtnEmpGiroServicios.Checked &&
+                !rbtnEmpGiroOtro.Checked)
+            {
+                datosValidados = false;
+                mensajeError += " - Giro de la empresa\n";
+            }
+
+            if (!rbtnEmpTipoPublica.Checked &&
+                !rbtnEmpTipoPrivada.Checked)
+            {
+                datosValidados = false;
+                mensajeError += " - Secto de la empresa\n";
+            }
+
+            if (txtEmpDomicilio.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Domicilio de la empresa\n";
+            }
+
+            if (txtEmpColonia.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Colonia de la empresa\n";
+            }
+
+            if (!(new Regex("[0-9]{5}").IsMatch(txtEmpCP.Text)))
+            {
+                datosValidados = false;
+                mensajeError += " - Código Postal de la empresa\n";
+            }
+
+
+            if (txtEmpCiudad.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Ciudad de la empresa\n";
+            }
+
+            if (!(new Regex("[0-9]{10}").IsMatch(txtEmpTelefono.Text)))
+            {
+                datosValidados = false;
+                mensajeError += " - Teléfono de la empresa\n";
+            }
+
+            if (txtEmpMision.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Misión de la empresa\n";
+            }
+
+            if (txtEmpTitularNombre.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Nombre del titular de la empresa\n";
+            }
+
+            if (txtEmpTitularPuesto.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Puesto del titular de la empresa\n";
+            }
+
+            if (txtEmpAsesorNombre.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Nombre del asesor externo de la empresa\n";
+            }
+
+            if (txtEmpAsesorPuesto.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Puesto del asesor externo de la empresa\n";
+            }
+
+            if (txtEmpFirmaNombre.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Nombre de la persona que firmará por la empresa\n";
+            }
+
+            if (txtEmpFirmaPuesto.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Puesto de la persona que firmará por la empresa\n";
+            }
+
+            // Validaciones de proyecto
+            if (txtProNombre.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Nombre del proyecto\n";
+            }
+
+            if (!rbtnProTipoBanco.Checked &&
+                !rbtnProTipoPropia.Checked &&
+                !rbtnProTipoTrabajador.Checked)
+            {
+                datosValidados = false;
+                mensajeError += " - Tipo de proyecto\n";
+            }
+
+            if (cmbProPeriodo.SelectedIndex == -1)
+            {
+                datosValidados = false;
+                mensajeError += " - Periodo proyectado para el proyecto\n";
+            }
+
+            //TODO: Implementar validaciones de alumno
+            if (txtResDomicilio.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Domicilio del residente\n";
+            }
+
+            if (txtResCiudad.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Ciudad del residente\n";
+            }
+
+            if (!(new Regex("[0-9]{10}").IsMatch(txtResTelefono.Text)))
+            {
+                datosValidados = false;
+                mensajeError += " - Teléfono del residente\n";
+            }
+
+            if (!rbtnResSSIMSS.Checked &&
+                !rbtnResSSISSSTE.Checked &&
+                !rbtnResSSOtro.Checked)
+            {
+                datosValidados = false;
+                mensajeError += " - Tipo de seguridad social\n";
+            }
+
+            if (txtResSSNumero.Text.Trim().Length == 0)
+            {
+                datosValidados = false;
+                mensajeError += " - Número de seguridad social del residente\n";
+            }
+
+            if (datosValidados)
+                return true;
+
+            MessageBox.Show(mensajeError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
-        private bool GuardarDatos()
+        private void GuardarDatos()
         {
-
-            // TODO: Implementar el metodo de guardado
-
-            // Insertar datos de la empresa
-
-            string sector = "";
+            // Insertar los datos de la empresa
+            string giro = "", sector = "";
 
             if (rbtnEmpGiroIndustrial.Checked)
-                sector = "Industrial";
+                giro = "Industrial";
             if (rbtnEmpGiroServicios.Checked)
-                sector = "Servicios";
+                giro = "Servicios";
             if (rbtnEmpGiroOtro.Checked)
-                sector = "Otro";
+                giro = "Otro";
+
+            if (rbtnEmpTipoPublica.Checked)
+                sector = "Publico";
+            if (rbtnEmpTipoPrivada.Checked)
+                sector = "Privado";
 
             EmpresaDAO.InsertarEmpresa(
                 new EmpresaPOJO(txtEmpRFC.Text,
                                 txtEmpNombre.Text,
+                                giro,
                                 sector,
                                 txtEmpDomicilio.Text,
                                 txtEmpColonia.Text,
@@ -166,12 +343,59 @@ namespace ResidenciasProfesionales.VIEW
                                 txtEmpMision.Text,
                                 txtEmpTitularNombre.Text,
                                 txtEmpTitularPuesto.Text));
-            return false;
+
+            // Actualizar los datos del alumno
+            alumno.Domicilio = txtResDomicilio.Text.Trim();
+            alumno.Ciudad = txtResCiudad.Text.Trim();
+            alumno.Correo = txtResEmail.Text.Trim();
+            alumno.Telefono = txtResTelefono.Text.Trim();
+            alumno.NumeroSS = txtResSSNumero.Text.Trim();
+
+            if (rbtnResSSIMSS.Checked)
+                alumno.TipoSS = "IMSS";
+            if (rbtnResSSISSSTE.Checked)
+                alumno.TipoSS = "ISSSTE";
+            if (rbtnResSSOtro.Checked)
+                alumno.TipoSS = "Otro";
+
+            AlumnoDAO.Actualizar(alumno);
+
+            // Registrar la informacion de la residencia
+            string modalidad = "";
+
+            if (rbtnProTipoBanco.Checked)
+                modalidad = "Banco de proyectos";
+            if (rbtnProTipoPropia.Checked)
+                modalidad = "Propuesta propia";
+            if (rbtnProTipoTrabajador.Checked)
+                modalidad = "Trabajador";
+
+            int idResidencia = ResidenciaDAO.InsertarResidencia(
+                new ResidenciaPOJO(
+                    -1,
+                    txtProNombre.Text,
+                    modalidad,
+                    cmbProPeriodo.SelectedItem.ToString(),
+                    DateTime.Now.Year,
+                    txtEmpAsesorNombre.Text,
+                    txtEmpAsesorPuesto.Text,
+                    txtEmpFirmaNombre.Text,
+                    txtEmpFirmaPuesto.Text,
+                    txtEmpRFC.Text,
+                    txtResNoControl.Text
+                ));
+
+            // Registrar la solicitud
+            SolicitudDAO.InsertarSolicitud(new SolicitudPOJO(-1, txtResNoControl.Text, idResidencia, "PENDIENTE"));
+
+            MessageBox.Show("Solicitud registrada correctamente.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            esEdicion = true;
         }
-        private bool ModificarDatos()
+        private void ModificarDatos()
         {
             // TODO: Implementar el metodo de modificado
-            return false;
+            return;
         }
         private void ImprimirSolicitud()
         {

@@ -36,6 +36,37 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+        public static int InsertarResidencia(ResidenciaPOJO residencia)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO inforesidencia VALUES(null,@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8,@P9,@P10); SELECT last_insert_id();");
+                
+                cmd.Parameters.AddWithValue("@P1", residencia.NombreProyec);
+                cmd.Parameters.AddWithValue("@P2", residencia.Modalidad);
+                cmd.Parameters.AddWithValue("@P3", residencia.Periodo);
+                cmd.Parameters.AddWithValue("@P4", residencia.Anio);
+                cmd.Parameters.AddWithValue("@P5", residencia.AsesorExt);
+                cmd.Parameters.AddWithValue("@P6", residencia.PuestoAsesor);
+                cmd.Parameters.AddWithValue("@P7", residencia.Responsable);
+                cmd.Parameters.AddWithValue("@P8", residencia.PuestoResp);
+                cmd.Parameters.AddWithValue("@P9", residencia.IdEmpresa);
+                cmd.Parameters.AddWithValue("@P10", residencia.IdAlumno);
+
+                return con.ejecutarSentencia(cmd, true);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
 
         public static ResidenciaPOJO DataRowAObjeto(DataRow dr)
         {
@@ -53,8 +84,5 @@ namespace ResidenciasProfesionales.DATA
                 dr["IdAlumno"].ToString()
             );
         }
-
-
-        //TODO : Revisar si faltan campos en la base de datos
     }    
 }
