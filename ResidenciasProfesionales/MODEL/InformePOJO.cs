@@ -29,23 +29,36 @@ namespace ResidenciasProfesionales.MODEL
             get
             {
                 if (DictamenAsesor == Dictamen.PENDIENTE ||
-                   DictamenRevisor1 == Dictamen.PENDIENTE ||
-                   DictamenRevisor2 == Dictamen.PENDIENTE)
+                    DictamenRevisor1 == Dictamen.PENDIENTE ||
+                    DictamenRevisor2 == Dictamen.PENDIENTE)
                     return Dictamen.PENDIENTE;
 
-                int aprobados = (DictamenAsesor == Dictamen.PENDIENTE ? 1 : 0) +
-                                (DictamenRevisor1 == Dictamen.PENDIENTE ? 1 : 0) +
-                                (DictamenRevisor2 == Dictamen.PENDIENTE ? 1 : 0);
+                int aprobados = (DictamenAsesor == Dictamen.APROBADO ? 1 : 0) +
+                                (DictamenRevisor1 == Dictamen.APROBADO ? 1 : 0) +
+                                (DictamenRevisor2 == Dictamen.APROBADO ? 1 : 0);
 
                 return aprobados >= 2 ? Dictamen.APROBADO : Dictamen.RECHAZADO;
             }
         }
+        public String AlumnoNombre
+        {
+            get
+            {
+                return Alumno.NombreCompleto;
+            }
+        }
+        public String AlumnoMatricula
+        {
+            get
+            {
+                return Alumno.Matricula;
+            }
+        }
 
-        public InformePOJO() { }
-
-        public InformePOJO(AlumnoPOJO alumno, Dictamen dictamenRevisor1, Dictamen dictamenRevisor2)
+        public InformePOJO(AlumnoPOJO alumno, Dictamen dictamenAsesor, Dictamen dictamenRevisor1, Dictamen dictamenRevisor2)
         {
             Alumno = alumno;
+            DictamenAsesor = dictamenAsesor;
             DictamenRevisor1 = dictamenRevisor1;
             DictamenRevisor2 = dictamenRevisor2;
         }

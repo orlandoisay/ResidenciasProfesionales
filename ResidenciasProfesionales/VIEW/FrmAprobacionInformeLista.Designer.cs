@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblSolicitud = new System.Windows.Forms.Label();
             this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.btnEvaluar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEvaluar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +80,14 @@
             this.Column4,
             this.Column5,
             this.Column6});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLista.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLista.EnableHeadersVisualStyles = false;
             this.dgvLista.Location = new System.Drawing.Point(12, 59);
             this.dgvLista.MultiSelect = false;
@@ -88,42 +97,6 @@
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLista.Size = new System.Drawing.Size(763, 325);
             this.dgvLista.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "No. control";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Alumno";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Veredicto (Asesor)";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Veredicto (Revisor 1)";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Veredicto (Revisor 2)";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Estado del informe";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
             // 
             // btnEvaluar
             // 
@@ -136,6 +109,48 @@
             this.btnEvaluar.Text = "Emitir veredicto";
             this.btnEvaluar.UseVisualStyleBackColor = true;
             this.btnEvaluar.Click += new System.EventHandler(this.btnEvaluar_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "AlumnoMatricula";
+            this.Column1.HeaderText = "No. control";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "AlumnoNombre";
+            this.Column2.HeaderText = "Alumno";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "DictamenAsesor";
+            this.Column3.HeaderText = "Veredicto (Asesor)";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "DictamenRevisor1";
+            this.Column4.HeaderText = "Veredicto (Revisor 1)";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "DictamenRevisor2";
+            this.Column5.HeaderText = "Veredicto (Revisor 2)";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "DictamenFinal";
+            this.Column6.HeaderText = "Estado del informe";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // FrmAprobacionInformeLista
             // 
@@ -159,12 +174,12 @@
         #endregion
         private System.Windows.Forms.Label lblSolicitud;
         private System.Windows.Forms.DataGridView dgvLista;
+        private System.Windows.Forms.Button btnEvaluar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Button btnEvaluar;
     }
 }

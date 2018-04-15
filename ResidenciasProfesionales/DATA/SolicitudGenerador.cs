@@ -5,12 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace ResidenciasProfesionales.DATA
 {
     public class SolicitudGenerador
     {
+        /// <summary>
+        /// Genera un archivo de Excel que contiene la solicitud de residencias
+        /// profesionales de un alumno, a través de su matrícula.
+        /// </summary>
+        /// <param name="matricula">Matrícula del alumno de quien se generará la solicitud</param>
+        /// <param name="ruta">Ruta donde se almacenará el archivo</param>
+        /// <returns></returns>
         public static bool GenerarFormatoDeSolicitud(String matricula, String ruta)
         {
             // Obtener informacion de la solicitud
@@ -21,6 +28,8 @@ namespace ResidenciasProfesionales.DATA
 
             // Obtener la ruta del archivo de plantilla
             var rutaPlantilla = Path.Combine(System.IO.Path.GetFullPath(@"..\..\"), "Resources", "Plantilla.xlsx");
+
+            // Crear la lista de cambios
             var listaDatos = new List<DatoCelda>();
 
             // Fecha
@@ -124,52 +133,7 @@ namespace ResidenciasProfesionales.DATA
             // Telefono del residente
             listaDatos.Add(new DatoCelda(59, 17, alumno.Telefono));
 
-            return LlenarPlantillaConDatos(ruta, rutaPlantilla, listaDatos);
+            return ExcelGenerador.LlenarPlantillaConDatos(ruta, rutaPlantilla, listaDatos);
         }
-
-        public static bool LlenarPlantillaConDatos(String rutaFinal, String rutaPlantilla, List<DatoCelda> listaDatos)
-        {
-            // Iniciar Excel
-            Excel.Application excel = new Excel.Application();
-
-            try
-            {
-                // Cargar la plantilla de Excel                
-                Excel.Workbook book = excel.Workbooks.Open(rutaPlantilla);
-                Excel.Worksheet sheet = excel.ActiveSheet as Excel.Worksheet;
-
-                // Carga de datos al archivo
-                foreach (DatoCelda dc in listaDatos)
-                    sheet.Cells[dc.Fila, dc.Columna] = dc.Valor;
-
-                sheet.SaveAs(rutaFinal);
-                
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }   
-            finally
-            {
-                excel.Quit();
-            }         
-        }
-    }
-
-    public class DatoCelda
-    {
-        public int Fila { get; set; }
-        public int Columna { get; set; }
-        public String Valor { get; set; }
-
-        public DatoCelda() { }
-        public DatoCelda(int fila, int columna, String valor)
-        {
-            Fila = fila;
-            Columna = columna;
-            Valor = valor;
-        }
-    }
+    }    
 }

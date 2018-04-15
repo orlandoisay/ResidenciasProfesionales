@@ -60,6 +60,7 @@
     <Compile Include="DATA\DocenteDAO.cs" />
     <Compile Include="DATA\EmpresaDAO.cs" />
     <Compile Include="DATA\EntregaDAO.cs" />
+    <Compile Include="DATA\ExcelGenerador.cs" />
     <Compile Include="DATA\InformeDAO.cs" />
     <Compile Include="DATA\ResidenciaDAO.cs" />
     <Compile Include="DATA\RevisorDAO.cs" />
