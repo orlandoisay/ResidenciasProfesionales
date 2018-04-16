@@ -94,6 +94,34 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        public static List<AlumnoPOJO> ObtenerAlumnosPorDocente(String idDocente)
+        {
+            try
+            {
+                var list = new List<AlumnoPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT* FROM alumno A JOIN roldocente R ON A.Matricula=R.IdAlumno WHERE IdDocente=@P0");
+                cmd.Parameters.AddWithValue("@P0", idDocente);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static AlumnoPOJO ObtenerAlumno(string matricula)
         {
             try
