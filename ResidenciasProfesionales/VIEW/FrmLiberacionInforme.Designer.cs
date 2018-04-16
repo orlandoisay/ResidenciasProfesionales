@@ -54,6 +54,7 @@
             this.btnEvaluar.TabIndex = 32;
             this.btnEvaluar.Text = "Liberar";
             this.btnEvaluar.UseVisualStyleBackColor = true;
+            this.btnEvaluar.Click += new System.EventHandler(this.btnEvaluar_Click);
             // 
             // txtComentarios
             // 

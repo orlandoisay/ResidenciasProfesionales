@@ -64,6 +64,37 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        public static DictamenPOJO ObtenerDictamen(String idDocente, String idAlumno, String tipo)
+        {
+            try
+            {
+                var idResidencia = SolicitudDAO.ObtenerSolicitud(idAlumno).IdResidencia;
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM dictamen WHERE IdDocente=@P0 AND " +
+                    "IdResidencia=@P1 AND Tipo=@P2");
+                cmd.Parameters.AddWithValue("@P0", idDocente);
+                cmd.Parameters.AddWithValue("@P1", idResidencia);
+                cmd.Parameters.AddWithValue("@P2", tipo);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                if (dt.Rows.Count != 1)
+                    return null;
+
+                return DataRowAObjeto(dt.Rows[0]);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static List<DictamenPOJO> ObtenerDictamenesAsesores(int idResidencia)
         {
             try
@@ -171,9 +202,12 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+        
 
         public static DictamenPOJO DataRowAObjeto(DataRow dr)
         {
+            int calf = 0;
+            int.TryParse(dr["Calificacion"].ToString(), out calf);
             return new DictamenPOJO(
                 int.Parse(dr["ID"].ToString()),
                 int.Parse(dr["IdResidencia"].ToString()),
@@ -181,7 +215,7 @@ namespace ResidenciasProfesionales.DATA
                 dr["Tipo"].ToString(),
                 dr["Estatus"].ToString(),
                 dr["Comentario"].ToString(),
-                int.Parse(dr["Calificacion"].ToString()),
+                calf,
                 DateTime.Parse(dr["Fecha"].ToString()));
         }
     }

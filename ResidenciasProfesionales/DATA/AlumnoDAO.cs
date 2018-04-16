@@ -94,16 +94,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
-        public static List<AlumnoPOJO> ObtenerAlumnosConAsesorSinLiberarlo(String idDocente)
+        public static List<AlumnoPOJO> ObtenerAlumnosPorDocente(String idDocente)
         {
             try
             {
                 var list = new List<AlumnoPOJO>();
 
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("SELECT al.* FROM alumno al JOIN roldocente rol WHERE"+
-                    " al.Matricula = rol.idAlumno AND rol.Rol = 'Asesor' AND rol.IdDocente = @P0" +
-                " AND rol.IdDocente NOT IN(SELECT IdDocente FROM dictamen WHERE tipo = 'LiberacionAsesor');");
+                MySqlCommand cmd = new MySqlCommand("SELECT* FROM alumno A JOIN roldocente R ON A.Matricula=R.IdAlumno WHERE IdDocente=@P0");
                 cmd.Parameters.AddWithValue("@P0", idDocente);
 
                 DataTable dt = con.ejecutarConsulta(cmd);
