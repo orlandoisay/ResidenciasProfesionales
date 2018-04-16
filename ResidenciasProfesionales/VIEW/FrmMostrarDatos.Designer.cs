@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.panelAsesor = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblNombreAsesor = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxAsesor = new System.Windows.Forms.ComboBox();
             this.lblCarreraAsesor = new System.Windows.Forms.Label();
             this.lblTelefonoAsesor = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -40,6 +41,8 @@
             this.lblNumeroAsesorados = new System.Windows.Forms.Label();
             this.lblEstatusAsesor = new System.Windows.Forms.Label();
             this.panelAlumno = new System.Windows.Forms.Panel();
+            this.lblNumeroSS = new System.Windows.Forms.Label();
+            this.lblTipoSS = new System.Windows.Forms.Label();
             this.pbFotografía = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
@@ -51,9 +54,6 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblEstatus = new System.Windows.Forms.Label();
-            this.lblTipoSS = new System.Windows.Forms.Label();
-            this.lblNumeroSS = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.panelAsesor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelAlumno.SuspendLayout();
@@ -66,7 +66,7 @@
             this.panelAsesor.Controls.Add(this.pictureBox1);
             this.panelAsesor.Controls.Add(this.btnCancelar);
             this.panelAsesor.Controls.Add(this.lblNombreAsesor);
-            this.panelAsesor.Controls.Add(this.comboBox1);
+            this.panelAsesor.Controls.Add(this.cbxAsesor);
             this.panelAsesor.Controls.Add(this.lblCarreraAsesor);
             this.panelAsesor.Controls.Add(this.lblTelefonoAsesor);
             this.panelAsesor.Controls.Add(this.btnAceptar);
@@ -78,6 +78,15 @@
             this.panelAsesor.Size = new System.Drawing.Size(460, 205);
             this.panelAsesor.TabIndex = 22;
             this.panelAsesor.Visible = false;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(47, 154);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lblUsuario.TabIndex = 22;
+            this.lblUsuario.Text = "Usuario:";
             // 
             // pictureBox1
             // 
@@ -107,13 +116,14 @@
             this.lblNombreAsesor.TabIndex = 10;
             this.lblNombreAsesor.Text = "Asesor: ";
             // 
-            // comboBox1
+            // cbxAsesor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(180, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(118, 21);
-            this.comboBox1.TabIndex = 18;
+            this.cbxAsesor.FormattingEnabled = true;
+            this.cbxAsesor.Location = new System.Drawing.Point(180, 15);
+            this.cbxAsesor.Name = "cbxAsesor";
+            this.cbxAsesor.Size = new System.Drawing.Size(277, 21);
+            this.cbxAsesor.TabIndex = 18;
+            this.cbxAsesor.SelectedIndexChanged += new System.EventHandler(this.cbxAsesor_SelectedIndexChanged);
             // 
             // lblCarreraAsesor
             // 
@@ -141,6 +151,7 @@
             this.btnAceptar.TabIndex = 16;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblCorreoAsesor
             // 
@@ -190,6 +201,26 @@
             this.panelAlumno.TabIndex = 21;
             this.panelAlumno.Visible = false;
             // 
+            // lblNumeroSS
+            // 
+            this.lblNumeroSS.AutoSize = true;
+            this.lblNumeroSS.Location = new System.Drawing.Point(245, 153);
+            this.lblNumeroSS.MaximumSize = new System.Drawing.Size(0, 50);
+            this.lblNumeroSS.Name = "lblNumeroSS";
+            this.lblNumeroSS.Size = new System.Drawing.Size(67, 13);
+            this.lblNumeroSS.TabIndex = 22;
+            this.lblNumeroSS.Text = "Número SS: ";
+            // 
+            // lblTipoSS
+            // 
+            this.lblTipoSS.AutoSize = true;
+            this.lblTipoSS.Location = new System.Drawing.Point(38, 153);
+            this.lblTipoSS.MaximumSize = new System.Drawing.Size(0, 50);
+            this.lblTipoSS.Name = "lblTipoSS";
+            this.lblTipoSS.Size = new System.Drawing.Size(51, 13);
+            this.lblTipoSS.TabIndex = 21;
+            this.lblTipoSS.Text = "Tipo SS: ";
+            // 
             // pbFotografía
             // 
             this.pbFotografía.BackColor = System.Drawing.Color.Gray;
@@ -217,6 +248,7 @@
             this.btnAnterior.TabIndex = 0;
             this.btnAnterior.Text = "Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnAsignar
             // 
@@ -236,11 +268,13 @@
             this.btnSiguiente.TabIndex = 2;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // lblNoControl
             // 
             this.lblNoControl.AutoSize = true;
             this.lblNoControl.Location = new System.Drawing.Point(110, 17);
+            this.lblNoControl.MaximumSize = new System.Drawing.Size(0, 150);
             this.lblNoControl.Name = "lblNoControl";
             this.lblNoControl.Size = new System.Drawing.Size(65, 13);
             this.lblNoControl.TabIndex = 4;
@@ -250,6 +284,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(125, 39);
+            this.lblNombre.MaximumSize = new System.Drawing.Size(0, 150);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(50, 13);
             this.lblNombre.TabIndex = 5;
@@ -259,6 +294,7 @@
             // 
             this.lblCarreraAlumno.AutoSize = true;
             this.lblCarreraAlumno.Location = new System.Drawing.Point(128, 61);
+            this.lblCarreraAlumno.MaximumSize = new System.Drawing.Size(0, 150);
             this.lblCarreraAlumno.Name = "lblCarreraAlumno";
             this.lblCarreraAlumno.Size = new System.Drawing.Size(47, 13);
             this.lblCarreraAlumno.TabIndex = 6;
@@ -268,6 +304,7 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Location = new System.Drawing.Point(39, 109);
+            this.lblTelefono.MaximumSize = new System.Drawing.Size(0, 150);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(55, 13);
             this.lblTelefono.TabIndex = 7;
@@ -277,6 +314,7 @@
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Location = new System.Drawing.Point(49, 131);
+            this.lblCorreo.MaximumSize = new System.Drawing.Size(0, 150);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(44, 13);
             this.lblCorreo.TabIndex = 8;
@@ -286,37 +324,11 @@
             // 
             this.lblEstatus.AutoSize = true;
             this.lblEstatus.Location = new System.Drawing.Point(128, 83);
+            this.lblEstatus.MaximumSize = new System.Drawing.Size(0, 150);
             this.lblEstatus.Name = "lblEstatus";
             this.lblEstatus.Size = new System.Drawing.Size(48, 13);
             this.lblEstatus.TabIndex = 9;
             this.lblEstatus.Text = "Estatus: ";
-            // 
-            // lblTipoSS
-            // 
-            this.lblTipoSS.AutoSize = true;
-            this.lblTipoSS.Location = new System.Drawing.Point(38, 153);
-            this.lblTipoSS.Name = "lblTipoSS";
-            this.lblTipoSS.Size = new System.Drawing.Size(51, 13);
-            this.lblTipoSS.TabIndex = 21;
-            this.lblTipoSS.Text = "Tipo SS: ";
-            // 
-            // lblNumeroSS
-            // 
-            this.lblNumeroSS.AutoSize = true;
-            this.lblNumeroSS.Location = new System.Drawing.Point(245, 153);
-            this.lblNumeroSS.Name = "lblNumeroSS";
-            this.lblNumeroSS.Size = new System.Drawing.Size(67, 13);
-            this.lblNumeroSS.TabIndex = 22;
-            this.lblNumeroSS.Text = "Número SS: ";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(47, 154);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
-            this.lblUsuario.TabIndex = 22;
-            this.lblUsuario.Text = "Usuario:";
             // 
             // FrmMostrarDatos
             // 
@@ -342,7 +354,7 @@
         private System.Windows.Forms.Panel panelAsesor;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblNombreAsesor;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxAsesor;
         private System.Windows.Forms.Label lblCarreraAsesor;
         private System.Windows.Forms.Label lblTelefonoAsesor;
         private System.Windows.Forms.Button btnAceptar;
