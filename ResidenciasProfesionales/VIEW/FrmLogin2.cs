@@ -18,7 +18,7 @@ namespace ResidenciasProfesionales.VIEW
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
         private static extern IntPtr SendMessage(IntPtr hWind, uint msg, IntPtr i, string str);
 
-
+        DocentePOJO docenteIngresado;
         public FrmLogin2()
         {
             InitializeComponent();
@@ -55,8 +55,11 @@ namespace ResidenciasProfesionales.VIEW
                 {
                         switch (cbTipo.Text) {
                         case "Asesor":
+                            MessageBox.Show(tbUsuario.Text);
+                            docenteIngresado = DocenteDAO.ObtenerDocenteXUsuario(tbUsuario.Text);
+                            MessageBox.Show(docenteIngresado.ID);
                             this.Visible = false;
-                            FrmVistaPrincipalAsesor fvpa = new FrmVistaPrincipalAsesor(lbUsuario.Text);
+                            FrmVistaPrincipalAsesor fvpa = new FrmVistaPrincipalAsesor(docenteIngresado.ID);
                             fvpa.Show();
                             break;
                         case "Revisor":
