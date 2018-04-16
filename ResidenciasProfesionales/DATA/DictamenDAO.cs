@@ -206,6 +206,8 @@ namespace ResidenciasProfesionales.DATA
 
         public static DictamenPOJO DataRowAObjeto(DataRow dr)
         {
+            int calf = 0;
+            int.TryParse(dr["Calificacion"].ToString(), out calf);
             return new DictamenPOJO(
                 int.Parse(dr["ID"].ToString()),
                 int.Parse(dr["IdResidencia"].ToString()),
@@ -213,7 +215,7 @@ namespace ResidenciasProfesionales.DATA
                 dr["Tipo"].ToString(),
                 dr["Estatus"].ToString(),
                 dr["Comentario"].ToString(),
-                int.Parse(dr["Calificacion"].ToString()),
+                calf,
                 DateTime.Parse(dr["Fecha"].ToString()));
         }
     }
