@@ -158,6 +158,41 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Retorna una lista de 3 docentes: asesor, revisor 1 y revisor 2
+        /// respectivamente. Dichos docentes deben estar enlazados al alumno
+        /// previamante.
+        /// </summary>
+        /// <param name="idAlumno"></param>
+        /// <returns></returns>
+        public static List<DocentePOJO> ObtenerResponsablesDeAlumno(String idAlumno)
+        {
+            try
+            {
+                var list = new List<DocentePOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM roldocente R JOIN docente D ON R.IdDocente=D.ID WHERE IdAlumno=@P0 ORDER BY Rol, IdDocente");
+                cmd.Parameters.AddWithValue("@P0", idAlumno);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static DocentePOJO DataRowAObjeto(DataRow dr)
         {
 
