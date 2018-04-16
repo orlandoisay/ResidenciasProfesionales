@@ -169,7 +169,13 @@ insert into dictamen values
 
 insert into documento values
 (null,'Solicitud de residencias'),
-(null,'Carta de aceptación');
+(null,'Carta de aceptación'),
+(null, 'Cronograma de actividades'),
+(null, 'Informe'),
+(null, 'Resumen ejecutivo'),
+(null, 'CD'),
+(null, 'Asesorias'),
+(null, 'Documento de evaluación');
 
 insert into entregaDocumento values
 ('S19650897',1,'Entregado'),
