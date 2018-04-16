@@ -20,7 +20,7 @@ namespace ResidenciasProfesionales.VIEW
 
         private void btnAprobacionInformes_Click(object sender, EventArgs e)
         {
-            var frmAprobarInforme = new FrmSolicitud(idDocente);
+            var frmAprobarInforme = new FrmAprobacionInformeLista(idDocente);
             frmAprobarInforme.ShowDialog();
         }
 

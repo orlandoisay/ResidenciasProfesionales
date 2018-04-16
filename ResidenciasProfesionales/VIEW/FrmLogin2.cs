@@ -55,9 +55,7 @@ namespace ResidenciasProfesionales.VIEW
                 {
                         switch (cbTipo.Text) {
                         case "Asesor":
-                            MessageBox.Show(tbUsuario.Text);
                             docenteIngresado = DocenteDAO.ObtenerDocenteXUsuario(tbUsuario.Text);
-                            MessageBox.Show(docenteIngresado.ID);
                             this.Visible = false;
                             FrmVistaPrincipalAsesor fvpa = new FrmVistaPrincipalAsesor(docenteIngresado.ID);
                             fvpa.Show();
@@ -77,8 +75,9 @@ namespace ResidenciasProfesionales.VIEW
                             fvpac.Show();
                             break;
                         case "Coordinador":
+                            docenteIngresado = DocenteDAO.ObtenerDocenteXUsuario(tbUsuario.Text);
                             this.Visible = false;
-                            FrmVistaPrincipalCoordinador fvpc = new FrmVistaPrincipalCoordinador(lbUsuario.Text);
+                            FrmVistaPrincipalCoordinador fvpc = new FrmVistaPrincipalCoordinador(docenteIngresado.ID);
                             fvpc.Show();
                             break;
                        } 
