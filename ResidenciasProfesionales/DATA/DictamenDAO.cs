@@ -62,6 +62,35 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        public static bool InsertarDictamen(DictamenPOJO dictamen)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO dictamen VALUES(null,@P1,@P2,@P3,@P4,@P5,@P6,@P7);");
+                
+                cmd.Parameters.AddWithValue("@P1", dictamen.IdResidencia);
+                cmd.Parameters.AddWithValue("@P2", dictamen.IdDocente);
+                cmd.Parameters.AddWithValue("@P3", dictamen.Tipo);
+                cmd.Parameters.AddWithValue("@P4", dictamen.Estatus);
+                cmd.Parameters.AddWithValue("@P5", dictamen.Comentario);
+                cmd.Parameters.AddWithValue("@P6", dictamen.Calificacion);
+                cmd.Parameters.AddWithValue("@P7", dictamen.Fecha);
+
+                con.ejecutarSentencia(cmd, true);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static DictamenPOJO DataRowAObjeto(DataRow dr)
         {
             return new DictamenPOJO(
