@@ -15,23 +15,25 @@ namespace ResidenciasProfesionales.VIEW
     {
         private String IdDocente;
         private String Matricula;
+        private String Rol;
         private DictamenPOJO Dictamen;
 
         public FrmAprobacionInforme(String idDocente, String matricula)
         {
             IdDocente = idDocente;
             Matricula = matricula;
-            Dictamen = DictamenDAO.ObtenerDictamen(idDocente, matricula, "Aprobacion");
+            Rol = RolDAO.ObtenerRol(matricula, idDocente).Rol;
+            Dictamen = DictamenDAO.ObtenerDictamen(idDocente, matricula, "Aprobacion" + Rol);
+
             InitializeComponent();
             CargarDatosAlumno();
 
-            if(Dictamen == null)
+            if(Dictamen != null)
                 CargarDatosDictamen();
         }
-
         private void btnEvaluar_Click(object sender, EventArgs e)
         {
-            //TODO: Implementar DictamenDAO.InsertarDictamen
+            GuardarDatos();     
         }
 
         private void CargarDatosAlumno()
@@ -50,7 +52,50 @@ namespace ResidenciasProfesionales.VIEW
             btnEvaluar.Enabled = false;
             txtComentarios.Enabled = false;
 
-            // TODO : Mostrar contenido del dictamen
+            if (Dictamen.Estatus == "Aceptado")
+                rbtnAprobar.Checked = true;
+
+            if (Dictamen.Estatus == "Rechazado")
+                rbtnRechazar.Checked = true;
+
+            txtComentarios.Text = Dictamen.Comentario;
+        }
+        private bool ValidarDatos()
+        {
+            if (!rbtnAprobar.Checked && !rbtnRechazar.Checked)
+            {
+                MessageBox.Show("Debe elegir un veredicto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+        private void GuardarDatos()
+        {
+            if (!ValidarDatos())
+                return;
+
+            DialogResult dr = MessageBox.Show("Continuar con el guardado", "Info", 
+                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.No)
+                return;
+
+            var solicitud = SolicitudDAO.ObtenerSolicitud(Matricula);
+            var idResidencia = solicitud.IdResidencia;
+            var tipo = (Rol == "Asesor") ? "AprobacionAsesor" : "AprobacionRevisor";
+            var estatus = rbtnAprobar.Checked ? "Aceptado" : "Rechazado";
+
+            DictamenDAO.InsertarDictamen(
+                new DictamenPOJO(-1,
+                                 idResidencia,
+                                 IdDocente,
+                                 tipo,
+                                 estatus,
+                                 txtComentarios.Text,
+                                 0,
+                                 DateTime.Now));
+
+            Close();
         }
     }
 }
