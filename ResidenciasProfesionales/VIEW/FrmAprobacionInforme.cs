@@ -21,18 +21,17 @@ namespace ResidenciasProfesionales.VIEW
         {
             IdDocente = idDocente;
             Matricula = matricula;
-            //Dictamen = DictamenDAO.ObtenerDictamen(idDocente, matricula);
+            Dictamen = DictamenDAO.ObtenerDictamen(idDocente, matricula, "Aprobacion");
             InitializeComponent();
             CargarDatosAlumno();
 
             if(Dictamen == null)
                 CargarDatosDictamen();
-            
         }
 
         private void btnEvaluar_Click(object sender, EventArgs e)
         {
-
+            //TODO: Implementar DictamenDAO.InsertarDictamen
         }
 
         private void CargarDatosAlumno()

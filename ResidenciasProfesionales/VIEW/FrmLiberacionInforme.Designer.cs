@@ -149,10 +149,11 @@
             // 
             // pbFotografía
             // 
-            this.pbFotografía.BackColor = System.Drawing.Color.Gray;
+            this.pbFotografía.Image = global::ResidenciasProfesionales.Properties.Resources.chico;
             this.pbFotografía.Location = new System.Drawing.Point(18, 63);
             this.pbFotografía.Name = "pbFotografía";
             this.pbFotografía.Size = new System.Drawing.Size(80, 80);
+            this.pbFotografía.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFotografía.TabIndex = 19;
             this.pbFotografía.TabStop = false;
             // 
