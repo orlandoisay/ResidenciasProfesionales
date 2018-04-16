@@ -64,6 +64,7 @@
     <Compile Include="DATA\InformeDAO.cs" />
     <Compile Include="DATA\ResidenciaDAO.cs" />
     <Compile Include="DATA\RevisorDAO.cs" />
+    <Compile Include="DATA\RolDAO.cs" />
     <Compile Include="DATA\SolicitudDAO.cs" />
     <Compile Include="DATA\SolicitudGenerador.cs" />
     <Compile Include="DATA\UsuarioDao.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="MODEL\InformePOJO.cs" />
     <Compile Include="MODEL\MAA.cs" />
     <Compile Include="MODEL\ResidenciaPOJO.cs" />
+    <Compile Include="MODEL\RolPOJO.cs" />
     <Compile Include="MODEL\SolicitudPOJO.cs" />
     <Compile Include="MODEL\TablaAsignacionRevisor.cs" />
     <Compile Include="MODEL\TablaResumenPOJO.cs" />
