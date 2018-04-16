@@ -86,6 +86,31 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        // Obtiene un asesor con base en el usuario ingresado en el login.
+        public static DocentePOJO ObtenerDocenteXUsuario(String usuario)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM docente WHERE Usuario = @P0;");
+                cmd.Parameters.AddWithValue("@P0", usuario);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+                if (dt.Rows.Count != 1)
+                    return null;
+                return DataRowAObjeto(dt.Rows[0]);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static int AsignarAsesorado(String idAlumno, String idDocente)
         {
             try
