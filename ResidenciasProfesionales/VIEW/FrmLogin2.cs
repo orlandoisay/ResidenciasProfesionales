@@ -61,8 +61,10 @@ namespace ResidenciasProfesionales.VIEW
                             fvpa.Show();
                             break;
                         case "Revisor":
+                            docenteIngresado = DocenteDAO.ObtenerDocenteXUsuario(tbUsuario.Text);
                             this.Visible = false;
-                            FrmVistaPrincipalRevisor fvpr = new FrmVistaPrincipalRevisor(lbUsuario.Text);
+                            FrmVistaPrincipalRevisor fvpr = new FrmVistaPrincipalRevisor(docenteIngresado.ID);
+                            fvpr.Show();
                             break;
                         case "Alumno":
                             this.Visible = false;
