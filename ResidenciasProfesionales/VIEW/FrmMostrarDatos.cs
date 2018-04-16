@@ -135,7 +135,7 @@ namespace ResidenciasProfesionales.VIEW
                 DocentePOJO docenteAnterior = DocenteDAO.ObtenerDocenteXMatricula(matricula);
                 DocenteDAO.CambiarAsesor(listaDocentes[cbxAsesor.SelectedIndex].ID, matricula, docenteAnterior.ID);
             }
-            
+            EntregaDAO.InsertarDocumentosPendientes(matricula);
             MessageBox.Show("Asignado");
             this.Close();
         }

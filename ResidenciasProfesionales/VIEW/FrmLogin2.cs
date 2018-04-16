@@ -65,7 +65,7 @@ namespace ResidenciasProfesionales.VIEW
                             break;
                         case "Alumno":
                             this.Visible = false;
-                            FrmVistaPrincipalAlumno fvp_a = new FrmVistaPrincipalAlumno();
+                            FrmVistaPrincipalAlumno fvp_a = new FrmVistaPrincipalAlumno(lbUsuario.Text);
                             fvp_a.Show();
                             break;
                         case "Academia":
@@ -75,7 +75,7 @@ namespace ResidenciasProfesionales.VIEW
                             break;
                         case "Coordinador":
                             this.Visible = false;
-                            FrmVistaPrincipalCoordinador fvpc = new FrmVistaPrincipalCoordinador();
+                            FrmVistaPrincipalCoordinador fvpc = new FrmVistaPrincipalCoordinador(lbUsuario.Text);
                             fvpc.Show();
                             break;
                        } 

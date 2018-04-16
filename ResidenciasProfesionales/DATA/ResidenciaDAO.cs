@@ -36,6 +36,33 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
+        public static ResidenciaPOJO ObtenerResidenciaXMatricula(String idAlumno)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM infoResidencia WHERE idAlumno = @P0;");
+                cmd.Parameters.AddWithValue("@P0", idAlumno);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                if (dt.Rows.Count != 1)
+                    return null;
+
+                return DataRowAObjeto(dt.Rows[0]);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static int InsertarResidencia(ResidenciaPOJO residencia)
         {
             try

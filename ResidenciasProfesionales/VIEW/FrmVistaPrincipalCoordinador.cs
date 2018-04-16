@@ -11,9 +11,23 @@ namespace ResidenciasProfesionales.VIEW
 {
     public partial class FrmVistaPrincipalCoordinador : Form
     {
-        public FrmVistaPrincipalCoordinador()
+        String idDocente;
+        public FrmVistaPrincipalCoordinador(String idCoordinador)
         {
             InitializeComponent();
+            idDocente = idCoordinador;
+        }
+
+        private void btnAprobacionInformes_Click(object sender, EventArgs e)
+        {
+            var frmAprobarInforme = new FrmSolicitud(idDocente);
+            frmAprobarInforme.ShowDialog();
+        }
+
+        private void btnReporteResidencias_Click(object sender, EventArgs e)
+        {
+            var frmReporteResidencia = new FrmReporteResidencias();
+            frmReporteResidencia.ShowDialog();
         }
     }
 }

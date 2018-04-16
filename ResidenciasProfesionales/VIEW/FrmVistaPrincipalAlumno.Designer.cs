@@ -28,72 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVistaPrincipalAlumno));
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.btnAprobacion = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCerrarSesión = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnVerSolicitud = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbLogo
             // 
-            this.pbLogo.BackColor = System.Drawing.Color.LightGray;
-            this.pbLogo.Location = new System.Drawing.Point(173, 53);
+            this.pbLogo.BackgroundImage = global::ResidenciasProfesionales.Properties.Resources.ITSUR_Logo;
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbLogo.Location = new System.Drawing.Point(231, 97);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(289, 276);
+            this.pbLogo.Size = new System.Drawing.Size(276, 248);
             this.pbLogo.TabIndex = 3;
             this.pbLogo.TabStop = false;
             // 
-            // menuStrip1
+            // panel1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Light", 10F);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAprobacion,
-            this.btnCerrarSesión});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(636, 27);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.btnVerSolicitud);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(774, 69);
+            this.panel1.TabIndex = 2;
             // 
-            // btnAprobacion
+            // panel2
             // 
-            this.btnAprobacion.Name = "btnAprobacion";
-            this.btnAprobacion.Size = new System.Drawing.Size(91, 23);
-            this.btnAprobacion.Text = "Ver solicitud";
+            this.panel2.Controls.Add(this.btnCerrarSesion);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(693, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(81, 69);
+            this.panel2.TabIndex = 1;
             // 
-            // btnCerrarSesión
+            // btnCerrarSesion
             // 
-            this.btnCerrarSesión.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnCerrarSesión.Name = "btnCerrarSesión";
-            this.btnCerrarSesión.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnCerrarSesión.Size = new System.Drawing.Size(98, 23);
-            this.btnCerrarSesión.Text = "Cerrar sesión";
+            this.btnCerrarSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.BackgroundImage")));
+            this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnCerrarSesion.Location = new System.Drawing.Point(25, 12);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(30, 35);
+            this.btnCerrarSesion.TabIndex = 3;
+            this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(6, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Cerrar sesión";
+            // 
+            // btnVerSolicitud
+            // 
+            this.btnVerSolicitud.BackColor = System.Drawing.Color.White;
+            this.btnVerSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerSolicitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerSolicitud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnVerSolicitud.Location = new System.Drawing.Point(22, 20);
+            this.btnVerSolicitud.Name = "btnVerSolicitud";
+            this.btnVerSolicitud.Size = new System.Drawing.Size(175, 30);
+            this.btnVerSolicitud.TabIndex = 0;
+            this.btnVerSolicitud.Text = "Ver solicitud";
+            this.btnVerSolicitud.UseVisualStyleBackColor = false;
+            this.btnVerSolicitud.Click += new System.EventHandler(this.btnVerSolicitud_Click);
             // 
             // FrmVistaPrincipalAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 341);
+            this.ClientSize = new System.Drawing.Size(776, 392);
             this.Controls.Add(this.pbLogo);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel1);
             this.Name = "FrmVistaPrincipalAlumno";
             this.Text = "FrmVistaPrincipalAlumno";
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pbLogo;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem btnAprobacion;
-        private System.Windows.Forms.ToolStripMenuItem btnCerrarSesión;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnVerSolicitud;
     }
 }
