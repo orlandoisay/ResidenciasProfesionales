@@ -1,18 +1,22 @@
-﻿using System;
+﻿using ResidenciasProfesionales.DATA;
+using ResidenciasProfesionales.MODEL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using ResidenciasProfesionales.MODEL;
-using ResidenciasProfesionales.DATA;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.VIEW
 {
     public partial class FrmReporteResidencias : Form
     {
+
+        List<TablaResumenPOJO> tabla = new List<TablaResumenPOJO>();
+
         public FrmReporteResidencias()
         {
             InitializeComponent();
@@ -21,13 +25,34 @@ namespace ResidenciasProfesionales.VIEW
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-           
+            if (tabla.Count > 0)
+                ImprimirReporte();
+        }
+
+        private void ImprimirReporte()
+        {
+
+            // Inicializar el cuadro de diálogo
+            sfdImpresion.FileName = string.Format("Reporte de residencias");
+            sfdImpresion.Filter = "Archivo de Excel (.xlsx)|*.xlsx";
+
+            DialogResult dr = sfdImpresion.ShowDialog();
+
+            if (dr != DialogResult.OK)
+                return;
+
+            bool resultado = ResumenGenerrador.GenerarFormatoDeReporte(tabla,sfdImpresion.FileName);
+            //bool resultado = SolicitudGenerador.GenerarFormatoDeSolicitud(alumno.Matricula, sfdImpresion.FileName);
+
+            if (resultado)
+                MessageBox.Show("Archivo generado corretamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Ocurrio un error al generar el archivo. Intente más tarde.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void cargarDatos() {
             dgvLista.DataSource = null;
             List <DictamenPOJO> dictamenes = DictamenDAO.ObtenerProyectosTerminados();
-            List<TablaResumenPOJO> tabla = new List<TablaResumenPOJO>();
             for (int i = 0; i < dictamenes.Count; i++) {
                 TablaResumenPOJO elemento = new TablaResumenPOJO();
                 DictamenPOJO dic = new DictamenPOJO();

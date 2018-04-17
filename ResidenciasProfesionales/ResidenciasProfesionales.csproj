@@ -63,6 +63,7 @@
     <Compile Include="DATA\ExcelGenerador.cs" />
     <Compile Include="DATA\InformeDAO.cs" />
     <Compile Include="DATA\ResidenciaDAO.cs" />
+    <Compile Include="DATA\ResumenGenerrador.cs" />
     <Compile Include="DATA\RevisorDAO.cs" />
     <Compile Include="DATA\RolDAO.cs" />
     <Compile Include="DATA\SolicitudDAO.cs" />
@@ -304,6 +305,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\PlantillaReporte.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

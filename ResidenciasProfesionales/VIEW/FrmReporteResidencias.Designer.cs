@@ -32,6 +32,7 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.lblSolicitud = new System.Windows.Forms.Label();
+            this.sfdImpresion = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,5 +111,6 @@
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Label lblSolicitud;
+        private System.Windows.Forms.SaveFileDialog sfdImpresion;
     }
 }
