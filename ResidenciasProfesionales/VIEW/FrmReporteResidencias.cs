@@ -32,13 +32,40 @@ namespace ResidenciasProfesionales.VIEW
                 TablaResumenPOJO elemento = new TablaResumenPOJO();
                 DictamenPOJO dic = new DictamenPOJO();
                 ResidenciaPOJO res = ResidenciaDAO.ObtenerResidencia(dictamenes[i].IdResidencia);
+                List<DictamenPOJO> revisores = DictamenDAO.ObtenerDictamenesRevisores(res.ID);
+
+                elemento.DictamenFinal = dictamenes[i].Estatus;
+                elemento.Calificacion = dictamenes[i].Calificacion;
+
                 elemento.Proyecto = res.NombreProyec;
                 elemento.Empresa = EmpresaDAO.ObtenerEmpresa(res.IdEmpresa).Nombre;
 
+                elemento.NombreAlumno = AlumnoDAO.ObtenerAlumno(res.IdAlumno).NombreCompleto;
+                elemento.Matricula = res.IdAlumno;
+
                 dic = DictamenDAO.ObtenerDictamenAsesor(res.ID);
-                //elemento.Asesor = 
+                elemento.Asesor = DocenteDAO.ObtenerDocente(dic.IdDocente).NombreCompleto;
+                elemento.DictamenAsesor = dic.Estatus;
+                elemento.ComentarioAsesor = dic.Comentario;
+
+                for (int j = 0; j < revisores.Count; j++) {
+                    if (j == 0)
+                    {
+                        elemento.Revisor1 = DocenteDAO.ObtenerDocente(revisores[j].IdDocente).NombreCompleto;
+                        elemento.DictamenRevisor1 = revisores[j].Estatus;
+                        elemento.ComentarioRevisor1 = revisores[j].Comentario;
+                    }
+                    else
+                    {
+                        elemento.Revisor2 = DocenteDAO.ObtenerDocente(revisores[j].IdDocente).NombreCompleto;
+                        elemento.DictamenRevisor2 = revisores[j].Estatus;
+                        elemento.ComentarioRevisor2 = revisores[j].Comentario;
+                    }
+                }
+
+                tabla.Add(elemento);
             }
-            dgvLista.DataSource = DictamenDAO.ObtenerProyectosTerminados();
+            dgvLista.DataSource = tabla;
         }
     }
 }
