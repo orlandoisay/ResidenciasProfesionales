@@ -73,7 +73,7 @@ namespace ResidenciasProfesionales.VIEW
             tablaAsignarAsesor.Rows.Clear();
             tablaModificarAsesor.Rows.Clear();
             // Lista donde se guardaran todos los alumnos sin y con asesor.
-            alumnosSinAsesor = AlumnoDAO.ObtenerAlumnosSinAsesor();
+            alumnosSinAsesor = AlumnoDAO.ObtenerAlumnosSinAsesorSolicitudAprobada();
             alumnosConAsesor = AlumnoDAO.ObtenerAlumnosConAsesor();
             DocentePOJO asesor;
             // Ciclo para llenar la tabla.
@@ -97,20 +97,33 @@ namespace ResidenciasProfesionales.VIEW
         String matriculaConAsesor;
         private void tablaAsignarAsesor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnAsignar.Enabled = true;
-            btnMostrarAsignar.Enabled = true;
-            matriculaSinAsesor = tablaAsignarAsesor.Rows[e.RowIndex].Cells["noControlAsignar"].Value.ToString();
-            String nombreSeleccionado = tablaAsignarAsesor.Rows[e.RowIndex].Cells["nombreAsignar"].Value.ToString();
-            lblAlumnoAsignar.Text = "ALUMNO: "+nombreSeleccionado.ToUpper();
+            try
+            {
+                btnAsignar.Enabled = true;
+                btnMostrarAsignar.Enabled = true;
+                matriculaSinAsesor = tablaAsignarAsesor.Rows[e.RowIndex].Cells["noControlAsignar"].Value.ToString();
+                String nombreSeleccionado = tablaAsignarAsesor.Rows[e.RowIndex].Cells["nombreAsignar"].Value.ToString();
+                lblAlumnoAsignar.Text = "ALUMNO: " + nombreSeleccionado.ToUpper();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void tablaModificarAsesor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnCambiarAsesor.Enabled = true;
-            btnMostrarModificar.Enabled = true;
-            matriculaConAsesor = tablaModificarAsesor.Rows[e.RowIndex].Cells["noControlModificar"].Value.ToString();
-            String nombreSeleccionado = tablaModificarAsesor.Rows[e.RowIndex].Cells["nombreModificar"].Value.ToString();
-            lblAlumnoModificar.Text = "ALUMNO: " + nombreSeleccionado.ToUpper();
+            try
+            {
+                btnCambiarAsesor.Enabled = true;
+                btnMostrarModificar.Enabled = true;
+                matriculaConAsesor = tablaModificarAsesor.Rows[e.RowIndex].Cells["noControlModificar"].Value.ToString();
+                String nombreSeleccionado = tablaModificarAsesor.Rows[e.RowIndex].Cells["nombreModificar"].Value.ToString();
+                lblAlumnoModificar.Text = "ALUMNO: " + nombreSeleccionado.ToUpper();
+            }
+            catch (Exception)
+            {
+            }
+            
         }
     }
 }

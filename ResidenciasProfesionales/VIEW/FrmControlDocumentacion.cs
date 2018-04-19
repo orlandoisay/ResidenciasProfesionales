@@ -53,13 +53,21 @@ namespace ResidenciasProfesionales.VIEW
         String matricula;
         private void tablaAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnGuardarCambios.Enabled = true;
-            matricula = tablaAlumnos.Rows[e.RowIndex].Cells["noControl"].Value.ToString();
-            String nombreSeleccionado = tablaAlumnos.Rows[e.RowIndex].Cells["nombre"].Value.ToString();
-            lblNombreAlumno.Text = "ALUMNO: " + nombreSeleccionado.ToUpper();
-            spnCalificacionFinal.Value = 0;
-            txtaComentario.Text = "";
-            palomearChecks();
+            try
+            {
+                btnGuardarCambios.Enabled = true;
+                matricula = tablaAlumnos.Rows[e.RowIndex].Cells["noControl"].Value.ToString();
+                String nombreSeleccionado = tablaAlumnos.Rows[e.RowIndex].Cells["nombre"].Value.ToString();
+                lblNombreAlumno.Text = "ALUMNO: " + nombreSeleccionado.ToUpper();
+                spnCalificacionFinal.Value = 0;
+                txtaComentario.Text = "";
+                palomearChecks();
+            }
+            catch (Exception)
+            {
+                btnGuardarCambios.Enabled = false;
+            }
+            
         }
 
         public void palomearChecks() {
