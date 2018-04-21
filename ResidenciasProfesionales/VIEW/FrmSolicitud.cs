@@ -17,6 +17,11 @@ namespace ResidenciasProfesionales.VIEW
         private bool esEdicion = false;
         private AlumnoPOJO alumno;
 
+        /// <summary>
+        /// Muestra una ventana en la que un alumno puede llenar
+        /// su solicitud, e imprimirla.
+        /// </summary>
+        /// <param name="matricula">Matricula del alumno en cuestión.</param>
         public FrmSolicitud(string matricula)
         {
             InitializeComponent();
