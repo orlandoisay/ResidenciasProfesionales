@@ -32,6 +32,7 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.lblSolicitud = new System.Windows.Forms.Label();
+            this.sfdImpresion = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,7 +41,7 @@
             this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportar.Font = new System.Drawing.Font("Segoe UI Light", 10F);
-            this.btnExportar.Location = new System.Drawing.Point(632, 14);
+            this.btnExportar.Location = new System.Drawing.Point(732, 14);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(143, 35);
             this.btnExportar.TabIndex = 20;
@@ -56,7 +57,7 @@
             this.dgvLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvLista.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvLista.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -76,7 +77,7 @@
             this.dgvLista.ReadOnly = true;
             this.dgvLista.RowHeadersVisible = false;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(763, 325);
+            this.dgvLista.Size = new System.Drawing.Size(863, 325);
             this.dgvLista.TabIndex = 19;
             // 
             // lblSolicitud
@@ -93,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 396);
+            this.ClientSize = new System.Drawing.Size(887, 396);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.lblSolicitud);
@@ -110,5 +111,6 @@
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Label lblSolicitud;
+        private System.Windows.Forms.SaveFileDialog sfdImpresion;
     }
 }

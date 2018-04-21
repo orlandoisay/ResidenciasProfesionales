@@ -39,6 +39,8 @@
             this.noControl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asesor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblComentario = new System.Windows.Forms.Label();
+            this.txtaComentario = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.spnCalificacionFinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDocumentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaAlumnos)).BeginInit();
@@ -47,28 +49,30 @@
             // spnCalificacionFinal
             // 
             this.spnCalificacionFinal.Enabled = false;
-            this.spnCalificacionFinal.Location = new System.Drawing.Point(127, 426);
+            this.spnCalificacionFinal.Location = new System.Drawing.Point(677, 364);
             this.spnCalificacionFinal.Name = "spnCalificacionFinal";
             this.spnCalificacionFinal.Size = new System.Drawing.Size(45, 20);
             this.spnCalificacionFinal.TabIndex = 13;
             // 
             // btnGuardarCambios
             // 
-            this.btnGuardarCambios.Location = new System.Drawing.Point(522, 423);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(522, 407);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(200, 23);
             this.btnGuardarCambios.TabIndex = 12;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // lblCalificacionFinal
             // 
             this.lblCalificacionFinal.AutoSize = true;
-            this.lblCalificacionFinal.Location = new System.Drawing.Point(12, 429);
+            this.lblCalificacionFinal.Location = new System.Drawing.Point(562, 367);
             this.lblCalificacionFinal.Name = "lblCalificacionFinal";
             this.lblCalificacionFinal.Size = new System.Drawing.Size(118, 13);
             this.lblCalificacionFinal.TabIndex = 11;
             this.lblCalificacionFinal.Text = "CALIFICACIÓN FINAL: ";
+            this.lblCalificacionFinal.Click += new System.EventHandler(this.lblCalificacionFinal_Click);
             // 
             // tablaDocumentos
             // 
@@ -119,6 +123,7 @@
             this.tablaAlumnos.ReadOnly = true;
             this.tablaAlumnos.Size = new System.Drawing.Size(710, 155);
             this.tablaAlumnos.TabIndex = 8;
+            this.tablaAlumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaAlumnos_CellClick);
             // 
             // noControl
             // 
@@ -142,11 +147,30 @@
             this.asesor.Name = "asesor";
             this.asesor.ReadOnly = true;
             // 
+            // lblComentario
+            // 
+            this.lblComentario.AutoSize = true;
+            this.lblComentario.Location = new System.Drawing.Point(12, 367);
+            this.lblComentario.Name = "lblComentario";
+            this.lblComentario.Size = new System.Drawing.Size(145, 13);
+            this.lblComentario.TabIndex = 14;
+            this.lblComentario.Text = "COMENTARIO (OPCIONAL):";
+            // 
+            // txtaComentario
+            // 
+            this.txtaComentario.Location = new System.Drawing.Point(12, 388);
+            this.txtaComentario.Name = "txtaComentario";
+            this.txtaComentario.Size = new System.Drawing.Size(480, 56);
+            this.txtaComentario.TabIndex = 15;
+            this.txtaComentario.Text = "";
+            // 
             // FrmControlDocumentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 456);
+            this.Controls.Add(this.txtaComentario);
+            this.Controls.Add(this.lblComentario);
             this.Controls.Add(this.spnCalificacionFinal);
             this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.lblCalificacionFinal);
@@ -176,5 +200,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn noControl;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn asesor;
+        private System.Windows.Forms.Label lblComentario;
+        private System.Windows.Forms.RichTextBox txtaComentario;
     }
 }

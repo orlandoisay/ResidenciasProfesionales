@@ -18,7 +18,7 @@ namespace ResidenciasProfesionales.VIEW
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
         private static extern IntPtr SendMessage(IntPtr hWind, uint msg, IntPtr i, string str);
 
-
+        DocentePOJO docenteIngresado;
         public FrmLogin2()
         {
             InitializeComponent();
@@ -55,17 +55,20 @@ namespace ResidenciasProfesionales.VIEW
                 {
                         switch (cbTipo.Text) {
                         case "Asesor":
+                            docenteIngresado = DocenteDAO.ObtenerDocenteXUsuario(tbUsuario.Text);
                             this.Visible = false;
-                            FrmVistaPrincipalAsesor fvpa = new FrmVistaPrincipalAsesor(lbUsuario.Text);
+                            FrmVistaPrincipalAsesor fvpa = new FrmVistaPrincipalAsesor(docenteIngresado.ID);
                             fvpa.Show();
                             break;
                         case "Revisor":
+                            docenteIngresado = DocenteDAO.ObtenerDocenteXUsuario(tbUsuario.Text);
                             this.Visible = false;
-                            FrmVistaPrincipalRevisor fvpr = new FrmVistaPrincipalRevisor(lbUsuario.Text);
+                            FrmVistaPrincipalRevisor fvpr = new FrmVistaPrincipalRevisor(docenteIngresado.ID);
+                            fvpr.Show();
                             break;
                         case "Alumno":
                             this.Visible = false;
-                            FrmVistaPrincipalAlumno fvp_a = new FrmVistaPrincipalAlumno();
+                            FrmVistaPrincipalAlumno fvp_a = new FrmVistaPrincipalAlumno(tbUsuario.Text);
                             fvp_a.Show();
                             break;
                         case "Academia":
@@ -74,8 +77,9 @@ namespace ResidenciasProfesionales.VIEW
                             fvpac.Show();
                             break;
                         case "Coordinador":
+                            docenteIngresado = DocenteDAO.ObtenerDocenteXUsuario(tbUsuario.Text);
                             this.Visible = false;
-                            FrmVistaPrincipalCoordinador fvpc = new FrmVistaPrincipalCoordinador();
+                            FrmVistaPrincipalCoordinador fvpc = new FrmVistaPrincipalCoordinador(docenteIngresado.ID);
                             fvpc.Show();
                             break;
                        } 

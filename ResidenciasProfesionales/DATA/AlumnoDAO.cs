@@ -66,6 +66,64 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        public static List<AlumnoPOJO> ObtenerAlumnosSinAsesorSolicitudAprobada()
+        {
+            try
+            {
+                var list = new List<AlumnoPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT DISTINCT al.* FROM alumno al JOIN solicitud sol ON al.matricula = sol.idAlumno " +
+                "WHERE Matricula NOT IN(SELECT IdAlumno FROM roldocente WHERE Rol = 'Asesor') AND sol.Estatus = 'Aceptado'; ");
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
+        public static List<AlumnoPOJO> ObtenerAlumnosConAsesorSinLiberarlo(String idDocente)
+        {
+            try
+            {
+                var list = new List<AlumnoPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT al.* FROM alumno al JOIN roldocente rol WHERE" +
+                    " al.Matricula = rol.idAlumno AND rol.Rol = 'Asesor' AND rol.IdDocente = @P0" +
+                " AND rol.IdDocente NOT IN(SELECT IdDocente FROM dictamen WHERE tipo = 'LiberacionAsesor');");
+                cmd.Parameters.AddWithValue("@P0", idDocente);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static List<AlumnoPOJO> ObtenerAlumnosConAsesor()
         {
             try

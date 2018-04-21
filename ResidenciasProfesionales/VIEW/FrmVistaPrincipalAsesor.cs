@@ -35,7 +35,7 @@ namespace ResidenciasProfesionales.VIEW
 
         private void btnControlDocumentacion_Click(object sender, EventArgs e)
         {
-            var frmControlDocumentacion = new FrmControlDocumentacion();
+            var frmControlDocumentacion = new FrmControlDocumentacion(IdDocente);
             frmControlDocumentacion.ShowDialog();
         }
 

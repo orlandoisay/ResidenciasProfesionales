@@ -95,7 +95,7 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
-        public static List<DictamenPOJO> ObtenerDictamenesAsesores(int idResidencia)
+        public static List<DictamenPOJO> ObtenerDictamenesRevisores(int idResidencia)
         {
             try
             {
@@ -122,6 +122,7 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
 
         public static List<DictamenPOJO> ObtenerProyectosTerminados()
         {
