@@ -11,6 +11,34 @@ namespace ResidenciasProfesionales.DATA
 {
     public class ResidenciaDAO
     {
+
+        public static List<ResidenciaPOJO> ObtenerResidenciaLiberacion()
+        {
+            try
+            {
+                var list = new List<ResidenciaPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("select * from inforesidencia r where r.ID not in (select distinct d.IdResidencia from dictamen d where d.Tipo like 'LiberacionFinal') and (select count(*) from dictamen d where r.ID = d.IdResidencia and d.Tipo in ('LiberacionAsesor','LiberacionRevisor') and d.Estatus like 'Aceptado') > 2;");
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static ResidenciaPOJO ObtenerResidencia(int id)
         {
             try
