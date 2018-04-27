@@ -117,7 +117,7 @@
             this.btnAprobacionInformes.Name = "btnAprobacionInformes";
             this.btnAprobacionInformes.Size = new System.Drawing.Size(176, 30);
             this.btnAprobacionInformes.TabIndex = 1;
-            this.btnAprobacionInformes.Text = "Aprobacion de Informes";
+            this.btnAprobacionInformes.Text = "Liberación de Informes";
             this.btnAprobacionInformes.UseVisualStyleBackColor = false;
             this.btnAprobacionInformes.Click += new System.EventHandler(this.btnAprobacionInformes_Click);
             // 

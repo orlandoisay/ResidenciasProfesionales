@@ -41,7 +41,10 @@
             this.lblNoControl = new System.Windows.Forms.Label();
             this.pbFotografía = new System.Windows.Forms.PictureBox();
             this.lblSolicitud = new System.Windows.Forms.Label();
+            this.lblCalificacion = new System.Windows.Forms.Label();
+            this.spnCal = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotografía)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spnCal)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEvaluar
@@ -49,12 +52,13 @@
             this.btnEvaluar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEvaluar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEvaluar.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEvaluar.Location = new System.Drawing.Point(327, 265);
+            this.btnEvaluar.Location = new System.Drawing.Point(327, 373);
             this.btnEvaluar.Name = "btnEvaluar";
             this.btnEvaluar.Size = new System.Drawing.Size(82, 35);
             this.btnEvaluar.TabIndex = 45;
             this.btnEvaluar.Text = "Liberar";
             this.btnEvaluar.UseVisualStyleBackColor = true;
+            this.btnEvaluar.Click += new System.EventHandler(this.btnEvaluar_Click);
             // 
             // txtComentarios
             // 
@@ -64,7 +68,7 @@
             this.txtComentarios.Location = new System.Drawing.Point(18, 182);
             this.txtComentarios.Multiline = true;
             this.txtComentarios.Name = "txtComentarios";
-            this.txtComentarios.Size = new System.Drawing.Size(391, 77);
+            this.txtComentarios.Size = new System.Drawing.Size(391, 128);
             this.txtComentarios.TabIndex = 44;
             // 
             // lblComentarios
@@ -81,7 +85,7 @@
             // 
             this.txtSemestre.AutoSize = true;
             this.txtSemestre.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSemestre.Location = new System.Drawing.Point(191, 123);
+            this.txtSemestre.Location = new System.Drawing.Point(206, 122);
             this.txtSemestre.Name = "txtSemestre";
             this.txtSemestre.Size = new System.Drawing.Size(18, 17);
             this.txtSemestre.TabIndex = 42;
@@ -91,7 +95,7 @@
             // 
             this.txtCarrera.AutoSize = true;
             this.txtCarrera.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCarrera.Location = new System.Drawing.Point(191, 103);
+            this.txtCarrera.Location = new System.Drawing.Point(206, 102);
             this.txtCarrera.Name = "txtCarrera";
             this.txtCarrera.Size = new System.Drawing.Size(18, 17);
             this.txtCarrera.TabIndex = 41;
@@ -101,7 +105,7 @@
             // 
             this.txtNombre.AutoSize = true;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(191, 83);
+            this.txtNombre.Location = new System.Drawing.Point(206, 82);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(18, 17);
             this.txtNombre.TabIndex = 40;
@@ -111,7 +115,7 @@
             // 
             this.txtNoControl.AutoSize = true;
             this.txtNoControl.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoControl.Location = new System.Drawing.Point(191, 63);
+            this.txtNoControl.Location = new System.Drawing.Point(206, 62);
             this.txtNoControl.Name = "txtNoControl";
             this.txtNoControl.Size = new System.Drawing.Size(18, 17);
             this.txtNoControl.TabIndex = 39;
@@ -121,7 +125,7 @@
             // 
             this.lblSemestre.AutoSize = true;
             this.lblSemestre.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSemestre.Location = new System.Drawing.Point(119, 123);
+            this.lblSemestre.Location = new System.Drawing.Point(134, 122);
             this.lblSemestre.Name = "lblSemestre";
             this.lblSemestre.Size = new System.Drawing.Size(62, 17);
             this.lblSemestre.TabIndex = 38;
@@ -131,7 +135,7 @@
             // 
             this.lblCarrera.AutoSize = true;
             this.lblCarrera.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarrera.Location = new System.Drawing.Point(128, 103);
+            this.lblCarrera.Location = new System.Drawing.Point(143, 102);
             this.lblCarrera.Name = "lblCarrera";
             this.lblCarrera.Size = new System.Drawing.Size(50, 17);
             this.lblCarrera.TabIndex = 37;
@@ -141,7 +145,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(123, 83);
+            this.lblNombre.Location = new System.Drawing.Point(138, 82);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(56, 17);
             this.lblNombre.TabIndex = 36;
@@ -151,7 +155,7 @@
             // 
             this.lblNoControl.AutoSize = true;
             this.lblNoControl.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoControl.Location = new System.Drawing.Point(104, 63);
+            this.lblNoControl.Location = new System.Drawing.Point(119, 62);
             this.lblNoControl.Name = "lblNoControl";
             this.lblNoControl.Size = new System.Drawing.Size(74, 17);
             this.lblNoControl.TabIndex = 35;
@@ -176,11 +180,33 @@
             this.lblSolicitud.TabIndex = 33;
             this.lblSolicitud.Text = "Liberación de informe final";
             // 
+            // lblCalificacion
+            // 
+            this.lblCalificacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblCalificacion.AutoSize = true;
+            this.lblCalificacion.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalificacion.Location = new System.Drawing.Point(12, 335);
+            this.lblCalificacion.Name = "lblCalificacion";
+            this.lblCalificacion.Size = new System.Drawing.Size(73, 17);
+            this.lblCalificacion.TabIndex = 46;
+            this.lblCalificacion.Text = "Calificación:";
+            // 
+            // spnCal
+            // 
+            this.spnCal.AllowDrop = true;
+            this.spnCal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.spnCal.Location = new System.Drawing.Point(91, 336);
+            this.spnCal.Name = "spnCal";
+            this.spnCal.Size = new System.Drawing.Size(40, 20);
+            this.spnCal.TabIndex = 47;
+            // 
             // FrmLiberacionFinalDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 312);
+            this.ClientSize = new System.Drawing.Size(421, 420);
+            this.Controls.Add(this.spnCal);
+            this.Controls.Add(this.lblCalificacion);
             this.Controls.Add(this.btnEvaluar);
             this.Controls.Add(this.txtComentarios);
             this.Controls.Add(this.lblComentarios);
@@ -198,6 +224,7 @@
             this.Text = "Liberación de informe final";
             this.Load += new System.EventHandler(this.FrmLiberacionFinalDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbFotografía)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spnCal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,5 +245,7 @@
         private System.Windows.Forms.Label lblNoControl;
         private System.Windows.Forms.PictureBox pbFotografía;
         private System.Windows.Forms.Label lblSolicitud;
+        private System.Windows.Forms.Label lblCalificacion;
+        private System.Windows.Forms.NumericUpDown spnCal;
     }
 }
