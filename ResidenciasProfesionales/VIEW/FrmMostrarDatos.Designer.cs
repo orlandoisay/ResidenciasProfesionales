@@ -30,7 +30,6 @@
         {
             this.panelAsesor = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblNombreAsesor = new System.Windows.Forms.Label();
             this.cbxAsesor = new System.Windows.Forms.ComboBox();
@@ -41,9 +40,9 @@
             this.lblNumeroAsesorados = new System.Windows.Forms.Label();
             this.lblEstatusAsesor = new System.Windows.Forms.Label();
             this.panelAlumno = new System.Windows.Forms.Panel();
+            this.lblSemestre = new System.Windows.Forms.Label();
             this.lblNumeroSS = new System.Windows.Forms.Label();
             this.lblTipoSS = new System.Windows.Forms.Label();
-            this.pbFotografía = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnAsignar = new System.Windows.Forms.Button();
@@ -54,17 +53,18 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblEstatus = new System.Windows.Forms.Label();
-            this.lblSemestre = new System.Windows.Forms.Label();
+            this.pbxAlumno = new System.Windows.Forms.PictureBox();
+            this.pbxAsesor = new System.Windows.Forms.PictureBox();
             this.panelAsesor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelAlumno.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotografía)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAlumno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAsesor)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAsesor
             // 
+            this.panelAsesor.Controls.Add(this.pbxAsesor);
             this.panelAsesor.Controls.Add(this.lblUsuario);
-            this.panelAsesor.Controls.Add(this.pictureBox1);
             this.panelAsesor.Controls.Add(this.btnCancelar);
             this.panelAsesor.Controls.Add(this.lblNombreAsesor);
             this.panelAsesor.Controls.Add(this.cbxAsesor);
@@ -88,15 +88,6 @@
             this.lblUsuario.Size = new System.Drawing.Size(46, 13);
             this.lblUsuario.TabIndex = 22;
             this.lblUsuario.Text = "Usuario:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
             // 
             // btnCancelar
             // 
@@ -183,10 +174,10 @@
             // 
             // panelAlumno
             // 
+            this.panelAlumno.Controls.Add(this.pbxAlumno);
             this.panelAlumno.Controls.Add(this.lblSemestre);
             this.panelAlumno.Controls.Add(this.lblNumeroSS);
             this.panelAlumno.Controls.Add(this.lblTipoSS);
-            this.panelAlumno.Controls.Add(this.pbFotografía);
             this.panelAlumno.Controls.Add(this.btnCerrar);
             this.panelAlumno.Controls.Add(this.btnAnterior);
             this.panelAlumno.Controls.Add(this.btnAsignar);
@@ -202,6 +193,15 @@
             this.panelAlumno.Size = new System.Drawing.Size(460, 205);
             this.panelAlumno.TabIndex = 21;
             this.panelAlumno.Visible = false;
+            // 
+            // lblSemestre
+            // 
+            this.lblSemestre.AutoSize = true;
+            this.lblSemestre.Location = new System.Drawing.Point(37, 131);
+            this.lblSemestre.Name = "lblSemestre";
+            this.lblSemestre.Size = new System.Drawing.Size(57, 13);
+            this.lblSemestre.TabIndex = 23;
+            this.lblSemestre.Text = "Semestre: ";
             // 
             // lblNumeroSS
             // 
@@ -222,15 +222,6 @@
             this.lblTipoSS.Size = new System.Drawing.Size(51, 13);
             this.lblTipoSS.TabIndex = 21;
             this.lblTipoSS.Text = "Tipo SS: ";
-            // 
-            // pbFotografía
-            // 
-            this.pbFotografía.BackColor = System.Drawing.Color.Gray;
-            this.pbFotografía.Location = new System.Drawing.Point(14, 16);
-            this.pbFotografía.Name = "pbFotografía";
-            this.pbFotografía.Size = new System.Drawing.Size(80, 80);
-            this.pbFotografía.TabIndex = 20;
-            this.pbFotografía.TabStop = false;
             // 
             // btnCerrar
             // 
@@ -332,14 +323,25 @@
             this.lblEstatus.TabIndex = 9;
             this.lblEstatus.Text = "Estatus: ";
             // 
-            // lblSemestre
+            // pbxAlumno
             // 
-            this.lblSemestre.AutoSize = true;
-            this.lblSemestre.Location = new System.Drawing.Point(37, 131);
-            this.lblSemestre.Name = "lblSemestre";
-            this.lblSemestre.Size = new System.Drawing.Size(57, 13);
-            this.lblSemestre.TabIndex = 23;
-            this.lblSemestre.Text = "Semestre: ";
+            this.pbxAlumno.BackgroundImage = global::ResidenciasProfesionales.Properties.Resources.chico;
+            this.pbxAlumno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxAlumno.Location = new System.Drawing.Point(13, 16);
+            this.pbxAlumno.Name = "pbxAlumno";
+            this.pbxAlumno.Size = new System.Drawing.Size(81, 80);
+            this.pbxAlumno.TabIndex = 24;
+            this.pbxAlumno.TabStop = false;
+            // 
+            // pbxAsesor
+            // 
+            this.pbxAsesor.BackgroundImage = global::ResidenciasProfesionales.Properties.Resources.hombre;
+            this.pbxAsesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxAsesor.Location = new System.Drawing.Point(13, 15);
+            this.pbxAsesor.Name = "pbxAsesor";
+            this.pbxAsesor.Size = new System.Drawing.Size(80, 79);
+            this.pbxAsesor.TabIndex = 25;
+            this.pbxAsesor.TabStop = false;
             // 
             // FrmMostrarDatos
             // 
@@ -352,10 +354,10 @@
             this.Text = "FrmMostrarDatos";
             this.panelAsesor.ResumeLayout(false);
             this.panelAsesor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelAlumno.ResumeLayout(false);
             this.panelAlumno.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotografía)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAlumno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAsesor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,11 +385,11 @@
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblEstatus;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pbFotografía;
         private System.Windows.Forms.Label lblNumeroSS;
         private System.Windows.Forms.Label lblTipoSS;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblSemestre;
+        private System.Windows.Forms.PictureBox pbxAlumno;
+        private System.Windows.Forms.PictureBox pbxAsesor;
     }
 }
