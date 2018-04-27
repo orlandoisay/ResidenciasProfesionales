@@ -54,6 +54,7 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblEstatus = new System.Windows.Forms.Label();
+            this.lblSemestre = new System.Windows.Forms.Label();
             this.panelAsesor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelAlumno.SuspendLayout();
@@ -182,6 +183,7 @@
             // 
             // panelAlumno
             // 
+            this.panelAlumno.Controls.Add(this.lblSemestre);
             this.panelAlumno.Controls.Add(this.lblNumeroSS);
             this.panelAlumno.Controls.Add(this.lblTipoSS);
             this.panelAlumno.Controls.Add(this.pbFotografía);
@@ -204,7 +206,7 @@
             // lblNumeroSS
             // 
             this.lblNumeroSS.AutoSize = true;
-            this.lblNumeroSS.Location = new System.Drawing.Point(245, 153);
+            this.lblNumeroSS.Location = new System.Drawing.Point(245, 131);
             this.lblNumeroSS.MaximumSize = new System.Drawing.Size(0, 50);
             this.lblNumeroSS.Name = "lblNumeroSS";
             this.lblNumeroSS.Size = new System.Drawing.Size(67, 13);
@@ -214,7 +216,7 @@
             // lblTipoSS
             // 
             this.lblTipoSS.AutoSize = true;
-            this.lblTipoSS.Location = new System.Drawing.Point(38, 153);
+            this.lblTipoSS.Location = new System.Drawing.Point(245, 109);
             this.lblTipoSS.MaximumSize = new System.Drawing.Size(0, 50);
             this.lblTipoSS.Name = "lblTipoSS";
             this.lblTipoSS.Size = new System.Drawing.Size(51, 13);
@@ -313,7 +315,7 @@
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(49, 131);
+            this.lblCorreo.Location = new System.Drawing.Point(50, 153);
             this.lblCorreo.MaximumSize = new System.Drawing.Size(0, 150);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(44, 13);
@@ -329,6 +331,15 @@
             this.lblEstatus.Size = new System.Drawing.Size(48, 13);
             this.lblEstatus.TabIndex = 9;
             this.lblEstatus.Text = "Estatus: ";
+            // 
+            // lblSemestre
+            // 
+            this.lblSemestre.AutoSize = true;
+            this.lblSemestre.Location = new System.Drawing.Point(37, 131);
+            this.lblSemestre.Name = "lblSemestre";
+            this.lblSemestre.Size = new System.Drawing.Size(57, 13);
+            this.lblSemestre.TabIndex = 23;
+            this.lblSemestre.Text = "Semestre: ";
             // 
             // FrmMostrarDatos
             // 
@@ -377,5 +388,6 @@
         private System.Windows.Forms.Label lblNumeroSS;
         private System.Windows.Forms.Label lblTipoSS;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblSemestre;
     }
 }

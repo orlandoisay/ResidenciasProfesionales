@@ -86,6 +86,7 @@ namespace ResidenciasProfesionales.VIEW
             lblNombre.Text = "Nombre: " + listaAlumnos[indice].Nombre;
             CarreraPOJO carrera = CarreraDAO.ObtenerUno(listaAlumnos[indice].Carrera);
             lblCarreraAlumno.Text = "Carrera: " + carrera.Nombre;
+            lblSemestre.Text = "Semestre: " + listaAlumnos[indice].Semestre;
             lblEstatus.Text = "Estatus: " + listaAlumnos[indice].Estatus;
             lblTelefono.Text = "Telefono: " + listaAlumnos[indice].Telefono;
             lblCorreo.Text = "Correo: " + listaAlumnos[indice].Correo;
