@@ -21,6 +21,7 @@ namespace ResidenciasProfesionales.VIEW
         public FrmMostrarDatos(List<AlumnoPOJO> lista, int inicial, String accion)
         {
             InitializeComponent();
+            //cbxAsesor.SelectedIndex = 0;
 
             this.Size = new Size(550, 270);
             if (accion == "Cambiar")
@@ -131,12 +132,18 @@ namespace ResidenciasProfesionales.VIEW
         {
             if (btnAceptar.Text == "Aceptar") {
                 DocenteDAO.AsignarAsesorado(matricula, listaDocentes[cbxAsesor.SelectedIndex].ID);
+                EntregaDAO.InsertarDocumentosPendientes(matricula);
             }
             else {
                 DocentePOJO docenteAnterior = DocenteDAO.ObtenerDocenteXMatricula(matricula);
                 DocenteDAO.CambiarAsesor(listaDocentes[cbxAsesor.SelectedIndex].ID, matricula, docenteAnterior.ID);
+                if (docenteAnterior.ID == DocenteDAO.ObtenerDocenteXMatricula(matricula).ID)
+                {
+                    MessageBox.Show("El docente seleccionado ya cumple un rol con el alumno:\n" + AlumnoDAO.ObtenerAlumno(matricula).NombreCompleto + "\npor lo tanto no puede ser su asesor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
             }
-            EntregaDAO.InsertarDocumentosPendientes(matricula);
             MessageBox.Show("Asignado");
             this.Close();
         }
