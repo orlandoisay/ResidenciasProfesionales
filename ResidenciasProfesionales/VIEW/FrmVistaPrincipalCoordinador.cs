@@ -20,14 +20,24 @@ namespace ResidenciasProfesionales.VIEW
 
         private void btnAprobacionInformes_Click(object sender, EventArgs e)
         {
-            var frmAprobarInforme = new FrmLiberacionFinal(idDocente);
-            frmAprobarInforme.ShowDialog();
+            var frmAprobarSolicitudes = new FrmAprobacionSolicitud();
+            frmAprobarSolicitudes.ShowDialog();
         }
 
         private void btnReporteResidencias_Click(object sender, EventArgs e)
         {
             var frmReporteResidencia = new FrmReporteResidencias();
             frmReporteResidencia.ShowDialog();
+        }
+
+        private void pbCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lblCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
