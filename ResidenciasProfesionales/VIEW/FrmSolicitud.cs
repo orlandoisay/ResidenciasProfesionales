@@ -291,6 +291,12 @@ namespace ResidenciasProfesionales.VIEW
                 mensajeError += " - Ciudad del residente\n";
             }
 
+            if (!(new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").IsMatch(txtResEmail.Text)))
+            {
+                datosValidados = false;
+                mensajeError += " - Correo electrónico del residente\n";
+            }
+
             if (!(new Regex("[0-9]{10}").IsMatch(txtResTelefono.Text)))
             {
                 datosValidados = false;

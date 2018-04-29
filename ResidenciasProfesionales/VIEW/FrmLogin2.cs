@@ -45,6 +45,12 @@ namespace ResidenciasProfesionales.VIEW
             g.DrawLine(pen, 38, 182, 236, 182);
         }
 
+        private void limpiarCampos()
+        {
+            tbUsuario.Text = "";
+            tbContrasena.Text = "";
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (tbUsuario.Text != "" || tbContrasena.Text != "")
@@ -58,29 +64,39 @@ namespace ResidenciasProfesionales.VIEW
                             docenteIngresado = DocenteDAO.ObtenerDocenteXUsuario(tbUsuario.Text);
                             this.Visible = false;
                             FrmVistaPrincipalAsesor fvpa = new FrmVistaPrincipalAsesor(docenteIngresado.ID);
-                            fvpa.Show();
+                            fvpa.ShowDialog();
+                            this.Visible = true;
+                            limpiarCampos();
                             break;
                         case "Revisor":
                             docenteIngresado = DocenteDAO.ObtenerDocenteXUsuario(tbUsuario.Text);
                             this.Visible = false;
                             FrmVistaPrincipalRevisor fvpr = new FrmVistaPrincipalRevisor(docenteIngresado.ID);
-                            fvpr.Show();
+                            fvpr.ShowDialog();
+                            this.Visible = true;
+                            limpiarCampos();
                             break;
                         case "Alumno":
                             this.Visible = false;
                             FrmVistaPrincipalAlumno fvp_a = new FrmVistaPrincipalAlumno(tbUsuario.Text);
-                            fvp_a.Show();
+                            fvp_a.ShowDialog();
+                            this.Visible = true;
+                            limpiarCampos();
                             break;
                         case "Academia":
                             this.Visible = false;
                             FrmVistaPrincipalAcademia fvpac = new FrmVistaPrincipalAcademia();
-                            fvpac.Show();
+                            fvpac.ShowDialog();
+                            this.Visible = true;
+                            limpiarCampos();
                             break;
                         case "Coordinador":
                             docenteIngresado = DocenteDAO.ObtenerDocenteXUsuario(tbUsuario.Text);
                             this.Visible = false;
                             FrmVistaPrincipalCoordinador fvpc = new FrmVistaPrincipalCoordinador(docenteIngresado.ID);
-                            fvpc.Show();
+                            fvpc.ShowDialog();
+                            this.Visible = true;
+                            limpiarCampos();
                             break;
                        } 
                     //MessageBox.Show("Bien-Mientras pongo la ventan principal");

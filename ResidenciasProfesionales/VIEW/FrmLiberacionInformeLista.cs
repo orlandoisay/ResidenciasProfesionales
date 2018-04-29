@@ -13,10 +13,12 @@ namespace ResidenciasProfesionales.VIEW
     public partial class FrmLiberacionInformeLista : Form
     {
         private String IdDocente;
+        private String RolDocente;
 
-        public FrmLiberacionInformeLista(String idDocente)
+        public FrmLiberacionInformeLista(String idDocente, String rolDocente)
         {
             IdDocente = idDocente;
+            RolDocente = rolDocente;
             InitializeComponent();
             dgvLista.AutoGenerateColumns = false;
             CargarInformes();
@@ -39,6 +41,7 @@ namespace ResidenciasProfesionales.VIEW
             var listaInformes = InformeDAO.ObtenerInformesPorPeriodo(Properties.Settings.Default.Anio,
                                                                      Properties.Settings.Default.Periodo,
                                                                      IdDocente,
+                                                                     RolDocente,
                                                                      true);
 
             dgvLista.DataSource = listaInformes;

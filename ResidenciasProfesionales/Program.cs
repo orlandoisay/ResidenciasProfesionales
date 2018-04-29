@@ -15,9 +15,7 @@ namespace ResidenciasProfesionales
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new VIEW.FrmLogin2());
-            Application.Run(new VIEW.FrmAsignacionAsesor());
-            //Application.Run(new VIEW.FrmControlDocumentacion("S67150249"));
+            Application.Run(new VIEW.FrmLogin2());
         }
     }
 }

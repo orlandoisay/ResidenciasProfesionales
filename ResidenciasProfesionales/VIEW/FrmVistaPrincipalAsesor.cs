@@ -23,13 +23,13 @@ namespace ResidenciasProfesionales.VIEW
 
         private void btnAprobacionInformes_Click(object sender, EventArgs e)
         {
-            var frmAprobacionInformeLista = new FrmAprobacionInformeLista(IdDocente);
+            var frmAprobacionInformeLista = new FrmAprobacionInformeLista(IdDocente, "Asesor");
             frmAprobacionInformeLista.ShowDialog();
         }
 
         private void btnLiberacionInformes_Click(object sender, EventArgs e)
         {
-            var frmLiberacionInformeLista = new FrmLiberacionInformeLista(IdDocente);
+            var frmLiberacionInformeLista = new FrmLiberacionInformeLista(IdDocente, "Asesor");
             frmLiberacionInformeLista.ShowDialog();
         }
 
