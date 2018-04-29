@@ -37,7 +37,34 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
-        
+
+        public static List<DocentePOJO> ObtenerTodosLosDisponibles()
+        {
+            try
+            {
+                var list = new List<DocentePOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM docente WHERE ID NOT IN (SELECT idDocente FROM roldocente WHERE Rol = 'Coordinador' OR Rol = 'Academia' OR Rol = 'Administrador');");
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static DocentePOJO ObtenerDocente(String ID)
         {
             try
