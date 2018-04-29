@@ -63,6 +63,7 @@ namespace ResidenciasProfesionales.VIEW
             {
                 cbxAsesor.Items.Add(listaDocentes[i].NombreCompleto);
             }
+            cbxAsesor.SelectedIndex = 0;
         }
 
         private void btnAsignar_Click(object sender, EventArgs e)
