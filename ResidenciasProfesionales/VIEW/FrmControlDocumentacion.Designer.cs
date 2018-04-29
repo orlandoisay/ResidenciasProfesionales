@@ -86,6 +86,7 @@
             this.tablaDocumentos.Name = "tablaDocumentos";
             this.tablaDocumentos.Size = new System.Drawing.Size(710, 155);
             this.tablaDocumentos.TabIndex = 10;
+            this.tablaDocumentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaDocumentos_CellClick);
             // 
             // documento
             // 
