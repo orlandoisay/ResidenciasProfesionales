@@ -101,10 +101,41 @@ namespace ResidenciasProfesionales.DATA
                 var list = new List<AlumnoPOJO>();
 
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("SELECT al.* FROM alumno al JOIN roldocente rol WHERE" +
-                    " al.Matricula = rol.idAlumno AND rol.Rol = 'Asesor' AND rol.IdDocente = @P0" +
-                " AND rol.IdDocente NOT IN(SELECT IdDocente FROM dictamen WHERE tipo = 'LiberacionAsesor');");
+                MySqlCommand cmd = new MySqlCommand("SELECT al.* FROM alumno al JOIN roldocente rol WHERE "+
+                    "al.Matricula = rol.idAlumno AND rol.Rol = 'Asesor' AND rol.IdDocente = @P0 AND al.Matricula "+
+                    "NOT IN(SELECT i.idAlumno FROM InfoResidencia i JOIN dictamen d ON i.ID = d.idResidencia "+
+                    "WHERE d.tipo = 'LiberacionAsesor');");
                 cmd.Parameters.AddWithValue("@P0", idDocente);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
+        public static List<AlumnoPOJO> ObtenerAlumnosConAsesorSinLiberarResidencias()
+        {
+            try
+            {
+                var list = new List<AlumnoPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT al.* FROM alumno al JOIN roldocente rol WHERE "+
+                    "al.Matricula = rol.idAlumno AND rol.Rol = 'Asesor' AND al.Matricula NOT IN"+
+                    "(SELECT i.idAlumno FROM InfoResidencia i JOIN dictamen d ON i.ID = d.idResidencia WHERE "+
+                    "d.tipo = 'LiberacionFinal');");
 
                 DataTable dt = con.ejecutarConsulta(cmd);
 

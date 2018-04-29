@@ -130,6 +130,13 @@ namespace ResidenciasProfesionales.VIEW
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (listaDocentes[cbxAsesor.SelectedIndex].Estatus == "Inactivo")
+            {
+                MessageBox.Show("El docente seleccionado está actualmente inactivo\npor lo tanto no puede ser su asesor",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (btnAceptar.Text == "Aceptar") {
                 DialogResult dr = MessageBox.Show("Asignar el asesor:\n" + 
                     listaDocentes[cbxAsesor.SelectedIndex].NombreCompleto +
@@ -149,12 +156,6 @@ namespace ResidenciasProfesionales.VIEW
                     MessageBox.Show("El docente seleccionado, actualmente es el asesor del alumno:\n" + 
                         AlumnoDAO.ObtenerAlumno(matricula).NombreCompleto + 
                         "\nsi desea cambiar de asesor, pruebe con otro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (listaDocentes[cbxAsesor.SelectedIndex].Estatus == "Inactivo") {
-                    MessageBox.Show("El docente seleccionado está actualmente inactivo\npor lo tanto no puede ser su asesor", 
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
