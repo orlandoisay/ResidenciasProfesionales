@@ -37,6 +37,30 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+        public static bool ExisteRol(String idAlumno, String idDocente, String rol)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM rolDocente WHERE IdAlumno LIKE @P0 AND IdDocente LIKE @P1 AND Rol LIKE @P2");
+                cmd.Parameters.AddWithValue("@P0", idAlumno);
+                cmd.Parameters.AddWithValue("@P1", idDocente);
+                cmd.Parameters.AddWithValue("@P2", rol);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                return dt.Rows.Count > 0;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
 
         public static RolPOJO DataRowAObjeto(DataRow dr)
         {
