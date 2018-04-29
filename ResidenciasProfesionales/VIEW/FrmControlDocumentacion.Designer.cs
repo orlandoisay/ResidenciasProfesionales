@@ -49,6 +49,7 @@
             // spnCalificacionFinal
             // 
             this.spnCalificacionFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.spnCalificacionFinal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.spnCalificacionFinal.Enabled = false;
             this.spnCalificacionFinal.Location = new System.Drawing.Point(677, 364);
             this.spnCalificacionFinal.Name = "spnCalificacionFinal";
@@ -58,6 +59,7 @@
             // btnGuardarCambios
             // 
             this.btnGuardarCambios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarCambios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardarCambios.Location = new System.Drawing.Point(522, 407);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(200, 23);

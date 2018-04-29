@@ -58,6 +58,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pestaniasAsig_Mod.Controls.Add(this.paginaAsignarAsesor);
             this.pestaniasAsig_Mod.Controls.Add(this.paginaModificarAsesor);
+            this.pestaniasAsig_Mod.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pestaniasAsig_Mod.Location = new System.Drawing.Point(12, 12);
             this.pestaniasAsig_Mod.Name = "pestaniasAsig_Mod";
             this.pestaniasAsig_Mod.SelectedIndex = 0;

@@ -101,6 +101,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Location = new System.Drawing.Point(357, 179);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
@@ -147,6 +148,7 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Location = new System.Drawing.Point(3, 179);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 23);
@@ -245,6 +247,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Location = new System.Drawing.Point(357, 179);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(100, 23);
@@ -255,6 +258,7 @@
             // 
             // btnAnterior
             // 
+            this.btnAnterior.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnterior.Location = new System.Drawing.Point(3, 179);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(100, 23);
@@ -265,6 +269,7 @@
             // 
             // btnAsignar
             // 
+            this.btnAsignar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAsignar.Location = new System.Drawing.Point(109, 179);
             this.btnAsignar.Name = "btnAsignar";
             this.btnAsignar.Size = new System.Drawing.Size(100, 23);
@@ -275,6 +280,7 @@
             // 
             // btnSiguiente
             // 
+            this.btnSiguiente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSiguiente.Location = new System.Drawing.Point(215, 179);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(100, 23);

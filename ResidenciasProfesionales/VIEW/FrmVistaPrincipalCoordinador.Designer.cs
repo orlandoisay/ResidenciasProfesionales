@@ -36,6 +36,7 @@
             this.btnReporteResidencias = new System.Windows.Forms.Button();
             this.btnAprobacionSolicitudes = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnLiberacionFinal = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -44,6 +45,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.pnlTop.Controls.Add(this.btnLiberacionFinal);
             this.pnlTop.Controls.Add(this.pnlCerrarSesion);
             this.pnlTop.Controls.Add(this.btnReporteResidencias);
             this.pnlTop.Controls.Add(this.btnAprobacionSolicitudes);
@@ -142,6 +144,22 @@
             this.pbLogo.TabIndex = 6;
             this.pbLogo.TabStop = false;
             // 
+            // btnLiberacionFinal
+            // 
+            this.btnLiberacionFinal.BackColor = System.Drawing.Color.White;
+            this.btnLiberacionFinal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLiberacionFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLiberacionFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLiberacionFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnLiberacionFinal.Location = new System.Drawing.Point(387, 20);
+            this.btnLiberacionFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLiberacionFinal.Name = "btnLiberacionFinal";
+            this.btnLiberacionFinal.Size = new System.Drawing.Size(174, 30);
+            this.btnLiberacionFinal.TabIndex = 6;
+            this.btnLiberacionFinal.Text = "Liberación final";
+            this.btnLiberacionFinal.UseVisualStyleBackColor = false;
+            this.btnLiberacionFinal.Click += new System.EventHandler(this.btnLiberacionFinal_Click);
+            // 
             // FrmVistaPrincipalCoordinador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,5 +187,6 @@
         private System.Windows.Forms.Button btnReporteResidencias;
         private System.Windows.Forms.Button btnAprobacionSolicitudes;
         private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Button btnLiberacionFinal;
     }
 }
