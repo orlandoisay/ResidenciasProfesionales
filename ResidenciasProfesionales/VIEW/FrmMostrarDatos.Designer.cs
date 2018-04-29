@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelAsesor = new System.Windows.Forms.Panel();
+            this.pbxAsesor = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblNombreAsesor = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.lblNumeroAsesorados = new System.Windows.Forms.Label();
             this.lblEstatusAsesor = new System.Windows.Forms.Label();
             this.panelAlumno = new System.Windows.Forms.Panel();
+            this.pbxAlumno = new System.Windows.Forms.PictureBox();
             this.lblSemestre = new System.Windows.Forms.Label();
             this.lblNumeroSS = new System.Windows.Forms.Label();
             this.lblTipoSS = new System.Windows.Forms.Label();
@@ -53,12 +55,10 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblEstatus = new System.Windows.Forms.Label();
-            this.pbxAlumno = new System.Windows.Forms.PictureBox();
-            this.pbxAsesor = new System.Windows.Forms.PictureBox();
             this.panelAsesor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAsesor)).BeginInit();
             this.panelAlumno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAlumno)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAsesor)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAsesor
@@ -79,6 +79,16 @@
             this.panelAsesor.Size = new System.Drawing.Size(460, 205);
             this.panelAsesor.TabIndex = 22;
             this.panelAsesor.Visible = false;
+            // 
+            // pbxAsesor
+            // 
+            this.pbxAsesor.BackgroundImage = global::ResidenciasProfesionales.Properties.Resources.hombre;
+            this.pbxAsesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxAsesor.Location = new System.Drawing.Point(13, 15);
+            this.pbxAsesor.Name = "pbxAsesor";
+            this.pbxAsesor.Size = new System.Drawing.Size(80, 79);
+            this.pbxAsesor.TabIndex = 25;
+            this.pbxAsesor.TabStop = false;
             // 
             // lblUsuario
             // 
@@ -193,6 +203,16 @@
             this.panelAlumno.Size = new System.Drawing.Size(460, 205);
             this.panelAlumno.TabIndex = 21;
             this.panelAlumno.Visible = false;
+            // 
+            // pbxAlumno
+            // 
+            this.pbxAlumno.BackgroundImage = global::ResidenciasProfesionales.Properties.Resources.chico;
+            this.pbxAlumno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxAlumno.Location = new System.Drawing.Point(13, 16);
+            this.pbxAlumno.Name = "pbxAlumno";
+            this.pbxAlumno.Size = new System.Drawing.Size(81, 80);
+            this.pbxAlumno.TabIndex = 24;
+            this.pbxAlumno.TabStop = false;
             // 
             // lblSemestre
             // 
@@ -323,26 +343,6 @@
             this.lblEstatus.TabIndex = 9;
             this.lblEstatus.Text = "Estatus: ";
             // 
-            // pbxAlumno
-            // 
-            this.pbxAlumno.BackgroundImage = global::ResidenciasProfesionales.Properties.Resources.chico;
-            this.pbxAlumno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxAlumno.Location = new System.Drawing.Point(13, 16);
-            this.pbxAlumno.Name = "pbxAlumno";
-            this.pbxAlumno.Size = new System.Drawing.Size(81, 80);
-            this.pbxAlumno.TabIndex = 24;
-            this.pbxAlumno.TabStop = false;
-            // 
-            // pbxAsesor
-            // 
-            this.pbxAsesor.BackgroundImage = global::ResidenciasProfesionales.Properties.Resources.hombre;
-            this.pbxAsesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxAsesor.Location = new System.Drawing.Point(13, 15);
-            this.pbxAsesor.Name = "pbxAsesor";
-            this.pbxAsesor.Size = new System.Drawing.Size(80, 79);
-            this.pbxAsesor.TabIndex = 25;
-            this.pbxAsesor.TabStop = false;
-            // 
             // FrmMostrarDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,14 +350,15 @@
             this.ClientSize = new System.Drawing.Size(484, 436);
             this.Controls.Add(this.panelAsesor);
             this.Controls.Add(this.panelAlumno);
+            this.MaximizeBox = false;
             this.Name = "FrmMostrarDatos";
             this.Text = "FrmMostrarDatos";
             this.panelAsesor.ResumeLayout(false);
             this.panelAsesor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAsesor)).EndInit();
             this.panelAlumno.ResumeLayout(false);
             this.panelAlumno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAlumno)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxAsesor)).EndInit();
             this.ResumeLayout(false);
 
         }

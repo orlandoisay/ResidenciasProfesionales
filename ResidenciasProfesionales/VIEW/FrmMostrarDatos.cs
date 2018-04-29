@@ -85,7 +85,7 @@ namespace ResidenciasProfesionales.VIEW
 
         public void llenarDatosAlumno(int indice) {
             lblNoControl.Text = "No. control: " + listaAlumnos[indice].Matricula;
-            lblNombre.Text = "Nombre: " + listaAlumnos[indice].Nombre;
+            lblNombre.Text = "Nombre: " + listaAlumnos[indice].NombreCompleto;
             CarreraPOJO carrera = CarreraDAO.ObtenerUno(listaAlumnos[indice].Carrera);
             lblCarreraAlumno.Text = "Carrera: " + carrera.Nombre;
             lblSemestre.Text = "Semestre: " + listaAlumnos[indice].Semestre;
