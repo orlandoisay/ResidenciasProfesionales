@@ -34,8 +34,9 @@
             this.pbCerrarSesion = new System.Windows.Forms.Button();
             this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.btnReporteResidencias = new System.Windows.Forms.Button();
-            this.btnAprobacionInformes = new System.Windows.Forms.Button();
+            this.btnAprobacionSolicitudes = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnLiberacionFinal = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -44,9 +45,10 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.pnlTop.Controls.Add(this.btnLiberacionFinal);
             this.pnlTop.Controls.Add(this.pnlCerrarSesion);
             this.pnlTop.Controls.Add(this.btnReporteResidencias);
-            this.pnlTop.Controls.Add(this.btnAprobacionInformes);
+            this.pnlTop.Controls.Add(this.btnAprobacionSolicitudes);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -69,6 +71,7 @@
             this.pbCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbCerrarSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbCerrarSesion.BackgroundImage")));
             this.pbCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pbCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.pbCerrarSesion.Location = new System.Drawing.Point(27, 8);
@@ -84,6 +87,7 @@
             // 
             this.lblCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCerrarSesion.AutoSize = true;
+            this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCerrarSesion.Font = new System.Drawing.Font("Segoe UI Light", 9F);
             this.lblCerrarSesion.ForeColor = System.Drawing.Color.White;
             this.lblCerrarSesion.Location = new System.Drawing.Point(4, 42);
@@ -91,10 +95,12 @@
             this.lblCerrarSesion.Size = new System.Drawing.Size(72, 15);
             this.lblCerrarSesion.TabIndex = 4;
             this.lblCerrarSesion.Text = "Cerrar sesión";
+            this.lblCerrarSesion.Click += new System.EventHandler(this.lblCerrarSesion_Click);
             // 
             // btnReporteResidencias
             // 
             this.btnReporteResidencias.BackColor = System.Drawing.Color.White;
+            this.btnReporteResidencias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReporteResidencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporteResidencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteResidencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
@@ -107,20 +113,21 @@
             this.btnReporteResidencias.UseVisualStyleBackColor = false;
             this.btnReporteResidencias.Click += new System.EventHandler(this.btnReporteResidencias_Click);
             // 
-            // btnAprobacionInformes
+            // btnAprobacionSolicitudes
             // 
-            this.btnAprobacionInformes.BackColor = System.Drawing.Color.White;
-            this.btnAprobacionInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAprobacionInformes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAprobacionInformes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnAprobacionInformes.Location = new System.Drawing.Point(25, 20);
-            this.btnAprobacionInformes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAprobacionInformes.Name = "btnAprobacionInformes";
-            this.btnAprobacionInformes.Size = new System.Drawing.Size(176, 30);
-            this.btnAprobacionInformes.TabIndex = 1;
-            this.btnAprobacionInformes.Text = "Liberación de Informes";
-            this.btnAprobacionInformes.UseVisualStyleBackColor = false;
-            this.btnAprobacionInformes.Click += new System.EventHandler(this.btnAprobacionInformes_Click);
+            this.btnAprobacionSolicitudes.BackColor = System.Drawing.Color.White;
+            this.btnAprobacionSolicitudes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAprobacionSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAprobacionSolicitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAprobacionSolicitudes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAprobacionSolicitudes.Location = new System.Drawing.Point(25, 20);
+            this.btnAprobacionSolicitudes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAprobacionSolicitudes.Name = "btnAprobacionSolicitudes";
+            this.btnAprobacionSolicitudes.Size = new System.Drawing.Size(176, 30);
+            this.btnAprobacionSolicitudes.TabIndex = 1;
+            this.btnAprobacionSolicitudes.Text = "Aprobación de solicitudes";
+            this.btnAprobacionSolicitudes.UseVisualStyleBackColor = false;
+            this.btnAprobacionSolicitudes.Click += new System.EventHandler(this.btnAprobacionInformes_Click);
             // 
             // pbLogo
             // 
@@ -137,10 +144,27 @@
             this.pbLogo.TabIndex = 6;
             this.pbLogo.TabStop = false;
             // 
+            // btnLiberacionFinal
+            // 
+            this.btnLiberacionFinal.BackColor = System.Drawing.Color.White;
+            this.btnLiberacionFinal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLiberacionFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLiberacionFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLiberacionFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnLiberacionFinal.Location = new System.Drawing.Point(387, 20);
+            this.btnLiberacionFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLiberacionFinal.Name = "btnLiberacionFinal";
+            this.btnLiberacionFinal.Size = new System.Drawing.Size(174, 30);
+            this.btnLiberacionFinal.TabIndex = 6;
+            this.btnLiberacionFinal.Text = "Liberación final";
+            this.btnLiberacionFinal.UseVisualStyleBackColor = false;
+            this.btnLiberacionFinal.Click += new System.EventHandler(this.btnLiberacionFinal_Click);
+            // 
             // FrmVistaPrincipalCoordinador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(776, 392);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.pnlTop);
@@ -161,7 +185,8 @@
         private System.Windows.Forms.Button pbCerrarSesion;
         private System.Windows.Forms.Label lblCerrarSesion;
         private System.Windows.Forms.Button btnReporteResidencias;
-        private System.Windows.Forms.Button btnAprobacionInformes;
+        private System.Windows.Forms.Button btnAprobacionSolicitudes;
         private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Button btnLiberacionFinal;
     }
 }

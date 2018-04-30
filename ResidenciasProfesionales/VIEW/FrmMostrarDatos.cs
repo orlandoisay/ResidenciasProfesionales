@@ -21,6 +21,7 @@ namespace ResidenciasProfesionales.VIEW
         public FrmMostrarDatos(List<AlumnoPOJO> lista, int inicial, String accion)
         {
             InitializeComponent();
+            //cbxAsesor.SelectedIndex = 0;
 
             this.Size = new Size(550, 270);
             if (accion == "Cambiar")
@@ -56,12 +57,13 @@ namespace ResidenciasProfesionales.VIEW
         public void abrirAsignacion() {
             panelAsesor.Visible = true;
             panelAsesor.Location = new Point(12, 12);
-            listaDocentes = DocenteDAO.ObtenerTodos();
+            listaDocentes = DocenteDAO.ObtenerTodosLosDisponibles();
             cbxAsesor.Items.Clear();
             for (int i = 0; i < listaDocentes.Count; i++)
             {
                 cbxAsesor.Items.Add(listaDocentes[i].NombreCompleto);
             }
+            cbxAsesor.SelectedIndex = 0;
         }
 
         private void btnAsignar_Click(object sender, EventArgs e)
@@ -83,9 +85,10 @@ namespace ResidenciasProfesionales.VIEW
 
         public void llenarDatosAlumno(int indice) {
             lblNoControl.Text = "No. control: " + listaAlumnos[indice].Matricula;
-            lblNombre.Text = "Nombre: " + listaAlumnos[indice].Nombre;
+            lblNombre.Text = "Nombre: " + listaAlumnos[indice].NombreCompleto;
             CarreraPOJO carrera = CarreraDAO.ObtenerUno(listaAlumnos[indice].Carrera);
             lblCarreraAlumno.Text = "Carrera: " + carrera.Nombre;
+            lblSemestre.Text = "Semestre: " + listaAlumnos[indice].Semestre;
             lblEstatus.Text = "Estatus: " + listaAlumnos[indice].Estatus;
             lblTelefono.Text = "Telefono: " + listaAlumnos[indice].Telefono;
             lblCorreo.Text = "Correo: " + listaAlumnos[indice].Correo;
@@ -128,15 +131,54 @@ namespace ResidenciasProfesionales.VIEW
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (listaDocentes[cbxAsesor.SelectedIndex].Estatus == "Inactivo")
+            {
+                MessageBox.Show("El docente seleccionado está actualmente inactivo\npor lo tanto no puede ser su asesor",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (btnAceptar.Text == "Aceptar") {
+                DialogResult dr = MessageBox.Show("Asignar el asesor:\n" + 
+                    listaDocentes[cbxAsesor.SelectedIndex].NombreCompleto +
+                    "\nal alumno:\n" +
+                    AlumnoDAO.ObtenerAlumno(matricula).NombreCompleto, "Info",
+                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.No)
+                    return;
+
                 DocenteDAO.AsignarAsesorado(matricula, listaDocentes[cbxAsesor.SelectedIndex].ID);
+                EntregaDAO.InsertarDocumentosPendientes(matricula);
             }
             else {
                 DocentePOJO docenteAnterior = DocenteDAO.ObtenerDocenteXMatricula(matricula);
+                if (docenteAnterior.ID == listaDocentes[cbxAsesor.SelectedIndex].ID)
+                {
+                    MessageBox.Show("El docente seleccionado, actualmente es el asesor del alumno:\n" + 
+                        AlumnoDAO.ObtenerAlumno(matricula).NombreCompleto + 
+                        "\nsi desea cambiar de asesor, pruebe con otro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                DialogResult dr = MessageBox.Show("Asignar el asesor:\n" +
+                    listaDocentes[cbxAsesor.SelectedIndex].NombreCompleto +
+                    "\nal alumno:\n" +
+                    AlumnoDAO.ObtenerAlumno(matricula).NombreCompleto, "Info",
+                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.No)
+                    return;
+
                 DocenteDAO.CambiarAsesor(listaDocentes[cbxAsesor.SelectedIndex].ID, matricula, docenteAnterior.ID);
+                if (docenteAnterior.ID == DocenteDAO.ObtenerDocenteXMatricula(matricula).ID)
+                {
+                    MessageBox.Show("El docente seleccionado ya cumple un rol con el alumno:\n" + 
+                        AlumnoDAO.ObtenerAlumno(matricula).NombreCompleto + "\npor lo tanto no puede ser su asesor", 
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
             }
-            EntregaDAO.InsertarDocumentosPendientes(matricula);
-            MessageBox.Show("Asignado");
+            MessageBox.Show("El docente fue asignado como asesor correctamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
     }

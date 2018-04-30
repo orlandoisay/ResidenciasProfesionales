@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panelAsesor = new System.Windows.Forms.Panel();
+            this.pbxAsesor = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblNombreAsesor = new System.Windows.Forms.Label();
             this.cbxAsesor = new System.Windows.Forms.ComboBox();
@@ -41,9 +41,10 @@
             this.lblNumeroAsesorados = new System.Windows.Forms.Label();
             this.lblEstatusAsesor = new System.Windows.Forms.Label();
             this.panelAlumno = new System.Windows.Forms.Panel();
+            this.pbxAlumno = new System.Windows.Forms.PictureBox();
+            this.lblSemestre = new System.Windows.Forms.Label();
             this.lblNumeroSS = new System.Windows.Forms.Label();
             this.lblTipoSS = new System.Windows.Forms.Label();
-            this.pbFotografía = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnAsignar = new System.Windows.Forms.Button();
@@ -55,15 +56,15 @@
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblEstatus = new System.Windows.Forms.Label();
             this.panelAsesor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAsesor)).BeginInit();
             this.panelAlumno.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotografía)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAlumno)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAsesor
             // 
+            this.panelAsesor.Controls.Add(this.pbxAsesor);
             this.panelAsesor.Controls.Add(this.lblUsuario);
-            this.panelAsesor.Controls.Add(this.pictureBox1);
             this.panelAsesor.Controls.Add(this.btnCancelar);
             this.panelAsesor.Controls.Add(this.lblNombreAsesor);
             this.panelAsesor.Controls.Add(this.cbxAsesor);
@@ -79,6 +80,16 @@
             this.panelAsesor.TabIndex = 22;
             this.panelAsesor.Visible = false;
             // 
+            // pbxAsesor
+            // 
+            this.pbxAsesor.BackgroundImage = global::ResidenciasProfesionales.Properties.Resources.hombre;
+            this.pbxAsesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxAsesor.Location = new System.Drawing.Point(13, 15);
+            this.pbxAsesor.Name = "pbxAsesor";
+            this.pbxAsesor.Size = new System.Drawing.Size(80, 79);
+            this.pbxAsesor.TabIndex = 25;
+            this.pbxAsesor.TabStop = false;
+            // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
@@ -88,17 +99,9 @@
             this.lblUsuario.TabIndex = 22;
             this.lblUsuario.Text = "Usuario:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnCancelar
             // 
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Location = new System.Drawing.Point(357, 179);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
@@ -145,6 +148,7 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Location = new System.Drawing.Point(3, 179);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 23);
@@ -182,9 +186,10 @@
             // 
             // panelAlumno
             // 
+            this.panelAlumno.Controls.Add(this.pbxAlumno);
+            this.panelAlumno.Controls.Add(this.lblSemestre);
             this.panelAlumno.Controls.Add(this.lblNumeroSS);
             this.panelAlumno.Controls.Add(this.lblTipoSS);
-            this.panelAlumno.Controls.Add(this.pbFotografía);
             this.panelAlumno.Controls.Add(this.btnCerrar);
             this.panelAlumno.Controls.Add(this.btnAnterior);
             this.panelAlumno.Controls.Add(this.btnAsignar);
@@ -201,10 +206,29 @@
             this.panelAlumno.TabIndex = 21;
             this.panelAlumno.Visible = false;
             // 
+            // pbxAlumno
+            // 
+            this.pbxAlumno.BackgroundImage = global::ResidenciasProfesionales.Properties.Resources.chico;
+            this.pbxAlumno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxAlumno.Location = new System.Drawing.Point(13, 16);
+            this.pbxAlumno.Name = "pbxAlumno";
+            this.pbxAlumno.Size = new System.Drawing.Size(81, 80);
+            this.pbxAlumno.TabIndex = 24;
+            this.pbxAlumno.TabStop = false;
+            // 
+            // lblSemestre
+            // 
+            this.lblSemestre.AutoSize = true;
+            this.lblSemestre.Location = new System.Drawing.Point(37, 131);
+            this.lblSemestre.Name = "lblSemestre";
+            this.lblSemestre.Size = new System.Drawing.Size(57, 13);
+            this.lblSemestre.TabIndex = 23;
+            this.lblSemestre.Text = "Semestre: ";
+            // 
             // lblNumeroSS
             // 
             this.lblNumeroSS.AutoSize = true;
-            this.lblNumeroSS.Location = new System.Drawing.Point(245, 153);
+            this.lblNumeroSS.Location = new System.Drawing.Point(245, 131);
             this.lblNumeroSS.MaximumSize = new System.Drawing.Size(0, 50);
             this.lblNumeroSS.Name = "lblNumeroSS";
             this.lblNumeroSS.Size = new System.Drawing.Size(67, 13);
@@ -214,24 +238,16 @@
             // lblTipoSS
             // 
             this.lblTipoSS.AutoSize = true;
-            this.lblTipoSS.Location = new System.Drawing.Point(38, 153);
+            this.lblTipoSS.Location = new System.Drawing.Point(245, 109);
             this.lblTipoSS.MaximumSize = new System.Drawing.Size(0, 50);
             this.lblTipoSS.Name = "lblTipoSS";
             this.lblTipoSS.Size = new System.Drawing.Size(51, 13);
             this.lblTipoSS.TabIndex = 21;
             this.lblTipoSS.Text = "Tipo SS: ";
             // 
-            // pbFotografía
-            // 
-            this.pbFotografía.BackColor = System.Drawing.Color.Gray;
-            this.pbFotografía.Location = new System.Drawing.Point(14, 16);
-            this.pbFotografía.Name = "pbFotografía";
-            this.pbFotografía.Size = new System.Drawing.Size(80, 80);
-            this.pbFotografía.TabIndex = 20;
-            this.pbFotografía.TabStop = false;
-            // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Location = new System.Drawing.Point(357, 179);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(100, 23);
@@ -242,6 +258,7 @@
             // 
             // btnAnterior
             // 
+            this.btnAnterior.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnterior.Location = new System.Drawing.Point(3, 179);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(100, 23);
@@ -252,6 +269,7 @@
             // 
             // btnAsignar
             // 
+            this.btnAsignar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAsignar.Location = new System.Drawing.Point(109, 179);
             this.btnAsignar.Name = "btnAsignar";
             this.btnAsignar.Size = new System.Drawing.Size(100, 23);
@@ -262,6 +280,7 @@
             // 
             // btnSiguiente
             // 
+            this.btnSiguiente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSiguiente.Location = new System.Drawing.Point(215, 179);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(100, 23);
@@ -313,7 +332,7 @@
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(49, 131);
+            this.lblCorreo.Location = new System.Drawing.Point(50, 153);
             this.lblCorreo.MaximumSize = new System.Drawing.Size(0, 150);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(44, 13);
@@ -337,14 +356,15 @@
             this.ClientSize = new System.Drawing.Size(484, 436);
             this.Controls.Add(this.panelAsesor);
             this.Controls.Add(this.panelAlumno);
+            this.MaximizeBox = false;
             this.Name = "FrmMostrarDatos";
             this.Text = "FrmMostrarDatos";
             this.panelAsesor.ResumeLayout(false);
             this.panelAsesor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAsesor)).EndInit();
             this.panelAlumno.ResumeLayout(false);
             this.panelAlumno.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotografía)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAlumno)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,10 +392,11 @@
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblEstatus;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pbFotografía;
         private System.Windows.Forms.Label lblNumeroSS;
         private System.Windows.Forms.Label lblTipoSS;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblSemestre;
+        private System.Windows.Forms.PictureBox pbxAlumno;
+        private System.Windows.Forms.PictureBox pbxAsesor;
     }
 }

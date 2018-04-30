@@ -48,6 +48,8 @@
             // 
             // spnCalificacionFinal
             // 
+            this.spnCalificacionFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.spnCalificacionFinal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.spnCalificacionFinal.Enabled = false;
             this.spnCalificacionFinal.Location = new System.Drawing.Point(677, 364);
             this.spnCalificacionFinal.Name = "spnCalificacionFinal";
@@ -56,6 +58,8 @@
             // 
             // btnGuardarCambios
             // 
+            this.btnGuardarCambios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarCambios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardarCambios.Location = new System.Drawing.Point(522, 407);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(200, 23);
@@ -66,6 +70,7 @@
             // 
             // lblCalificacionFinal
             // 
+            this.lblCalificacionFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCalificacionFinal.AutoSize = true;
             this.lblCalificacionFinal.Location = new System.Drawing.Point(562, 367);
             this.lblCalificacionFinal.Name = "lblCalificacionFinal";
@@ -78,6 +83,8 @@
             // 
             this.tablaDocumentos.AllowUserToAddRows = false;
             this.tablaDocumentos.AllowUserToDeleteRows = false;
+            this.tablaDocumentos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tablaDocumentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaDocumentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.documento,
@@ -86,6 +93,7 @@
             this.tablaDocumentos.Name = "tablaDocumentos";
             this.tablaDocumentos.Size = new System.Drawing.Size(710, 155);
             this.tablaDocumentos.TabIndex = 10;
+            this.tablaDocumentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaDocumentos_CellClick);
             // 
             // documento
             // 
@@ -102,6 +110,7 @@
             // 
             // lblNombreAlumno
             // 
+            this.lblNombreAlumno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNombreAlumno.AutoSize = true;
             this.lblNombreAlumno.Location = new System.Drawing.Point(12, 178);
             this.lblNombreAlumno.Name = "lblNombreAlumno";
@@ -113,6 +122,9 @@
             // 
             this.tablaAlumnos.AllowUserToAddRows = false;
             this.tablaAlumnos.AllowUserToDeleteRows = false;
+            this.tablaAlumnos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tablaAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaAlumnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.noControl,
@@ -149,6 +161,7 @@
             // 
             // lblComentario
             // 
+            this.lblComentario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblComentario.AutoSize = true;
             this.lblComentario.Location = new System.Drawing.Point(12, 367);
             this.lblComentario.Name = "lblComentario";
@@ -158,6 +171,8 @@
             // 
             // txtaComentario
             // 
+            this.txtaComentario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtaComentario.Location = new System.Drawing.Point(12, 388);
             this.txtaComentario.Name = "txtaComentario";
             this.txtaComentario.Size = new System.Drawing.Size(480, 56);

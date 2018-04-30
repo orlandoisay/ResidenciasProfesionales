@@ -27,12 +27,12 @@ namespace ResidenciasProfesionales.VIEW
 
         private void btnAprobacion_Click(object sender, EventArgs e)
         {
-            var frmAprobacionInformeLista = new FrmAprobacionInformeLista(IdDocente);
+            var frmAprobacionInformeLista = new FrmAprobacionInformeLista(IdDocente, "Revisor");
             frmAprobacionInformeLista.ShowDialog();
         }
         private void btnLiberacion_Click(object sender, EventArgs e)
         {
-            var frmLiberacionInformeLista = new FrmLiberacionInformeLista(IdDocente);
+            var frmLiberacionInformeLista = new FrmLiberacionInformeLista(IdDocente, "Revisor");
             frmLiberacionInformeLista.ShowDialog();
         }
         private void pnlCerrarSesion_Click(object sender, EventArgs e)

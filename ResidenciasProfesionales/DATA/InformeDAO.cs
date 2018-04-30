@@ -16,7 +16,7 @@ namespace ResidenciasProfesionales.DATA
         /// <param name="periodo"></param>
         /// <param name="aprobados"></param>
         /// <returns></returns>
-        public static List<InformePOJO> ObtenerInformesPorPeriodo(int anio, string periodo, String idDocente, bool aprobados)
+        public static List<InformePOJO> ObtenerInformesPorPeriodo(int anio, string periodo, String idDocente, String rolDocente, bool aprobados)
         {
             try
             {
@@ -25,8 +25,16 @@ namespace ResidenciasProfesionales.DATA
 
                 foreach (var alumno in alumnos)
                 {
+                    // Verifica la relacion de rol docente-alumno
+                    var existeRol = RolDAO.ExisteRol(alumno.Matricula, idDocente, rolDocente);
+                    if (!existeRol) continue;
+
                     var pre = aprobados ? "Liberacion" : "Aprobacion";
                     var responsables = DocenteDAO.ObtenerResponsablesDeAlumno(alumno.Matricula);
+
+                    // No tiene asignados todos los responsables
+                    if (responsables.Count < 3) continue;
+
                     InformePOJO.Dictamen dictamenAsesor, dictamenRevisor1, dictamenRevisor2;
 
                     var dicAsesor = DictamenDAO.ObtenerDictamen(responsables[0].ID, alumno.Matricula, pre + "Asesor");

@@ -53,8 +53,12 @@
             // 
             // pestaniasAsig_Mod
             // 
+            this.pestaniasAsig_Mod.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pestaniasAsig_Mod.Controls.Add(this.paginaAsignarAsesor);
             this.pestaniasAsig_Mod.Controls.Add(this.paginaModificarAsesor);
+            this.pestaniasAsig_Mod.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pestaniasAsig_Mod.Location = new System.Drawing.Point(12, 12);
             this.pestaniasAsig_Mod.Name = "pestaniasAsig_Mod";
             this.pestaniasAsig_Mod.SelectedIndex = 0;
@@ -77,6 +81,7 @@
             // 
             // btnAsignar
             // 
+            this.btnAsignar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAsignar.Location = new System.Drawing.Point(490, 377);
             this.btnAsignar.Name = "btnAsignar";
             this.btnAsignar.Size = new System.Drawing.Size(100, 23);
@@ -87,6 +92,7 @@
             // 
             // lblAlumnoAsignar
             // 
+            this.lblAlumnoAsignar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAlumnoAsignar.AutoSize = true;
             this.lblAlumnoAsignar.Location = new System.Drawing.Point(6, 382);
             this.lblAlumnoAsignar.Name = "lblAlumnoAsignar";
@@ -96,6 +102,7 @@
             // 
             // btnMostrarAsignar
             // 
+            this.btnMostrarAsignar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarAsignar.Location = new System.Drawing.Point(596, 377);
             this.btnMostrarAsignar.Name = "btnMostrarAsignar";
             this.btnMostrarAsignar.Size = new System.Drawing.Size(100, 23);
@@ -108,6 +115,9 @@
             // 
             this.tablaAsignarAsesor.AllowUserToAddRows = false;
             this.tablaAsignarAsesor.AllowUserToDeleteRows = false;
+            this.tablaAsignarAsesor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tablaAsignarAsesor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaAsignarAsesor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.noControlAsignar,
@@ -150,6 +160,7 @@
             // 
             // btnCambiarAsesor
             // 
+            this.btnCambiarAsesor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCambiarAsesor.Location = new System.Drawing.Point(490, 377);
             this.btnCambiarAsesor.Name = "btnCambiarAsesor";
             this.btnCambiarAsesor.Size = new System.Drawing.Size(100, 23);
@@ -160,6 +171,7 @@
             // 
             // btnMostrarModificar
             // 
+            this.btnMostrarModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarModificar.Location = new System.Drawing.Point(596, 377);
             this.btnMostrarModificar.Name = "btnMostrarModificar";
             this.btnMostrarModificar.Size = new System.Drawing.Size(100, 23);
@@ -170,6 +182,7 @@
             // 
             // lblAlumnoModificar
             // 
+            this.lblAlumnoModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAlumnoModificar.AutoSize = true;
             this.lblAlumnoModificar.Location = new System.Drawing.Point(6, 382);
             this.lblAlumnoModificar.Name = "lblAlumnoModificar";
@@ -181,6 +194,9 @@
             // 
             this.tablaModificarAsesor.AllowUserToAddRows = false;
             this.tablaModificarAsesor.AllowUserToDeleteRows = false;
+            this.tablaModificarAsesor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tablaModificarAsesor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaModificarAsesor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.noControlModificar,

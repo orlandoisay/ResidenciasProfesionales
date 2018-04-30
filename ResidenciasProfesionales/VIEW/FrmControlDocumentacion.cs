@@ -21,12 +21,22 @@ namespace ResidenciasProfesionales.VIEW
             InitializeComponent();
             insertarDocumentos();
             this.idDocente = idDocente;
+
             tablaDocumentos.Enabled = false;
             spnCalificacionFinal.Enabled = false;
             lblComentario.Visible = false;
             txtaComentario.Visible = false;
-            btnGuardarCambios.Enabled = false;
             llenarTablaAlumno();
+            btnGuardarCambios.Enabled = false;
+            if (tablaAlumnos.Rows.Count == 0)
+            {
+                lblNombreAlumno.Text = "NO HAY ASESORADOS CON DOCUMENTACIÓN PENDIENTE";
+                tablaAlumnos.Enabled = false;
+            }
+            else
+            {
+                lblNombreAlumno.Text = "SELECCIONE UN ALUMNO";
+            }
         }
 
         public void llenarTablaAlumno() {
@@ -53,9 +63,10 @@ namespace ResidenciasProfesionales.VIEW
         String matricula;
         private void tablaAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
-                btnGuardarCambios.Enabled = true;
+                btnGuardarCambios.Enabled = false;
                 matricula = tablaAlumnos.Rows[e.RowIndex].Cells["noControl"].Value.ToString();
                 String nombreSeleccionado = tablaAlumnos.Rows[e.RowIndex].Cells["nombre"].Value.ToString();
                 lblNombreAlumno.Text = "ALUMNO: " + nombreSeleccionado.ToUpper();
@@ -82,6 +93,14 @@ namespace ResidenciasProfesionales.VIEW
             entregoTodos();
         }
 
+        public void limpiarChecks()
+        {
+            for (int i = 3; i < 9; i++)
+            {
+                    tablaDocumentos[1, (i - 3)].Value = false;
+            }
+        }
+
         private void lblCalificacionFinal_Click(object sender, EventArgs e)
         {
         }
@@ -89,6 +108,12 @@ namespace ResidenciasProfesionales.VIEW
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             if (spnCalificacionFinal.Enabled == false) {
+
+                DialogResult dr = MessageBox.Show("¿Mantener los cambios realizados?" + spnCalificacionFinal.Value, "Info",
+                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.No)
+                    return;
+
                 for (int i = 3; i < 9; i++)
                 {
                     if (tablaDocumentos[1, (i - 3)].Value.Equals(true))
@@ -99,10 +124,17 @@ namespace ResidenciasProfesionales.VIEW
                         EntregaDAO.CambiarEstadoDocumento("Pendiente", matricula, i);
                     }
                 }
-                MessageBox.Show("Guardado con exito");
+                MessageBox.Show("Documentos guardados con exito", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnGuardarCambios.Enabled = false;
                 entregoTodos();
             } else if (spnCalificacionFinal.Enabled == true)
             {
+
+                DialogResult dr = MessageBox.Show("Crear el dictamen \"liberación asesor\" con una calificación final de "+spnCalificacionFinal.Value, "Info",
+                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.No)
+                    return;
+
                 ResidenciaPOJO residencia = ResidenciaDAO.ObtenerResidenciaXMatricula(matricula);
                 String estatus;
                 if (spnCalificacionFinal.Value>=70) {
@@ -115,11 +147,22 @@ namespace ResidenciasProfesionales.VIEW
                 DictamenPOJO nuevoDictamen = new DictamenPOJO(0, residencia.ID, idDocente, "LiberacionAsesor",
                     estatus, txtaComentario.Text, int.Parse(spnCalificacionFinal.Value+""), DateTime.Parse(fecha));
                 DictamenDAO.InsertarDictamen(nuevoDictamen);
-                MessageBox.Show("Dictamen creado con exito");
+                MessageBox.Show("Dictamen creado con exito", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 llenarTablaAlumno();
                 bloquearDesbloquear(false);
                 btnGuardarCambios.Enabled = false;
                 spnCalificacionFinal.Value = 0;
+                limpiarChecks();
+                tablaDocumentos.Enabled = false;
+                if (tablaAlumnos.Rows.Count == 0)
+                {
+                    lblNombreAlumno.Text = "NO HAY ASESORADOS CON DOCUMENTACIÓN PENDIENTE";
+                    tablaAlumnos.Enabled = false;
+                }
+                else
+                {
+                    lblNombreAlumno.Text = "SELECCIONE UN ALUMNO";
+                }
             }
         }
 
@@ -142,6 +185,7 @@ namespace ResidenciasProfesionales.VIEW
                 btnGuardarCambios.Text = "Guardar Calificación";
                 lblComentario.Visible = true;
                 txtaComentario.Visible = true;
+                btnGuardarCambios.Enabled = true;
             }
             else {
                 tablaDocumentos.Enabled = true;
@@ -150,6 +194,11 @@ namespace ResidenciasProfesionales.VIEW
                 lblComentario.Visible = false;
                 txtaComentario.Visible = false;
             }
+        }
+
+        private void tablaDocumentos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnGuardarCambios.Enabled = true;
         }
     }
 }
