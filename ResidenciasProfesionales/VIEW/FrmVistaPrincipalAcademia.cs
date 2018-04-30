@@ -27,5 +27,10 @@ namespace ResidenciasProfesionales.VIEW
             FrmAsignacionRevisores frmRevisor = new FrmAsignacionRevisores();
             frmRevisor.ShowDialog();
         }
+
+        private void pbCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
