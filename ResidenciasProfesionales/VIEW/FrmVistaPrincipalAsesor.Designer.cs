@@ -63,6 +63,7 @@
             this.panel2.Size = new System.Drawing.Size(81, 69);
             this.panel2.TabIndex = 1;
             this.panel2.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnCerrarSesion
             // 

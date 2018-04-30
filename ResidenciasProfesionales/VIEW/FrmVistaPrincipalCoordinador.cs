@@ -29,5 +29,10 @@ namespace ResidenciasProfesionales.VIEW
             var frmReporteResidencia = new FrmReporteResidencias();
             frmReporteResidencia.ShowDialog();
         }
+
+        private void pbCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
