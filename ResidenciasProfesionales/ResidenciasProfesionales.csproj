@@ -78,6 +78,7 @@
     <Compile Include="MODEL\EntregaPOJO.cs" />
     <Compile Include="MODEL\InformePOJO.cs" />
     <Compile Include="MODEL\LiberacionFinalPOJO.cs" />
+    <Compile Include="MODEL\ListaPOJO.cs" />
     <Compile Include="MODEL\MAA.cs" />
     <Compile Include="MODEL\ResidenciaPOJO.cs" />
     <Compile Include="MODEL\RolPOJO.cs" />
@@ -147,6 +148,12 @@
     </Compile>
     <Compile Include="VIEW\FrmLiberacionInformeLista.Designer.cs">
       <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FrmListaResidentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmListaResidentes.Designer.cs">
+      <DependentUpon>FrmListaResidentes.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\FrmLogin2.cs">
       <SubType>Form</SubType>
@@ -259,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmLiberacionInformeLista.resx">
       <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmListaResidentes.resx">
+      <DependentUpon>FrmListaResidentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmLogin2.resx">
       <DependentUpon>FrmLogin2.cs</DependentUpon>

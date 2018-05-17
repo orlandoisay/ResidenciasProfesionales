@@ -12,6 +12,33 @@ namespace ResidenciasProfesionales.DATA
     public class ResidenciaDAO
     {
 
+        public static List<ResidenciaPOJO> ObtenerResidencias()
+        {
+            try
+            {
+                var list = new List<ResidenciaPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("select * from inforesidencia;");
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static List<ResidenciaPOJO> ObtenerResidenciaLiberacion()
         {
             try

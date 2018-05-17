@@ -92,5 +92,15 @@ namespace ResidenciasProfesionales.VIEW
             }
             dgvLista.DataSource = tabla;
         }
+
+        private void lblSolicitud_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
