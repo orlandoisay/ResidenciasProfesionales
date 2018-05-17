@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnReporteResidencia = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnControlDocumentacion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -43,6 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.panel1.Controls.Add(this.btnControlDocumentacion);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnReporteResidencia);
             this.panel1.Location = new System.Drawing.Point(2, 0);
@@ -109,6 +111,20 @@
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
             // 
+            // btnControlDocumentacion
+            // 
+            this.btnControlDocumentacion.BackColor = System.Drawing.Color.White;
+            this.btnControlDocumentacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnControlDocumentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnControlDocumentacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnControlDocumentacion.Location = new System.Drawing.Point(203, 20);
+            this.btnControlDocumentacion.Name = "btnControlDocumentacion";
+            this.btnControlDocumentacion.Size = new System.Drawing.Size(175, 30);
+            this.btnControlDocumentacion.TabIndex = 2;
+            this.btnControlDocumentacion.Text = "Control de documentación";
+            this.btnControlDocumentacion.UseVisualStyleBackColor = false;
+            this.btnControlDocumentacion.Click += new System.EventHandler(this.btnControlDocumentacion_Click);
+            // 
             // FrmVistaPrincipalAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,5 +154,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Button btnControlDocumentacion;
     }
 }

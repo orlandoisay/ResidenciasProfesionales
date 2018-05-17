@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVistaPrincipalCoordinador));
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnLiberacionFinal = new System.Windows.Forms.Button();
             this.pnlCerrarSesion = new System.Windows.Forms.Panel();
             this.pbCerrarSesion = new System.Windows.Forms.Button();
             this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.btnReporteResidencias = new System.Windows.Forms.Button();
             this.btnAprobacionSolicitudes = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnLiberacionFinal = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -55,6 +55,22 @@
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(776, 69);
             this.pnlTop.TabIndex = 5;
+            // 
+            // btnLiberacionFinal
+            // 
+            this.btnLiberacionFinal.BackColor = System.Drawing.Color.White;
+            this.btnLiberacionFinal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLiberacionFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLiberacionFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLiberacionFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnLiberacionFinal.Location = new System.Drawing.Point(387, 20);
+            this.btnLiberacionFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLiberacionFinal.Name = "btnLiberacionFinal";
+            this.btnLiberacionFinal.Size = new System.Drawing.Size(174, 30);
+            this.btnLiberacionFinal.TabIndex = 6;
+            this.btnLiberacionFinal.Text = "Liberación final";
+            this.btnLiberacionFinal.UseVisualStyleBackColor = false;
+            this.btnLiberacionFinal.Click += new System.EventHandler(this.btnLiberacionFinal_Click);
             // 
             // pnlCerrarSesion
             // 
@@ -144,22 +160,6 @@
             this.pbLogo.TabIndex = 6;
             this.pbLogo.TabStop = false;
             // 
-            // btnLiberacionFinal
-            // 
-            this.btnLiberacionFinal.BackColor = System.Drawing.Color.White;
-            this.btnLiberacionFinal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLiberacionFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLiberacionFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLiberacionFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnLiberacionFinal.Location = new System.Drawing.Point(387, 20);
-            this.btnLiberacionFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLiberacionFinal.Name = "btnLiberacionFinal";
-            this.btnLiberacionFinal.Size = new System.Drawing.Size(174, 30);
-            this.btnLiberacionFinal.TabIndex = 6;
-            this.btnLiberacionFinal.Text = "Liberación final";
-            this.btnLiberacionFinal.UseVisualStyleBackColor = false;
-            this.btnLiberacionFinal.Click += new System.EventHandler(this.btnLiberacionFinal_Click);
-            // 
             // FrmVistaPrincipalCoordinador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,7 +169,7 @@
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.pnlTop);
             this.Name = "FrmVistaPrincipalCoordinador";
-            this.Text = "FrmVistaPrincipalCoordinador";
+            this.Text = "FrmVentanaPrincipalCoordinador";
             this.pnlTop.ResumeLayout(false);
             this.pnlCerrarSesion.ResumeLayout(false);
             this.pnlCerrarSesion.PerformLayout();
