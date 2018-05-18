@@ -14,6 +14,8 @@ namespace ResidenciasProfesionales.VIEW
 {
     public partial class FrmVistaPrincipalAdministrador : Form
     {
+        List<DocentePOJO> listaDocentes = new List<DocentePOJO>();
+
         public FrmVistaPrincipalAdministrador()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace ResidenciasProfesionales.VIEW
 
         public void llenarCombo()
         {
-            List<DocentePOJO> listaDocentes = DocenteDAO.ObtenerTodosLosDisponibles();
+            listaDocentes = DocenteDAO.ObtenerTodosLosDisponibles();
             cbxAsesores.Items.Clear();
             for (int i = 0; i < listaDocentes.Count; i++)
             {
@@ -75,6 +77,14 @@ namespace ResidenciasProfesionales.VIEW
         private void btnControlDocumentacion_Click(object sender, EventArgs e)
         {
             panelSeleccion.Visible = true;
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            int index = cbxAsesores.SelectedIndex;
+            var frmControlDocumentacion = new FrmControlDocumentacion(listaDocentes[index].ID);
+            frmControlDocumentacion.ShowDialog();
+            panelSeleccion.Visible = false;
         }
     }
 }

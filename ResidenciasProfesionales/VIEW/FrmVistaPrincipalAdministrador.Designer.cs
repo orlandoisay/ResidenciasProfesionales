@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVistaPrincipalAdministrador));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnControlDocumentacion = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReporteResidencia = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnControlDocumentacion = new System.Windows.Forms.Button();
             this.cbxAsesores = new System.Windows.Forms.ComboBox();
             this.panelSeleccion = new System.Windows.Forms.Panel();
-            this.lblAsesor = new System.Windows.Forms.Label();
-            this.btnVer = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.lblAsesor = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -57,6 +57,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(774, 69);
             this.panel1.TabIndex = 0;
+            // 
+            // btnControlDocumentacion
+            // 
+            this.btnControlDocumentacion.BackColor = System.Drawing.Color.White;
+            this.btnControlDocumentacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnControlDocumentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnControlDocumentacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnControlDocumentacion.Location = new System.Drawing.Point(10, 20);
+            this.btnControlDocumentacion.Name = "btnControlDocumentacion";
+            this.btnControlDocumentacion.Size = new System.Drawing.Size(175, 30);
+            this.btnControlDocumentacion.TabIndex = 2;
+            this.btnControlDocumentacion.Text = "Control de documentación";
+            this.btnControlDocumentacion.UseVisualStyleBackColor = false;
+            this.btnControlDocumentacion.Click += new System.EventHandler(this.btnControlDocumentacion_Click);
             // 
             // panel2
             // 
@@ -117,20 +131,6 @@
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
             // 
-            // btnControlDocumentacion
-            // 
-            this.btnControlDocumentacion.BackColor = System.Drawing.Color.White;
-            this.btnControlDocumentacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnControlDocumentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnControlDocumentacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnControlDocumentacion.Location = new System.Drawing.Point(10, 20);
-            this.btnControlDocumentacion.Name = "btnControlDocumentacion";
-            this.btnControlDocumentacion.Size = new System.Drawing.Size(175, 30);
-            this.btnControlDocumentacion.TabIndex = 2;
-            this.btnControlDocumentacion.Text = "Control de documentación";
-            this.btnControlDocumentacion.UseVisualStyleBackColor = false;
-            this.btnControlDocumentacion.Click += new System.EventHandler(this.btnControlDocumentacion_Click);
-            // 
             // cbxAsesores
             // 
             this.cbxAsesores.FormattingEnabled = true;
@@ -151,14 +151,19 @@
             this.panelSeleccion.TabIndex = 3;
             this.panelSeleccion.Visible = false;
             // 
-            // lblAsesor
+            // btnRegistrar
             // 
-            this.lblAsesor.AutoSize = true;
-            this.lblAsesor.Location = new System.Drawing.Point(3, 9);
-            this.lblAsesor.Name = "lblAsesor";
-            this.lblAsesor.Size = new System.Drawing.Size(39, 13);
-            this.lblAsesor.TabIndex = 4;
-            this.lblAsesor.Text = "Asesor";
+            this.btnRegistrar.BackColor = System.Drawing.Color.White;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnRegistrar.Location = new System.Drawing.Point(5, 93);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(223, 30);
+            this.btnRegistrar.TabIndex = 5;
+            this.btnRegistrar.Text = "Registrar documentación";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnVer
             // 
@@ -173,18 +178,14 @@
             this.btnVer.Text = "Ver documentación";
             this.btnVer.UseVisualStyleBackColor = false;
             // 
-            // btnRegistrar
+            // lblAsesor
             // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.White;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnRegistrar.Location = new System.Drawing.Point(5, 93);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(223, 30);
-            this.btnRegistrar.TabIndex = 5;
-            this.btnRegistrar.Text = "Registrar documentación";
-            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.lblAsesor.AutoSize = true;
+            this.lblAsesor.Location = new System.Drawing.Point(3, 9);
+            this.lblAsesor.Name = "lblAsesor";
+            this.lblAsesor.Size = new System.Drawing.Size(39, 13);
+            this.lblAsesor.TabIndex = 4;
+            this.lblAsesor.Text = "Asesor";
             // 
             // FrmVistaPrincipalAdministrador
             // 
