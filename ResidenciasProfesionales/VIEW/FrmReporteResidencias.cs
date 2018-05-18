@@ -27,6 +27,8 @@ namespace ResidenciasProfesionales.VIEW
         {
             if (tabla.Count > 0)
                 ImprimirReporte();
+            else
+                MessageBox.Show("Tabla vacía", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ImprimirReporte()

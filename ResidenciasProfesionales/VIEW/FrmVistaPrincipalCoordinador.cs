@@ -45,5 +45,11 @@ namespace ResidenciasProfesionales.VIEW
             var frmLiberacionFin = new FrmLiberacionFinal(idDocente);
             frmLiberacionFin.ShowDialog();
         }
+
+        private void btnResidentes_Click(object sender, EventArgs e)
+        {
+            var frmListaResidentes = new FrmListaResidentes();
+            frmListaResidentes.ShowDialog();
+        }
     }
 }

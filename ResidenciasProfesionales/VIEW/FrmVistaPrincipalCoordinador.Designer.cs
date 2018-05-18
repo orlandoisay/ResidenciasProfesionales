@@ -37,6 +37,7 @@
             this.btnReporteResidencias = new System.Windows.Forms.Button();
             this.btnAprobacionSolicitudes = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnResidentes = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -45,6 +46,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.pnlTop.Controls.Add(this.btnResidentes);
             this.pnlTop.Controls.Add(this.btnLiberacionFinal);
             this.pnlTop.Controls.Add(this.pnlCerrarSesion);
             this.pnlTop.Controls.Add(this.btnReporteResidencias);
@@ -63,10 +65,10 @@
             this.btnLiberacionFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLiberacionFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLiberacionFinal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnLiberacionFinal.Location = new System.Drawing.Point(387, 20);
+            this.btnLiberacionFinal.Location = new System.Drawing.Point(372, 20);
             this.btnLiberacionFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLiberacionFinal.Name = "btnLiberacionFinal";
-            this.btnLiberacionFinal.Size = new System.Drawing.Size(174, 30);
+            this.btnLiberacionFinal.Size = new System.Drawing.Size(155, 30);
             this.btnLiberacionFinal.TabIndex = 6;
             this.btnLiberacionFinal.Text = "Liberación final";
             this.btnLiberacionFinal.UseVisualStyleBackColor = false;
@@ -123,7 +125,7 @@
             this.btnReporteResidencias.Location = new System.Drawing.Point(207, 20);
             this.btnReporteResidencias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReporteResidencias.Name = "btnReporteResidencias";
-            this.btnReporteResidencias.Size = new System.Drawing.Size(174, 30);
+            this.btnReporteResidencias.Size = new System.Drawing.Size(159, 30);
             this.btnReporteResidencias.TabIndex = 2;
             this.btnReporteResidencias.Text = "Reporte de residencias";
             this.btnReporteResidencias.UseVisualStyleBackColor = false;
@@ -160,6 +162,22 @@
             this.pbLogo.TabIndex = 6;
             this.pbLogo.TabStop = false;
             // 
+            // btnResidentes
+            // 
+            this.btnResidentes.BackColor = System.Drawing.Color.White;
+            this.btnResidentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResidentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResidentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResidentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnResidentes.Location = new System.Drawing.Point(533, 20);
+            this.btnResidentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnResidentes.Name = "btnResidentes";
+            this.btnResidentes.Size = new System.Drawing.Size(155, 30);
+            this.btnResidentes.TabIndex = 7;
+            this.btnResidentes.Text = "Residentes";
+            this.btnResidentes.UseVisualStyleBackColor = false;
+            this.btnResidentes.Click += new System.EventHandler(this.btnResidentes_Click);
+            // 
             // FrmVistaPrincipalCoordinador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,7 +187,7 @@
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.pnlTop);
             this.Name = "FrmVistaPrincipalCoordinador";
-            this.Text = "FrmVentanaPrincipalCoordinador";
+            this.Text = "FrmVistaPrincipalCoordinador";
             this.pnlTop.ResumeLayout(false);
             this.pnlCerrarSesion.ResumeLayout(false);
             this.pnlCerrarSesion.PerformLayout();
@@ -188,5 +206,6 @@
         private System.Windows.Forms.Button btnAprobacionSolicitudes;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnLiberacionFinal;
+        private System.Windows.Forms.Button btnResidentes;
     }
 }
