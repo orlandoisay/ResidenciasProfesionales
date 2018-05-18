@@ -61,7 +61,7 @@ namespace ResidenciasProfesionales.VIEW
 
         private void btnControlDocumentacion_Click(object sender, EventArgs e)
         {
-
+            panelSeleccion.Visible = true;
         }
     }
 }

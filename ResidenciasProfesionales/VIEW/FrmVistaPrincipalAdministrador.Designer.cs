@@ -36,9 +36,15 @@
             this.btnReporteResidencia = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnControlDocumentacion = new System.Windows.Forms.Button();
+            this.cbxAsesores = new System.Windows.Forms.ComboBox();
+            this.panelSeleccion = new System.Windows.Forms.Panel();
+            this.lblAsesor = new System.Windows.Forms.Label();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.panelSeleccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,7 +99,7 @@
             this.btnReporteResidencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporteResidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteResidencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnReporteResidencia.Location = new System.Drawing.Point(22, 20);
+            this.btnReporteResidencia.Location = new System.Drawing.Point(191, 20);
             this.btnReporteResidencia.Name = "btnReporteResidencia";
             this.btnReporteResidencia.Size = new System.Drawing.Size(175, 30);
             this.btnReporteResidencia.TabIndex = 0;
@@ -105,7 +111,7 @@
             // 
             this.pbLogo.BackgroundImage = global::ResidenciasProfesionales.Properties.Resources.ITSUR_Logo;
             this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbLogo.Location = new System.Drawing.Point(232, 96);
+            this.pbLogo.Location = new System.Drawing.Point(251, 132);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(276, 248);
             this.pbLogo.TabIndex = 1;
@@ -117,7 +123,7 @@
             this.btnControlDocumentacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnControlDocumentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnControlDocumentacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnControlDocumentacion.Location = new System.Drawing.Point(203, 20);
+            this.btnControlDocumentacion.Location = new System.Drawing.Point(10, 20);
             this.btnControlDocumentacion.Name = "btnControlDocumentacion";
             this.btnControlDocumentacion.Size = new System.Drawing.Size(175, 30);
             this.btnControlDocumentacion.TabIndex = 2;
@@ -125,12 +131,68 @@
             this.btnControlDocumentacion.UseVisualStyleBackColor = false;
             this.btnControlDocumentacion.Click += new System.EventHandler(this.btnControlDocumentacion_Click);
             // 
+            // cbxAsesores
+            // 
+            this.cbxAsesores.FormattingEnabled = true;
+            this.cbxAsesores.Location = new System.Drawing.Point(3, 25);
+            this.cbxAsesores.Name = "cbxAsesores";
+            this.cbxAsesores.Size = new System.Drawing.Size(226, 21);
+            this.cbxAsesores.TabIndex = 2;
+            // 
+            // panelSeleccion
+            // 
+            this.panelSeleccion.Controls.Add(this.btnRegistrar);
+            this.panelSeleccion.Controls.Add(this.btnVer);
+            this.panelSeleccion.Controls.Add(this.lblAsesor);
+            this.panelSeleccion.Controls.Add(this.cbxAsesores);
+            this.panelSeleccion.Location = new System.Drawing.Point(12, 75);
+            this.panelSeleccion.Name = "panelSeleccion";
+            this.panelSeleccion.Size = new System.Drawing.Size(233, 134);
+            this.panelSeleccion.TabIndex = 3;
+            this.panelSeleccion.Visible = false;
+            // 
+            // lblAsesor
+            // 
+            this.lblAsesor.AutoSize = true;
+            this.lblAsesor.Location = new System.Drawing.Point(3, 9);
+            this.lblAsesor.Name = "lblAsesor";
+            this.lblAsesor.Size = new System.Drawing.Size(39, 13);
+            this.lblAsesor.TabIndex = 4;
+            this.lblAsesor.Text = "Asesor";
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.Color.White;
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnVer.Location = new System.Drawing.Point(5, 57);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(223, 30);
+            this.btnVer.TabIndex = 3;
+            this.btnVer.Text = "Ver documentación";
+            this.btnVer.UseVisualStyleBackColor = false;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.White;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnRegistrar.Location = new System.Drawing.Point(5, 93);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(223, 30);
+            this.btnRegistrar.TabIndex = 5;
+            this.btnRegistrar.Text = "Registrar documentación";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            // 
             // FrmVistaPrincipalAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(776, 392);
+            this.Controls.Add(this.panelSeleccion);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.panel1);
             this.Name = "FrmVistaPrincipalAdministrador";
@@ -142,6 +204,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.panelSeleccion.ResumeLayout(false);
+            this.panelSeleccion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -155,5 +219,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnControlDocumentacion;
+        private System.Windows.Forms.ComboBox cbxAsesores;
+        private System.Windows.Forms.Panel panelSeleccion;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Label lblAsesor;
     }
 }
