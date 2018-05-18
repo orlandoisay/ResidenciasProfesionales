@@ -32,5 +32,11 @@ namespace ResidenciasProfesionales.VIEW
         {
             this.Close();
         }
+
+        private void btnResidentes_Click(object sender, EventArgs e)
+        {
+            var frmResidentes = new FrmListaResidentes();
+            frmResidentes.ShowDialog();
+        }
     }
 }

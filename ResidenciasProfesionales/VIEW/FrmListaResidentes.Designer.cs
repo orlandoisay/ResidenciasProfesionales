@@ -32,12 +32,14 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.lblEncabezado = new System.Windows.Forms.Label();
+            this.sfdImpresion = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExportar
             // 
             this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.Enabled = false;
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportar.Font = new System.Drawing.Font("Segoe UI Light", 10F);
             this.btnExportar.Location = new System.Drawing.Point(732, 14);
@@ -110,5 +112,6 @@
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Label lblEncabezado;
+        private System.Windows.Forms.SaveFileDialog sfdImpresion;
     }
 }
