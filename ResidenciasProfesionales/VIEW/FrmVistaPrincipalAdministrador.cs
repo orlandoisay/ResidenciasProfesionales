@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ResidenciasProfesionales.MODEL;
+using ResidenciasProfesionales.DATA;
 
 namespace ResidenciasProfesionales.VIEW
 {
@@ -16,8 +18,19 @@ namespace ResidenciasProfesionales.VIEW
         {
             InitializeComponent();
             CentrarLogo();
+            llenarCombo();
         }
-        
+
+        public void llenarCombo()
+        {
+            List<DocentePOJO> listaDocentes = DocenteDAO.ObtenerTodosLosDisponibles();
+            cbxAsesores.Items.Clear();
+            for (int i = 0; i < listaDocentes.Count; i++)
+            {
+                cbxAsesores.Items.Add(listaDocentes[i].NombreCompleto);
+            }
+            cbxAsesores.SelectedIndex = 0;
+        }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
