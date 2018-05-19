@@ -119,9 +119,13 @@ create table solicitud(
 
 
 insert into carrera(Nombre) values
-('Sistemas'),
-('Gestión'),
-('Electrónica');
+('Ing. Sistemas Computacionales'),
+('Ing. Gestión Empresarial'),
+('Ing. Electrónica'),
+('Ing. Ambiental'),
+('Ing. Sistemas Automotrices'),
+('Ing. Industrial'),
+('Lic. Gastronomía');
 
 insert into alumno values
 ('S19650897','1234','José','Moreno','Díaz','asdf@gmail.com','Comonfot #89','Moroleón','4409463879',1,7,'IMSS','3456787456','Activo'),
