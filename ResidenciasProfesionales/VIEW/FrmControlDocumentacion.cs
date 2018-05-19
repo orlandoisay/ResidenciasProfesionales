@@ -109,7 +109,7 @@ namespace ResidenciasProfesionales.VIEW
         {
             if (spnCalificacionFinal.Enabled == false) {
 
-                DialogResult dr = MessageBox.Show("¿Mantener los cambios realizados?" + spnCalificacionFinal.Value, "Info",
+                DialogResult dr = MessageBox.Show("¿Mantener los cambios realizados?", "Info",
                                               MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.No)
                     return;
