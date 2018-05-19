@@ -28,68 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblComentario = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.lblFecha = new System.Windows.Forms.Label();
+            this.tablaCalificaciones = new System.Windows.Forms.DataGridView();
             this.noControl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblComentario = new System.Windows.Forms.Label();
+            this.txtaComentario = new System.Windows.Forms.RichTextBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.lblFecha = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCalificaciones)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // tablaCalificaciones
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tablaCalificaciones.AllowUserToAddRows = false;
+            this.tablaCalificaciones.AllowUserToDeleteRows = false;
+            this.tablaCalificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaCalificaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.noControl,
             this.nombre,
             this.estatus,
             this.calificacion});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(752, 150);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // lblComentario
-            // 
-            this.lblComentario.AutoSize = true;
-            this.lblComentario.Location = new System.Drawing.Point(12, 172);
-            this.lblComentario.Name = "lblComentario";
-            this.lblComentario.Size = new System.Drawing.Size(63, 13);
-            this.lblComentario.TabIndex = 1;
-            this.lblComentario.Text = "Comentario:";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 188);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(606, 56);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(624, 221);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(140, 23);
-            this.btnSalir.TabIndex = 3;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(621, 172);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(40, 13);
-            this.lblFecha.TabIndex = 4;
-            this.lblFecha.Text = "Fecha:";
+            this.tablaCalificaciones.Location = new System.Drawing.Point(12, 12);
+            this.tablaCalificaciones.Name = "tablaCalificaciones";
+            this.tablaCalificaciones.ReadOnly = true;
+            this.tablaCalificaciones.Size = new System.Drawing.Size(752, 150);
+            this.tablaCalificaciones.TabIndex = 0;
+            this.tablaCalificaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaCalificaciones_CellClick);
             // 
             // noControl
             // 
@@ -120,6 +86,42 @@
             this.calificacion.ReadOnly = true;
             this.calificacion.Width = 86;
             // 
+            // lblComentario
+            // 
+            this.lblComentario.AutoSize = true;
+            this.lblComentario.Location = new System.Drawing.Point(12, 172);
+            this.lblComentario.Name = "lblComentario";
+            this.lblComentario.Size = new System.Drawing.Size(63, 13);
+            this.lblComentario.TabIndex = 1;
+            this.lblComentario.Text = "Comentario:";
+            // 
+            // txtaComentario
+            // 
+            this.txtaComentario.Location = new System.Drawing.Point(12, 188);
+            this.txtaComentario.Name = "txtaComentario";
+            this.txtaComentario.Size = new System.Drawing.Size(606, 56);
+            this.txtaComentario.TabIndex = 2;
+            this.txtaComentario.Text = "";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(624, 221);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(140, 23);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(621, 172);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(40, 13);
+            this.lblFecha.TabIndex = 4;
+            this.lblFecha.Text = "Fecha:";
+            // 
             // FrmMostrarCalificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,12 +129,12 @@
             this.ClientSize = new System.Drawing.Size(776, 256);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtaComentario);
             this.Controls.Add(this.lblComentario);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tablaCalificaciones);
             this.Name = "FrmMostrarCalificaciones";
             this.Text = "FrmMostrarCalificaciones";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCalificaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,9 +142,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tablaCalificaciones;
         private System.Windows.Forms.Label lblComentario;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtaComentario;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn noControl;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
