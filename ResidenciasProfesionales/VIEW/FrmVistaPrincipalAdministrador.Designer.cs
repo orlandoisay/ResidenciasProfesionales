@@ -177,6 +177,7 @@
             this.btnVer.TabIndex = 3;
             this.btnVer.Text = "Ver documentación";
             this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // lblAsesor
             // 

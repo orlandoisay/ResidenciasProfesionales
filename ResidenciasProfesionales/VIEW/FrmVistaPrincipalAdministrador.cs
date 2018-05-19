@@ -67,6 +67,7 @@ namespace ResidenciasProfesionales.VIEW
         {
             var frmReporteResidencia = new FrmReporteResidencias();
             frmReporteResidencia.ShowDialog();
+            panelSeleccion.Visible = false;
         }
 
         private void FrmVistaPrincipalAdministrador_Load(object sender, EventArgs e)
@@ -84,6 +85,14 @@ namespace ResidenciasProfesionales.VIEW
             int index = cbxAsesores.SelectedIndex;
             var frmControlDocumentacion = new FrmControlDocumentacion(listaDocentes[index].ID);
             frmControlDocumentacion.ShowDialog();
+            panelSeleccion.Visible = false;
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            int index = cbxAsesores.SelectedIndex;
+            var frmMostrarCalificacion = new FrmMostrarCalificaciones(listaDocentes[index].ID);
+            frmMostrarCalificacion.ShowDialog();
             panelSeleccion.Visible = false;
         }
     }

@@ -235,6 +235,38 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        public static List<AlumnoPOJO> ObtenerAlumnosConLiberacionAsesor(String idDocente)
+        {
+            try
+            {
+                var list = new List<AlumnoPOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT al.* FROM alumno al JOIN roldocente rol ON "+
+                    "al.Matricula = rol.idAlumno JOIN InfoResidencia i ON al.Matricula = i.idAlumno JOIN "+
+                    "dictamen d ON i.ID = d.idResidencia WHERE rol.IdDocente = @P0 AND " +
+                    "d.tipo = 'LiberacionAsesor' AND al.Matricula NOT IN(SELECT i.idAlumno FROM "+
+                    "InfoResidencia i JOIN dictamen d ON i.ID = d.idResidencia  WHERE d.tipo = 'LiberacionFinal');");
+                cmd.Parameters.AddWithValue("@P0", idDocente);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         public static void Actualizar(AlumnoPOJO alumno)
         {
             try
