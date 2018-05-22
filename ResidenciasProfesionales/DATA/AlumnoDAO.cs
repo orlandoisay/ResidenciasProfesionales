@@ -324,7 +324,7 @@ namespace ResidenciasProfesionales.DATA
                 Conexion con = new Conexion();
                 MySqlCommand cmd = new MySqlCommand("SELECT al.* FROM alumno al JOIN roldocente rol ON "+
                     "al.Matricula = rol.idAlumno JOIN InfoResidencia i ON al.Matricula = i.idAlumno JOIN "+
-                    "dictamen d ON i.ID = d.idResidencia WHERE rol.IdDocente = @P0 AND " +
+                    "dictamen d ON i.ID = d.idResidencia WHERE rol.IdDocente = @P0 AND rol.Rol = 'Asesor' AND " +
                     "d.tipo = 'LiberacionAsesor' AND al.Matricula NOT IN(SELECT i.idAlumno FROM "+
                     "InfoResidencia i JOIN dictamen d ON i.ID = d.idResidencia  WHERE d.tipo = 'LiberacionFinal');");
                 cmd.Parameters.AddWithValue("@P0", idDocente);
