@@ -11,14 +11,20 @@ using ResidenciasProfesionales.MODEL;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Clase encargada de asignar revisores a los alumnos.
+    /// </summary>
     public partial class FrmAsignacionRevisores : Form
     {
         int indice = -1;
+
+        /// <summary>
+        /// Inicializa los componentes.
+        /// </summary>
         public FrmAsignacionRevisores()
         {
             InitializeComponent();
             this.Size = new Size(958, 518);
-            //939, 477
             pPanel.Size = new Size(939, 477);
             pPanelV2.Visible = false;
             dgvTabla.AutoGenerateColumns = false;
@@ -35,23 +41,25 @@ namespace ResidenciasProfesionales.VIEW
 
         }
 
+        // Almacena a todos los revisores.
         List<DocentePOJO> listRevisores;
 
+        /// <summary>
+        /// Despliega el panel encargado de mostrar los revisores
+        /// disponibles.
+        /// </summary>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (indice != -1)
             {
                 if (dgvTabla.Rows[indice].Cells[3].Value.ToString() == "")
                 {
-                    //
                     pPanel.Visible = false;
                     llenarDatos();
                     indice = -1;
                     pPanelV2.Location = new Point(pPanel.Location.X, pPanel.Location.Y);
                     pPanelV2.Size = new Size(939, 477);
                     pPanelV2.Visible = true;
-
-                    //MessageBox.Show("Mal" + new RevisorDAO().ObtenerTodos().Count);
                     listRevisores = new RevisorDAO().ObtenerTodos();
                     dgvTablaCarga.DataSource = null;
                     dgvTablaCarga.DataSource = listRevisores;
@@ -78,6 +86,13 @@ namespace ResidenciasProfesionales.VIEW
         DocentePOJO d1 = null;
         DocentePOJO d2 = null;
 
+        /// <summary>
+        /// Verifica si existen dos revisores seleccionados.
+        /// </summary>
+        /// <returns>
+        /// Retorna true si seleccionaron exactamente dos revisores,
+        /// de otro modo retorna false.
+        /// </returns>
         public bool verificar() {
             int cont = 0;
             int i = 0;
@@ -100,13 +115,20 @@ namespace ResidenciasProfesionales.VIEW
             return cont == 2;
         }
 
+        // Almacena los datos usados para llenar la tabla de revisores.
         List<TablaAsignacionRevisor> lista;
 
+        /// <summary>
+        /// Llama al método encargado de actualizar la tabla.
+        /// </summary>
         private void FrmAsignacionRevisores_Load(object sender, EventArgs e)
         {
             actualizarDgvTabla();
         }
 
+        /// <summary>
+        /// Actualiza la tabla de revisores.
+        /// </summary>
         public void actualizarDgvTabla() {
             AsignacionRevisorDAO ard = new AsignacionRevisorDAO();
             dgvTabla.DataSource = null;
@@ -114,6 +136,9 @@ namespace ResidenciasProfesionales.VIEW
             dgvTabla.DataSource = lista;
         }
 
+        /// <summary>
+        /// Evento capaz de reconocer la fila seleccionada.
+        /// </summary>
         private void dgvTabla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indice = e.RowIndex;
@@ -121,6 +146,10 @@ namespace ResidenciasProfesionales.VIEW
 
         string NoControl = "";
 
+        /// <summary>
+        /// Llena los componentes encargados de mostrar los datos del docente
+        /// y del alumno seleccionado.
+        /// </summary>
         private void llenarDatos() {
             NoControl = lista[indice].NoControl;
             AlumnoPOJO aP = AlumnoDAO.ObtenerAlumno(NoControl);
@@ -138,14 +167,21 @@ namespace ResidenciasProfesionales.VIEW
 
         }
 
+        /// <summary>
+        /// Llama al método encargado de asignarle los revisores
+        /// seleccionados al alumno.
+        /// </summary>
         private void btnAsignarContinuar_Click(object sender, EventArgs e)
         {
             insertarRevisores();
             siguiente();
         }
 
+        /// <summary>
+        /// Permite desplazarse al siguiente alumno sin revisores
+        /// asignados.
+        /// </summary>
         public void siguiente() {
-            //dgvTabla.Rows[indice].Cells[3].Value.ToString()
             actualizarDgvTabla();
             bool entrar = false;
             for (int i = 0; i < dgvTabla.RowCount; i++) {
@@ -171,6 +207,11 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Revisa si se han seleccionado dos revisores, de ser
+        /// así permite ingresarlos como revisores del alumno
+        /// a la base de datos.
+        /// </summary>
         public void insertarRevisores() {
             if (verificar())
             {
@@ -191,6 +232,9 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Inicializa los valores después de un cambio.
+        /// </summary>
         public void regresar() {
             AsignacionRevisorDAO ard = new AsignacionRevisorDAO();
             lista = ard.extraerList();
@@ -200,17 +244,27 @@ namespace ResidenciasProfesionales.VIEW
             pPanelV2.Visible = false;
         }
 
+        /// <summary>
+        /// Descarta cualquier cambio y regresa la lista de alumnos.
+        /// </summary>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             regresar();
         }
 
+        /// <summary>
+        /// Llama al método encargado de asignarle los revisores
+        /// seleccionados al alumno.
+        /// </summary>
         private void btnAsignar_Click(object sender, EventArgs e)
         {
             insertarRevisores();
             regresar();
         }
 
+        /// <summary>
+        /// Cierra la ventana actual.
+        /// </summary>
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             this.Close();

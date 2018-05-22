@@ -8,11 +8,26 @@ using MySql.Data.MySqlClient;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Objeto de acceso a datos de usuario.
+    /// </summary>
+    /// <remarks>
+    /// Permite acceder a los datos almacenados del usuario.
+    /// </remarks>
     class UsuarioDao
     {
+        /// <summary>
+        /// Permite conocer si el usuario ingresado como parámetro
+        /// realmente existe en la base de datos.
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// Representa el nombre del usuario ingresado en el login.
+        /// <returns>
+        /// Retorna true si el usuario si se encuentra almacenado,
+        /// si no es así, retorna false.
+        /// </returns>
         public Boolean Existe(Usuario usuario)
         {
-
             try
             {
                 String sentencia = "";
@@ -32,9 +47,7 @@ namespace ResidenciasProfesionales.DATA
                 cmd.Parameters.AddWithValue("@P2", usuario.TipoUsuario);
 
                 DataTable dtProductos = con.ejecutarConsulta(cmd);
-
-                //Verificar si la consulta regresó resultados
-                // para llenar el objeto
+                
                 if (dtProductos != null && dtProductos.Rows.Count > 0)
                 {
                     return true;
@@ -47,7 +60,6 @@ namespace ResidenciasProfesionales.DATA
             }
             finally
             {
-                //Solo intentar cerrar la conexión cuando si se encuentra abierta
                 if (Conexion.conexion != null)
                 {
                     Conexion.conexion.Close();

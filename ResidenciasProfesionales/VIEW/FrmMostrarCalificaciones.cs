@@ -12,12 +12,20 @@ using ResidenciasProfesionales.DATA;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Permite visualizar las calificaciones emitidas por el 
+    /// asesor.
+    /// </summary>
     public partial class FrmMostrarCalificaciones : Form
     {
         String idDocente;
         List<AlumnoPOJO> alumnos = new List<AlumnoPOJO>();
         List<DictamenPOJO> dictamenes = new List<DictamenPOJO>();
 
+        /// <summary>
+        /// Evalua si hay o no alumnos para mostrar, y dependiendo 
+        /// de ello, permitir o limitar las opciones proporcionadas.
+        /// </summary>
         public FrmMostrarCalificaciones(String ID)
         {
             InitializeComponent();
@@ -35,6 +43,9 @@ namespace ResidenciasProfesionales.VIEW
             lblFecha.Visible = false;
         }
 
+        /// <summary>
+        /// Llena la tabla con las listas previamente cargadas.
+        /// </summary>
         public void llenarTablaAlumno()
         {
             tablaCalificaciones.Rows.Clear();
@@ -47,6 +58,11 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Evento capaz de reconocer la fila seleccionada
+        /// y cargar los datos de la misma en los componentes
+        /// correspondientes.
+        /// </summary>
         private void tablaCalificaciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -64,6 +80,9 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Cierra la ventana actual.
+        /// </summary>
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();

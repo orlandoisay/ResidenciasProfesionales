@@ -9,9 +9,23 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Objeto de acceso a datos de dictamen.
+    /// </summary>
+    /// <remarks>
+    /// Permite acceder a los datos almacenados del dictamen.
+    /// </remarks>
     class DictamenDAO
     {
-        // Obtiene un solo dictamen, con base en el id de la residencia ingresada como parámetro.
+        /// <summary>
+        /// Busca y obtiene un dictamen que coincida con la id de
+        /// la residencia ingresado como parámetro.
+        /// </summary>
+        /// <param name="idResidencia"></param>
+        /// Id utilizado para identificar al dictamen.
+        /// <returns>
+        /// Retorna el dictamen si es encontrado, de otro modo retorna null.
+        /// </returns>
         public static DictamenPOJO ObtenerDictamen(int idResidencia)
         {
             try
@@ -38,6 +52,15 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Busca y obtiene el dictamen asesor que coincida con la id 
+        /// de la residencia ingresada como parámetro.
+        /// </summary>
+        /// <param name="idResidencia"></param>
+        /// Id utilizado para identificar al dictamen.
+        /// <returns>
+        /// Retorna el dictamen asesor si es encontrado, de otro modo retorna null.
+        /// </returns>
         public static DictamenPOJO ObtenerDictamenAsesor(int idResidencia)
         {
             try
@@ -64,6 +87,20 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Busca y obtiene el dictamen que coincida con los 
+        /// parámetros ingresados.
+        /// </summary>
+        /// <param name="idDocente"></param>
+        /// Identificador del docente.
+        /// /// <param name="idAlumno"></param>
+        /// Identificador del alumno.
+        /// /// <param name="tipo"></param>
+        /// Tipo de dictamen a buscado.
+        /// <returns>
+        /// Retorna el dictamen especificado si es encontrado, de otro modo retorna 
+        /// null.
+        /// </returns>
         public static DictamenPOJO ObtenerDictamen(String idDocente, String idAlumno, String tipo)
         {
             try
@@ -95,6 +132,16 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Busca y obtiene todos los dictamenes de revisores que coincidan 
+        /// con la id de la residencia ingresada como parámetro.
+        /// </summary>
+        /// <param name="idResidencia"></param>
+        /// Id utilizado para identificar al dictamen.
+        /// <returns>
+        /// Retorna los dictamenes de revisores si son encontrados, 
+        /// de otro modo retorna null.
+        /// </returns>
         public static List<DictamenPOJO> ObtenerDictamenesRevisores(int idResidencia)
         {
             try
@@ -123,7 +170,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
-
+        /// <summary>
+        /// Busca y obtiene todos los dictamenes de liberación final almacenados
+        /// en la base de datos.
+        /// </summary>
+        /// <returns>
+        /// Retorna los dictamenes de liberación final obtenidos a través de la
+        /// consulta.
+        /// </returns>
         public static List<DictamenPOJO> ObtenerProyectosTerminados()
         {
             try
@@ -151,7 +205,13 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
-        // Ingresa la calificación final al dictamen.
+        /// <summary>
+        /// Asigna la calificación emitida por el asesor.
+        /// </summary>
+        /// <param name="idResidencia"></param>
+        /// Id utilizado para identificar al proyecto.
+        /// /// <param name="calificacion"></param>
+        /// Contiene la calificación a ingresar.
         public static void agregarCalificacionFinal(int idResidencia, float calificacion)
         {
             try
@@ -175,6 +235,15 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Almacena un nuevo dictamen en la base de datos.
+        /// </summary>
+        /// <param name="dictamen"></param>
+        /// Dictamen a ingresar en la base de datos.
+        /// <returns>
+        /// Retorna true si la inserción tuvo exito, de otro modo retorna
+        /// false.
+        /// </returns>
         public static bool InsertarDictamen(DictamenPOJO dictamen)
         {
             try
@@ -204,6 +273,16 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Obtiene los dictamenes de liberación asesor emitidos por el docente ingresado
+        /// como parámetro.
+        /// </summary>
+        /// <param name="idDocente"></param>
+        /// Identificador del docente usado para filtrar los dictamenes.
+        /// <returns>
+        /// Retorna los dictamenes de liberación asesor obtenidos a través de la
+        /// consulta.
+        /// </returns>
         public static List<DictamenPOJO> ObtenerLiberacionesAsesor(String idDocente)
         {
             try
@@ -236,6 +315,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Construye un dictamen con los datos ingresados como parámetro.
+        /// </summary>
+        /// <param name="dr"></param>
+        /// Registro de datos pertenecientes al alumno.
+        /// <returns>
+        /// Retorna el dictamen creado.
+        /// </returns>
         public static DictamenPOJO DataRowAObjeto(DataRow dr)
         {
             int calf = 0;

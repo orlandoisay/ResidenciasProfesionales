@@ -11,6 +11,17 @@ namespace ResidenciasProfesionales.DATA
 {
     public class RolDAO
     {
+        /// <summary>
+        /// Obtiene el rol que existe entre el alumno y el docente,
+        /// ambos ingresados como parámetro.
+        /// </summary>
+        /// <param name="idAlumno"></param>
+        /// Identificador del alumno.
+        /// <param name="idDocente"></param>
+        /// Identificador del docente.
+        /// <returns>
+        /// Retorna el rol ubicado por los identificadores descritos.
+        /// </returns>
         public static RolPOJO ObtenerRol(String idAlumno, String idDocente)
         {
             try
@@ -37,6 +48,21 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
+        /// <summary>
+        /// Busca en la base de datos si un rol en especifico
+        /// existe entre el alumno y el asesor, ambos ingresados
+        /// como parámetro.
+        /// </summary>
+        /// <param name="idAlumno"></param>
+        /// Identificador del alumno.
+        /// <param name="idDocente"></param>
+        /// Identificador del docente.
+        /// <param name="rol"></param>
+        /// Contiene el tipo de rol.
+        /// <returns>
+        /// Retorna true si el rol existe, de lo contrario retorna false.
+        /// </returns>
         public static bool ExisteRol(String idAlumno, String idDocente, String rol)
         {
             try
@@ -62,6 +88,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Construye un rol con los datos ingresados como parámetro.
+        /// </summary>
+        /// <param name="dr"></param>
+        /// Registro de datos pertenecientes al rol.
+        /// <returns>
+        /// Retorna el rol creado.
+        /// </returns>
         public static RolPOJO DataRowAObjeto(DataRow dr)
         {
             return new RolPOJO(

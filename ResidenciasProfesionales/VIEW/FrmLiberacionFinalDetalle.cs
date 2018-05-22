@@ -11,11 +11,22 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Liberación final de residencias.
+    /// </summary>
     public partial class FrmLiberacionFinalDetalle : Form
     {
         ResidenciaPOJO resi = new ResidenciaPOJO();
         DocentePOJO doce = new DocentePOJO();
 
+        /// <summary>
+        /// Llena los componentes encargados de mostrar los datos
+        /// necesarios para la liberación final.
+        /// </summary>
+        /// <param name="res"></param>
+        /// Residencias previamente seleccionada.
+        /// <param name="idDocente"></param>
+        /// Identificador del docente.
         public FrmLiberacionFinalDetalle(ResidenciaPOJO res, String idDocente)
         {
             InitializeComponent();
@@ -33,6 +44,10 @@ namespace ResidenciasProfesionales.VIEW
 
         }
 
+        /// <summary>
+        /// Crea e ingresa el dictamen LiberaciónFinal en la base de 
+        /// datos, además cierra la ventana actual.
+        /// </summary>
         private void btnEvaluar_Click(object sender, EventArgs e)
         {
             String fecha = DateTime.Now.ToString("yyyy-MM-dd");

@@ -9,8 +9,23 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Objeto de acceso a datos de empresa.
+    /// </summary>
+    /// <remarks>
+    /// Permite acceder a los datos almacenados de la empresa.
+    /// </remarks>
     public class EmpresaDAO
     {
+        /// <summary>
+        /// Busca y obtiene a la empresa que coincida con el rfc ingresado
+        /// como parámetro.
+        /// </summary>
+        /// <param name="rfc"></param>
+        /// RFC utilizado para identificar a la empresa.
+        /// <returns>
+        /// Retorna la empresa si es encontrada, de otro modo retorna null.
+        /// </returns>
         public static EmpresaPOJO ObtenerEmpresa(string rfc)
         {
             try
@@ -36,6 +51,15 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
+        /// <summary>
+        /// Inserta una nueva empresa en la base de datos.
+        /// </summary>
+        /// <param name="empresa"></param>
+        /// Contiene los datos que constituyen a una empresa.
+        /// <returns>
+        /// Retorna -1 si la sentencia no se ejecuto correctamente.
+        /// </returns>
         public static int InsertarEmpresa(EmpresaPOJO empresa)
         {
             try
@@ -68,6 +92,18 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
+        /// <summary>
+        /// Remplaza a la empresa ubicada en la base de datos por la
+        /// empresa ingresada como parametro.
+        /// </summary>
+        /// <param name="empresa"></param>
+        /// Contiene los datos de la empresa que remplazará a la empresa 
+        /// almacenada.
+        /// /// <returns>
+        /// Retorna true si la inserción se ejecuto correctamente, de otro
+        /// modo retorna false.
+        /// </returns>
         public static bool ActualizarEmpresa(EmpresaPOJO empresa)
         {
             try
@@ -104,6 +140,17 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
+        /// <summary>
+        /// Busca y elimina a la empresa que coincida con el rfc ingresado
+        /// como parámetro.
+        /// </summary>
+        /// <param name="RFC"></param>
+        /// RFC utilizado para identificar a la empresa.
+        /// <returns>
+        /// Retorna true si la empresa se elimino correctamente, si no es 
+        /// así retorna false.
+        /// </returns>
         public static bool EliminarEmpresa(String RFC)
         {
             try
@@ -127,6 +174,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Construye una empresa con los datos ingresados como parámetro.
+        /// </summary>
+        /// <param name="dr"></param>
+        /// Registro de datos pertenecientes a la empresa.
+        /// <returns>
+        /// Retorna la empresa creada.
+        /// </returns>
         public static EmpresaPOJO DataRowAObjeto(DataRow dr)
         {
             return new EmpresaPOJO(

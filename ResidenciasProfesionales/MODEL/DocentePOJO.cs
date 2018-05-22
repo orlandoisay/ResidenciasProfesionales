@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.MODEL
 {
+    /// <summary>
+    /// Objeto POJO de docente.
+    /// </summary>
+    /// <remarks>
+    /// Permite manipular todos los atributos del docente a través de un solo objeto.
+    /// </remarks>
     public class DocentePOJO
     {
+        // Getters y Setters.
         public String ID { get; set; }
         public String Nombre { get; set; }
         public String ApellidoP { get; set; }
@@ -29,6 +36,7 @@ namespace ResidenciasProfesionales.MODEL
             }
         }
 
+        // Constructores.
         public DocentePOJO() { }
 
         public DocentePOJO(String id, String nombre, String apellidoP, String apellidoM, String correo, String telefono,

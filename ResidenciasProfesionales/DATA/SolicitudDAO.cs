@@ -9,8 +9,23 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Objeto de acceso a datos de solicitud.
+    /// </summary>
+    /// <remarks>
+    /// Permite acceder a los datos almacenados de la 
+    /// solicitud.
+    /// </remarks>
     public class SolicitudDAO
     {
+        /// <summary>
+        /// Obtiene todas las solicitudes almacenadas en la base de datos 
+        /// así como sus atributos.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con las solicitudes obtenidos a través de la 
+        /// consulta.
+        /// </returns>
         public List<SolicitudPOJO> ObtenerTodos()
         {
             try
@@ -37,6 +52,16 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
+        /// <summary>
+        /// Busca y obtiene la solicitud que coincida con el id ingresado
+        /// como parámetro.
+        /// </summary>
+        /// <param name="id"></param>
+        /// Identificador utilizado para ubicar la solicitud.
+        /// <returns>
+        /// Retorna la solicitud si es encontrada, de otro modo retorna null.
+        /// </returns>
         public static SolicitudPOJO ObtenerSolicitud(int id)
         {
             try
@@ -62,6 +87,16 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
+        /// <summary>
+        /// Busca y obtiene la solicitud que coincida con la matricula
+        /// del alumno ingresado como parámetro.
+        /// </summary>
+        /// <param name="idAlumno"></param>
+        /// Matricula utilizada para ubicar la solicitud.
+        /// <returns>
+        /// Retorna la solicitud si es encontrada, de otro modo retorna null.
+        /// </returns>
         public static SolicitudPOJO ObtenerSolicitud(string idAlumno)
         {
             try
@@ -88,6 +123,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Obtiene todas las solicitudes almacenados en la base de datos 
+        /// que se encuentren pendientes.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con las solicitudes obtenidas a través de la 
+        /// consulta.
+        /// </returns>
         public static List<SolicitudPOJO> ObtenerSolicitudesPendientes()
         {
             try
@@ -115,6 +158,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Inserta una nueva solicitud en la base de datos.
+        /// </summary>
+        /// <param name="solicitud"></param>
+        /// Contiene los datos que constituyen una solicitud.
+        /// <returns>
+        /// Retorna -1 si la sentencia no se ejecuto correctamente.
+        /// </returns>
         public static int InsertarSolicitud(SolicitudPOJO solicitud)
         {
             try
@@ -138,6 +189,17 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Remplaza a la solicitud ubicada en la base de datos por la
+        /// solicitud ingresada como parametro.
+        /// </summary>
+        /// <param name="solicitud"></param>
+        /// Contiene los datos de la solicitud que remplazará a la 
+        /// solicitud almacenada.
+        /// <returns>
+        /// Retorna true si la sentencia se ejecuto correctamente,
+        /// de otro modo retorna false.
+        /// </returns>
         public static void Actualizar(SolicitudPOJO solicitud)
         {
             try
@@ -162,6 +224,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Construye una solicitud con los datos ingresados como parámetro.
+        /// </summary>
+        /// <param name="dr"></param>
+        /// Registro de datos pertenecientes a la solicitud.
+        /// <returns>
+        /// Retorna la solicitud creada.
+        /// </returns>
         public static SolicitudPOJO DataRowAObjeto(DataRow dr)
         {
             return new SolicitudPOJO(

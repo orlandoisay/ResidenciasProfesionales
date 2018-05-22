@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.MODEL
 {
+    /// <summary>
+    /// Objeto POJO de Asesor.
+    /// </summary>
+    /// <remarks>
+    /// Permite manipular todos los atributos del asesor a través de un solo objeto.
+    /// </remarks>
     class Asesor
     {
+        // Getters y Setters.
         public string Id { get; set; }
         public string Nombre { get; set; }
         public string ApellidoP { get; set; }
@@ -24,6 +31,7 @@ namespace ResidenciasProfesionales.MODEL
             }
         }
 
+        // Constructores.
         public Asesor(string id, string nombre, string apellidoP, string apellidoM, string correo,
        string telefono, string carrera, string estatus)
         {

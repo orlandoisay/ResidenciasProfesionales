@@ -9,8 +9,21 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Objeto de acceso a datos de alumno.
+    /// </summary>
+    /// <remarks>
+    /// Permite acceder a los datos almacenados del alumno.
+    /// </remarks>
     public class AlumnoDAO
     {
+        /// <summary>
+        /// Obtiene a todos los alumnos almacenados en la base de datos así como 
+        /// sus atributos.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con los alumnos obtenidos a través de la consulta.
+        /// </returns>
         public static List<AlumnoPOJO> ObtenerTodos()
         {
             try
@@ -38,6 +51,13 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Obtiene a todos los alumnos sin asesor
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con los alumnos sin asesor obtenidos a través de la 
+        /// consulta.
+        /// </returns>
         public static List<AlumnoPOJO> ObtenerAlumnosSinAsesor()
         {
             try
@@ -66,6 +86,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Obtiene a todos los alumnos sin asesor y con su solicitud de residencias
+        /// aprobada.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con los alumnos sin asesor y con solicitud aprobada 
+        /// obtenidos a través de la consulta.
+        /// </returns>
         public static List<AlumnoPOJO> ObtenerAlumnosSinAsesorSolicitudAprobada()
         {
             try
@@ -94,6 +122,16 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Obtiene a todos los alumnos con documentación y/o calificación 
+        /// pendiente.
+        /// </summary>
+        /// <param name="idDocente"></param>
+        /// Clave del docente utilizado para filtrar a los alumnos.
+        /// <returns>
+        /// Retorna una lista con los alumnos con documentación y/o calificación 
+        /// pendiente obtenidos a través de la consulta.
+        /// </returns>
         public static List<AlumnoPOJO> ObtenerAlumnosConAsesorSinLiberarlo(String idDocente)
         {
             try
@@ -125,6 +163,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Obtiene a todos los alumnos con asesor asignado y sin terminar el 
+        /// proceso de residencias profesionales.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con asesor asignado y sin terminar el proceso de 
+        /// residencias profesionales obtenidos a través de la consulta.
+        /// </returns>
         public static List<AlumnoPOJO> ObtenerAlumnosConAsesorSinLiberarResidencias()
         {
             try
@@ -155,6 +201,13 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Obtiene a todos los alumnos con asesor asignado
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con los alumnos con asesor obtenidos 
+        /// a través de la consulta.
+        /// </returns>
         public static List<AlumnoPOJO> ObtenerAlumnosConAsesor()
         {
             try
@@ -183,6 +236,15 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Obtiene a todos los asesorados del docente ingresado como parámetro.
+        /// </summary>
+        /// <param name="idDocente"></param>
+        /// Clave del docente utilizado para filtrar a los alumnos.
+        /// <returns>
+        /// Retorna una lista con los alumnos asesorados del docente ingresado como 
+        /// parámetro obtenidos a través de la consulta.
+        /// </returns>
         public static List<AlumnoPOJO> ObtenerAlumnosPorDocente(String idDocente)
         {
             try
@@ -211,6 +273,15 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Busca y obtiene al alumno que coincida con la matricula ingresada
+        /// como parámetro.
+        /// </summary>
+        /// <param name="matricula"></param>
+        /// Matricula utilizada para identificar al alumno.
+        /// <returns>
+        /// Retorna al alumno si es encontrado, de otro modo retorna null.
+        /// </returns>
         public static AlumnoPOJO ObtenerAlumno(string matricula)
         {
             try
@@ -235,6 +306,15 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Obtiene a los alumnos cuya calificación ya ha sido asignada.
+        /// </summary>
+        /// <param name="idDocente"></param>
+        /// Clave del docente utilizado para filtrar a los alumnos.
+        /// <returns>
+        /// Retorna una lista con los alumnos cuya calificación ya ha sido asignada 
+        /// obtenidos a través de la consulta.
+        /// </returns>
         public static List<AlumnoPOJO> ObtenerAlumnosConLiberacionAsesor(String idDocente)
         {
             try
@@ -267,6 +347,12 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Remplaza al alumno ubicado en la base de datos por el
+        /// alumno ingresado como parametro.
+        /// </summary>
+        /// <param name="alumno"></param>
+        /// Contiene los datos del alumno que remplazará al alumno almacenado.
         public static void Actualizar(AlumnoPOJO alumno)
         {
             try
@@ -303,9 +389,16 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Construye un alumno con los datos ingresados como parámetro.
+        /// </summary>
+        /// <param name="dr"></param>
+        /// Registro de datos pertenecientes al alumno.
+        /// <returns>
+        /// Retorna el alumno creado.
+        /// </returns>
         public static AlumnoPOJO DataRowAObjeto(DataRow dr)
         {
-         
             return new AlumnoPOJO(
                 dr["Matricula"].ToString(),
                 dr["Password"].ToString(),

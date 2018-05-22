@@ -12,10 +12,20 @@ using ResidenciasProfesionales.DATA;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Vista principal del administrador.
+    /// </summary>
+    /// <remarks>
+    /// Proporciona las opciones que un usuario identificado
+    /// como administrador puede realizar.
+    /// </remarks>
     public partial class FrmVistaPrincipalAdministrador : Form
     {
         List<DocentePOJO> listaDocentes = new List<DocentePOJO>();
 
+        /// <summary>
+        /// Inicializa los componentes.
+        /// </summary>
         public FrmVistaPrincipalAdministrador()
         {
             InitializeComponent();
@@ -23,6 +33,9 @@ namespace ResidenciasProfesionales.VIEW
             llenarCombo();
         }
 
+        /// <summary>
+        /// Llena el combo box con los asesores disponibles.
+        /// </summary>
         public void llenarCombo()
         {
             listaDocentes = DocenteDAO.ObtenerTodosLosDisponibles();
@@ -34,6 +47,9 @@ namespace ResidenciasProfesionales.VIEW
             cbxAsesores.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Cierra la ventana actual.
+        /// </summary>
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             CerrarSesion();
@@ -58,11 +74,17 @@ namespace ResidenciasProfesionales.VIEW
             pbLogo.Location = new Point(left, top);
         }
 
+        /// <summary>
+        /// Centra el logo de la institución en la interfaz.
+        /// </summary>
         private void FrmVistaPrincipalAsesor_Resize(object sender, EventArgs e)
         {
             CentrarLogo();
         }
 
+        /// <summary>
+        /// Evento capaz de abrir la ventana FrmReporteResidencias.
+        /// </summary>
         private void btnReporteResidencia_Click(object sender, EventArgs e)
         {
             var frmReporteResidencia = new FrmReporteResidencias();
@@ -75,11 +97,19 @@ namespace ResidenciasProfesionales.VIEW
 
         }
 
+        /// <summary>
+        /// Permite visualizar el panel encargado de desplegar más 
+        /// opciones sobre el control de documentación.
+        /// </summary>
         private void btnControlDocumentacion_Click(object sender, EventArgs e)
         {
             panelSeleccion.Visible = true;
         }
 
+        /// <summary>
+        /// Evento capaz de abrir la ventana FrmControlDocumentacion
+        /// usando el identificador del docente seleccionado.
+        /// </summary>
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             int index = cbxAsesores.SelectedIndex;
@@ -88,6 +118,10 @@ namespace ResidenciasProfesionales.VIEW
             panelSeleccion.Visible = false;
         }
 
+        /// <summary>
+        /// Evento capaz de abrir la ventana FrmMostrarCalificaciones
+        /// usando el identificador del docente seleccionado.
+        /// </summary>
         private void btnVer_Click(object sender, EventArgs e)
         {
             int index = cbxAsesores.SelectedIndex;

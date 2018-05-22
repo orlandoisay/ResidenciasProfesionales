@@ -9,6 +9,13 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Vista principal del revisor.
+    /// </summary>
+    /// <remarks>
+    /// Proporciona las opciones que un usuario identificado
+    /// como revisor puede realizar.
+    /// </remarks>
     public partial class FrmVistaPrincipalRevisor : Form
     {
         private String IdDocente;
@@ -18,6 +25,7 @@ namespace ResidenciasProfesionales.VIEW
         /// usuario con el rol de revisor.
         /// </summary>
         /// <param name="IdDocente">El Id del revisor</param>
+        /// Identificador del docente.
         public FrmVistaPrincipalRevisor(String IdDocente)
         {
             InitializeComponent();
@@ -25,20 +33,37 @@ namespace ResidenciasProfesionales.VIEW
             CentrarLogo();
         }
 
+        /// <summary>
+        /// Evento capaz de abrir la ventana FrmAprobacionInformeLista
+        /// usando el identificador del revisor ingresado.
+        /// </summary>
         private void btnAprobacion_Click(object sender, EventArgs e)
         {
             var frmAprobacionInformeLista = new FrmAprobacionInformeLista(IdDocente, "Revisor");
             frmAprobacionInformeLista.ShowDialog();
         }
+
+        /// <summary>
+        /// Evento capaz de abrir la ventana FrmLiberacionInformeLista
+        /// usando el identificador del revisor ingresado.
+        /// </summary>
         private void btnLiberacion_Click(object sender, EventArgs e)
         {
             var frmLiberacionInformeLista = new FrmLiberacionInformeLista(IdDocente, "Revisor");
             frmLiberacionInformeLista.ShowDialog();
         }
+
+        /// <summary>
+        /// Cierra la ventana actual.
+        /// </summary>
         private void pnlCerrarSesion_Click(object sender, EventArgs e)
         {
             CerrarSesion();
         }
+
+        /// <summary>
+        /// Cierra la ventana actual.
+        /// </summary>
         private void FrmVistaPrincipalRevisor_Resize(object sender, EventArgs e)
         {
             CentrarLogo();

@@ -11,11 +11,22 @@ using ResidenciasProfesionales.DATA;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Clase encargada de controlar la entrega de documentación
+    /// así como de la asignación de calificación.
+    /// </summary>
     public partial class FrmControlDocumentacion : Form
     {
+        // Lista de alumnos.
         List<AlumnoPOJO> alumnosConAsesor = new List<AlumnoPOJO>();
+        // Almacena el identificador del docente.
         String idDocente;
 
+        /// <summary>
+        /// Evalua si hay o no alumnos con documentación pendiente,
+        /// y dependiendo de ello, permitir o limitar las 
+        /// opciones proporcionadas.
+        /// </summary>
         public FrmControlDocumentacion(String idDocente)
         {
             InitializeComponent();
@@ -39,6 +50,9 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Actualiza las tablas después de cada modificación.
+        /// </summary>
         public void llenarTablaAlumno() {
             tablaAlumnos.Rows.Clear();
             alumnosConAsesor = AlumnoDAO.ObtenerAlumnosConAsesorSinLiberarlo(idDocente);
@@ -51,6 +65,10 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Inserta los documentos en la base de datos con el estado
+        /// pendiente para su posterior modificación.
+        /// </summary>
         public void insertarDocumentos() {
             tablaDocumentos.Rows.Add("Cronograma de actividades");
             tablaDocumentos.Rows.Add("Informe");
@@ -60,10 +78,14 @@ namespace ResidenciasProfesionales.VIEW
             tablaDocumentos.Rows.Add("Documento de evaluación");
         }
 
+        // Almacena la matricula del alumno seleccionado.
         String matricula;
+
+        /// <summary>
+        /// Evento capaz de reconocer la fila seleccionada.
+        /// </summary>
         private void tablaAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             try
             {
                 btnGuardarCambios.Enabled = false;
@@ -81,6 +103,10 @@ namespace ResidenciasProfesionales.VIEW
             
         }
 
+        /// <summary>
+        /// Revisa cuales documentos ya fueron entregados para marcarlos
+        /// en las casillas de verificación.
+        /// </summary>
         public void palomearChecks() {
             for (int i  = 3; i < 9; i++) {
                 if (EntregaDAO.ObtenerEntrega(matricula, i).Estado == "Entregado") {
@@ -93,6 +119,10 @@ namespace ResidenciasProfesionales.VIEW
             entregoTodos();
         }
 
+        /// <summary>
+        /// Establece el valor false en todas las casillas de 
+        /// verificación.
+        /// </summary>
         public void limpiarChecks()
         {
             for (int i = 3; i < 9; i++)
@@ -105,6 +135,10 @@ namespace ResidenciasProfesionales.VIEW
         {
         }
 
+        /// <summary>
+        /// Almacena todos los cambios realizados en la
+        /// base de datos.
+        /// </summary>
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             if (spnCalificacionFinal.Enabled == false) {
@@ -166,6 +200,10 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Revisa si la totalidad de los documentos ya han sido
+        /// entregados.
+        /// </summary>
         public void entregoTodos() {
             for (int i = 0; i < 6; i++)
             {
@@ -177,6 +215,9 @@ namespace ResidenciasProfesionales.VIEW
             bloquearDesbloquear(true);
         }
 
+        /// <summary>
+        /// Habilita/deshabilita los botones.
+        /// </summary>
         public void bloquearDesbloquear(bool bandera) {
             if (bandera == true)
             {
@@ -196,6 +237,10 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Si no se ha seleccionado algún alumno, no se permite
+        /// guardar cambios.
+        /// </summary>
         private void tablaDocumentos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnGuardarCambios.Enabled = true;

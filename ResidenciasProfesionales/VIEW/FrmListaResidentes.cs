@@ -12,17 +12,28 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Lista las residencias en proceso para su posterior
+    /// exportación.
+    /// </summary>
     public partial class FrmListaResidentes : Form
     {
-
+        // Almacena los datos con los cuales se llena la tabla.
         List<ListaPOJO> lista = new List<ListaPOJO>();
 
+        /// <summary>
+        /// Inicializa los componentes.
+        /// </summary>
         public FrmListaResidentes()
         {
             InitializeComponent();
             cargarDatos();
         }
 
+        /// <summary>
+        /// Llena la tabla con los datos obtenidos a través de la
+        /// consulta.
+        /// </summary>
         private void cargarDatos() {
             dgvLista.DataSource = null;
             List<ResidenciaPOJO> residencias = ResidenciaDAO.ObtenerResidencias();
@@ -31,6 +42,7 @@ namespace ResidenciasProfesionales.VIEW
                 btnExportar.Enabled = true;
                 for (int i = 0; i < residencias.Count; i++)
                 {
+                    // Crea un objeto de tipo ListaPOJO con los datos correspondientes.
                     ListaPOJO elemento = new ListaPOJO();
                     elemento.Matricula = residencias[i].IdAlumno;
                     elemento.NombreAlumno = AlumnoDAO.ObtenerAlumno(residencias[i].IdAlumno).NombreCompleto;
@@ -48,6 +60,9 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Exporta los datos de la lista a un archivo Excel.
+        /// </summary>
         private void btnExportar_Click(object sender, EventArgs e)
         {
             // Inicializar el cuadro de diálogo
@@ -60,7 +75,6 @@ namespace ResidenciasProfesionales.VIEW
                 return;
 
             bool resultado = ListaGenerador.GenerarFormatoDeReporte(lista, sfdImpresion.FileName);
-            //bool resultado = SolicitudGenerador.GenerarFormatoDeSolicitud(alumno.Matricula, sfdImpresion.FileName);
 
             if (resultado)
                 MessageBox.Show("Archivo generado corretamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);

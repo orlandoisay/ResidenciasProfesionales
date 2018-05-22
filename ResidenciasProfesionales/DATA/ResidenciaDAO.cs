@@ -9,9 +9,21 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Objeto de acceso a datos de residencia.
+    /// </summary>
+    /// <remarks>
+    /// Permite acceder a los datos almacenados de la residencia.
+    /// </remarks>
     public class ResidenciaDAO
     {
-
+        /// <summary>
+        /// Obtiene todas las residencias almacenadas en la base de datos así como 
+        /// sus atributos.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con las residencias obtenidos a través de la consulta.
+        /// </returns>
         public static List<ResidenciaPOJO> ObtenerResidencias()
         {
             try
@@ -39,6 +51,13 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Obtiene todas las residencias en proceso que hayan aprobado la liberación
+        /// asesor y la liberación revisor.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con las residencias obtenidos a través de la consulta.
+        /// </returns>
         public static List<ResidenciaPOJO> ObtenerResidenciaLiberacion()
         {
             try
@@ -66,6 +85,15 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Busca y obtiene la residencia que coincida con el id ingresado
+        /// como parámetro.
+        /// </summary>
+        /// <param name="id"></param>
+        /// Identificador utilizado para identificar a la residencia.
+        /// <returns>
+        /// Retorna a la residencia si es encontrada, de otro modo retorna null.
+        /// </returns>
         public static ResidenciaPOJO ObtenerResidencia(int id)
         {
             try
@@ -92,6 +120,16 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Busca y obtiene la residencia perteneciente al alumno
+        /// ingresado como parámetro.
+        /// </summary>
+        /// <param name="idAlumno"></param>
+        /// Identificador del alumno utilizado para identificar a 
+        /// la residencia que le pertenece.
+        /// <returns>
+        /// Retorna a la residencia si es encontrada, de otro modo retorna null.
+        /// </returns>
         public static ResidenciaPOJO ObtenerResidenciaXMatricula(String idAlumno)
         {
             try
@@ -118,6 +156,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Inserta una nueva residencia en la base de datos.
+        /// </summary>
+        /// <param name="residencia"></param>
+        /// Contiene los datos que constituyen a una residencia.
+        /// <returns>
+        /// Retorna -1 si la sentencia no se ejecuto correctamente.
+        /// </returns>
         public static int InsertarResidencia(ResidenciaPOJO residencia)
         {
             try
@@ -149,6 +195,18 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
+        /// <summary>
+        /// Remplaza a la residencia ubicada en la base de datos por la
+        /// residencia ingresada como parametro.
+        /// </summary>
+        /// <param name="residencia"></param>
+        /// Contiene los datos de la residencia que remplazará a la 
+        /// residencia almacenada.
+        /// <returns>
+        /// Retorna true si la sentencia se ejecuto correctamente,
+        /// de otro modo retorna false.
+        /// </returns>
         public static bool ActualizarResidencia(ResidenciaPOJO residencia)
         {
             try
@@ -184,6 +242,15 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Construye una residencia con los datos ingresados como 
+        /// parámetro.
+        /// </summary>
+        /// <param name="dr"></param>
+        /// Registro de datos pertenecientes a la residencia.
+        /// <returns>
+        /// Retorna la residencia creada.
+        /// </returns>
         public static ResidenciaPOJO DataRowAObjeto(DataRow dr)
         {
             return new ResidenciaPOJO(

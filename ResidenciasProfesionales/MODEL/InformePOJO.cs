@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.MODEL
 {
+    /// <summary>
+    /// Objeto POJO de informe.
+    /// </summary>
+    /// <remarks>
+    /// Permite manipular todos los atributos de un informe a través de un solo 
+    /// objeto.
+    /// </remarks>
     public class InformePOJO
     {
+        // Getters y Setters.
         public enum Dictamen
         {
             APROBADO,
@@ -55,6 +63,7 @@ namespace ResidenciasProfesionales.MODEL
             }
         }
 
+        // Constructor.
         public InformePOJO(AlumnoPOJO alumno, Dictamen dictamenAsesor, Dictamen dictamenRevisor1, Dictamen dictamenRevisor2)
         {
             Alumno = alumno;

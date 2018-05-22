@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.MODEL
 {
+    /// <summary>
+    /// Objeto POJO de tabla resumen.
+    /// </summary>
+    /// <remarks>
+    /// Permite manipular todos los atributos de tabla resumen a través de un solo 
+    /// objeto.
+    /// </remarks>
     public class TablaResumenPOJO
     {
+        // Getters y Setters.
         public String Matricula { get; set; }
         public String NombreAlumno { get; set; }
         public String DictamenFinal { get; set; }
@@ -24,6 +32,7 @@ namespace ResidenciasProfesionales.MODEL
         public String Proyecto { get; set; }
         public String Empresa { get; set; }
 
+        // Constructores.
         public TablaResumenPOJO() { }
 
         public TablaResumenPOJO(String matricula, String nombreAlumno, String dictamenFinal, int calificacion, String asesor,

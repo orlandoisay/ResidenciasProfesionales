@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Clase auxiliar en la generación del archivo Excel.
+    /// </summary>
+    /// <remarks>
+    /// Ubica la plantilla encargada de darle formato a la información
+    /// sobre los reportes.
+    /// </remarks>
     public class ResumenGenerrador
     {
         public static bool GenerarFormatoDeReporte(List<TablaResumenPOJO> elementos, String ruta)
         {
-            // Obtener la ruta del archivo de plantilla
             var rutaPlantilla = Path.Combine(System.IO.Path.GetFullPath(@"..\..\"), "Resources", "PlantillaReporte.xlsx");
 
             var listaDatos = new List<DatoCelda>();

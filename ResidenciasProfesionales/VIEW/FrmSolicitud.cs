@@ -12,14 +12,18 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Muestra una ventana en la que un alumno puede llenar
+    /// su solicitud, e imprimirla.
+    /// </summary>
     public partial class FrmSolicitud : Form
     {
         private bool esEdicion = false;
         private AlumnoPOJO alumno;
 
         /// <summary>
-        /// Muestra una ventana en la que un alumno puede llenar
-        /// su solicitud, e imprimirla.
+        /// Revisa si la solicitud será realizada por primera vez o no
+        /// para que se actue según corresponda.
         /// </summary>
         /// <param name="matricula">Matricula del alumno en cuestión.</param>
         public FrmSolicitud(string matricula)
@@ -40,6 +44,11 @@ namespace ResidenciasProfesionales.VIEW
                 esEdicion = true;
             }
         }
+
+        /// <summary>
+        /// Almacena los datos de la solicitud elaborada en la
+        /// base de datos.
+        /// </summary>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!ValidarDatos())
@@ -50,11 +59,22 @@ namespace ResidenciasProfesionales.VIEW
             else
                 GuardarDatos();
         }
+
+        /// <summary>
+        /// Llama al método encargado de imprimir la solicitud.
+        /// </summary>
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             ImprimirSolicitud();
         }
 
+        /// <summary>
+        /// Llena la solicitud con base en los datos proporcionados
+        /// por el alumno ingresado como parámetro.
+        /// </summary>
+        /// <param name="alumno">
+        /// Alumno que realiza la solicitud.
+        /// </param>
         private void CargarDatosAlumno(AlumnoPOJO alumno)
         {
             txtResNoControl.Text = alumno.Matricula;
@@ -78,8 +98,15 @@ namespace ResidenciasProfesionales.VIEW
                     break;
             }
             txtResSSNumero.Text = alumno.NumeroSS;
-
         }
+
+        /// <summary>
+        /// Auxiliar en el llenado de la solicitud para su posterior
+        /// modificación.
+        /// </summary>
+        /// <param name="solicitud">
+        /// Solicitud elaborada anteriormente.
+        /// </param>
         private void CargarDatosSolicitud(SolicitudPOJO solicitud)
         {
             if (solicitud.Estatus == "Aceptado")
@@ -150,13 +177,17 @@ namespace ResidenciasProfesionales.VIEW
             txtEmpFirmaNombre.Text = residencia.Responsable;
             txtEmpFirmaPuesto.Text = residencia.PuestoResp;
         }
+
+        /// <summary>
+        /// Revisa los campos modificables verificando que sean
+        /// datos aceptables.
+        /// </summary>
         private bool ValidarDatos()
         {
             bool datosValidados = true;
             String mensajeError = "Es necesario corregir los siguientes campos:\n";
 
             // Validaciones de empresa
-
             if (!(new Regex("[A-Z0-9]{13}").IsMatch(txtEmpRFC.Text)))
             {
                 datosValidados = false;
@@ -323,6 +354,11 @@ namespace ResidenciasProfesionales.VIEW
             MessageBox.Show(mensajeError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
+
+        /// <summary>
+        /// Almacena los datos de la solicitud elaborada en la
+        /// base de datos.
+        /// </summary>
         private void GuardarDatos()
         {
             // Insertar los datos de la empresa
@@ -402,6 +438,11 @@ namespace ResidenciasProfesionales.VIEW
             MessageBox.Show("Solicitud registrada correctamente.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             esEdicion = true;
         }
+
+        /// <summary>
+        /// Almacena los nuevos datos de la solicitud modificada, en la
+        /// base de datos.
+        /// </summary>
         private void ModificarDatos()
         {
             // Actualizar los datos de la empresa
@@ -496,6 +537,11 @@ namespace ResidenciasProfesionales.VIEW
 
             MessageBox.Show("Solicitud actualizada correctamente.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        /// <summary>
+        /// Exporta los datos introducidos en los campos de la solicitud
+        /// en un archivo Excel para imprimirlo posteriormente.
+        /// </summary>
         private void ImprimirSolicitud()
         {
             if (!ValidarDatos())

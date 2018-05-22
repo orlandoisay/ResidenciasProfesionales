@@ -9,8 +9,21 @@ using System.Data;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Objeto de acceso a datos de revisor.
+    /// </summary>
+    /// <remarks>
+    /// Permite acceder a los datos almacenados del revisor.
+    /// </remarks>
     class RevisorDAO
     {
+        /// <summary>
+        /// Obtiene a todos los revisores almacenados en la base de datos así como 
+        /// sus atributos.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con los revisores obtenidos a través de la consulta.
+        /// </returns>
         public List<DocentePOJO> ObtenerTodos()
         {
 
@@ -41,6 +54,22 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Asigna los revisores al alumno, los datos necesarios
+        /// son ingresados como parámetro.
+        /// </summary>
+        /// <param name="NoControl"></param>
+        /// Identificador del alumno al cual se le asignarán los
+        /// revisores.
+        /// <param name="claveDocente"></param>
+        /// Identificador del docente que será uno de los revisores
+        /// del alumno.
+        /// <param name="claveDocente2"></param>
+        /// Identificador del docente que será uno de los revisores
+        /// del alumno.
+        /// <returns>
+        /// Retorna -1 si la sentencia no se ejecuto correctamente.
+        /// </returns>
         public static int InsertarRevisor(String NoControl, String claveDocente, String claveDocente2)
         {
             try

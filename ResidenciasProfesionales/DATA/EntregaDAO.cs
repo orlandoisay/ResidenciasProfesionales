@@ -9,8 +9,21 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Objeto de acceso a datos de entrega.
+    /// </summary>
+    /// <remarks>
+    /// Permite acceder a los datos almacenados de las entregas.
+    /// </remarks>
     public class EntregaDAO
     {
+        /// <summary>
+        /// Obtiene todas las entregas almacenados en la base de datos así como 
+        /// sus atributos.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con las entregas obtenidos a través de la consulta.
+        /// </returns>
         public static List<EntregaPOJO> ObtenerTodos()
         {
             try
@@ -37,6 +50,18 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
+        /// <summary>
+        /// Busca y obtiene una entrega usando los parámetros para ubicarla.
+        /// </summary>
+        /// <param name="idAlumno"></param>
+        /// Identificador del alumno.
+        /// <param name="idDocumento"></param>
+        /// Identificador del documento.
+        /// <returns>
+        /// Retorna el documento buscado si es encontrado, si no es así
+        /// retorna null.
+        /// </returns>
         public static EntregaPOJO ObtenerEntrega(String idAlumno, int idDocumento)
         {
             try
@@ -64,6 +89,13 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Obtiene todos los documentos almacenados en la base de datos 
+        /// que se encuentren pendientes.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con todos los documentos pendientes.
+        /// </returns>
         public static List<EntregaPOJO> ObtenerDocumentosPendientes()
         {
             try
@@ -91,6 +123,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Inserta los documentos necesarios para el proceso de
+        /// liberación asesor, con objetivo de manipular su estado
+        /// de pendiente a entregado o viceversa, según corresponda.
+        /// </summary>
+        /// <returns>
+        /// Retorna -1 si la sentencia no se ejecuto correctamente.
+        /// </returns>
         public static int InsertarDocumentosPendientes(String idAlumno)
         {
             try
@@ -116,6 +156,17 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Usa los parámetros ingresados para ubicar un documento y
+        /// cambiar su estado.
+        /// </summary>
+        /// <param name="estado"></param>
+        /// Contiene el estado por el cual se cambiará.
+        /// <param name="idAlumno"></param>
+        /// Identificador del alumno.
+        /// <param name="idDocumento"></param>
+        /// Identificador del documento.
+        /// <returns>
         public static void CambiarEstadoDocumento(String estado, String idAlumno, int idDocumento)
         {
             try
@@ -140,6 +191,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Construye una entrega con los datos ingresados como parámetro.
+        /// </summary>
+        /// <param name="dr"></param>
+        /// Registro de datos pertenecientes a la entrega.
+        /// <returns>
+        /// Retorna la entrega creada.
+        /// </returns>
         public static EntregaPOJO DataRowAObjeto(DataRow dr)
         {
             return new EntregaPOJO(

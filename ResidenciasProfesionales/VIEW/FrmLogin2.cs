@@ -12,31 +12,40 @@ using ResidenciasProfesionales.DATA;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Login de la aplicación.
+    /// </summary>
+    /// <remarks>
+    /// Restringe el acceso a la aplicación.
+    /// </remarks>
     public partial class FrmLogin2 : Form
     {
-        //Para hacer la marca de agua en los textbox
+        //Instrucciones para producir la marca de agua en los textboxs.
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
         private static extern IntPtr SendMessage(IntPtr hWind, uint msg, IntPtr i, string str);
-
+       
+        // Almacena al docente ingresado.
         DocentePOJO docenteIngresado;
+
+        /// <summary>
+        /// Prepara la presentación del login en pantalla.
+        /// </summary>
         public FrmLogin2()
         {
             InitializeComponent();
-            //
             cbTipo.SelectedIndex = 0;
-            //
             SendMessage(tbUsuario.Handle, 0x1501, (IntPtr)1, "Usuario");
             SendMessage(tbContrasena.Handle, 0x1501, (IntPtr)1, "Contraseña");
-            //
             lbContrasena.Visible = false;
             lbUsuario.Visible = false;
-            //
             this.pPanel.BackColor = Color.FromArgb(39, 174, 96);
             this.lbUsuario.ForeColor = Color.FromArgb(127, 140, 141);
             this.lbContrasena.ForeColor = Color.FromArgb(127, 140, 141);
-
         }
 
+        /// <summary>
+        /// Produce efectos visuales.
+        /// </summary>
         private void hacerLineas()
         {
             Graphics g = this.CreateGraphics();
@@ -45,12 +54,20 @@ namespace ResidenciasProfesionales.VIEW
             g.DrawLine(pen, 38, 182, 236, 182);
         }
 
+        /// <summary>
+        /// Limpia los campos editables del login.
+        /// </summary>
         private void limpiarCampos()
         {
             tbUsuario.Text = "";
             tbContrasena.Text = "";
         }
 
+        /// <summary>
+        /// Evento capaz de reconocer como validos, los datos ingresados 
+        /// a través del login y con base en ellos dirigir al usuario
+        /// a su respectiva ventana principal.
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             if (tbUsuario.Text != "" || tbContrasena.Text != "")
@@ -98,8 +115,7 @@ namespace ResidenciasProfesionales.VIEW
                             this.Visible = true;
                             limpiarCampos();
                             break;
-                       } 
-                    //MessageBox.Show("Bien-Mientras pongo la ventan principal");
+                       }
                 }
                 else
                 {
@@ -120,6 +136,9 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Produce efectos visuales en el momento en que se escribe.
+        /// </summary>
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (tbUsuario.Text.Length == 0)
@@ -132,6 +151,9 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Produce efectos visuales en el momento en que se escribe.
+        /// </summary>
         private void tbContrasena_TextChanged(object sender, EventArgs e)
         {
             if (tbContrasena.Text.Length == 0)
@@ -144,17 +166,13 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Produce efectos visuales.
+        /// </summary>
         private void FrmLogin2_Paint(object sender, PaintEventArgs e)
         {
             hacerLineas();
         }
-
-//        private void FrmLogin2_Load(object sender, EventArgs e) 
-//        { 
-//            MessageBox.Show("Bienvenidos a mi aplicacion", "Hola", MessageBoxButtons.OK,
-//MessageBoxIcon.Warning); 
-//        }
-
 
         private void FrmLogin2_Load(object sender, EventArgs e)
         {

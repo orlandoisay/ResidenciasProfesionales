@@ -9,8 +9,21 @@ using System.Data;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Objeto de acceso a datos de docente.
+    /// </summary>
+    /// <remarks>
+    /// Permite acceder a los datos almacenados del docente.
+    /// </remarks>
     public class DocenteDAO
     {
+        /// <summary>
+        /// Obtiene a todos los docentes almacenados en la base de datos así como 
+        /// sus atributos.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con los docentes obtenidos a través de la consulta.
+        /// </returns>
         public static List<DocentePOJO> ObtenerTodos()
         {
             try
@@ -38,6 +51,13 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Busca y obtiene a todos los docentes capaces de actuar como
+        /// asesor.
+        /// </summary>
+        /// <returns>
+        /// Una lista de asesores disponibles.
+        /// </returns>
         public static List<DocentePOJO> ObtenerTodosLosDisponibles()
         {
             try
@@ -65,6 +85,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Busca y obtiene al docente usando su identificador.
+        /// </summary>
+        /// <param name="ID"></param>
+        /// Identificador del docente.
+        /// <returns>
+        /// Retorna al docente que coincide con el identificador ingresado.
+        /// </returns>
         public static DocentePOJO ObtenerDocente(String ID)
         {
             try
@@ -88,7 +116,15 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
-        // Obtiene un asesor con base en la matricula de su asesorado.
+
+        /// <summary>
+        /// Busca y obtiene al asesor del alumno ingresado como parámetro.
+        /// </summary>
+        /// <param name="IdAlumno"></param>
+        /// Identificador del alumno, utilizado para buscar a su asesor.
+        /// <returns>
+        /// Retorna al docente que asesora al alumno ingresado como parametro.
+        /// </returns>
         public static DocentePOJO ObtenerDocenteXMatricula(String IdAlumno)
         {
             try
@@ -113,7 +149,15 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
-        // Obtiene un asesor con base en el usuario ingresado en el login.
+        /// <summary>
+        /// Busca y obtiene los datos del asesor usando el usuario
+        /// del mismo.
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// Nombre de usuario, usado para ingresar a través del login.
+        /// <returns>
+        /// Retorna al docente que coincide con el nombre de usuario.
+        /// </returns>
         public static DocentePOJO ObtenerDocenteXUsuario(String usuario)
         {
             try
@@ -138,6 +182,17 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Asigna un asesor a un alumno, ambos ingresados como 
+        /// parámetros.
+        /// </summary>
+        /// <param name="idAlumno"></param>
+        /// Alumno a quien se le asignará el asesor.
+        /// <param name="idDocente"></param>
+        /// Asesor que le será asignado al alumno.
+        /// <returns>
+        /// Retorna -1 si la sentencia no fue ejecutada correctamente.
+        /// </returns>
         public static int AsignarAsesorado(String idAlumno, String idDocente)
         {
             try
@@ -162,6 +217,15 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Busca los alumnos a cargo del docente ingresado como parámetro.
+        /// </summary>
+        /// <param name="idDocente"></param>
+        /// Identificador del docente utilizado como filtro.
+        /// <returns>
+        /// Retorna el número de alumnos que tienen asignado como asesor
+        /// al docente ingresado como parámetro
+        /// </returns>
         public static int ObtenerCantidadAsesorados(String idDocente)
         {
             try
@@ -186,6 +250,20 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Permite cambiarle el asesor al alumno ingresado como parámetro.
+        /// </summary>
+        /// <param name="idDocenteNuevo"></param>
+        /// Identificador del docente que remplazara al anterior.
+        /// <param name="idAlumno"></param>
+        /// Identificador del alumno.
+        /// <param name="idDocenteNuevo"></param>
+        /// Identificador del docente que será remplazado.
+        /// <returns>
+        /// Retorna una lista de 3 docentes: asesor, revisor 1 y revisor 2
+        /// respectivamente. Dichos docentes deben estar enlazados al alumno
+        /// previamante.
+        /// </returns>
         public static void CambiarAsesor(String idDocenteNuevo, String idAlumno, String idDocenteAnterior)
         {
             try
@@ -211,12 +289,16 @@ namespace ResidenciasProfesionales.DATA
         }
 
         /// <summary>
+        /// Busca y obtiene a los responsables de evaluar al alumno ingresado
+        /// como parámetro.
+        /// </summary>
+        /// <param name="idAlumno"></param>
+        /// Identificador del alumno.
+        /// <returns>
         /// Retorna una lista de 3 docentes: asesor, revisor 1 y revisor 2
         /// respectivamente. Dichos docentes deben estar enlazados al alumno
         /// previamante.
-        /// </summary>
-        /// <param name="idAlumno"></param>
-        /// <returns></returns>
+        /// </returns>
         public static List<DocentePOJO> ObtenerResponsablesDeAlumno(String idAlumno)
         {
             try
@@ -245,6 +327,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Construye un docente con los datos ingresados como parámetro.
+        /// </summary>
+        /// <param name="dr"></param>
+        /// Registro de datos pertenecientes al docente.
+        /// <returns>
+        /// Retorna el docente creado.
+        /// </returns>
         public static DocentePOJO DataRowAObjeto(DataRow dr)
         {
 

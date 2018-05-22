@@ -12,17 +12,27 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Lista las reportes emitidos para su posterior
+    /// exportación.
+    /// </summary>
     public partial class FrmReporteResidencias : Form
     {
-
+        // Almacena los datos con los cuales se llena la tabla.
         List<TablaResumenPOJO> tabla = new List<TablaResumenPOJO>();
 
+        /// <summary>
+        /// Inicializa los componentes.
+        /// </summary>
         public FrmReporteResidencias()
         {
             InitializeComponent();
             cargarDatos();
         }
 
+        /// <summary>
+        /// Revisa si existen datos para exportar.
+        /// </summary>
         private void btnExportar_Click(object sender, EventArgs e)
         {
             if (tabla.Count > 0)
@@ -31,6 +41,9 @@ namespace ResidenciasProfesionales.VIEW
                 MessageBox.Show("Tabla vacía", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// Exporta los datos de la lista a un archivo Excel.
+        /// </summary>
         private void ImprimirReporte()
         {
 
@@ -44,7 +57,6 @@ namespace ResidenciasProfesionales.VIEW
                 return;
 
             bool resultado = ResumenGenerrador.GenerarFormatoDeReporte(tabla,sfdImpresion.FileName);
-            //bool resultado = SolicitudGenerador.GenerarFormatoDeSolicitud(alumno.Matricula, sfdImpresion.FileName);
 
             if (resultado)
                 MessageBox.Show("Archivo generado corretamente", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -52,6 +64,10 @@ namespace ResidenciasProfesionales.VIEW
                 MessageBox.Show("Ocurrio un error al generar el archivo. Intente más tarde.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        /// <summary>
+        /// Llena la tabla con los datos obtenidos a través de la
+        /// consulta.
+        /// </summary>
         private void cargarDatos() {
             dgvLista.DataSource = null;
             List <DictamenPOJO> dictamenes = DictamenDAO.ObtenerProyectosTerminados();

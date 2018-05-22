@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.MODEL
 {
+    /// <summary>
+    /// Objeto POJO de alumno.
+    /// </summary>
+    /// <remarks>
+    /// Permite manipular todos los atributos del alumno a través de un solo objeto.
+    /// </remarks>
     public class AlumnoPOJO
     {
+        // Getters y Setters.
         public String Matricula { get; set; }
         public String Password { get; set; }
         public String Nombre { get; set; }
@@ -31,6 +38,7 @@ namespace ResidenciasProfesionales.MODEL
             }
         }
 
+        // Constructores.
         public AlumnoPOJO() { }
 
         public AlumnoPOJO(String matricula, String password, String nombre, String apellidoP, String apellidoM, String correo,
@@ -50,19 +58,5 @@ namespace ResidenciasProfesionales.MODEL
             Domicilio = domicilio;
             Ciudad = ciudad;
         }
-
-        /*public AlumnoPOJO(String matricula, String password, String nombre, String apellidoP, String apellidoM, String correo,
-            String telefono, int carrera, int semestre, String estatus) {
-            Matricula = matricula;
-            Password = password;
-            Nombre = nombre;
-            ApellidoP = apellidoP;
-            ApellidoM = apellidoM;
-            Correo = correo;
-            Telefono = telefono;
-            Carrera = carrera;
-            Semestre = semestre;
-            Estatus = estatus;
-        }*/
     }
 }

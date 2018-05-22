@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Clase encargada de la liberación de informes.
+    /// </summary>
     public partial class FrmLiberacionInforme : Form
     {
         private String IdDocente;
@@ -18,6 +21,13 @@ namespace ResidenciasProfesionales.VIEW
         private String Rol;
         private DictamenPOJO Dictamen;
 
+        /// <summary>
+        /// Busca el informe a evaluar.
+        /// </summary>
+        /// <param name="idDocente"></param>
+        /// Identificador del docente.
+        /// <param name="matricula"></param>
+        /// Identificador del alumno.
         public FrmLiberacionInforme(String idDocente, String matricula)
         {
             IdDocente = idDocente;
@@ -31,11 +41,18 @@ namespace ResidenciasProfesionales.VIEW
             if (Dictamen != null)
                 CargarDatosDictamen();
         }
+
+        /// <summary>
+        /// Llama al método encargado de guardar.
+        /// </summary>
         private void btnEvaluar_Click(object sender, EventArgs e)
         {
             GuardarDatos();
         }
 
+        /// <summary>
+        /// Llena los componentes encargados de mostrar los datos del alumno.
+        /// </summary>
         private void CargarDatosAlumno()
         {
             var alumno = AlumnoDAO.ObtenerAlumno(Matricula);
@@ -45,16 +62,26 @@ namespace ResidenciasProfesionales.VIEW
             txtCarrera.Text = CarreraDAO.ObtenerUno(alumno.Carrera).Nombre;
             txtSemestre.Text = alumno.Semestre.ToString();
         }
+
+        /// <summary>
+        /// Llena los componentes encargados de mostrar los datos del dictamen.
+        /// </summary>
         private void CargarDatosDictamen()
         {
             btnEvaluar.Enabled = false;
             txtComentarios.Enabled = false;
             txtComentarios.Text = Dictamen.Comentario;
         }
+
         private bool ValidarDatos()
         {
             return true;
         }
+
+        /// <summary>
+        /// Guarda el resultado de la evaluación en la base de datos
+        /// y cierra la ventana actual.
+        /// </summary>
         private void GuardarDatos()
         {
             if (!ValidarDatos())

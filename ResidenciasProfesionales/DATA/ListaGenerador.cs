@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Clase auxiliar en la generación del archivo Excel.
+    /// </summary>
+    /// <remarks>
+    /// Ubica la plantilla encargada de darle formato a la información
+    /// sobre la lista de residentes.
+    /// </remarks>
     public class ListaGenerador
     {
         public static bool GenerarFormatoDeReporte(List<ListaPOJO> elementos, String ruta)
         {
-            // Obtener la ruta del archivo de plantilla
             var rutaPlantilla = Path.Combine(System.IO.Path.GetFullPath(@"..\..\"), "Resources", "ListaResidentes.xlsx");
 
             var listaDatos = new List<DatoCelda>();
@@ -32,7 +38,6 @@ namespace ResidenciasProfesionales.DATA
                 listaDatos.Add(new DatoCelda(i + 2, 12, elementos[i].CorreoAlumno));
                 listaDatos.Add(new DatoCelda(i + 2, 13, elementos[i].CorreoAsesorInt));
             }
-
             return ExcelGenerador.LlenarPlantillaConDatos(ruta, rutaPlantilla, listaDatos);
         }
     }

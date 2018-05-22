@@ -8,15 +8,26 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Clase conexión de la aplicación.
+    /// </summary>
+    /// <remarks>
+    /// Establece la comunicación entre la aplicación y la base de datos.
+    /// </remarks>
     class Conexion
     {
         public static MySqlConnection conexion = null;
 
+        /// <summary>
+        /// Crea la conexión hacia la base de datos.
+        /// </summary>
+        /// <returns>
+        /// Retorna true si la conexión fue exitosa, de otro modo retorna false.
+        /// </returns>
         static public bool Conectar()
         {
             String parametrosConexion = "Server=127.0.0.1;Database=ControlResidencias;Uid=root;Pwd=root;Port=3306;";
             conexion = new MySqlConnection(parametrosConexion);
-            //Intentamos conectarnos
             try
             {
                 conexion.Open();
@@ -24,12 +35,19 @@ namespace ResidenciasProfesionales.DATA
             }
             catch (Exception ex)
             {
-                //throw ex;
                 return false;
             }
 
         }
 
+        /// <summary>
+        /// Ejecuta una consulta en la base de datos.
+        /// </summary>
+        /// <param name="com"></param>
+        /// Contiene la consulta a ingresar en la base de datos.
+        /// <returns>
+        /// Retorna todas las columnas y filas obtenidas por la consulta.
+        /// </returns>
         public DataTable ejecutarConsulta(MySqlCommand com)
         {
             try
@@ -37,10 +55,8 @@ namespace ResidenciasProfesionales.DATA
                 if (Conectar())
                 {
                     com.Connection = conexion;
-                    MySqlDataAdapter objAdapter =
-                        new MySqlDataAdapter(com);
+                    MySqlDataAdapter objAdapter = new MySqlDataAdapter(com);
                     DataTable resultado = new DataTable();
-                    //LLenar el objeto con el resultado de la consulta
                     objAdapter.Fill(resultado);
                     return resultado;
                 }
@@ -55,19 +71,22 @@ namespace ResidenciasProfesionales.DATA
             }
             finally
             {
-                //Solo intentar cerrar la conexión cuando si se encuentra abierta
                 if (conexion != null)
                     conexion.Close();
             }
 
         }
-        //new MySqlCommand(sentencia, conexion);
+
         /// <summary>
-        /// Ejecuta una sentencia en la base de datos
+        /// Ejecuta una sentencia en la base de datos.
         /// </summary>
-        /// <param name="sentencia"></param>
+        /// <param name="objComando"></param>
+        /// Contiene la sentencia a ingresar en la base de datos.
         /// <param name="esInsert"></param>
-        /// <returns></returns>
+        /// <returns>
+        /// Retorna 0 si la sentencia fue ingresada correctamente, 
+        /// de otro modo retorna 1.
+        /// </returns>
         public int ejecutarSentencia(MySqlCommand objComando, bool esInsert)
         {
             int resultado = 0;
@@ -76,11 +95,9 @@ namespace ResidenciasProfesionales.DATA
                 if (Conectar())
                 {
                     objComando.Connection = conexion;
-                    MySqlDataAdapter objAdapter =
-                       new MySqlDataAdapter(objComando);
+                    MySqlDataAdapter objAdapter = new MySqlDataAdapter(objComando);
                     if (esInsert)
                     {
-                        //Obtiene el último id ingresado por el insert
                         resultado = int.Parse(objComando.ExecuteScalar().ToString());
                     }
                     else
@@ -88,8 +105,6 @@ namespace ResidenciasProfesionales.DATA
                         objComando.ExecuteNonQuery();
                         resultado = 1;
                     }
-
-
                     return resultado;
                 }
                 else
@@ -109,4 +124,3 @@ namespace ResidenciasProfesionales.DATA
         }
     }
 }
-

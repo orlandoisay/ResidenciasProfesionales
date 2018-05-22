@@ -9,19 +9,28 @@ using ResidenciasProfesionales.MODEL;
 
 namespace ResidenciasProfesionales.DATA
 {
-    
+    /// <summary>
+    /// Clase encargada de obtener las asignaciones de revisores.
+    /// </summary>
+    /// <remarks>
+    /// Llena las listas necesarias para producir las asignaciones
+    /// de revisores.
+    /// </remarks>
     class AsignacionRevisorDAO
     {
-
+        // Listas globales.
         List<aux> listaRevisores = new List<aux>();
         List<MAA> listaMAA = new List<MAA>();
 
-
+        // Constructor.
         public AsignacionRevisorDAO() {
             llenarListaMAA();
-
         }
 
+        /// <summary>
+        /// Llena la lista listaMAA con los datos recopilados a través de la 
+        /// consulta.
+        /// </summary>
         public void llenarListaMAA() {
             try
             {
@@ -48,6 +57,10 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Llena la lista listaRevisores con los datos recopilados a través 
+        /// de la consulta.
+        /// </summary>
         public void llenarListaRevisores() {
             try
             {
@@ -73,11 +86,18 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        // Lista global.
         List<TablaAsignacionRevisor> list;
+        
+        // Getter.
         public List<TablaAsignacionRevisor> extraerList() {
             return list;
         }
 
+        /// <summary>
+        /// Llena la lista list con las asignaciones de revisores producidas 
+        /// a través de un ciclo.
+        /// </summary>
         public List<TablaAsignacionRevisor> crearTabla() {
             list = new List<TablaAsignacionRevisor>();
             string rev1 = "", rev2 = "";
@@ -104,15 +124,17 @@ namespace ResidenciasProfesionales.DATA
             }
             return list;
         }
-
-
     }
-
-    class aux{
-
+    /// <summary>
+    /// Clase auxiliar para establecer la relación alumno-revisor.
+    /// </summary>
+    class aux
+    {
+        // Getters y Setters.
         public string Matricula { get; set; }
         public string Revisor { get; set; }
 
+        // Constructor.
         public aux(string matricula, string revisor)
         {
             Matricula = matricula;

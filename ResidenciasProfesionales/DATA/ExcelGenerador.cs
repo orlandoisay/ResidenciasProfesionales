@@ -7,17 +7,28 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Clase encargada de generar el archivo Excel.
+    /// </summary>
+    /// <remarks>
+    /// Permite exportar la información obtenida a través de la
+    /// aplicación y visualizarla en una archivo Excel.
+    /// </remarks>
     public class ExcelGenerador
     {
         /// <summary>
-        /// Toma una plantilla de Excel y una serie de cambios a realizar 
-        /// sobre dicho documento y genera un archivo nuevo con las modificiones
-        /// especificadas.
+        /// Toma una plantilla de Excel y una serie de cambios a 
+        /// realizar sobre dicho documento y genera un archivo nuevo 
+        /// con las modificionesespecificadas.
         /// </summary>
-        /// <param name="rutaFinal">Ruta donde se almacenará el archivo generado</param>
-        /// <param name="rutaPlantilla">Ruta donde se encuentra la plantilla a usar</param>
-        /// <param name="listaDatos">Lista de cambios a realizar sobre las celdas de la plantilla</param>
-        /// <returns>Retorna un booleano que indica si la creación se realizó con éxito.</returns>
+        /// <param name="rutaFinal">Ruta donde se almacenará el archivo 
+        /// generado</param>
+        /// <param name="rutaPlantilla">Ruta donde se encuentra la plantilla 
+        /// a usar</param>
+        /// <param name="listaDatos">Lista de cambios a realizar sobre las 
+        /// celdas de la plantilla</param>
+        /// <returns>Retorna un booleano que indica si la creación se realizó 
+        /// con éxito.</returns>
         public static bool LlenarPlantillaConDatos(String rutaFinal, String rutaPlantilla, List<DatoCelda> listaDatos)
         {
             // Iniciar Excel

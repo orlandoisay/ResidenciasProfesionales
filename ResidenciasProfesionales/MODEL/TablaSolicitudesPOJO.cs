@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.MODEL
 {
+    /// <summary>
+    /// Objeto POJO de tabla solicitudes.
+    /// </summary>
+    /// <remarks>
+    /// Permite manipular todos los atributos de tabla solicitudes a través de un 
+    /// solo 
+    /// objeto.
+    /// </remarks>
     public class TablaSolicitudes
     {
+        // Getters y Setters.
         public String Matricula { get; set; }
         public String NombreAlumno { get; set; }
         public int Semestre { get; set; }
@@ -16,6 +25,7 @@ namespace ResidenciasProfesionales.MODEL
         public String Periodo { get; set; }
         public String NombreEmpresa { get; set; }
 
+        // Constructores.
         public TablaSolicitudes() { }
 
         public TablaSolicitudes(String matricula, String nombreAlumno, int semestre, String nombreProyecto, String modalidad,

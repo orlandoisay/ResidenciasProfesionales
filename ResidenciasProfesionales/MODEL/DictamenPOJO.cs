@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.MODEL
 {
+    /// <summary>
+    /// Objeto POJO de dictamen.
+    /// </summary>
+    /// <remarks>
+    /// Permite manipular todos los atributos del dictamen a través de un solo 
+    /// objeto.
+    /// </remarks>
     class DictamenPOJO
     {
+        // Getters y Setters.
         public int ID { get; set; }
         public int IdResidencia { get; set; }
         public String IdDocente { get; set; }
@@ -17,6 +25,7 @@ namespace ResidenciasProfesionales.MODEL
         public int Calificacion { get; set; }
         public DateTime Fecha { get; set; }
 
+        // Constructores.
         public DictamenPOJO() { }
 
         public DictamenPOJO(int id, int idResidencia, String idDocente, String tipo, String estatus, 

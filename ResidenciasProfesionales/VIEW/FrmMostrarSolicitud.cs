@@ -11,17 +11,31 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Muestra las solicitudes elaboradas previamente.
+    /// </summary>
     public partial class FrmMostrarSolicitud : Form
     {
+        /// <summary>
+        /// Permite visualizar las solicitudes para emitir su 
+        /// aceptación o modificación.
+        /// </summary>
         private SolicitudPOJO Solicitud = null;
+
+        /// <summary>
+        /// Inicializa los componentes.
+        /// </summary>
         public FrmMostrarSolicitud(SolicitudPOJO solicitud)
         {
             InitializeComponent();
             Solicitud = solicitud;
             cargarDatos();
-            
         }
 
+        /// <summary>
+        /// Llena los componentes encargados de mostrar los datos 
+        /// de la solicitud seleccionada previamente.
+        /// </summary>
         private void cargarDatos() {
             AlumnoPOJO objAlum = AlumnoDAO.ObtenerAlumno(Solicitud.IdAlumno);
             ResidenciaPOJO objResidencia = ResidenciaDAO.ObtenerResidencia(Solicitud.IdResidencia);
@@ -78,6 +92,10 @@ namespace ResidenciasProfesionales.VIEW
             txtEmpAsesorPuesto.Text = objResidencia.PuestoAsesor;
         }
 
+        /// <summary>
+        /// Emite la aceptación de la solicitud seleccionada y
+        /// además cierra la ventana actual.
+        /// </summary>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             SolicitudDAO.Actualizar(Solicitud);

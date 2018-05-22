@@ -11,6 +11,10 @@ using ResidenciasProfesionales.DATA;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Permite visualizar tanto los datos del alumno como los
+    /// datos del docente seleccionado.
+    /// </summary>
     public partial class FrmMostrarDatos : Form
     {
         List<AlumnoPOJO> listaAlumnos = new List<AlumnoPOJO>();
@@ -18,10 +22,19 @@ namespace ResidenciasProfesionales.VIEW
         String matricula;
         int index;
 
+        /// <summary>
+        /// Abre el panel para mostrar los datos del alumno e indica
+        /// cual alumno es el seleccionado.
+        /// </summary>
+        /// <param name="lista"></param>
+        /// Contiene todos los alumnos a mostrar.
+        /// <param name="inicial"></param>
+        /// Indica cual de los alumnos es el que está seleccionado.
+        /// <param name="accion"></param>
+        /// Indica si se quiere asignar un asesor o cambiarlo.
         public FrmMostrarDatos(List<AlumnoPOJO> lista, int inicial, String accion)
         {
             InitializeComponent();
-            //cbxAsesor.SelectedIndex = 0;
 
             this.Size = new Size(550, 270);
             if (accion == "Cambiar")
@@ -40,8 +53,14 @@ namespace ResidenciasProfesionales.VIEW
                     llenarDatosAlumno(index);
             
         }
-        // Abre el panel para asignar asesor, solo recibe como parámetros la matricula del alumno
-        // para hacer la futura asignación con el asesor.
+        /// <summary>
+        /// Abre el panel para asignar asesor.
+        /// </summary>
+        /// <param name="matricula"></param>
+        /// Identificador del alumno utilizado para hacer la futura 
+        /// asignación con el asesor.
+        /// <param name="accion"></param>
+        /// Indica si se quiere asignar un asesor o cambiarlo.
         public FrmMostrarDatos(String matricula, String accion)
         {
             InitializeComponent();
@@ -54,6 +73,10 @@ namespace ResidenciasProfesionales.VIEW
             abrirAsignacion();
         }
 
+        /// <summary>
+        /// Llena el combo box con los docentes disponibles
+        /// para ser asesores.
+        /// </summary>
         public void abrirAsignacion() {
             panelAsesor.Visible = true;
             panelAsesor.Location = new Point(12, 12);
@@ -66,6 +89,9 @@ namespace ResidenciasProfesionales.VIEW
             cbxAsesor.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Abre el panel para ver los datos del alumno seleccionado.
+        /// </summary>
         private void btnAsignar_Click(object sender, EventArgs e)
         {
             matricula = listaAlumnos[index].Matricula;
@@ -73,16 +99,28 @@ namespace ResidenciasProfesionales.VIEW
             abrirAsignacion();
         }
 
+        /// <summary>
+        /// Cierra la ventana actual.
+        /// </summary>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Cierra la ventana actual.
+        /// </summary>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Llena los componentes encargados de mostrar los datos del alumno
+        /// seleccionado.
+        /// </summary>
+        /// <param name="indice"></param>
+        /// Funciona como identificador del alumno seleccionado.
         public void llenarDatosAlumno(int indice) {
             lblNoControl.Text = "No. control: " + listaAlumnos[indice].Matricula;
             lblNombre.Text = "Nombre: " + listaAlumnos[indice].NombreCompleto;
@@ -96,6 +134,9 @@ namespace ResidenciasProfesionales.VIEW
             lblNumeroSS.Text = "Número SS: " + listaAlumnos[indice].NumeroSS;
         }
 
+        /// <summary>
+        /// Recorre el enfoque del alumno seleccionado al anterior.
+        /// </summary>
         private void btnAnterior_Click(object sender, EventArgs e)
         {
             btnSiguiente.Enabled = true;
@@ -106,6 +147,9 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Recorre el enfoque del alumno seleccionado al siguiente.
+        /// </summary>
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
             btnAnterior.Enabled = true;
@@ -117,6 +161,10 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        /// <summary>
+        /// Llena los componentes encargados de mostrar los datos del docente
+        /// seleccionado.
+        /// </summary>
         private void cbxAsesor_SelectedIndexChanged(object sender, EventArgs e)
         {
             int indice = cbxAsesor.SelectedIndex;
@@ -129,6 +177,11 @@ namespace ResidenciasProfesionales.VIEW
             lblUsuario.Text = "Usuario: " + listaDocentes[indice].Usuario;
         }
 
+        /// <summary>
+        /// Revisa si es posible asignar el docente seleccionado al alumno en
+        /// cuestion, de ser así se almacena la asignación en la base de datos,
+        /// de lo contrario muestra un mensaje sobre el problema.
+        /// </summary>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (listaDocentes[cbxAsesor.SelectedIndex].Estatus == "Inactivo")

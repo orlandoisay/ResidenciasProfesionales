@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.MODEL
 {
+    /// <summary>
+    /// Objeto POJO de lista.
+    /// </summary>
+    /// <remarks>
+    /// Permite manipular todos los atributos de una lista a través de un solo 
+    /// objeto.
+    /// </remarks>
     public class ListaPOJO
     {
+        // Getters y Setters.
         public String Matricula { get; set; }
         public String NombreAlumno { get; set; }
         public String AsesorInt { get; set; }
@@ -19,6 +27,7 @@ namespace ResidenciasProfesionales.MODEL
         public String CorreoAlumno { get; set; }
         public String CorreoAsesorInt { get; set; }
 
+        // Constructores.
         public ListaPOJO() { }
 
         public ListaPOJO(String matricula, String nombreAlumno, String asesorInt, String asesorExt, String empresa,

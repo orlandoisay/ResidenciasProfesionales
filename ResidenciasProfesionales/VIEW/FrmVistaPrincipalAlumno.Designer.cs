@@ -107,6 +107,7 @@
             this.pbCerrarSesion.TabIndex = 3;
             this.pbCerrarSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.pbCerrarSesion.UseVisualStyleBackColor = true;
+            this.pbCerrarSesion.Click += new System.EventHandler(this.pbCerrarSesion_Click);
             // 
             // lblCerrarSesion
             // 

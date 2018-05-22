@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.MODEL
 {
+    /// <summary>
+    /// Objeto POJO de empresa.
+    /// </summary>
+    /// <remarks>
+    /// Permite manipular todos los atributos de la empresa a través de un solo 
+    /// objeto.
+    /// </remarks>
     public class EmpresaPOJO
     {
+        // Getters y Setters.
         public String RFC { get; set; }
         public String Nombre { get; set; }
         public String Giro { get; set; }
@@ -22,6 +30,7 @@ namespace ResidenciasProfesionales.MODEL
         public String Titular { get; set; }
         public String PuestoTit { get; set; }
 
+        // Constructores.
         public EmpresaPOJO() { }
 
         public EmpresaPOJO(String rfc, String nombre, String giro, String sector, String domicilio, String colonia, String ciudad,

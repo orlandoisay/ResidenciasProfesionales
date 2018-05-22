@@ -9,9 +9,23 @@ using System.Data;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Objeto de acceso a datos de asesor.
+    /// </summary>
+    /// <remarks>
+    /// Permite acceder a los datos almacenados del alumno.
+    /// </remarks>
     class AsesorDAO
     {
-
+        /// <summary>
+        /// Busca y obtiene al asesor que coincida con el ID ingresado
+        /// como parámetro.
+        /// </summary>
+        /// <param name="iD"></param>
+        /// ID utilizado para identificar al asesor.
+        /// <returns>
+        /// Retorna al asesor si es encontrado, de otro modo retorna null.
+        /// </returns>
         public Asesor ObtenerAsesor(string iD)
         {
             try

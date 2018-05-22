@@ -9,8 +9,21 @@ using System.Threading.Tasks;
 
 namespace ResidenciasProfesionales.DATA
 {
+    /// <summary>
+    /// Objeto de acceso a datos de carrera.
+    /// </summary>
+    /// <remarks>
+    /// Permite acceder a los datos almacenados de la carrera.
+    /// </remarks>
     public class CarreraDAO
     {
+        /// <summary>
+        /// Obtiene todas las carreras almacenados en la base de datos así como 
+        /// sus atributos.
+        /// </summary>
+        /// <returns>
+        /// Retorna una lista con las carreras obtenidos a través de la consulta.
+        /// </returns>
         public static List<CarreraPOJO> ObtenerTodas()
         {
             try
@@ -37,6 +50,16 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
+
+        /// <summary>
+        /// Busca y obtiene la carrera que coincida con el id ingresado
+        /// como parámetro.
+        /// </summary>
+        /// <param name="id"></param>
+        /// id utilizado para identificar la carrera.
+        /// <returns>
+        /// Retorna la carrera si es encontrada, de otro modo retorna null.
+        /// </returns>
         public static CarreraPOJO ObtenerUno(int id)
         {
             try
@@ -63,6 +86,14 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        /// <summary>
+        /// Construye una carrera con los datos ingresados como parámetro.
+        /// </summary>
+        /// <param name="dr"></param>
+        /// Registro de datos pertenecientes a la carrera.
+        /// <returns>
+        /// Retorna la carrera creada.
+        /// </returns>
         public static CarreraPOJO DataRowAObjeto(DataRow dr)
         {
             return new CarreraPOJO(

@@ -11,9 +11,23 @@ using System.Windows.Forms;
 
 namespace ResidenciasProfesionales.VIEW
 {
+    /// <summary>
+    /// Lista de informes pendientes de la liberación final.
+    /// </summary>
+    /// <remarks>
+    /// Muestra todos aquellos informes en espera de un veredicto
+    /// sobre la liberación final de la residencia.
+    /// </remarks>
     public partial class FrmLiberacionFinal : Form
     {
+        //Almacena al docente ingresado.
         DocentePOJO doce = new DocentePOJO();
+
+        /// <summary>
+        /// Inicializa los componentes.
+        /// </summary>
+        /// <param name="idDocente"></param>
+        /// Identificador del docente.
         public FrmLiberacionFinal(String idDocente)
         {
             InitializeComponent();
@@ -21,6 +35,10 @@ namespace ResidenciasProfesionales.VIEW
             cargarDatos();
         }
 
+        /// <summary>
+        /// Evento capaz de abrir la ventana FrmLiberacionFinalDetalle
+        /// utilizando la residencia seleccionada de la lista.
+        /// </summary>
         private void btnLiberar_Click(object sender, EventArgs e)
         {
             ResidenciaPOJO res = ResidenciaDAO.ObtenerResidenciaXMatricula(dgvLista.CurrentRow.Cells[0].Value.ToString());
@@ -29,6 +47,10 @@ namespace ResidenciasProfesionales.VIEW
             frmMostrar.Show();
         }
 
+        /// <summary>
+        /// Llena la tabla con las residencias obtenidos a través
+        /// de la consulta a la base de datos.
+        /// </summary>
         private void cargarDatos(object sender, FormClosedEventArgs e)
         {
             List<ResidenciaPOJO> residencias = ResidenciaDAO.ObtenerResidenciaLiberacion();
@@ -45,6 +67,10 @@ namespace ResidenciasProfesionales.VIEW
             dgvLista.DataSource = liberacionesPendientes;
         }
 
+        /// <summary>
+        /// Llena la tabla con las residencias obtenidos a través
+        /// de la consulta a la base de datos.
+        /// </summary>
         private void cargarDatos() {
             List<ResidenciaPOJO> residencias = ResidenciaDAO.ObtenerResidenciaLiberacion();
             List<LiberacionFinalPOJO> liberacionesPendientes = new List<LiberacionFinalPOJO>();
