@@ -45,8 +45,7 @@ create table rolDocente(
     IdDocente	char(9)		not null,
     Rol			enum('Coordinador','Asesor','Revisor','Academia','Administrador'),
     constraint foreign key(IdAlumno) references alumno(Matricula),
-    constraint foreign key(IdDocente) references docente(ID),
-    constraint primary key(IdAlumno,IdDocente)
+    constraint foreign key(IdDocente) references docente(ID)
 );
 
 create table empresa(

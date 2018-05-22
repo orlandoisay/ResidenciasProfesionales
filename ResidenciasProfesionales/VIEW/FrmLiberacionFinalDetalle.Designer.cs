@@ -190,6 +190,7 @@
             this.lblCalificacion.Size = new System.Drawing.Size(73, 17);
             this.lblCalificacion.TabIndex = 46;
             this.lblCalificacion.Text = "Calificación:";
+            this.lblCalificacion.Visible = false;
             // 
             // spnCal
             // 
@@ -199,6 +200,12 @@
             this.spnCal.Name = "spnCal";
             this.spnCal.Size = new System.Drawing.Size(40, 20);
             this.spnCal.TabIndex = 47;
+            this.spnCal.Value = new decimal(new int[] {
+            89,
+            0,
+            0,
+            0});
+            this.spnCal.Visible = false;
             // 
             // FrmLiberacionFinalDetalle
             // 
