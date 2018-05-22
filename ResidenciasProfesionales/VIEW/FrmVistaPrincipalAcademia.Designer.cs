@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVistaPrincipalAcademia));
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnResidentes = new System.Windows.Forms.Button();
             this.pnlCerrarSesion = new System.Windows.Forms.Panel();
             this.pbCerrarSesion = new System.Windows.Forms.Button();
             this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.btnAsignaciónRevisor = new System.Windows.Forms.Button();
             this.btnAsignaciónAsesor = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnResidentes = new System.Windows.Forms.Button();
+            this.btnPreLiberacion = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -45,6 +46,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.pnlTop.Controls.Add(this.btnPreLiberacion);
             this.pnlTop.Controls.Add(this.btnResidentes);
             this.pnlTop.Controls.Add(this.pnlCerrarSesion);
             this.pnlTop.Controls.Add(this.btnAsignaciónRevisor);
@@ -55,6 +57,21 @@
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(776, 69);
             this.pnlTop.TabIndex = 4;
+            // 
+            // btnResidentes
+            // 
+            this.btnResidentes.BackColor = System.Drawing.Color.White;
+            this.btnResidentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResidentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResidentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnResidentes.Location = new System.Drawing.Point(387, 20);
+            this.btnResidentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnResidentes.Name = "btnResidentes";
+            this.btnResidentes.Size = new System.Drawing.Size(121, 30);
+            this.btnResidentes.TabIndex = 6;
+            this.btnResidentes.Text = "Residentes";
+            this.btnResidentes.UseVisualStyleBackColor = false;
+            this.btnResidentes.Click += new System.EventHandler(this.btnResidentes_Click);
             // 
             // pnlCerrarSesion
             // 
@@ -139,20 +156,20 @@
             this.pbLogo.TabIndex = 5;
             this.pbLogo.TabStop = false;
             // 
-            // btnResidentes
+            // btnPreLiberacion
             // 
-            this.btnResidentes.BackColor = System.Drawing.Color.White;
-            this.btnResidentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResidentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResidentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnResidentes.Location = new System.Drawing.Point(387, 20);
-            this.btnResidentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnResidentes.Name = "btnResidentes";
-            this.btnResidentes.Size = new System.Drawing.Size(174, 30);
-            this.btnResidentes.TabIndex = 6;
-            this.btnResidentes.Text = "Residentes";
-            this.btnResidentes.UseVisualStyleBackColor = false;
-            this.btnResidentes.Click += new System.EventHandler(this.btnResidentes_Click);
+            this.btnPreLiberacion.BackColor = System.Drawing.Color.White;
+            this.btnPreLiberacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreLiberacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreLiberacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnPreLiberacion.Location = new System.Drawing.Point(520, 20);
+            this.btnPreLiberacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPreLiberacion.Name = "btnPreLiberacion";
+            this.btnPreLiberacion.Size = new System.Drawing.Size(163, 30);
+            this.btnPreLiberacion.TabIndex = 7;
+            this.btnPreLiberacion.Text = "Lista pre-liberaciones";
+            this.btnPreLiberacion.UseVisualStyleBackColor = false;
+            this.btnPreLiberacion.Click += new System.EventHandler(this.btnPreLiberacion_Click);
             // 
             // FrmVistaPrincipalAcademia
             // 
@@ -181,5 +198,6 @@
         private System.Windows.Forms.Button btnAsignaciónAsesor;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnResidentes;
+        private System.Windows.Forms.Button btnPreLiberacion;
     }
 }

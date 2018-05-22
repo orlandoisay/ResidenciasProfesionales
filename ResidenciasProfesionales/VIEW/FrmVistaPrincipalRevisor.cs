@@ -86,5 +86,14 @@ namespace ResidenciasProfesionales.VIEW
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Evento capaz de abrir la ventana FrmListaPreLiberacion.
+        /// </summary>
+        private void btnPreLiberacion_Click(object sender, EventArgs e)
+        {
+            var frmPreLiberacion = new FrmListaPreLiberacion();
+            frmPreLiberacion.ShowDialog();
+        }
     }
 }

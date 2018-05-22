@@ -36,6 +36,7 @@
             this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.btnLiberacion = new System.Windows.Forms.Button();
             this.btnAprobacion = new System.Windows.Forms.Button();
+            this.btnPreLiberacion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
@@ -56,6 +57,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.pnlTop.Controls.Add(this.btnPreLiberacion);
             this.pnlTop.Controls.Add(this.pnlCerrarSesion);
             this.pnlTop.Controls.Add(this.btnLiberacion);
             this.pnlTop.Controls.Add(this.btnAprobacion);
@@ -134,6 +136,21 @@
             this.btnAprobacion.UseVisualStyleBackColor = false;
             this.btnAprobacion.Click += new System.EventHandler(this.btnAprobacion_Click);
             // 
+            // btnPreLiberacion
+            // 
+            this.btnPreLiberacion.BackColor = System.Drawing.Color.White;
+            this.btnPreLiberacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreLiberacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreLiberacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnPreLiberacion.Location = new System.Drawing.Point(387, 20);
+            this.btnPreLiberacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPreLiberacion.Name = "btnPreLiberacion";
+            this.btnPreLiberacion.Size = new System.Drawing.Size(174, 30);
+            this.btnPreLiberacion.TabIndex = 6;
+            this.btnPreLiberacion.Text = "Lista pre-liberacion";
+            this.btnPreLiberacion.UseVisualStyleBackColor = false;
+            this.btnPreLiberacion.Click += new System.EventHandler(this.btnPreLiberacion_Click);
+            // 
             // FrmVistaPrincipalRevisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,5 +179,6 @@
         private System.Windows.Forms.Button btnLiberacion;
         private System.Windows.Forms.Button btnAprobacion;
         private System.Windows.Forms.Panel pnlCerrarSesion;
+        private System.Windows.Forms.Button btnPreLiberacion;
     }
 }

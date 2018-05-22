@@ -150,6 +150,12 @@
     <Compile Include="VIEW\FrmLiberacionInformeLista.Designer.cs">
       <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\FrmListaPreLiberacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FrmListaPreLiberacion.Designer.cs">
+      <DependentUpon>FrmListaPreLiberacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FrmListaResidentes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmLiberacionInformeLista.resx">
       <DependentUpon>FrmLiberacionInformeLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FrmListaPreLiberacion.resx">
+      <DependentUpon>FrmListaPreLiberacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FrmListaResidentes.resx">
       <DependentUpon>FrmListaResidentes.cs</DependentUpon>
