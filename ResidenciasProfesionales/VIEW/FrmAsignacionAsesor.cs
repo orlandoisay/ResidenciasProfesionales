@@ -32,7 +32,9 @@ namespace ResidenciasProfesionales.VIEW
                 tablaAsignarAsesor.Enabled = false;
             }
             else {
-                lblAlumnoAsignar.Text = "SELECCIONE UN ALUMNO";
+                tablaAsignarAsesor.Rows[0].Selected = true;
+                llenarEspaciosAsignarAsesor(0);
+                //lblAlumnoAsignar.Text = "SELECCIONE UN ALUMNO";
             }
 
             if (tablaModificarAsesor.Rows.Count == 0)
@@ -42,7 +44,9 @@ namespace ResidenciasProfesionales.VIEW
             }
             else
             {
-                lblAlumnoModificar.Text = "SELECCIONE UN ALUMNO";
+                tablaModificarAsesor.Rows[0].Selected = true;
+                llenarEspaciosModificarAsesor(0);
+                //lblAlumnoModificar.Text = "SELECCIONE UN ALUMNO";
             }
             
             enabledBotones("Asignar", false);
@@ -83,15 +87,21 @@ namespace ResidenciasProfesionales.VIEW
                 enabledBotones("Asignar", false);
                 tablaAsignarAsesor.Enabled = false;
                 tablaModificarAsesor.Enabled = true;
-                lblAlumnoModificar.Text = "SELECCIONE UN ALUMNO";
+                tablaModificarAsesor.Rows[0].Selected = true;
+                llenarEspaciosModificarAsesor(0);
+                //lblAlumnoModificar.Text = "SELECCIONE UN ALUMNO";
             }
             else
             if(cantidad != tablaAsignarAsesor.Rows.Count)
             {
-                lblAlumnoAsignar.Text = "SELECCIONE UN ALUMNO";
-                enabledBotones("Asignar", false);
+                tablaAsignarAsesor.Rows[0].Selected = true;
+                llenarEspaciosAsignarAsesor(0);
+                //lblAlumnoAsignar.Text = "SELECCIONE UN ALUMNO";
+                //enabledBotones("Asignar", false);
                 tablaModificarAsesor.Enabled = true;
-                lblAlumnoModificar.Text = "SELECCIONE UN ALUMNO";
+                tablaModificarAsesor.Rows[0].Selected = true;
+                llenarEspaciosModificarAsesor(0);
+                //lblAlumnoModificar.Text = "SELECCIONE UN ALUMNO";
             }
         }
 
@@ -115,15 +125,21 @@ namespace ResidenciasProfesionales.VIEW
                 enabledBotones("Asignar", false);
                 tablaAsignarAsesor.Enabled = false;
                 tablaModificarAsesor.Enabled = true;
-                lblAlumnoModificar.Text = "SELECCIONE UN ALUMNO";
+                tablaModificarAsesor.Rows[0].Selected = true;
+                llenarEspaciosModificarAsesor(0);
+                //lblAlumnoModificar.Text = "SELECCIONE UN ALUMNO";
             }
             else
             if (cantidad != tablaAsignarAsesor.Rows.Count)
             {
-                lblAlumnoAsignar.Text = "SELECCIONE UN ALUMNO";
-                enabledBotones("Asignar", false);
+                tablaAsignarAsesor.Rows[0].Selected = true;
+                llenarEspaciosAsignarAsesor(0);
+                //lblAlumnoAsignar.Text = "SELECCIONE UN ALUMNO";
+                //enabledBotones("Asignar", false);
                 tablaModificarAsesor.Enabled = true;
-                lblAlumnoModificar.Text = "SELECCIONE UN ALUMNO";
+                tablaModificarAsesor.Rows[0].Selected = true;
+                llenarEspaciosModificarAsesor(0);
+                //lblAlumnoModificar.Text = "SELECCIONE UN ALUMNO";
             }
         }
 
@@ -192,6 +208,7 @@ namespace ResidenciasProfesionales.VIEW
         {
             try
             {
+                tablaAsignarAsesor.Rows[e.RowIndex].Selected = true;
                 enabledBotones("Asignar", true);
                 matriculaSinAsesor = tablaAsignarAsesor.Rows[e.RowIndex].Cells["noControlAsignar"].Value.ToString();
                 String nombreSeleccionado = tablaAsignarAsesor.Rows[e.RowIndex].Cells["nombreAsignar"].Value.ToString();
@@ -202,6 +219,15 @@ namespace ResidenciasProfesionales.VIEW
             }
         }
 
+        public void llenarEspaciosAsignarAsesor(int index)
+        {
+            tablaAsignarAsesor.Rows[index].Selected = true;
+            enabledBotones("Asignar", true);
+            matriculaSinAsesor = tablaAsignarAsesor.Rows[index].Cells["noControlAsignar"].Value.ToString();
+            String nombreSeleccionado = tablaAsignarAsesor.Rows[index].Cells["nombreAsignar"].Value.ToString();
+            lblAlumnoAsignar.Text = "ALUMNO: " + nombreSeleccionado.ToUpper();
+        }
+
         /// <summary>
         /// Evento capaz de reconocer la fila seleccionada.
         /// </summary>
@@ -209,6 +235,7 @@ namespace ResidenciasProfesionales.VIEW
         {
             try
             {
+                tablaModificarAsesor.Rows[e.RowIndex].Selected = true;
                 enabledBotones("Cambiar", true);
                 matriculaConAsesor = tablaModificarAsesor.Rows[e.RowIndex].Cells["noControlModificar"].Value.ToString();
                 String nombreSeleccionado = tablaModificarAsesor.Rows[e.RowIndex].Cells["nombreModificar"].Value.ToString();
@@ -219,5 +246,15 @@ namespace ResidenciasProfesionales.VIEW
             }
             
         }
+
+        public void llenarEspaciosModificarAsesor(int index)
+        {
+            tablaModificarAsesor.Rows[index].Selected = true;
+            enabledBotones("Cambiar", true);
+            matriculaConAsesor = tablaModificarAsesor.Rows[index].Cells["noControlModificar"].Value.ToString();
+            String nombreSeleccionado = tablaModificarAsesor.Rows[index].Cells["nombreModificar"].Value.ToString();
+            lblAlumnoModificar.Text = "ALUMNO: " + nombreSeleccionado.ToUpper();
+        }
+
     }
 }

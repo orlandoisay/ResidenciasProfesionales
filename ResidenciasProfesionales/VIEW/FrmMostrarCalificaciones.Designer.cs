@@ -133,7 +133,7 @@
             this.Controls.Add(this.lblComentario);
             this.Controls.Add(this.tablaCalificaciones);
             this.Name = "FrmMostrarCalificaciones";
-            this.Text = "FrmMostrarCalificaciones";
+            this.Text = "Calificaciones";
             ((System.ComponentModel.ISupportInitialize)(this.tablaCalificaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

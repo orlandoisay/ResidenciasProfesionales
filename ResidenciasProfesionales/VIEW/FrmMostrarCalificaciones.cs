@@ -31,16 +31,18 @@ namespace ResidenciasProfesionales.VIEW
             InitializeComponent();
             idDocente = ID;
             llenarTablaAlumno();
+            txtaComentario.Visible = false;
+            lblFecha.Visible = false;
             if (tablaCalificaciones.Rows.Count == 0)
             {
                 lblComentario.Text = "NO HAY CALIFICACIONES PARA MOSTRAR";
                 tablaCalificaciones.Enabled = false;
             }
             else {
-                lblComentario.Text = "SELECCIONE UN ALUMNO DE LA LISTA";
+                tablaCalificaciones.Rows[0].Selected = true;
+                llenarEspacios(0);
+                //lblComentario.Text = "SELECCIONE UN ALUMNO DE LA LISTA";
             }
-            txtaComentario.Visible = false;
-            lblFecha.Visible = false;
         }
 
         /// <summary>
@@ -67,6 +69,7 @@ namespace ResidenciasProfesionales.VIEW
         {
             try
             {
+                tablaCalificaciones.Rows[e.RowIndex].Selected = true;
                 txtaComentario.Visible = true;
                 lblFecha.Visible = true;
                 lblComentario.Text = "Comentario:";
@@ -78,6 +81,16 @@ namespace ResidenciasProfesionales.VIEW
             catch (Exception)
             {
             }
+        }
+
+        public void llenarEspacios(int index) {
+            txtaComentario.Visible = true;
+            lblFecha.Visible = true;
+            lblComentario.Text = "Comentario:";
+
+            String fecha = dictamenes[index].Fecha.Day + "/" + dictamenes[index].Fecha.Month + "/" + dictamenes[index].Fecha.Year;
+            lblFecha.Text = "Fecha: " + fecha;
+            txtaComentario.Text = dictamenes[index].Comentario;
         }
 
         /// <summary>

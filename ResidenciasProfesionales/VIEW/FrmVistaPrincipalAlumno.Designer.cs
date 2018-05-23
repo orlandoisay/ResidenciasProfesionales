@@ -131,7 +131,7 @@
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pbLogo);
             this.Name = "FrmVistaPrincipalAlumno";
-            this.Text = "FrmVistaPrincipalAlumno";
+            this.Text = "Alumno";
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnlTop.ResumeLayout(false);
             this.pnlCerrarSesion.ResumeLayout(false);

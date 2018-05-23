@@ -238,7 +238,7 @@
             this.ClientSize = new System.Drawing.Size(734, 456);
             this.Controls.Add(this.pestaniasAsig_Mod);
             this.Name = "FrmAsignacionAsesor";
-            this.Text = "FrmAsignarAsesor";
+            this.Text = "Asignar asesor";
             this.pestaniasAsig_Mod.ResumeLayout(false);
             this.paginaAsignarAsesor.ResumeLayout(false);
             this.paginaAsignarAsesor.PerformLayout();

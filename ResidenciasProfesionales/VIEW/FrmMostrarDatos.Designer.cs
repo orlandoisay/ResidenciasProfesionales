@@ -93,7 +93,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(47, 154);
+            this.lblUsuario.Location = new System.Drawing.Point(44, 154);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(46, 13);
             this.lblUsuario.TabIndex = 22;
@@ -358,7 +358,7 @@
             this.Controls.Add(this.panelAlumno);
             this.MaximizeBox = false;
             this.Name = "FrmMostrarDatos";
-            this.Text = "FrmMostrarDatos";
+            this.Text = "Datos";
             this.panelAsesor.ResumeLayout(false);
             this.panelAsesor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAsesor)).EndInit();

@@ -46,7 +46,9 @@ namespace ResidenciasProfesionales.VIEW
             }
             else
             {
-                lblNombreAlumno.Text = "SELECCIONE UN ALUMNO";
+                tablaAlumnos.Rows[0].Selected = true;
+                llenarEspacios(0);
+                //lblNombreAlumno.Text = "SELECCIONE UN ALUMNO";
             }
         }
 
@@ -71,7 +73,7 @@ namespace ResidenciasProfesionales.VIEW
         /// </summary>
         public void insertarDocumentos() {
             tablaDocumentos.Rows.Add("Cronograma de actividades");
-            tablaDocumentos.Rows.Add("Informe");
+            tablaDocumentos.Rows.Add("Informe técnico de residencias");
             tablaDocumentos.Rows.Add("Resumen ejecutivo");
             tablaDocumentos.Rows.Add("CD");
             tablaDocumentos.Rows.Add("Asesorias");
@@ -88,6 +90,7 @@ namespace ResidenciasProfesionales.VIEW
         {
             try
             {
+                tablaAlumnos.Rows[e.RowIndex].Selected = true;
                 btnGuardarCambios.Enabled = false;
                 matricula = tablaAlumnos.Rows[e.RowIndex].Cells["noControl"].Value.ToString();
                 String nombreSeleccionado = tablaAlumnos.Rows[e.RowIndex].Cells["nombre"].Value.ToString();
@@ -101,6 +104,16 @@ namespace ResidenciasProfesionales.VIEW
                 btnGuardarCambios.Enabled = false;
             }
             
+        }
+
+        public void llenarEspacios(int index) {
+            btnGuardarCambios.Enabled = false;
+            matricula = tablaAlumnos.Rows[index].Cells["noControl"].Value.ToString();
+            String nombreSeleccionado = tablaAlumnos.Rows[index].Cells["nombre"].Value.ToString();
+            lblNombreAlumno.Text = "ALUMNO: " + nombreSeleccionado.ToUpper();
+            spnCalificacionFinal.Value = 0;
+            txtaComentario.Text = "";
+            palomearChecks();
         }
 
         /// <summary>
@@ -195,7 +208,10 @@ namespace ResidenciasProfesionales.VIEW
                 }
                 else
                 {
-                    lblNombreAlumno.Text = "SELECCIONE UN ALUMNO";
+                    tablaAlumnos.Rows[0].Selected = true;
+                    llenarEspacios(0);
+                    //lblNombreAlumno.Text = "SELECCIONE UN ALUMNO";
+                    btnGuardarCambios.Enabled = true;
                 }
             }
         }

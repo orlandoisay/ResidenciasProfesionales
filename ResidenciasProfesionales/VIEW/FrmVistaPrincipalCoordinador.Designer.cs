@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVistaPrincipalCoordinador));
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnResidentes = new System.Windows.Forms.Button();
             this.btnLiberacionFinal = new System.Windows.Forms.Button();
             this.pnlCerrarSesion = new System.Windows.Forms.Panel();
             this.pbCerrarSesion = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.btnReporteResidencias = new System.Windows.Forms.Button();
             this.btnAprobacionSolicitudes = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnResidentes = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlCerrarSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -57,6 +57,22 @@
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(776, 69);
             this.pnlTop.TabIndex = 5;
+            // 
+            // btnResidentes
+            // 
+            this.btnResidentes.BackColor = System.Drawing.Color.White;
+            this.btnResidentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResidentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResidentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResidentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnResidentes.Location = new System.Drawing.Point(533, 20);
+            this.btnResidentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnResidentes.Name = "btnResidentes";
+            this.btnResidentes.Size = new System.Drawing.Size(155, 30);
+            this.btnResidentes.TabIndex = 7;
+            this.btnResidentes.Text = "Residentes";
+            this.btnResidentes.UseVisualStyleBackColor = false;
+            this.btnResidentes.Click += new System.EventHandler(this.btnResidentes_Click);
             // 
             // btnLiberacionFinal
             // 
@@ -162,22 +178,6 @@
             this.pbLogo.TabIndex = 6;
             this.pbLogo.TabStop = false;
             // 
-            // btnResidentes
-            // 
-            this.btnResidentes.BackColor = System.Drawing.Color.White;
-            this.btnResidentes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnResidentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResidentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResidentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnResidentes.Location = new System.Drawing.Point(533, 20);
-            this.btnResidentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnResidentes.Name = "btnResidentes";
-            this.btnResidentes.Size = new System.Drawing.Size(155, 30);
-            this.btnResidentes.TabIndex = 7;
-            this.btnResidentes.Text = "Residentes";
-            this.btnResidentes.UseVisualStyleBackColor = false;
-            this.btnResidentes.Click += new System.EventHandler(this.btnResidentes_Click);
-            // 
             // FrmVistaPrincipalCoordinador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,7 +187,7 @@
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.pnlTop);
             this.Name = "FrmVistaPrincipalCoordinador";
-            this.Text = "FrmVistaPrincipalCoordinador";
+            this.Text = "Coordinador";
             this.pnlTop.ResumeLayout(false);
             this.pnlCerrarSesion.ResumeLayout(false);
             this.pnlCerrarSesion.PerformLayout();
