@@ -389,6 +389,44 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        public static bool DictamenAprobado(AlumnoPOJO alumno)
+        {
+            try
+            {
+                var residencia = ResidenciaDAO.ObtenerResidenciaXMatricula(alumno.Matricula);
+
+                if (residencia == null)
+                    return false;
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd;
+                DataTable dt;
+                
+                cmd = new MySqlCommand("SELECT count(*) as 'cnt' FROM dictamen WHERE Idresidencia=@P0 AND " +
+                    "Tipo LIKE 'Aprobacion%' LIMIT 1;");
+                cmd.Parameters.AddWithValue("@P0", residencia.ID);
+                dt = con.ejecutarConsulta(cmd);
+                int dictamenes = int.Parse(dt.Rows[0]["cnt"].ToString());
+
+                cmd = new MySqlCommand("SELECT count(*) as 'cnt' FROM dictamen WHERE Idresidencia=@P0 AND " +
+                    "Tipo LIKE 'Aprobacion%' AND Estatus LIKE 'Aceptado' LIMIT 1;");
+                cmd.Parameters.AddWithValue("@P0", residencia.ID);
+                dt = con.ejecutarConsulta(cmd);
+                int cantidad = int.Parse(dt.Rows[0]["cnt"].ToString());
+
+                return dictamenes == 3 && cantidad >= 2;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         /// <summary>
         /// Construye un alumno con los datos ingresados como parámetro.
         /// </summary>
