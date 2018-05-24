@@ -33,7 +33,7 @@ namespace ResidenciasProfesionales.VIEW
             IdDocente = idDocente;
             Matricula = matricula;
             Rol = RolDAO.ObtenerRol(matricula, idDocente).Rol;
-            Dictamen = DictamenDAO.ObtenerDictamen(idDocente, matricula, "Aprobacion" + Rol);
+            Dictamen = DictamenDAO.ObtenerDictamen(idDocente, matricula, "Liberacion" + Rol);
 
             InitializeComponent();
             CargarDatosAlumno();
