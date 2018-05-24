@@ -94,7 +94,8 @@
             "Revisor",
             "Alumno",
             "Academia",
-            "Coordinador"});
+            "Coordinador",
+            "Administrador"});
             this.cbTipo.Location = new System.Drawing.Point(39, 200);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(198, 28);
@@ -156,7 +157,6 @@
             this.Controls.Add(this.lbUsuario);
             this.Name = "FrmLogin2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLogin2";
             this.Load += new System.EventHandler(this.FrmLogin2_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmLogin2_Paint);
             this.pPanel.ResumeLayout(false);

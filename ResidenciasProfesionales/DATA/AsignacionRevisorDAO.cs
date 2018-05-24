@@ -35,7 +35,7 @@ namespace ResidenciasProfesionales.DATA
             try
             {
                 Conexion con = new Conexion();
-                MySqlCommand cmd = new MySqlCommand("select a.Matricula, concat(a.ApellidoP,' ',a.ApellidoM,' ',a.Nombre)as Alumno,rd.IdDocente,concat(d.ApellidoP,' ',d.ApellidoM,' ',d.Nombre)as Asesor from alumno a join roldocente rd on a.Matricula = rd.IdAlumno join docente d on rd.IdDocente = d.ID where rd.Rol = 'Asesor' order by Matricula;");
+                MySqlCommand cmd = new MySqlCommand("select a.Matricula, concat(a.ApellidoP,' ',a.ApellidoM,', ',a.Nombre)as Alumno,rd.IdDocente,concat(d.ApellidoP,' ',d.ApellidoM,' ',d.Nombre)as Asesor from alumno a join roldocente rd on a.Matricula = rd.IdAlumno join docente d on rd.IdDocente = d.ID where rd.Rol = 'Asesor' order by Matricula;");
 
                 DataTable dt = con.ejecutarConsulta(cmd);
 

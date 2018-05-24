@@ -53,7 +53,28 @@ namespace ResidenciasProfesionales.DATA
                     Conexion.conexion.Close();
             }
         }
-
+        
+            public static int EliminarRevisor(String NoControl)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("DELETE FROM rolDocente WHERE idAlumno = @P0 and Rol = 'Revisor';");
+                cmd.Parameters.AddWithValue("@P0", NoControl);
+                con.ejecutarSentencia(cmd, true);
+                Conexion.conexion.Close();
+                return con.ejecutarSentencia(cmd, true);
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
         /// <summary>
         /// Asigna los revisores al alumno, los datos necesarios
         /// son ingresados como parámetro.

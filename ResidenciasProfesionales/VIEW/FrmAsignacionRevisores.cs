@@ -43,7 +43,7 @@ namespace ResidenciasProfesionales.VIEW
 
         // Almacena a todos los revisores.
         List<DocentePOJO> listRevisores;
-
+        private bool borrar = true;
         /// <summary>
         /// Despliega el panel encargado de mostrar los revisores
         /// disponibles.
@@ -52,8 +52,14 @@ namespace ResidenciasProfesionales.VIEW
         {
             if (indice != -1)
             {
+                
                 if (dgvTabla.Rows[indice].Cells[3].Value.ToString() == "")
                 {
+                    borrar = false;
+                }
+                String revisor1, revisor2;
+                revisor1 = dgvTabla.Rows[indice].Cells[3].Value.ToString();
+                revisor2 = dgvTabla.Rows[indice].Cells[4].Value.ToString();
                     pPanel.Visible = false;
                     llenarDatos();
                     indice = -1;
@@ -63,7 +69,17 @@ namespace ResidenciasProfesionales.VIEW
                     listRevisores = new RevisorDAO().ObtenerTodos();
                     dgvTablaCarga.DataSource = null;
                     dgvTablaCarga.DataSource = listRevisores;
+                for (int i = 0; i < dgvTablaCarga.RowCount; i++)
+                {
+                    if (revisor1 == dgvTablaCarga.Rows[i].Cells[1].Value.ToString()) {
+                        dgvTablaCarga.Rows[i].Cells[0].Value = true;
+                    }
+                    else if (revisor2 == dgvTablaCarga.Rows[i].Cells[1].Value.ToString())
+                    {
+                        dgvTablaCarga.Rows[i].Cells[0].Value = true;
+                    }
                 }
+                /*}
                 else
                 {
                     MessageBox.Show("Ya tiene revisores asignados.",
@@ -71,7 +87,7 @@ namespace ResidenciasProfesionales.VIEW
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information,
                     MessageBoxDefaultButton.Button1);
-                }
+                }*/
             }
             else
             {
@@ -96,6 +112,7 @@ namespace ResidenciasProfesionales.VIEW
         public bool verificar() {
             int cont = 0;
             int i = 0;
+            d1 = d2 = null;
             foreach (DataGridViewRow row in dgvTablaCarga.Rows)
             {
                 if (Convert.ToBoolean(row.Cells["cAceptar"].Value))
@@ -215,7 +232,12 @@ namespace ResidenciasProfesionales.VIEW
         public void insertarRevisores() {
             if (verificar())
             {
+                if (borrar) {
+                    RevisorDAO.EliminarRevisor(NoControl);
+                    MessageBox.Show("//");
+                }
                 RevisorDAO.InsertarRevisor(NoControl, d1.ID, d2.ID);
+                MessageBox.Show(d1.Nombre + " " + d2.Nombre);
                 MessageBox.Show("Datos guardados.",
                "Aviso",
                MessageBoxButtons.OK,

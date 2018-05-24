@@ -115,7 +115,14 @@ namespace ResidenciasProfesionales.VIEW
                             this.Visible = true;
                             limpiarCampos();
                             break;
-                       }
+                        case "Administrador":
+                            this.Visible = false;
+                            FrmVistaPrincipalAdministrador fvoa = new FrmVistaPrincipalAdministrador();
+                            fvoa.ShowDialog();
+                            this.Visible = true;
+                            limpiarCampos();
+                            break;
+                    }
                 }
                 else
                 {

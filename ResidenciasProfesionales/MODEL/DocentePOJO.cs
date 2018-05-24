@@ -32,7 +32,7 @@ namespace ResidenciasProfesionales.MODEL
         {
             get
             {
-                return string.Format("{0} {1}, {2}", ApellidoP, ApellidoM, Nombre);
+                return string.Format("{0} {1} {2}", ApellidoP, ApellidoM, Nombre);
             }
         }
 
