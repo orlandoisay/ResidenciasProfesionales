@@ -32,16 +32,24 @@ namespace ResidenciasProfesionales.DATA
                     if (!existeRol) continue;
 
                     var pre = aprobados ? "Liberacion" : "Aprobacion";
-                    var responsables = DocenteDAO.ObtenerResponsablesDeAlumno(alumno.Matricula);
 
-                    // No tiene asignados todos los responsables
-                    if (responsables.Count < 3) continue;
+                    // Verifica que haya sido aprobado en caso de liberacion
+                    if (aprobados && !AlumnoDAO.DictamenAprobado(alumno))
+                        continue;
+                    
+                    // Obtiene los responsables
+                    var asesor = DocenteDAO.ObtenerAsesor(alumno);
+                    var revisores = DocenteDAO.ObtenerRevisores(alumno);
 
                     InformePOJO.Dictamen dictamenAsesor, dictamenRevisor1, dictamenRevisor2;
 
-                    var dicAsesor = DictamenDAO.ObtenerDictamen(responsables[0].ID, alumno.Matricula, pre + "Asesor");
-                    var dicRevisor1 = DictamenDAO.ObtenerDictamen(responsables[1].ID, alumno.Matricula, pre + "Revisor");
-                    var dicRevisor2 = DictamenDAO.ObtenerDictamen(responsables[2].ID, alumno.Matricula, pre + "Revisor");
+                    // No hay asesor o revisores asignados correctamente
+                    if (asesor == null || revisores == null || revisores.Count != 2)
+                        continue;
+
+                    var dicAsesor = DictamenDAO.ObtenerDictamen(asesor.ID, alumno.Matricula, pre + "Asesor");
+                    var dicRevisor1 = DictamenDAO.ObtenerDictamen(revisores[0].ID, alumno.Matricula, pre + "Revisor");
+                    var dicRevisor2 = DictamenDAO.ObtenerDictamen(revisores[1].ID, alumno.Matricula, pre + "Revisor");
 
                     // Asesor
                     if (dicAsesor == null)
