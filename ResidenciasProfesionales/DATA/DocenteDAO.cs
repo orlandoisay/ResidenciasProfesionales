@@ -327,6 +327,62 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        public static DocentePOJO ObtenerAsesor(AlumnoPOJO alumno)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM roldocente R JOIN docente D ON R.IdDocente = D.ID " +
+                    "WHERE IdAlumno=@P0 AND Rol = 'Asesor'");
+                cmd.Parameters.AddWithValue("@P0", alumno.Matricula);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                if (dt.Rows.Count != 1)
+                    return null;
+
+                return DataRowAObjeto(dt.Rows[0]);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+        public static List<DocentePOJO> ObtenerRevisores(AlumnoPOJO alumno)
+        {
+            try
+            {
+                var list = new List<DocentePOJO>();
+
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM roldocente R JOIN docente D ON R.IdDocente = D.ID " +
+                    "WHERE IdAlumno=@P0 AND Rol='Revisor'");
+                cmd.Parameters.AddWithValue("@P0", alumno.Matricula);
+
+                DataTable dt = con.ejecutarConsulta(cmd);
+
+                foreach (DataRow dr in dt.Rows)
+                    list.Add(DataRowAObjeto(dr));
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
+
         /// <summary>
         /// Construye un docente con los datos ingresados como parámetro.
         /// </summary>
