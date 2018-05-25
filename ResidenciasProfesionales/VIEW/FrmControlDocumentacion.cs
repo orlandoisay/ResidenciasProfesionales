@@ -32,6 +32,7 @@ namespace ResidenciasProfesionales.VIEW
             InitializeComponent();
             insertarDocumentos();
             this.idDocente = idDocente;
+            btnCorregir.Visible = false;
 
             tablaDocumentos.Enabled = false;
             spnCalificacionFinal.Enabled = false;
@@ -204,6 +205,7 @@ namespace ResidenciasProfesionales.VIEW
                 if (tablaAlumnos.Rows.Count == 0)
                 {
                     lblNombreAlumno.Text = "NO HAY ASESORADOS CON DOCUMENTACIÓN PENDIENTE";
+                    btnCorregir.Visible = false;
                     tablaAlumnos.Enabled = false;
                 }
                 else
@@ -243,6 +245,7 @@ namespace ResidenciasProfesionales.VIEW
                 lblComentario.Visible = true;
                 txtaComentario.Visible = true;
                 btnGuardarCambios.Enabled = true;
+                btnCorregir.Visible = true;
             }
             else {
                 tablaDocumentos.Enabled = true;
@@ -260,6 +263,14 @@ namespace ResidenciasProfesionales.VIEW
         private void tablaDocumentos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnGuardarCambios.Enabled = true;
+        }
+
+        private void btnCorregir_Click(object sender, EventArgs e)
+        {
+            bloquearDesbloquear(false);
+            btnCorregir.Visible = false;
+            spnCalificacionFinal.Value = 0;
+            txtaComentario.Text = "";
         }
     }
 }

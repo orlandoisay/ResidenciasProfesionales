@@ -273,6 +273,29 @@ namespace ResidenciasProfesionales.DATA
             }
         }
 
+        public static bool BorrarDictamen(int id)
+        {
+            try
+            {
+                Conexion con = new Conexion();
+                MySqlCommand cmd = new MySqlCommand("DELETE FROM DICTAMEN WHERE id = @P1;");
+
+                cmd.Parameters.AddWithValue("@P1", id);
+
+                con.ejecutarSentencia(cmd, true);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                if (Conexion.conexion != null)
+                    Conexion.conexion.Close();
+            }
+        }
+
         /// <summary>
         /// Obtiene los dictamenes de liberación asesor emitidos por el docente ingresado
         /// como parámetro.

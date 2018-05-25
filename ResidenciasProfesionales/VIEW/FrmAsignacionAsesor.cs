@@ -30,6 +30,7 @@ namespace ResidenciasProfesionales.VIEW
             {
                 lblAlumnoAsignar.Text = "NO HAY ALUMNOS A QUIEN ASIGNARLE UN ASESOR";
                 tablaAsignarAsesor.Enabled = false;
+                enabledBotones("Asignar", false);
             }
             else {
                 tablaAsignarAsesor.Rows[0].Selected = true;
@@ -41,6 +42,7 @@ namespace ResidenciasProfesionales.VIEW
             {
                 lblAlumnoModificar.Text = "NO HAY ALUMNOS A QUIEN CAMBIARLE EL ASESOR";
                 tablaModificarAsesor.Enabled = false;
+                enabledBotones("Cambiar", false);
             }
             else
             {
@@ -48,9 +50,6 @@ namespace ResidenciasProfesionales.VIEW
                 llenarEspaciosModificarAsesor(0);
                 //lblAlumnoModificar.Text = "SELECCIONE UN ALUMNO";
             }
-            
-            enabledBotones("Asignar", false);
-            enabledBotones("Cambiar", false);
         }
 
         /// <summary>

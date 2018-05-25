@@ -41,6 +41,7 @@
             this.asesor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblComentario = new System.Windows.Forms.Label();
             this.txtaComentario = new System.Windows.Forms.RichTextBox();
+            this.btnCorregir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.spnCalificacionFinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDocumentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaAlumnos)).BeginInit();
@@ -60,7 +61,7 @@
             // 
             this.btnGuardarCambios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardarCambios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarCambios.Location = new System.Drawing.Point(522, 407);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(522, 421);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(200, 23);
             this.btnGuardarCambios.TabIndex = 12;
@@ -179,11 +180,22 @@
             this.txtaComentario.TabIndex = 15;
             this.txtaComentario.Text = "";
             // 
+            // btnCorregir
+            // 
+            this.btnCorregir.Location = new System.Drawing.Point(522, 392);
+            this.btnCorregir.Name = "btnCorregir";
+            this.btnCorregir.Size = new System.Drawing.Size(200, 23);
+            this.btnCorregir.TabIndex = 16;
+            this.btnCorregir.Text = "Corregir documentación";
+            this.btnCorregir.UseVisualStyleBackColor = true;
+            this.btnCorregir.Click += new System.EventHandler(this.btnCorregir_Click);
+            // 
             // FrmControlDocumentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 456);
+            this.Controls.Add(this.btnCorregir);
             this.Controls.Add(this.txtaComentario);
             this.Controls.Add(this.lblComentario);
             this.Controls.Add(this.spnCalificacionFinal);
@@ -217,5 +229,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn asesor;
         private System.Windows.Forms.Label lblComentario;
         private System.Windows.Forms.RichTextBox txtaComentario;
+        private System.Windows.Forms.Button btnCorregir;
     }
 }

@@ -19,6 +19,7 @@ namespace ResidenciasProfesionales.VIEW
     public partial class FrmMostrarCalificaciones : Form
     {
         String idDocente;
+        int idDictamen;
         List<AlumnoPOJO> alumnos = new List<AlumnoPOJO>();
         List<DictamenPOJO> dictamenes = new List<DictamenPOJO>();
 
@@ -30,20 +31,28 @@ namespace ResidenciasProfesionales.VIEW
         {
             InitializeComponent();
             idDocente = ID;
+            iniciar();
+        }
+
+        public void iniciar() {
             llenarTablaAlumno();
             txtaComentario.Visible = false;
             lblFecha.Visible = false;
             if (tablaCalificaciones.Rows.Count == 0)
             {
                 lblComentario.Text = "NO HAY CALIFICACIONES PARA MOSTRAR";
+                btnCambiar.Enabled = false;
                 tablaCalificaciones.Enabled = false;
             }
-            else {
+            else
+            {
                 tablaCalificaciones.Rows[0].Selected = true;
                 llenarEspacios(0);
+                idDictamen = dictamenes[0].ID;
                 //lblComentario.Text = "SELECCIONE UN ALUMNO DE LA LISTA";
             }
         }
+
 
         /// <summary>
         /// Llena la tabla con las listas previamente cargadas.
@@ -69,6 +78,7 @@ namespace ResidenciasProfesionales.VIEW
         {
             try
             {
+                idDictamen = dictamenes[e.RowIndex].ID;
                 tablaCalificaciones.Rows[e.RowIndex].Selected = true;
                 txtaComentario.Visible = true;
                 lblFecha.Visible = true;
@@ -99,6 +109,21 @@ namespace ResidenciasProfesionales.VIEW
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCambiar_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("¿Seguro que desea cambiar esta información?", "Info",
+                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.No)
+                return;
+
+            DictamenDAO.BorrarDictamen(idDictamen);
+            var frmControlDocumentacion = new FrmControlDocumentacion(idDocente);
+            this.Visible = false;
+            frmControlDocumentacion.ShowDialog();
+            iniciar();
+            this.Visible = true;
         }
     }
 }
