@@ -27,6 +27,12 @@ namespace ResidenciasProfesionales.DATA
 
             for (int i = 0; i < elementos.Count; i++)
             {
+                listaDatos.Add(new DatoCelda(i + 2, 1, i+""));
+                listaDatos.Add(new DatoCelda(i + 2, 2, "S"));
+                String n = i + "";
+                while (n.Length < 3)
+                    n = "0" + n; 
+                listaDatos.Add(new DatoCelda(i + 2, 3, n));
                 listaDatos.Add(new DatoCelda(i + 2, 4, elementos[i].Matricula));
                 listaDatos.Add(new DatoCelda(i + 2, 5, elementos[i].NombreAlumno));
                 listaDatos.Add(new DatoCelda(i + 2, 6, elementos[i].AsesorInt));
